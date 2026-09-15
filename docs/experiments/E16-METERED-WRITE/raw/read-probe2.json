@@ -1,0 +1,54 @@
+{
+  "model": "claude-sonnet-4-6",
+  "prefix_chars": 43142,
+  "rows": [
+    {
+      "c1h": 9082,
+      "c5m": 0,
+      "call": 0,
+      "create": 9082,
+      "geo": "global",
+      "input": 22,
+      "output": 16,
+      "read": 0,
+      "stop_reason": "max_tokens",
+      "text": "Section 1 states that the billed input for turn 1 contained"
+    },
+    {
+      "c1h": 0,
+      "c5m": 0,
+      "call": 1,
+      "create": 0,
+      "geo": "global",
+      "input": 22,
+      "output": 16,
+      "read": 9082,
+      "stop_reason": "max_tokens",
+      "text": "Section 2 states that in turn 2, the billed input contained"
+    },
+    {
+      "c1h": 0,
+      "c5m": 0,
+      "call": 2,
+      "create": 0,
+      "geo": "global",
+      "input": 22,
+      "output": 16,
+      "read": 9082,
+      "stop_reason": "max_tokens",
+      "text": "Section 3 states that in turn 3, the billed input contained"
+    },
+    {
+      "c1h": 0,
+      "c5m": 0,
+      "call": 3,
+      "create": 0,
+      "geo": "global",
+      "input": 22,
+      "output": 16,
+      "read": 9082,
+      "stop_reason": "max_tokens",
+      "text": "Section 4 states that in turn 4, the billed input contained"
+    }
+  ]
+}

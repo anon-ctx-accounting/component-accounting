@@ -1,0 +1,45 @@
+{
+  "artifact_audit_rows": 5,
+  "artifact_residual_zero_all": true,
+  "canary_executed": false,
+  "error_category": "zero-token pre-assistant CLI/API api_error; exact provider message unavailable by privacy design",
+  "error_detail_length": 62,
+  "error_detail_sha256": "74d0c91b76adab55e37054de42866a6fb6d2d0921e498d5fb83b4940ec388215",
+  "experiment_id": "E10-P2-XR",
+  "invalid_epoch": {
+    "arm": "karc-full",
+    "reason": "Claude Code 2.1.220 --tools selects built-in tools; passing MCP names there suppressed the intended MCP surface",
+    "turn_rows": 9
+  },
+  "model_spend_attempt_cap": 80,
+  "model_spend_attempts": 26,
+  "operational_attempt_rows": 31,
+  "primary_eligible": false,
+  "provider_probe": {
+    "arm": "rag-bm25",
+    "gross_input_tokens": 8592,
+    "mcp_calls": 0,
+    "reported_model": "claude-sonnet-5",
+    "status": "PASS",
+    "tool_calls": 0
+  },
+  "rate_card_equivalent_cap_usd": 75.0,
+  "rate_card_equivalent_total_usd": 0.6716349,
+  "recovery_budget": {
+    "expected_additional_model_spend_attempts": 49,
+    "expected_final_model_spend_attempts": 75,
+    "expected_remaining_attempt_headroom": 5
+  },
+  "reusable_epoch_candidate": {
+    "arm": "rag-bm25",
+    "condition": "pre/post-recovery RAG argv and sources pass a byte-identity audit",
+    "complete_sessions": [
+      "S01",
+      "S02"
+    ],
+    "turn_rows": 16
+  },
+  "schema": "e10-p2-xr-partial-stop-v1",
+  "status": "STOP-PROVIDER-ERROR+INVALID-KARC-TOOL-EXPOSURE",
+  "turn_rows_persisted": 25
+}

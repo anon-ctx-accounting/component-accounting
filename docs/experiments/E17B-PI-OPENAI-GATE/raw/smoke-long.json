@@ -1,0 +1,297 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T16:51:29Z",
+    "phase": "smoke",
+    "pi_version": "0.84.3"
+  },
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "regime": "long",
+  "rows": [
+    {
+      "api_call_count": 3,
+      "api_calls": [
+        {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "toolCall"
+          ],
+          "cost_cacheWrite": 0,
+          "cost_total": 0.0001594,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 647,
+          "output": 25,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "toolUse",
+          "totalTokens": 672,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        },
+        {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "toolCall",
+            "toolCall"
+          ],
+          "cost_cacheWrite": 0,
+          "cost_total": 0.0002536,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 884,
+          "output": 64,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "toolUse",
+          "totalTokens": 948,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        },
+        {
+          "cacheRead": 0,
+          "cacheWrite": 1311,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "text"
+          ],
+          "cost_cacheWrite": 0.00032775,
+          "cost_total": 0.00034755,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 3,
+          "output": 16,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "stop",
+          "totalTokens": 1330,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        }
+      ],
+      "bridge_audit_lines_this_turn": 3,
+      "bridge_audit_mcp_tools": [
+        "search",
+        "get",
+        "get"
+      ],
+      "bridge_audit_outcomes": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "closure": [
+        {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": false,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": true,
+          "input": 647,
+          "input_ge_read_plus_write": true,
+          "output": 25,
+          "totalTokens": 672
+        },
+        {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": false,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": true,
+          "input": 884,
+          "input_ge_read_plus_write": true,
+          "output": 64,
+          "totalTokens": 948
+        },
+        {
+          "cacheRead": 0,
+          "cacheWrite": 1311,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": true,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": false,
+          "input": 3,
+          "input_ge_read_plus_write": false,
+          "output": 16,
+          "totalTokens": 1330
+        }
+      ],
+      "event_types": {
+        "agent_end": 1,
+        "agent_settled": 1,
+        "agent_start": 1,
+        "message_end": 7,
+        "message_start": 7,
+        "message_update": 33,
+        "session": 1,
+        "tool_execution_end": 3,
+        "tool_execution_start": 3,
+        "turn_end": 3,
+        "turn_start": 3
+      },
+      "position": 1,
+      "prompt_chars": 303,
+      "prompt_sha256": "fa28d6e3fe711c0c49099203c38f9eaf96a96d699118e65156b8e87454bd870a",
+      "raw_stop_reasons": [
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "regime": "long",
+      "returncode": 0,
+      "stderr_tail": [
+        "Warning: No project session found with id 'e17b-long'; creating a new session with that id."
+      ],
+      "stop_reasons": [
+        "toolUse",
+        "toolUse",
+        "stop"
+      ],
+      "stream_errors": [],
+      "task_id": "E4-0001",
+      "tool_execution_end_errors": 0,
+      "tool_execution_start_count": 3,
+      "tool_execution_start_names": [
+        "karc_search",
+        "karc_get",
+        "karc_get"
+      ],
+      "usage_turn": {
+        "cacheRead": 0,
+        "cacheWrite": 1311,
+        "cacheWrite1h": 0,
+        "cost_total": 0.000761,
+        "input": 1534,
+        "output": 105,
+        "reasoning": 0
+      },
+      "wall_seconds": 4.87
+    },
+    {
+      "api_call_count": 1,
+      "api_calls": [
+        {
+          "cacheRead": 1311,
+          "cacheWrite": 92,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "text"
+          ],
+          "cost_cacheWrite": 2.3e-05,
+          "cost_total": 6.902e-05,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 3,
+          "output": 16,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "stop",
+          "totalTokens": 1422,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        }
+      ],
+      "bridge_audit_lines_this_turn": 0,
+      "bridge_audit_mcp_tools": [],
+      "bridge_audit_outcomes": [],
+      "closure": [
+        {
+          "cacheRead": 1311,
+          "cacheWrite": 92,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": true,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": false,
+          "input": 3,
+          "input_ge_read_plus_write": false,
+          "output": 16,
+          "totalTokens": 1422
+        }
+      ],
+      "event_types": {
+        "agent_end": 1,
+        "agent_settled": 1,
+        "agent_start": 1,
+        "message_end": 2,
+        "message_start": 2,
+        "message_update": 14,
+        "session": 1,
+        "turn_end": 1,
+        "turn_start": 1
+      },
+      "position": 2,
+      "prompt_chars": 303,
+      "prompt_sha256": "0e87e2ee990fb2b879e416b6417622eabe54af865e5721fcc93ad251ae28c8cb",
+      "raw_stop_reasons": [
+        "completed"
+      ],
+      "regime": "long",
+      "returncode": 0,
+      "stderr_tail": [],
+      "stop_reasons": [
+        "stop"
+      ],
+      "stream_errors": [],
+      "task_id": "E4-0002",
+      "tool_execution_end_errors": 0,
+      "tool_execution_start_count": 0,
+      "tool_execution_start_names": [],
+      "usage_turn": {
+        "cacheRead": 1311,
+        "cacheWrite": 92,
+        "cacheWrite1h": 0,
+        "cost_total": 6.9e-05,
+        "input": 3,
+        "output": 16,
+        "reasoning": 0
+      },
+      "wall_seconds": 1.32
+    }
+  ],
+  "session_id_sha256": "96604f485bee8c62f4e4d293de34e9f94650a8f91a1fcbb72fabc2de491db80c",
+  "thinking": "off",
+  "turns_executed": 2,
+  "turns_requested": 2
+}

@@ -1,0 +1,53 @@
+{
+  "karc-full": {
+    "corrected": {
+      "cache_read": 1238781,
+      "creation": 103566,
+      "output": 4606,
+      "priced_usd": 0.056660119999999994,
+      "uncached": 2329
+    },
+    "observed": {
+      "cache_read": 1250703,
+      "creation": 91644,
+      "output": 4606,
+      "priced_usd": 0.05391806,
+      "uncached": 2329
+    }
+  },
+  "note": "POINT ESTIMATES ONLY, no CI. This is the sensitivity check that decided attempt 2 was discarded rather than reported: the contamination biases the priced ratio TOWARD 1.0, i.e. against the observed direction, so no verdict was chosen by discarding. Attempt 3 was run cold instead of applying this correction, because a post-hoc reclassification of provider buckets is not an observation.",
+  "rag-bm25": {
+    "corrected": {
+      "cache_read": 679302,
+      "creation": 467993,
+      "output": 1588,
+      "priced_usd": 0.13254749000000002,
+      "uncached": 288
+    },
+    "observed": {
+      "cache_read": 970718,
+      "creation": 176577,
+      "output": 1588,
+      "priced_usd": 0.06552181,
+      "uncached": 288
+    }
+  },
+  "shift_tokens_read_to_creation": {
+    "karc-full": 11922,
+    "rag-bm25": 291416
+  },
+  "summary": {
+    "corrected": {
+      "delta_creation": -364427,
+      "delta_read": 559479,
+      "mu_w_star": 0.2088124644990629,
+      "priced_ratio": 0.4274703353492396
+    },
+    "observed": {
+      "delta_creation": -84933,
+      "delta_read": 279985,
+      "mu_w_star": 0.5668880176138839,
+      "priced_ratio": 0.822902480868584
+    }
+  }
+}

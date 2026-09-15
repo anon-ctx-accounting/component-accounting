@@ -1,0 +1,21 @@
+{
+  "adjudication": {
+    "probe_answer_quality": "FAIL-DIAGNOSTIC",
+    "tool_exposure": "PASS"
+  },
+  "approved_smoke_gate": {
+    "artifact_residual_zero": true,
+    "get_calls_min": 1,
+    "native_tool_calls": 0,
+    "reported_model": "claude-sonnet-5",
+    "search_calls_min": 1
+  },
+  "canary_authorized": false,
+  "experiment_id": "E10-P2-XR",
+  "reason": "The recovery-only probe answer gate was stricter than the original smoke contract, where correctness is a recorded guardrail rather than a stop condition.",
+  "requires_new_provider_probe": false,
+  "schema": "e10-p2-xr-tool-exposure-adjudication-v1",
+  "status": "ADJUDICATED-TOOL-EXPOSURE-PASS",
+  "supersedes_answer_gate_stop_sha256": "9174346d637fd36dc34df253e320da1a5b20fc5db8a1ba44ad7952f29158a671",
+  "v4_probe_sha256": "adf2a977fafab84c085f0cd478a30e02d0242a2286ba8abbd1ca223965a0b778"
+}

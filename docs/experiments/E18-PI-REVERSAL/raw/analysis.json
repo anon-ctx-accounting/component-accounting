@@ -1,0 +1,1004 @@
+{
+  "_meta": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 1313,
+    "generated_at_utc": "2026-08-27T18:26:59Z"
+  },
+  "accounting_contract": {
+    "gross": "input + cacheRead + cacheWrite",
+    "why": "pi usage.input excludes cache buckets on both legs (E17 §3, E17B §2); treating it as provider raw input_tokens under-counts gross by ~5.5x"
+  },
+  "baseline_e13_direction_contrast": {
+    "component_delta_karc_minus_rag": {
+      "cache_read": 4431943,
+      "creation": -279431,
+      "creation_1h": -279431,
+      "creation_5m": 0,
+      "gross": 4152824,
+      "output": 7516,
+      "priced_usd": -0.2333270999999999,
+      "tool_calls": 111,
+      "turns": 0,
+      "uncached": 312
+    },
+    "component_totals": {
+      "karc-full": {
+        "cache_read": 6455657,
+        "creation": 144714,
+        "creation_1h": 144714,
+        "creation_5m": 0,
+        "gross": 6600779,
+        "output": 9219,
+        "priced_usd": 2.9444901,
+        "tool_calls": 111,
+        "turns": 96,
+        "uncached": 408
+      },
+      "rag-bm25": {
+        "cache_read": 2023714,
+        "creation": 424145,
+        "creation_1h": 424145,
+        "creation_5m": 0,
+        "gross": 2447955,
+        "output": 1703,
+        "priced_usd": 3.1778172,
+        "tool_calls": 0,
+        "turns": 96,
+        "uncached": 96
+      }
+    },
+    "gross_ratio": 2.6964462173528516,
+    "per_session_ratios": {
+      "S01": {
+        "gross_ratio": 2.330732916091245,
+        "priced_ratio": 0.7857068425750154
+      },
+      "S02": {
+        "gross_ratio": 2.3854657715489784,
+        "priced_ratio": 0.811538566070555
+      },
+      "S03": {
+        "gross_ratio": 2.4280029635881006,
+        "priced_ratio": 0.8231794364737485
+      },
+      "S04": {
+        "gross_ratio": 2.476824537398051,
+        "priced_ratio": 0.8515316409929172
+      },
+      "S05": {
+        "gross_ratio": 2.5529210210724687,
+        "priced_ratio": 0.8979793135276499
+      },
+      "S06": {
+        "gross_ratio": 2.5838225125421137,
+        "priced_ratio": 0.9042887758351627
+      },
+      "S07": {
+        "gross_ratio": 2.9318219695112986,
+        "priced_ratio": 1.0065469135089666
+      },
+      "S08": {
+        "gross_ratio": 2.9373390557939913,
+        "priced_ratio": 1.0062802622273
+      },
+      "S09": {
+        "gross_ratio": 2.933745920677388,
+        "priced_ratio": 1.0131143418360757
+      },
+      "S10": {
+        "gross_ratio": 2.9374212247980656,
+        "priced_ratio": 1.0077398433675968
+      },
+      "S11": {
+        "gross_ratio": 2.921652233151505,
+        "priced_ratio": 1.0042742256152202
+      },
+      "S12": {
+        "gross_ratio": 2.938140739505361,
+        "priced_ratio": 1.006723197581326
+      }
+    },
+    "priced_ratio": 0.9265762989765428,
+    "reported_by_E13": {
+      "delta_creation": -279431,
+      "delta_read": 4431943,
+      "gross_ratio": 2.6964,
+      "gross_ratio_ci": [
+        2.5587,
+        2.8319
+      ],
+      "mu_w_star_mu_o_5": 1.7217,
+      "priced_ratio": 0.9266,
+      "priced_ratio_ci": [
+        0.877,
+        0.9742
+      ]
+    },
+    "sha256": "eee0390c8d878cc9fc51eddc7f150edead24d2964e19ed22edd7529414a0f1d4",
+    "source": "docs/experiments/E10-P2-XR/canary/raw/turns.jsonl"
+  },
+  "cell": "E18-PI-REVERSAL",
+  "judgments": {
+    "A": {
+      "P1_gross_ordering_karc_more_expensive": {
+        "ci95": [
+          0.7439187759994359,
+          1.032369154915828
+        ],
+        "criterion": "paired gross ratio 95% CI entirely above 1.0",
+        "ratio": 0.8933293214489093,
+        "verdict": "FAIL"
+      },
+      "P2_priced_reversal": {
+        "criterion": "paired priced ratio 95% CI entirely below 1.0 AND paired mean USD difference CI excludes 0",
+        "paired_mean_usd_difference": -0.12145135,
+        "paired_mean_usd_difference_ci95": [
+          -0.13456100000000001,
+          -0.109122925
+        ],
+        "priced_ratio": 0.44943150297975737,
+        "priced_ratio_ci95": [
+          0.3900141067637325,
+          0.5052991656845
+        ],
+        "priced_ratio_ci_entirely_below_one": true,
+        "usd_difference_ci_excludes_zero": true,
+        "verdict": "NOT JUDGED (§5: P1 FAIL turns the cell to root-cause)",
+        "would_have_been": "PASS"
+      },
+      "P3_component_signature": {
+        "criterion": "delta_read > 0 AND delta_creation < 0",
+        "delta_creation": -262350,
+        "delta_output": 6106,
+        "delta_read": 80526,
+        "delta_uncached": 312,
+        "verdict": "PASS"
+      },
+      "hold_fired": []
+    },
+    "B": {
+      "P1_gross_ordering_karc_more_expensive": {
+        "ci95": [
+          0.9515715721644545,
+          1.367426807764753
+        ],
+        "criterion": "paired gross ratio 95% CI entirely above 1.0",
+        "ratio": 1.171291798490693,
+        "verdict": "FAIL"
+      },
+      "P4_no_reversal_on_openai_rates": {
+        "criterion": "paired priced ratio 95% CI entirely above 1.0",
+        "paired_mean_usd_difference": -0.0020343758333333335,
+        "paired_mean_usd_difference_ci95": [
+          -0.00277174,
+          -0.0013764575
+        ],
+        "priced_ratio": 0.7040578934652494,
+        "priced_ratio_ci95": [
+          0.5966795178122455,
+          0.7997494343433659
+        ],
+        "verdict": "FAIL"
+      },
+      "P5_component_structure_transfers": {
+        "criterion": "delta_read > 0 AND delta_creation < 0",
+        "delta_creation": -140979,
+        "delta_output": 3094,
+        "delta_read": 335522,
+        "delta_uncached": 2045,
+        "verdict": "PASS"
+      },
+      "hold_fired": []
+    },
+    "H6_budget": {
+      "cap_usd": 15.0,
+      "standard_rate_card_total_usd": 3.977376,
+      "within_cap": true
+    }
+  },
+  "legs": {
+    "A": {
+      "bootstrap": {
+        "ci": "two-sided 95% percentile",
+        "method": "paired percentile bootstrap over sessions, common random numbers",
+        "n_sessions": 12,
+        "resamples": 10000,
+        "seed": 1313,
+        "unit": "session"
+      },
+      "component_delta_karc_minus_rag": {
+        "api_calls": 108,
+        "cache_read": 80526,
+        "creation": -262350,
+        "creation_1h": -262350,
+        "creation_5m": 0,
+        "gross": -181512,
+        "output": 6106,
+        "tool_calls": 109,
+        "turns": 0,
+        "uncached": 312
+      },
+      "component_totals": {
+        "karc-full": {
+          "api_calls": 204,
+          "cache_read": 1411721,
+          "creation": 107970,
+          "creation_1h": 107970,
+          "creation_5m": 0,
+          "gross": 1520099,
+          "output": 7809,
+          "tool_calls": 109,
+          "turns": 96,
+          "uncached": 408
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "cache_read": 1331195,
+          "creation": 370320,
+          "creation_1h": 370320,
+          "creation_5m": 0,
+          "gross": 1701611,
+          "output": 1703,
+          "tool_calls": 0,
+          "turns": 96,
+          "uncached": 96
+        }
+      },
+      "gross_ratio_karc_over_rag": {
+        "ci95_hi": 1.032369154915828,
+        "ci95_lo": 0.7439187759994359,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": false,
+        "point": 0.8933293214489093,
+        "usable_resamples": 10000
+      },
+      "leg": "A",
+      "multipliers": {
+        "mu_output": 5.0,
+        "mu_read": 0.09999999999999999,
+        "mu_write_1h": 2.0,
+        "mu_write_5m": 1.25
+      },
+      "observed_mu_w": 2.0,
+      "paired_mean_session_gross_difference": {
+        "ci95_hi": 4586.833333333333,
+        "ci95_lo": -36320.0,
+        "excludes_zero": false,
+        "point": -15126.0
+      },
+      "paired_mean_session_priced_usd_difference": {
+        "ci95_hi": -0.109122925,
+        "ci95_lo": -0.13456100000000001,
+        "excludes_zero": true,
+        "point": -0.12145135
+      },
+      "per_position_profile": {
+        "karc-full": {
+          "1": {
+            "api_calls_mean": 3,
+            "creation_mean": 6259.75,
+            "gross_mean": 17637.333333333332,
+            "n": 12,
+            "output_mean": 134.41666666666666,
+            "read_mean": 11371.583333333334
+          },
+          "2": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 344,
+            "gross_mean": 12546.916666666666,
+            "n": 12,
+            "output_mean": 64.83333333333333,
+            "read_mean": 12199.25
+          },
+          "3": {
+            "api_calls_mean": 2.3333333333333335,
+            "creation_mean": 483.4166666666667,
+            "gross_mean": 16391.75,
+            "n": 12,
+            "output_mean": 92.16666666666667,
+            "read_mean": 15903.666666666666
+          },
+          "4": {
+            "api_calls_mean": 2.1666666666666665,
+            "creation_mean": 438.25,
+            "gross_mean": 15469.75,
+            "n": 12,
+            "output_mean": 82.83333333333333,
+            "read_mean": 15027.166666666666
+          },
+          "5": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 344.25,
+            "gross_mean": 14282,
+            "n": 12,
+            "output_mean": 64.58333333333333,
+            "read_mean": 13934.083333333334
+          },
+          "6": {
+            "api_calls_mean": 2.1666666666666665,
+            "creation_mean": 438.75,
+            "gross_mean": 18047.333333333332,
+            "n": 12,
+            "output_mean": 83.16666666666667,
+            "read_mean": 17604.25
+          },
+          "7": {
+            "api_calls_mean": 2,
+            "creation_mean": 391.8333333333333,
+            "gross_mean": 18336.583333333332,
+            "n": 12,
+            "output_mean": 73.41666666666667,
+            "read_mean": 17940.75
+          },
+          "8": {
+            "api_calls_mean": 1.6666666666666667,
+            "creation_mean": 297.25,
+            "gross_mean": 13963.25,
+            "n": 12,
+            "output_mean": 55.333333333333336,
+            "read_mean": 13662.666666666666
+          }
+        },
+        "rag-bm25": {
+          "1": {
+            "api_calls_mean": 1,
+            "creation_mean": 4572.166666666667,
+            "gross_mean": 4573.166666666667,
+            "n": 12,
+            "output_mean": 17.583333333333332,
+            "read_mean": 0
+          },
+          "2": {
+            "api_calls_mean": 1,
+            "creation_mean": 3767,
+            "gross_mean": 8340.166666666666,
+            "n": 12,
+            "output_mean": 18.166666666666668,
+            "read_mean": 4572.166666666667
+          },
+          "3": {
+            "api_calls_mean": 1,
+            "creation_mean": 3757.6666666666665,
+            "gross_mean": 12097.833333333334,
+            "n": 12,
+            "output_mean": 17.5,
+            "read_mean": 8339.166666666666
+          },
+          "4": {
+            "api_calls_mean": 1,
+            "creation_mean": 3756.6666666666665,
+            "gross_mean": 15854.5,
+            "n": 12,
+            "output_mean": 17.5,
+            "read_mean": 12096.833333333334
+          },
+          "5": {
+            "api_calls_mean": 1,
+            "creation_mean": 3750.8333333333335,
+            "gross_mean": 19605.333333333332,
+            "n": 12,
+            "output_mean": 17.916666666666668,
+            "read_mean": 15853.5
+          },
+          "6": {
+            "api_calls_mean": 1,
+            "creation_mean": 3752,
+            "gross_mean": 23357.333333333332,
+            "n": 12,
+            "output_mean": 17.833333333333332,
+            "read_mean": 19604.333333333332
+          },
+          "7": {
+            "api_calls_mean": 1,
+            "creation_mean": 3754.25,
+            "gross_mean": 27111.583333333332,
+            "n": 12,
+            "output_mean": 17.416666666666668,
+            "read_mean": 23356.333333333332
+          },
+          "8": {
+            "api_calls_mean": 1,
+            "creation_mean": 3749.4166666666665,
+            "gross_mean": 30861,
+            "n": 12,
+            "output_mean": 18,
+            "read_mean": 27110.583333333332
+          }
+        }
+      },
+      "per_session_gross": {
+        "karc-full": {
+          "S01": 57608.0,
+          "S02": 68891.0,
+          "S03": 88268.0,
+          "S04": 103522.0,
+          "S05": 119236.0,
+          "S06": 136244.0,
+          "S07": 157691.0,
+          "S08": 158250.0,
+          "S09": 157007.0,
+          "S10": 158774.0,
+          "S11": 156093.0,
+          "S12": 158515.0
+        },
+        "rag-bm25": {
+          "S01": 142014.0,
+          "S02": 141870.0,
+          "S03": 141607.0,
+          "S04": 141717.0,
+          "S05": 142095.0,
+          "S06": 141713.0,
+          "S07": 141810.0,
+          "S08": 141659.0,
+          "S09": 141878.0,
+          "S10": 141719.0,
+          "S11": 141847.0,
+          "S12": 141682.0
+        }
+      },
+      "per_session_priced_usd": {
+        "karc-full": {
+          "S01": 0.056517,
+          "S02": 0.0629124,
+          "S03": 0.0745143,
+          "S04": 0.0852006,
+          "S05": 0.095907,
+          "S06": 0.1065642,
+          "S07": 0.1181295,
+          "S08": 0.1178808,
+          "S09": 0.1177011,
+          "S10": 0.11855489999999999,
+          "S11": 0.1176201,
+          "S12": 0.11819339999999999
+        },
+        "rag-bm25": {
+          "S01": 0.22065120000000002,
+          "S02": 0.2206866,
+          "S03": 0.22034310000000001,
+          "S04": 0.22047270000000002,
+          "S05": 0.2209866,
+          "S06": 0.2204817,
+          "S07": 0.2207649,
+          "S08": 0.22044,
+          "S09": 0.220602,
+          "S10": 0.2205588,
+          "S11": 0.22059779999999998,
+          "S12": 0.2205261
+        }
+      },
+      "priced_ratio_karc_over_rag": {
+        "ci95_hi": 0.5052991656845,
+        "ci95_lo": 0.3900141067637325,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": true,
+        "point": 0.44943150297975737,
+        "usable_resamples": 10000
+      },
+      "priced_totals_usd": {
+        "karc-full": 1.1896953,
+        "rag-bm25": 2.6471115
+      },
+      "rate_card_source": "E13-RECOMP §4.1 recovered Anthropic claude-sonnet-5 card",
+      "rate_card_usd_per_million": {
+        "input": 3.0,
+        "output": 15.0,
+        "read": 0.3,
+        "write_1h": 6.0,
+        "write_5m": 3.75
+      },
+      "reversal_predicted_by_threshold": true,
+      "reversal_threshold_mu_w_star": 0.14825462168858394,
+      "single_api_call_turn_prefix_tokens": {
+        "karc-full": {
+          "max": 10567,
+          "mean": 7597.309523809524,
+          "min": 2836,
+          "n": 42
+        },
+        "rag-bm25": {
+          "max": 30896,
+          "mean": 17725.114583333332,
+          "min": 4568,
+          "n": 96
+        }
+      }
+    },
+    "B": {
+      "bootstrap": {
+        "ci": "two-sided 95% percentile",
+        "method": "paired percentile bootstrap over sessions, common random numbers",
+        "n_sessions": 12,
+        "resamples": 10000,
+        "seed": 1313,
+        "unit": "session"
+      },
+      "component_delta_karc_minus_rag": {
+        "api_calls": 108,
+        "cache_read": 335522,
+        "creation": -140979,
+        "creation_1h": 0,
+        "creation_5m": -140979,
+        "gross": 196588,
+        "output": 3094,
+        "tool_calls": 113,
+        "turns": 0,
+        "uncached": 2045
+      },
+      "component_totals": {
+        "karc-full": {
+          "api_calls": 204,
+          "cache_read": 1232566,
+          "creation": 109368,
+          "creation_1h": 0,
+          "creation_5m": 109368,
+          "gross": 1344267,
+          "output": 4682,
+          "tool_calls": 113,
+          "turns": 96,
+          "uncached": 2333
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "cache_read": 897044,
+          "creation": 250347,
+          "creation_1h": 0,
+          "creation_5m": 250347,
+          "gross": 1147679,
+          "output": 1588,
+          "tool_calls": 0,
+          "turns": 96,
+          "uncached": 288
+        }
+      },
+      "gross_ratio_karc_over_rag": {
+        "ci95_hi": 1.367426807764753,
+        "ci95_lo": 0.9515715721644545,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": false,
+        "point": 1.171291798490693,
+        "usable_resamples": 10000
+      },
+      "leg": "B",
+      "multipliers": {
+        "mu_output": 5.999999999999999,
+        "mu_read": 0.09999999999999999,
+        "mu_write_1h": 1.25,
+        "mu_write_5m": 1.25
+      },
+      "observed_mu_w": 1.25,
+      "paired_mean_session_gross_difference": {
+        "ci95_hi": 35121.166666666664,
+        "ci95_lo": -4633.333333333333,
+        "excludes_zero": false,
+        "point": 16382.333333333334
+      },
+      "paired_mean_session_priced_usd_difference": {
+        "ci95_hi": -0.0013764575,
+        "ci95_lo": -0.00277174,
+        "excludes_zero": true,
+        "point": -0.0020343758333333335
+      },
+      "per_position_profile": {
+        "karc-full": {
+          "1": {
+            "api_calls_mean": 3,
+            "creation_mean": 4607.666666666667,
+            "gross_mean": 12228.916666666666,
+            "n": 12,
+            "output_mean": 86.25,
+            "read_mean": 7468.833333333333
+          },
+          "2": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 549.75,
+            "gross_mean": 9872.583333333334,
+            "n": 12,
+            "output_mean": 39.333333333333336,
+            "read_mean": 9317.333333333334
+          },
+          "3": {
+            "api_calls_mean": 2.3333333333333335,
+            "creation_mean": 856,
+            "gross_mean": 13890.166666666666,
+            "n": 12,
+            "output_mean": 52.666666666666664,
+            "read_mean": 13027.166666666666
+          },
+          "4": {
+            "api_calls_mean": 2.1666666666666665,
+            "creation_mean": 682.6666666666666,
+            "gross_mean": 13434.5,
+            "n": 12,
+            "output_mean": 47.75,
+            "read_mean": 12745.333333333334
+          },
+          "5": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 517.9166666666666,
+            "gross_mean": 12944,
+            "n": 12,
+            "output_mean": 38.583333333333336,
+            "read_mean": 12420.583333333334
+          },
+          "6": {
+            "api_calls_mean": 2.1666666666666665,
+            "creation_mean": 793.1666666666666,
+            "gross_mean": 17410.25,
+            "n": 12,
+            "output_mean": 48,
+            "read_mean": 16610.583333333332
+          },
+          "7": {
+            "api_calls_mean": 2,
+            "creation_mean": 691,
+            "gross_mean": 18396.166666666668,
+            "n": 12,
+            "output_mean": 43.166666666666664,
+            "read_mean": 17699.166666666668
+          },
+          "8": {
+            "api_calls_mean": 1.6666666666666667,
+            "creation_mean": 415.8333333333333,
+            "gross_mean": 13845.666666666666,
+            "n": 12,
+            "output_mean": 34.416666666666664,
+            "read_mean": 13424.833333333334
+          }
+        },
+        "rag-bm25": {
+          "1": {
+            "api_calls_mean": 1,
+            "creation_mean": 3030.25,
+            "gross_mean": 3033.25,
+            "n": 12,
+            "output_mean": 16.666666666666668,
+            "read_mean": 0
+          },
+          "2": {
+            "api_calls_mean": 1,
+            "creation_mean": 2555.5,
+            "gross_mean": 5588.75,
+            "n": 12,
+            "output_mean": 16.833333333333332,
+            "read_mean": 3030.25
+          },
+          "3": {
+            "api_calls_mean": 1,
+            "creation_mean": 2549.25,
+            "gross_mean": 8138,
+            "n": 12,
+            "output_mean": 16.666666666666668,
+            "read_mean": 5585.75
+          },
+          "4": {
+            "api_calls_mean": 1,
+            "creation_mean": 2548.8333333333335,
+            "gross_mean": 10686.833333333334,
+            "n": 12,
+            "output_mean": 16.5,
+            "read_mean": 8135
+          },
+          "5": {
+            "api_calls_mean": 1,
+            "creation_mean": 2544.1666666666665,
+            "gross_mean": 13231,
+            "n": 12,
+            "output_mean": 16.333333333333332,
+            "read_mean": 10683.833333333334
+          },
+          "6": {
+            "api_calls_mean": 1,
+            "creation_mean": 2544.1666666666665,
+            "gross_mean": 15775.166666666666,
+            "n": 12,
+            "output_mean": 16.5,
+            "read_mean": 13228
+          },
+          "7": {
+            "api_calls_mean": 1,
+            "creation_mean": 2546.5,
+            "gross_mean": 18321.666666666668,
+            "n": 12,
+            "output_mean": 16.166666666666668,
+            "read_mean": 15772.166666666666
+          },
+          "8": {
+            "api_calls_mean": 1,
+            "creation_mean": 2543.5833333333335,
+            "gross_mean": 20865.25,
+            "n": 12,
+            "output_mean": 16.666666666666668,
+            "read_mean": 18318.666666666668
+          }
+        }
+      },
+      "per_session_gross": {
+        "karc-full": {
+          "S01": 32929.0,
+          "S02": 68166.0,
+          "S03": 75273.0,
+          "S04": 94793.0,
+          "S05": 106016.0,
+          "S06": 119106.0,
+          "S07": 143147.0,
+          "S08": 143225.0,
+          "S09": 138553.0,
+          "S10": 142093.0,
+          "S11": 134670.0,
+          "S12": 146296.0
+        },
+        "rag-bm25": {
+          "S01": 95756.0,
+          "S02": 95722.0,
+          "S03": 95603.0,
+          "S04": 95572.0,
+          "S05": 95827.0,
+          "S06": 95549.0,
+          "S07": 95594.0,
+          "S08": 95543.0,
+          "S09": 95788.0,
+          "S10": 95598.0,
+          "S11": 95656.0,
+          "S12": 95471.0
+        }
+      },
+      "per_session_priced_usd": {
+        "karc-full": {
+          "S01": 0.0021266499999999995,
+          "S02": 0.0033778599999999995,
+          "S03": 0.00335402,
+          "S04": 0.004231019999999999,
+          "S05": 0.00471761,
+          "S06": 0.00512483,
+          "S07": 0.0059591,
+          "S08": 0.005853270000000001,
+          "S09": 0.005773599999999999,
+          "S10": 0.00585186,
+          "S11": 0.00569745,
+          "S12": 0.00601105
+        },
+        "rag-bm25": {
+          "S01": 0.00685981,
+          "S02": 0.00688247,
+          "S03": 0.0068758000000000005,
+          "S04": 0.00687188,
+          "S05": 0.00688904,
+          "S06": 0.00686813,
+          "S07": 0.00687554,
+          "S08": 0.00687069,
+          "S09": 0.00688522,
+          "S10": 0.00687922,
+          "S11": 0.00687443,
+          "S12": 0.0068586
+        }
+      },
+      "priced_ratio_karc_over_rag": {
+        "ci95_hi": 0.7997494343433659,
+        "ci95_lo": 0.5966795178122455,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": true,
+        "point": 0.7040578934652494,
+        "usable_resamples": 10000
+      },
+      "priced_totals_usd": {
+        "karc-full": 0.05807832,
+        "rag-bm25": 0.08249083
+      },
+      "rate_card_source": "docs/analysis/openai-luna-rate-card.md (observed 2026-08-28)",
+      "rate_card_usd_per_million": {
+        "input": 0.2,
+        "output": 1.2,
+        "read": 0.02,
+        "write_1h": 0.25,
+        "write_5m": 0.25
+      },
+      "reversal_predicted_by_threshold": true,
+      "reversal_threshold_mu_w_star": 0.3841792039949212,
+      "single_api_call_turn_prefix_tokens": {
+        "karc-full": {
+          "max": 11111,
+          "mean": 6896.952380952381,
+          "min": 1538,
+          "n": 42
+        },
+        "rag-bm25": {
+          "max": 20889,
+          "mean": 11954.989583333334,
+          "min": 3028,
+          "n": 96
+        }
+      }
+    }
+  },
+  "preregistration": "docs/experiments/E18-PI-REVERSAL/preregistration.md",
+  "root_cause_decomposition_post_hoc": {
+    "baseline_per_session_ratios": {
+      "S01": {
+        "gross_ratio": 2.330732916091245,
+        "priced_ratio": 0.7857068425750154
+      },
+      "S02": {
+        "gross_ratio": 2.3854657715489784,
+        "priced_ratio": 0.811538566070555
+      },
+      "S03": {
+        "gross_ratio": 2.4280029635881006,
+        "priced_ratio": 0.8231794364737485
+      },
+      "S04": {
+        "gross_ratio": 2.476824537398051,
+        "priced_ratio": 0.8515316409929172
+      },
+      "S05": {
+        "gross_ratio": 2.5529210210724687,
+        "priced_ratio": 0.8979793135276499
+      },
+      "S06": {
+        "gross_ratio": 2.5838225125421137,
+        "priced_ratio": 0.9042887758351627
+      },
+      "S07": {
+        "gross_ratio": 2.9318219695112986,
+        "priced_ratio": 1.0065469135089666
+      },
+      "S08": {
+        "gross_ratio": 2.9373390557939913,
+        "priced_ratio": 1.0062802622273
+      },
+      "S09": {
+        "gross_ratio": 2.933745920677388,
+        "priced_ratio": 1.0131143418360757
+      },
+      "S10": {
+        "gross_ratio": 2.9374212247980656,
+        "priced_ratio": 1.0077398433675968
+      },
+      "S11": {
+        "gross_ratio": 2.921652233151505,
+        "priced_ratio": 1.0042742256152202
+      },
+      "S12": {
+        "gross_ratio": 2.938140739505361,
+        "priced_ratio": 1.006723197581326
+      }
+    },
+    "caveat": "post hoc, descriptive; no preregistered criterion attaches to this decomposition. Magnitudes are NOT compared across harnesses as a claim (§7) - the quantity examined is which factor changed.",
+    "factors": {
+      "claude_code_baseline_E13": {
+        "karc-full": {
+          "api_calls": 207,
+          "api_calls_per_turn": 2.15625,
+          "gross": 6600779,
+          "mean_prefix_tokens_per_call": 31887.82125603865,
+          "note": "API calls reconstructed as turns + tool_calls (a turn with c tool calls issues c+1 API calls, E13 §5.1)",
+          "turns": 96
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "api_calls_per_turn": 1.0,
+          "gross": 2447955,
+          "mean_prefix_tokens_per_call": 25499.53125,
+          "note": "API calls reconstructed as turns + tool_calls (a turn with c tool calls issues c+1 API calls, E13 §5.1)",
+          "turns": 96
+        }
+      },
+      "pi_leg_A": {
+        "karc-full": {
+          "api_calls": 204,
+          "api_calls_per_turn": 2.125,
+          "gross": 1520099,
+          "mean_prefix_tokens_per_call": 7451.46568627451,
+          "turns": 96
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "api_calls_per_turn": 1.0,
+          "gross": 1701611,
+          "mean_prefix_tokens_per_call": 17725.114583333332,
+          "turns": 96
+        }
+      },
+      "pi_leg_B": {
+        "karc-full": {
+          "api_calls": 204,
+          "api_calls_per_turn": 2.125,
+          "gross": 1344267,
+          "mean_prefix_tokens_per_call": 6589.544117647059,
+          "turns": 96
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "api_calls_per_turn": 1.0,
+          "gross": 1147679,
+          "mean_prefix_tokens_per_call": 11954.989583333334,
+          "turns": 96
+        }
+      }
+    },
+    "per_call_prefix_contrast_legA_vs_baseline": {
+      "api_calls_per_turn_karc": {
+        "claude_code": 2.15625,
+        "pi": 2.125,
+        "reading": "the arm's round-trip multiplicity transferred essentially unchanged"
+      },
+      "mean_prefix_per_call_shrink_factor": {
+        "karc-full": 4.27940254959176,
+        "rag-bm25": 1.4386102346541014
+      },
+      "prefix_tokens_per_call_absent_on_pi": {
+        "karc-full": 24436.35556976414,
+        "karc_excess_over_rag": 16661.93890309747,
+        "rag-bm25": 7774.416666666668,
+        "reading": "the tool-less arm loses one constant per call (the harness's fixed system prompt and tool schemas); the MCP arm loses that plus a further amount, which is where pi-mcp-bridge.md §5.2 / E17 §10 locate the structuredContent rendering difference. The split between schema size and tool-result rendering is [U] - it is not separable from committed data."
+      }
+    },
+    "resident_ramp": {
+      "A": {
+        "per_session_gross_ratio": {
+          "S01": 0.405650147168589,
+          "S02": 0.4855924437865652,
+          "S03": 0.6233307675468021,
+          "S04": 0.7304839927461066,
+          "S05": 0.8391287518913403,
+          "S06": 0.9614079159992379,
+          "S07": 1.1119878710951272,
+          "S08": 1.1171192793962967,
+          "S09": 1.1066338685349384,
+          "S10": 1.120343778886388,
+          "S11": 1.1004321557734742,
+          "S12": 1.1188083172174306
+        },
+        "per_session_priced_ratio": {
+          "S01": 0.256137288172464,
+          "S02": 0.28507575901753884,
+          "S03": 0.33817396596489746,
+          "S04": 0.38644512449840723,
+          "S05": 0.43399464039901064,
+          "S06": 0.48332446638428495,
+          "S07": 0.5350918556346593,
+          "S08": 0.5347523135547088,
+          "S09": 0.5335450267903283,
+          "S10": 0.5375206067497647,
+          "S11": 0.5331880009682781,
+          "S12": 0.5359610495084255
+        },
+        "reading": "karc carries a resident working set that fills to the 1,756-token budget over the first sessions and then plateaus; rag carries none, so its per-session totals are flat. The ratio therefore ramps. E13 §5.2 documented the same ramp in the baseline."
+      },
+      "B": {
+        "per_session_gross_ratio": {
+          "S01": 0.3438844563264965,
+          "S02": 0.7121246944276133,
+          "S03": 0.7873497693587022,
+          "S04": 0.9918490771355627,
+          "S05": 1.1063270268295993,
+          "S06": 1.2465436582277156,
+          "S07": 1.4974475385484445,
+          "S08": 1.4990632490083,
+          "S09": 1.446454670731198,
+          "S10": 1.4863595472708635,
+          "S11": 1.4078573220707535,
+          "S12": 1.532360612123053
+        },
+        "per_session_priced_ratio": {
+          "S01": 0.31001587507525713,
+          "S02": 0.49079182328437315,
+          "S03": 0.48780069228307976,
+          "S04": 0.6157005069937193,
+          "S05": 0.6847993334339763,
+          "S06": 0.7461754509597227,
+          "S07": 0.8667101056789721,
+          "S08": 0.8519188029149912,
+          "S09": 0.8385498212112321,
+          "S10": 0.8506574873314127,
+          "S11": 0.8287887141188433,
+          "S12": 0.8764252179745138
+        },
+        "reading": "karc carries a resident working set that fills to the 1,756-token budget over the first sessions and then plateaus; rag carries none, so its per-session totals are flat. The ratio therefore ramps. E13 §5.2 documented the same ramp in the baseline."
+      }
+    }
+  }
+}

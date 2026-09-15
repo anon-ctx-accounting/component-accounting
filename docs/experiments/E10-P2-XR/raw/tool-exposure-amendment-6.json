@@ -1,0 +1,45 @@
+{
+  "amendment": "TOOL-EXPOSURE-RECOVERY-6",
+  "canary_authorized": false,
+  "direct_mcp_handshake": {
+    "exit": 0,
+    "server": "karc",
+    "stderr_length": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools": [
+      "get",
+      "search"
+    ]
+  },
+  "execution_epoch": "tool-exposure-v2",
+  "experiment_id": "E10-P2-XR",
+  "invalid_epoch": {
+    "arm": "karc-full",
+    "reason": "MCP names were incorrectly passed through --tools",
+    "turn_rows": 9
+  },
+  "prior_model_spend_attempts": 26,
+  "prior_operational_attempt_rows": 31,
+  "rag_salvage_audit": {
+    "preserved_sessions": [
+      "S01",
+      "S02"
+    ],
+    "preserved_turn_rows": 16,
+    "preserved_turn_rows_sha256": "c86e8f630b8c101f1021e44a5e43cfee68401971553479efd204428714123df1",
+    "prompt_hashes_recomputed": true,
+    "rag_argv_byte_identity_sha256": "0bfe3faabede6b632d23a181225b4d8c8c085230d7f40cb0729b16f1ecc1af65",
+    "status": "PASS"
+  },
+  "remaining_plan": {
+    "expected_final_attempts": 75,
+    "karc_probe": 1,
+    "karc_turns": 32,
+    "rag_turns": 16
+  },
+  "schema": "e10-p2-xr-tool-exposure-amendment-v1",
+  "sha256": "dba443cffade4dd0c4a612125207ae8bd8d0aff33f44787971b57422b99cf0f0",
+  "supersedes_freeze_sha256": "66f143a390a2ae120fdad83871b64f1aba62a4a98bdef7a6b0ef287f449e6aea",
+  "supersedes_partial_stop_sha256": "061428aed3d7265b0ac1f3ac57fef3da00f1ef00ab05f1de0c14944f143965c7",
+  "user_retry_approved": true
+}

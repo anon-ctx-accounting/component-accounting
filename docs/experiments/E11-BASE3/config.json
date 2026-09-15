@@ -1,0 +1,242 @@
+{
+  "analysis_contract": {
+    "accounting": "F=fresh input; R=gross-fresh cache-read; C_w=F+wR",
+    "cache_read_weights": [
+      0,
+      0.1,
+      1
+    ],
+    "claim_scope": "this frozen H16 fixture, schedule, reader pin, accounting, and observed positions 1..16 only",
+    "curve_fits": "descriptive positions 1..16 only; no extrapolation",
+    "forbidden_interpretations": [
+      "no structural or asymptotic complexity claim",
+      "no extrapolation beyond position 16",
+      "no K-ARC performance-superiority claim",
+      "no cross-runtime comparison",
+      "do not mix H16 session-gross with any other cell or runtime axis"
+    ],
+    "primary_horizon": 16,
+    "primary_outputs": [
+      "arm-by-position mean F, R, and gross for each new baseline",
+      "paired-session cumulative C_w differences and ratios among all three new arms",
+      "paired-session cumulative C_w differences and ratios versus each frozen H16 reference arm",
+      "exact-answer correctness by arm and horizon"
+    ],
+    "quality_noninferiority": "paired exact-answer difference; lower 95% CI must be >= -0.05",
+    "quality_noninferiority_margin": 0.05,
+    "secondary_horizons": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "uncertainty": "paired-session percentile bootstrap, 10000 resamples, two-sided 95% CI"
+  },
+  "approval_gate": {
+    "execution_source_freeze": "must be created after approval and before the first probe/model turn; the current runner is a non-executing skeleton",
+    "required_user_approvals": [
+      "576 planned valid turns and 720 model-spend attempt cap",
+      "144 zero-token infra failures and 864 total API-call cap",
+      "three exact arm operationalizations including W=4 and no compactor calls",
+      "zero K-ARC MCP calls in all E11 arms",
+      "separate exact-pin provider probe capped at 2 attempts",
+      "reuse of frozen H16 control rows and their later-batch limitation",
+      "planning token scenarios and unavailable exact dollar amount",
+      "stop without substitution on usage-limit or any pin/hash mismatch"
+    ],
+    "scientific_contract_edits_after_approval": "FORBIDDEN; amendment required"
+  },
+  "attempt_contract": {
+    "expected_model_spend_attempts_without_failure": 576,
+    "infra_failure_attempt_cap": 144,
+    "infra_failure_definition": "failed call with zero normalized model usage",
+    "infra_failures_are_append_only_and_do_not_refund_total_api_call_cap": true,
+    "max_model_spend_attempts_per_turn": 3,
+    "model_spend_attempt_cap": 720,
+    "model_spend_definition": "successful turn or any failed call with non-zero normalized model usage",
+    "planned_valid_turns": 576,
+    "provider_probe_attempt_cap_separate": 2,
+    "total_api_call_cap": 864
+  },
+  "authority": [
+    "docs/analysis/e11-paper2-consolidation--codex-workorder.md §0/§1/Lane P2-B",
+    "docs/analysis/e9-writeup-and-release--codex-workorder.md §0/§1/Lane P2",
+    "docs/experiments/E10-P2-H16/preregistration.md",
+    "docs/analysis/benchmark-credibility--adoption-norms.md P5/C2"
+  ],
+  "cost_plan": {
+    "dollar_cost": null,
+    "dollar_cost_note": "ChatGPT subscription telemetry did not expose actual billed dollars; retry usage may exceed the planning scenarios but not the attempt caps",
+    "expected_model_spend_attempts_without_failure": 576,
+    "planned_valid_turns": 576,
+    "planning_gross_tokens": {
+      "high_scenario": 72541596,
+      "low_scenario": 57836510,
+      "not_a_confidence_interval_or_cap": true
+    },
+    "scenario_method": "stateless proxy = H16 rag-bm25 position-1 mean x192 (2,346,160); sliding proxy = H16 rag-bm25 positions 1..4 plus position-5 mean repeated through position 16 (14,252,483); full-history bracketed by the two observed H16 arm gross totals (41,237,867..55,942,953)"
+  },
+  "decision_contract": {
+    "adjudicator": "main/user only",
+    "null_disposition": "failure to trigger a rewrite rule is not evidence of K-ARC superiority",
+    "paper2_premise_collapse": {
+      "conjunction": "cost_condition AND quality_condition",
+      "cost_condition": "at H=16, for full-history minus each of karc-full and rag-bm25, the paired 95% CI upper bound is <0 for every w in {0,0.1,1}",
+      "label": "PAPER2_PREMISE_REWRITE_REQUIRED",
+      "quality_condition": "full-history minus each reference arm has paired correctness 95% CI lower bound >= -0.05",
+      "required_action": "Paper 2 may not retain a memory-system-necessity premise; rewrite the thesis around the trivial full-history result and report it first"
+    },
+    "quality_guard": "if a cost-cheaper arm fails the -5pp paired correctness margin, report its token curve but withhold a cost-optimal recommendation",
+    "stateless_state_necessity_failure": {
+      "condition": "at H=16 stateless-rag has paired 95% CI upper bound <0 versus H16 rag-bm25 for every w and paired correctness lower bound >= -0.05",
+      "label": "SESSION_STATE_NECESSITY_CLAIM_REMOVE",
+      "required_action": "remove any claim that session state is necessary on this cell; retain only accounting observations that survive"
+    }
+  },
+  "design": {
+    "arm_contracts": {
+      "full-history": {
+        "corpus_supply": "all 408 fixture artifacts / 35,128 fixture tokens at session start",
+        "cross_turn_state": "all prior task messages and answers retained",
+        "eviction": "none",
+        "provider_session": "one persistent thread per 16-turn session",
+        "retrieval": "none"
+      },
+      "sliding-window-compaction": {
+        "corpus_supply": "current turn frozen H16 BM25 plan",
+        "cross_turn_state": "most recent four completed task/evidence/answer turns replayed verbatim",
+        "eviction": "drop oldest completed turn when the four-turn window is full",
+        "provider_session": "new isolated thread per turn with deterministic window replay",
+        "retrieval": "frozen H16 BM25; no MCP",
+        "semantic_summary": "none; no extra compactor model call"
+      },
+      "stateless-rag": {
+        "corpus_supply": "current turn frozen H16 BM25 plan",
+        "cross_turn_state": "none",
+        "eviction": "all prior turn state absent by construction",
+        "provider_session": "new isolated thread per turn",
+        "retrieval": "frozen H16 BM25; no MCP"
+      }
+    },
+    "arms": [
+      "full-history",
+      "sliding-window-compaction",
+      "stateless-rag"
+    ],
+    "budget_pct": 5,
+    "granularity": "whole-document E5-G1/H16",
+    "objective": "test trivial full-context, bounded-runtime, and no-session-state baselines before making Paper 2 lifecycle-cost claims",
+    "paired_sessions": 12,
+    "planned_valid_turns": 576,
+    "reuse_count": 90,
+    "reuse_definition": "fraction of non-initial session tasks whose gold artifact was gold for an earlier task in the same session",
+    "reuse_denominator": 180,
+    "reuse_factor": 0.5,
+    "same_task_schedule_for_all_arms": true,
+    "schedule_seed": 10160,
+    "session_length": 16,
+    "stateless_rag_difference_from_h16_rag_bm25": "H16 rag-bm25 used one persistent 16-turn provider conversation and therefore carried prior prompts, BM25 evidence, answers, and provider cache; stateless-rag creates a fresh isolated provider session for every turn and supplies only that turn's frozen BM25 evidence",
+    "window_completed_turns": 4
+  },
+  "embedding_calls_at_freeze": 0,
+  "experiment": "E11-BASE3",
+  "fixture": {
+    "artifact_count": 408,
+    "budget_tokens": 1756,
+    "corpus_content_hash": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a",
+    "corpus_seed": 4000,
+    "corpus_tokens": 35128,
+    "manifest_file_sha256": "9b43d7f2904e81b8dc39139d2ad49271cc9a3644c7fea68560b4eb0fa8934e4b",
+    "root": "fixture/e4-v2",
+    "source_manifest_sha256": "d8ec0bcf8354a5dc1046c7787b9ce4550086148ecfb4e42c1791bbc4b81ccc43"
+  },
+  "mcp_tool_calls_at_freeze": 0,
+  "model_calls_at_freeze": 0,
+  "preparation_base_git_hash": "8195c32f6165a67b97aaf9d577f0e546851148d2",
+  "preparation_source_sha256": {
+    "scripts/prepare_e11_base3.py": "ee21661938b15f98805dc8491a8adc9ee140b193c975a3b644f3e9fa8685dd41",
+    "scripts/run_e11_base3.py": "53f8562518074f05bb9a69c69ea1976f45c6fd04fdc4cafa811a122fb6e63070",
+    "src/karc/bench/e10_horizon_canary.py": "51d4a6b9d7f641147f891d77f1caf5f6683ced6bb57198a2c022a307617f6687",
+    "src/karc/bench/e11_baseline3.py": "428c4e225739c7dcf75221dd1b4c616c5668725ea1dab31c6b63aac627e6c398",
+    "src/karc/bench/e5_cache_canary.py": "af8cbce3af5b91245102f30eefa5f140133885387a0a6cd81fa594614645f580",
+    "src/karc/bench/e5_killgate.py": "701d0265eb6431ee84eb24c40e8f8fec29ef61810811e92fb1c5168588d10e32",
+    "src/karc/bench/materialize.py": "bd87197440dbdba66ff059a52d615ac485c733e3f8c46def983c45460842c7cd"
+  },
+  "privacy_contract": {
+    "forbid": [
+      "argv",
+      "command",
+      "compaction_text",
+      "credential",
+      "cwd",
+      "environment",
+      "history_text",
+      "output",
+      "output_text",
+      "prompt",
+      "tool_response",
+      "transcript"
+    ],
+    "original_fixture_content_is_not_copied_to_experiment_raw": true,
+    "persist": [
+      "normalized token usage",
+      "grade",
+      "IDs",
+      "counts",
+      "hashes",
+      "state-window counts",
+      "failure category and hashed error digest"
+    ],
+    "raw_is_append_only": true,
+    "transient_window_replay_is_never_persisted": true
+  },
+  "reference_cell": {
+    "arms": [
+      "karc-full",
+      "rag-bm25"
+    ],
+    "config_self_sha256": "75dd169f2d3eb05f7a40717ebd1199e10c3a8b22f918aaf7d53a280f966d44a2",
+    "execution_batch_difference": "E11 baseline rows are a later execution batch; comparisons are permitted only because fixture, schedule, reader pin, reasoning, auth mode, and accounting are exact and their hashes are frozen",
+    "experiment": "E10-P2-H16",
+    "fixture_manifest_file_sha256": "9b43d7f2904e81b8dc39139d2ad49271cc9a3644c7fea68560b4eb0fa8934e4b",
+    "h16_config_file_sha256": "a0baec55a75890533b444aa81b54438070a2e7951620aaa80699c9f5a106441c",
+    "h16_schedule_file_sha256": "0ae3e1586d30f8c83266faf3bbeb4a55fdb03a31a4479bfc808fc6b68b212da8",
+    "h16_summary_file_sha256": "5dfe3a6b827faf98017c07475687b80a3591c0dc092f92c8d31382d0dc0b31e3",
+    "h16_turns_file_sha256": "28eca47eada0a730204a91657cdf06827cb4109f60232415785934b49d1d049b",
+    "new_control_model_calls": 0,
+    "reuse_existing_control_rows": true,
+    "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006"
+  },
+  "runtime_pin": {
+    "auth_mode": "ChatGPT subscription",
+    "codex_cli": "codex-cli 0.144.5",
+    "mismatch_disposition": "STOP_WITHOUT_SUBSTITUTION",
+    "model": "gpt-5.6-luna",
+    "provider_model_availability": "UNKNOWN_WITHOUT_APPROVED_PROBE",
+    "reasoning_effort": "high",
+    "substitution": "FORBIDDEN"
+  },
+  "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006",
+  "schema": "e11-base3-pre-execution-v1",
+  "sha256": "5a61492b6095487bf9166a5af586f8e203ed83d9f54ebe9da5bf1264b6d36beb",
+  "status": "AWAITING_USER_APPROVAL",
+  "stopping_contract": {
+    "before_first_turn": [
+      "stop until the user explicitly approves this E11-BASE3 execution and caps",
+      "stop if Codex CLI is not exactly 0.144.5",
+      "stop if gpt-5.6-luna/high under ChatGPT subscription cannot be selected; do not substitute",
+      "stop on fixture, H16 schedule, schema, reference raw, or execution-source hash mismatch",
+      "stop if the approved exact-pin probe reports a usage-limit or quota block"
+    ],
+    "during_run": [
+      "stop globally on any usage-limit or quota error; do not switch provider, model, account, or runtime",
+      "stop globally on reported-model or reasoning-pin mismatch",
+      "stop globally on missing or internally inconsistent token telemetry",
+      "stop globally on context overflow or runtime truncation; do not shorten, compact, or substitute the registered arm",
+      "stop globally if any E11 arm records a K-ARC MCP search/get call",
+      "stop globally if state-window/session-isolation instrumentation violates the registered arm contract",
+      "stop when any registered attempt cap is reached"
+    ],
+    "task_errors": "grade and retain normalized metadata; task-answer error alone is not a stop"
+  }
+}

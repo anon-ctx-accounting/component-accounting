@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "cell": "E19-STEADY-STATE",
+    "generated_at_utc": "2026-08-28T02:59:32Z",
+    "namespace": "",
+    "phase": "slices",
+    "pi_version": "0.84.3"
+  },
+  "distinct_required_versions": {
+    "e18_slice": 66,
+    "measure": 68,
+    "warmup": 40
+  },
+  "measure_sessions": [
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+  ],
+  "note": "warm-up vs measurement disjointness is exact; residual overlap with E18 is a property of the frozen fixture corpus and is reported, not designed away",
+  "overlap": {
+    "measure_vs_e18": 5,
+    "warmup_vs_e18": 3,
+    "warmup_vs_measure": 0
+  },
+  "task_sequence_identity": {
+    "e18_schedule_sha256": "9944a77572e2d130a0150f865024785929771cd13a9264ab315b4bfa5f26eea3",
+    "e18_tasks_sha256": "618193d35103b819d83ce2d13dea40d7e3a65cbae5072266ab693613fe3b3584",
+    "e19_schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+    "e19_tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74",
+    "identical": false
+  },
+  "unused_sessions": [
+    "S21",
+    "S22",
+    "S23",
+    "S24"
+  ],
+  "warmup_sessions": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08"
+  ]
+}

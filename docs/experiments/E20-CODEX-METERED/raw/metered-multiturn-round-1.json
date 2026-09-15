@@ -1,0 +1,359 @@
+{
+  "cell": "E20-CODEX-METERED",
+  "probe": "metered-multiturn-cache-write",
+  "round": 1,
+  "code_git_hash": "1d49c5994d53b54943cf30e3bf9388c0ffcb9fba",
+  "binary_path": "<HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "cli_version": "codex-cli 0.145.0",
+  "model_requested": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "route": "metered OpenAI API key (isolated CODEX_HOME, no auth bridge)",
+  "sandbox": "read-only",
+  "planned_turns": 4,
+  "prose_sentences_per_turn": 40,
+  "model_turns_spent_this_round": 4,
+  "model_turns_spent_cumulative": 4,
+  "attempt_cap_model_turns": 8,
+  "thread_id": "01a05d20-32b7-7841-a70e-b334647f4d46",
+  "route_provenance": {
+    "status_before_any_credential": {
+      "returncode": 1,
+      "auth_type": "not-logged-in",
+      "line_length": 13,
+      "line_sha256": "b6237a3a920e95a949268e005b215c0dba02984cb6543685d1d679e2c794a966"
+    },
+    "exec_without_credential": {
+      "ok": false,
+      "error_class": "api_error",
+      "unauthorized_in_error": true,
+      "usage_raw_empty": true,
+      "thread_id_assigned": false,
+      "event_summary": {
+        "event_type_counts": {
+          "thread.started": 1,
+          "item.completed": 3,
+          "turn.started": 1,
+          "error": 10,
+          "turn.failed": 1
+        },
+        "turn_completed_non_usage_fields": {},
+        "error_event_digests": [
+          "34e9e4fce8d7d1a5",
+          "5c83d4e5f8596d4e",
+          "fa7553960b42d049",
+          "782c04575860a0e3",
+          "73ed14810423ded7",
+          "208f01409b63b08f",
+          "93dd54529a164979",
+          "c516894874905319",
+          "af9412013f3973e3",
+          "21c1ed5e1e5759c7",
+          "2fa2bf76d1f22c78"
+        ],
+        "stop_reason_field_present": false
+      }
+    },
+    "login_with_api_key": {
+      "returncode": 0,
+      "succeeded": true,
+      "auth_json_present_in_isolated_home": true
+    },
+    "status_after_credential": {
+      "returncode": 0,
+      "auth_type": "api-key",
+      "line_length": 45,
+      "line_sha256": "7668d453f2227bb885482b03fddbb50cf73322abd893b52474f9283bedb4b187"
+    }
+  },
+  "user_codex_mtimes_before": {
+    ".": {
+      "mtime_ns": 1785988342198487044,
+      "mtime_utc": "2026-08-06T03:52:22+00:00"
+    },
+    "auth.json": {
+      "mtime_ns": 1787777724361810188,
+      "mtime_utc": "2026-08-26T20:55:24+00:00"
+    },
+    "config.toml": {
+      "mtime_ns": 1785678463171474520,
+      "mtime_utc": "2026-08-02T13:47:43+00:00"
+    },
+    "sessions": {
+      "mtime_ns": 1784322834735576624,
+      "mtime_utc": "2026-07-17T21:13:54+00:00"
+    },
+    "packages/standalone/current": {
+      "mtime_ns": 1784322758515921804,
+      "mtime_utc": "2026-07-17T21:12:38+00:00"
+    }
+  },
+  "user_codex_mtimes_after": {
+    ".": {
+      "mtime_ns": 1785988342198487044,
+      "mtime_utc": "2026-08-06T03:52:22+00:00"
+    },
+    "auth.json": {
+      "mtime_ns": 1787777724361810188,
+      "mtime_utc": "2026-08-26T20:55:24+00:00"
+    },
+    "config.toml": {
+      "mtime_ns": 1785678463171474520,
+      "mtime_utc": "2026-08-02T13:47:43+00:00"
+    },
+    "sessions": {
+      "mtime_ns": 1784322834735576624,
+      "mtime_utc": "2026-07-17T21:13:54+00:00"
+    },
+    "packages/standalone/current": {
+      "mtime_ns": 1784322758515921804,
+      "mtime_utc": "2026-07-17T21:12:38+00:00"
+    }
+  },
+  "user_codex_untouched": true,
+  "isolated_home_manifest": {
+    "auth_bridge": "none-metered-api-key-written-by-cli-login",
+    "user_auth_json_linked": false
+  },
+  "turns": [
+    {
+      "probe_turn": 1,
+      "observed_at_utc": "2026-09-01T13:19:50+00:00",
+      "prompt_chars": 6858,
+      "prompt_sha256": "49c2e2f0cf1c8762eb3ed7241804e8f3b5ca5a66afec6c80905860187d548f10",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 9567,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 9564,
+        "output_tokens": 5,
+        "reasoning_output_tokens": 0
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 3,
+        "cache_read_input_tokens": 0,
+        "output_tokens": 5,
+        "reasoning_output_tokens": 0,
+        "cache_creation_input_tokens": 9564
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 9567,
+      "fresh_input_tokens": 3,
+      "session_turn": 2,
+      "persistent_session": true,
+      "hook_event_count": 2,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ],
+      "event_summary": {
+        "event_type_counts": {
+          "thread.started": 1,
+          "item.completed": 3,
+          "turn.started": 1,
+          "turn.completed": 1
+        },
+        "turn_completed_non_usage_fields": {},
+        "error_event_digests": [],
+        "stop_reason_field_present": false
+      }
+    },
+    {
+      "probe_turn": 2,
+      "observed_at_utc": "2026-09-01T13:19:52+00:00",
+      "prompt_chars": 6851,
+      "prompt_sha256": "fe098cc68b37ef0f7c4b079e556a050bb5fd43c7a408d51e313fa435ddf6a44e",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 21091,
+        "cached_input_tokens": 9564,
+        "cache_write_input_tokens": 11521,
+        "output_tokens": 10,
+        "reasoning_output_tokens": 0
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 6,
+        "cache_read_input_tokens": 9564,
+        "output_tokens": 10,
+        "reasoning_output_tokens": 0,
+        "cache_creation_input_tokens": 11521
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 21091,
+      "fresh_input_tokens": 6,
+      "session_turn": 3,
+      "persistent_session": true,
+      "hook_event_count": 1,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ],
+      "event_summary": {
+        "event_type_counts": {
+          "thread.started": 1,
+          "item.completed": 3,
+          "turn.started": 1,
+          "turn.completed": 1
+        },
+        "turn_completed_non_usage_fields": {},
+        "error_event_digests": [],
+        "stop_reason_field_present": false
+      }
+    },
+    {
+      "probe_turn": 3,
+      "observed_at_utc": "2026-09-01T13:19:54+00:00",
+      "prompt_chars": 6833,
+      "prompt_sha256": "1fb4e333bb423e9a674ac928db3c1a730c456188be8d735dba28c1373cb1da6d",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 34388,
+        "cached_input_tokens": 21085,
+        "cache_write_input_tokens": 13294,
+        "output_tokens": 15,
+        "reasoning_output_tokens": 0
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 9,
+        "cache_read_input_tokens": 21085,
+        "output_tokens": 15,
+        "reasoning_output_tokens": 0,
+        "cache_creation_input_tokens": 13294
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 34388,
+      "fresh_input_tokens": 9,
+      "session_turn": 4,
+      "persistent_session": true,
+      "hook_event_count": 1,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ],
+      "event_summary": {
+        "event_type_counts": {
+          "thread.started": 1,
+          "item.completed": 3,
+          "turn.started": 1,
+          "turn.completed": 1
+        },
+        "turn_completed_non_usage_fields": {},
+        "error_event_digests": [],
+        "stop_reason_field_present": false
+      }
+    },
+    {
+      "probe_turn": 4,
+      "observed_at_utc": "2026-09-01T13:19:57+00:00",
+      "prompt_chars": 6854,
+      "prompt_sha256": "e9ef59bb8412f01eb2892977c994bacb2ffa943f972f7435e2bb36873a0bd842",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 49459,
+        "cached_input_tokens": 34379,
+        "cache_write_input_tokens": 15068,
+        "output_tokens": 20,
+        "reasoning_output_tokens": 0
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 12,
+        "cache_read_input_tokens": 34379,
+        "output_tokens": 20,
+        "reasoning_output_tokens": 0,
+        "cache_creation_input_tokens": 15068
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 49459,
+      "fresh_input_tokens": 12,
+      "session_turn": 5,
+      "persistent_session": true,
+      "hook_event_count": 1,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ],
+      "event_summary": {
+        "event_type_counts": {
+          "thread.started": 1,
+          "item.completed": 3,
+          "turn.started": 1,
+          "turn.completed": 1
+        },
+        "turn_completed_non_usage_fields": {},
+        "error_event_digests": [],
+        "stop_reason_field_present": false
+      }
+    }
+  ],
+  "evaluation": {
+    "cached_series": [
+      0,
+      9564,
+      21085,
+      34379
+    ],
+    "write_series": [
+      9564,
+      11521,
+      13294,
+      15068
+    ],
+    "input_series": [
+      9567,
+      21091,
+      34388,
+      49459
+    ],
+    "output_series": [
+      5,
+      10,
+      15,
+      20
+    ],
+    "any_write_gt_zero": true,
+    "cached_grew_between_turns": true,
+    "input_grew_between_turns": true,
+    "verdict": "A",
+    "outcome": "metered-route-reports-writes",
+    "aborted_for_budget": false,
+    "gross_input_tokens_total": 114505,
+    "uncached_input_tokens_total": 30,
+    "priced_usd_luna_public_card": 0.013728
+  },
+  "privacy": "token-counts-hashes-and-mtimes-only"
+}

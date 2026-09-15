@@ -1,0 +1,22 @@
+{
+  "answer_passed": null,
+  "artifact_residual_zero": true,
+  "execution_epoch": "tool-exposure-v2",
+  "get_calls": 2,
+  "gross_input_tokens": 79546,
+  "known_nonresident": true,
+  "model_spend": 1,
+  "operational_attempt_index": 31,
+  "rate_card_equivalent_usd": 0.1492881,
+  "reported_model": "claude-sonnet-5",
+  "schema": "e10-p2-xr-karc-tool-exposure-probe-v1",
+  "search_calls": 1,
+  "status": "STOP-TOOL-POLICY",
+  "tool_calls": 4,
+  "tool_names": [
+    "ToolSearch",
+    "mcp__karc__search",
+    "mcp__karc__get",
+    "mcp__karc__get"
+  ]
+}

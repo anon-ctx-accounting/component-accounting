@@ -1,0 +1,16 @@
+{
+  "approval-checklist.md": "5201cf4295831c8a7e949759288a8961e9d880acbd249320a472019c9f0c5924",
+  "config.json": "a0baec55a75890533b444aa81b54438070a2e7951620aaa80699c9f5a106441c",
+  "preregistration.md": "c4b8e3e87de516db7bdb891b5394102c14a5b8d8b9da5e2a6b65498123b90f99",
+  "raw/execution-source-freeze.json": "7d9025c156a1a858d37194ca7537beb205670488b0a7bf4145632e7c0424405e",
+  "raw/model-free-dry-run.json": "f00fe2299d025b97147a1a6f3855506cffbf52196bab399a64e2e3aecd087403",
+  "raw/provider-probe.json": "7204503bda42469ebd9578d25b5a66125329913463628116fd2b7996a61b2cc4",
+  "raw/schedule.json": "0ae3e1586d30f8c83266faf3bbeb4a55fdb03a31a4479bfc808fc6b68b212da8",
+  "raw/verification.json": "90193560fda9a3077f5cc34f75440a8d61cba0256dcb5b974917a951d9d844f4",
+  "report.md": "26e51ce4c3a1459536dc4d638e0c5fa35c9877d3ec9a80ce75e031e7c2d3662a",
+  "run/raw/cost-summary.json": "1c34d475a35d91b110eb1ee86071ec4d423cc9a7b1000a1b3d34bfbca65d86d5",
+  "run/raw/summary.json": "5dfe3a6b827faf98017c07475687b80a3591c0dc092f92c8d31382d0dc0b31e3",
+  "run/raw/turns.jsonl": "28eca47eada0a730204a91657cdf06827cb4109f60232415785934b49d1d049b",
+  "schema/config.schema.json": "b3f4daca04b9a44f04a33441356990e034fac4cf575981477b0c68acf21dddf8",
+  "schema/turn.schema.json": "3c0a0c990b05d709562f8c72763e8b8a63e8984239ea785bc5ae03ffbb1b7884"
+}

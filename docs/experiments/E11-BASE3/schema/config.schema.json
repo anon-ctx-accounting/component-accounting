@@ -1,0 +1,145 @@
+{
+  "$id": "urn:k-arc:e11-base3:pre-execution:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analysis_contract": {
+      "type": "object"
+    },
+    "approval_gate": {
+      "type": "object"
+    },
+    "attempt_contract": {
+      "type": "object"
+    },
+    "authority": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "cost_plan": {
+      "type": "object"
+    },
+    "decision_contract": {
+      "type": "object"
+    },
+    "design": {
+      "properties": {
+        "arms": {
+          "const": [
+            "full-history",
+            "sliding-window-compaction",
+            "stateless-rag"
+          ]
+        },
+        "budget_pct": {
+          "const": 5
+        },
+        "granularity": {
+          "const": "whole-document E5-G1/H16"
+        },
+        "paired_sessions": {
+          "const": 12
+        },
+        "planned_valid_turns": {
+          "const": 576
+        },
+        "reuse_factor": {
+          "const": 0.5
+        },
+        "session_length": {
+          "const": 16
+        },
+        "window_completed_turns": {
+          "const": 4
+        }
+      },
+      "required": [
+        "arms",
+        "session_length",
+        "paired_sessions",
+        "reuse_factor",
+        "budget_pct",
+        "granularity",
+        "planned_valid_turns",
+        "window_completed_turns"
+      ],
+      "type": "object"
+    },
+    "embedding_calls_at_freeze": {
+      "const": 0
+    },
+    "experiment": {
+      "const": "E11-BASE3"
+    },
+    "fixture": {
+      "type": "object"
+    },
+    "mcp_tool_calls_at_freeze": {
+      "const": 0
+    },
+    "model_calls_at_freeze": {
+      "const": 0
+    },
+    "preparation_base_git_hash": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "preparation_source_sha256": {
+      "type": "object"
+    },
+    "privacy_contract": {
+      "type": "object"
+    },
+    "reference_cell": {
+      "type": "object"
+    },
+    "runtime_pin": {
+      "type": "object"
+    },
+    "schedule_sha256": {
+      "const": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006"
+    },
+    "schema": {
+      "const": "e11-base3-pre-execution-v1"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "status": {
+      "const": "AWAITING_USER_APPROVAL"
+    },
+    "stopping_contract": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "experiment",
+    "status",
+    "authority",
+    "design",
+    "reference_cell",
+    "runtime_pin",
+    "attempt_contract",
+    "analysis_contract",
+    "decision_contract",
+    "stopping_contract",
+    "privacy_contract",
+    "fixture",
+    "schedule_sha256",
+    "preparation_source_sha256",
+    "preparation_base_git_hash",
+    "cost_plan",
+    "approval_gate",
+    "model_calls_at_freeze",
+    "embedding_calls_at_freeze",
+    "mcp_tool_calls_at_freeze",
+    "sha256"
+  ],
+  "title": "E11-BASE3 pre-execution scientific contract",
+  "type": "object"
+}

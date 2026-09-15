@@ -1,0 +1,22 @@
+cell: E16-METERED-WRITE
+purpose: >
+  계량 청구(metered API key) route에서 cache-write가 실제로 발생하고 보고되는지 확인한다.
+  E15가 확정한 subscription route negative에 대한 통제 대조군이며, E13 §4.3의
+  "5분 TTL은 pricing counterfactual only" qualifier를 실측 cell로 승격할 수 있는지 사전 검증한다.
+date: 2026-08-28
+legs:
+  openai:
+    endpoint: POST https://api.openai.com/v1/responses
+    model: gpt-5.6-luna          # E15 subscription 세션과 동일 모델
+    status: MEASURED    # 최초 시도는 credit_balance_exhausted로 차단, 충전 후 측정
+  anthropic:
+    endpoint: POST https://api.anthropic.com/v1/messages
+    model: claude-sonnet-4-6
+    status: MEASURED
+key_handling:
+  source: ~/api-key.txt (저장소 외부)
+  method: 값은 subshell 환경변수로만 주입. 스크립트는 os.environ에서만 읽는다.
+  artifacts: raw/ 및 scripts/ 어디에도 키 값이 없다(커밋 전 grep 가드로 확인).
+  note: ANTHROPIC_API_KEY를 전역으로 export하지 않았다 — 그러면 driver의 `claude -p`
+        호출이 subscription 대신 키로 청구된다.
+model_cost: 약 $0.35 (Anthropic 12 calls + OpenAI 9 calls)

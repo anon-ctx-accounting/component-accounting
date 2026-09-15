@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "cell": "E23-REUSE-DENSITY",
+    "generated_at_utc": "2026-09-07T20:00:43Z",
+    "namespace": "",
+    "phase": "mtime",
+    "pi_version": "0.84.3"
+  },
+  "sibling_cell_roots": {
+    "<REPO>/tmp/e17": {
+      "exists": true,
+      "mtime_ns": 1787848202798532457,
+      "size": null
+    },
+    "<REPO>/tmp/e17b": {
+      "exists": true,
+      "mtime_ns": 1787849485626435447,
+      "size": null
+    },
+    "<REPO>/tmp/e18": {
+      "exists": true,
+      "mtime_ns": 1787853227089952096,
+      "size": null
+    },
+    "<REPO>/tmp/e19": {
+      "exists": true,
+      "mtime_ns": 1787886380374719662,
+      "size": null
+    },
+    "<REPO>/tmp/e21": {
+      "exists": true,
+      "mtime_ns": 1788801201278173995,
+      "size": null
+    }
+  },
+  "user_pi_paths": {
+    "<HOME>/.pi": {
+      "exists": true,
+      "mtime_ns": 1787847668687481309,
+      "size": null
+    },
+    "<HOME>/.pi/agent": {
+      "exists": true,
+      "mtime_ns": 1787850563832214657,
+      "size": null
+    },
+    "<HOME>/.pi/agent/auth.json": {
+      "exists": true,
+      "mtime_ns": 1787847668687571523,
+      "size": 2
+    },
+    "<HOME>/.pi/agent/models-store.json": {
+      "exists": true,
+      "mtime_ns": 1787847668690018934,
+      "size": 2
+    }
+  }
+}

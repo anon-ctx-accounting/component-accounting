@@ -1,0 +1,30 @@
+{
+  "artifact_residual_zero": true,
+  "canary_executed": false,
+  "execution_epoch": "tool-exposure-v3",
+  "invalid_probe_attempt_index": 32,
+  "model_spend_attempt_cap": 80,
+  "model_spend_attempts": 28,
+  "observed": {
+    "answer_passed": false,
+    "get_calls": 0,
+    "gross_input_tokens": 27246,
+    "native_tool_calls": 0,
+    "reported_model": "claude-sonnet-5",
+    "search_calls": 0,
+    "tool_calls": 0
+  },
+  "operational_attempt_rows": 33,
+  "primary_eligible": false,
+  "rate_card_equivalent_cap_usd": 75.0,
+  "rate_card_equivalent_total_usd": 0.991398,
+  "recovery_proposal_not_approved": {
+    "contract": "allow ToolSearch discovery bootstrap at most once per K-ARC session; after bootstrap permit only mcp__karc__search/get; forbid every other native tool; retain RAG tool/MCP zero",
+    "expected_additional_model_spend_attempts": 49,
+    "expected_final_model_spend_attempts": 77,
+    "expected_remaining_attempt_headroom": 3,
+    "requires_new_user_approval": true
+  },
+  "schema": "e10-p2-xr-eager-load-stop-v1",
+  "status": "STOP-KARC-MCP-NOT-EXPOSED"
+}

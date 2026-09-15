@@ -1,0 +1,32 @@
+[project]
+name = "karc"
+version = "0.1.0"
+description = "K-ARC M0: SQLite schema v1, Claude Code transcript ingestion, E0-1 locality analysis"
+requires-python = ">=3.12"
+# 런타임 의존성 0 — stdlib만 사용한다 (R-3, brief §11).
+dependencies = []
+
+[project.scripts]
+karc = "karc.cli:main"
+
+[dependency-groups]
+# dev 의존성은 pytest만 허용.
+dev = ["pytest"]
+# E3 dense retrieval build/runtime only. K-ARC itself remains stdlib-only;
+# the frozen experiment config records the resolved model revision and package
+# versions so this optional local retriever can be reproduced independently.
+e3 = ["sentence-transformers==5.6.0"]
+# E4 group-sequential 경계 *생성*에만 필요. K-ARC core + harness는 stdlib-only 유지
+# (scipy는 e4_sequential._cached_boundaries에서 lazy import). frozen
+# sequential-boundaries.json이 런타임 권위이며, 경계 재생성 시에만 이 group 설치.
+e4 = ["scipy"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/karc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

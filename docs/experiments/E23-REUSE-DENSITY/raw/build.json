@@ -1,0 +1,1467 @@
+{
+  "_meta": {
+    "cell": "E23-REUSE-DENSITY",
+    "generated_at_utc": "2026-09-07T19:08:31Z",
+    "namespace": "",
+    "phase": "build",
+    "pi_version": "0.84.3"
+  },
+  "control_rho_050_reproduces_e19": {
+    "matches_e19_schedule": true,
+    "matches_e19_snapshot": true,
+    "matches_e19_tasks": true,
+    "resident_ramp": [
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.0,
+        "resident_tokens": 0,
+        "resident_versions": 0,
+        "session_id": "S01",
+        "session_index": 1
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.19760820045558086,
+        "resident_tokens": 347,
+        "resident_versions": 4,
+        "session_id": "S02",
+        "session_index": 2
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.3952164009111617,
+        "resident_tokens": 694,
+        "resident_versions": 8,
+        "session_id": "S03",
+        "session_index": 3
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.5928246013667426,
+        "resident_tokens": 1041,
+        "resident_versions": 12,
+        "session_id": "S04",
+        "session_index": 4
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.7904328018223234,
+        "resident_tokens": 1388,
+        "resident_versions": 16,
+        "session_id": "S05",
+        "session_index": 5
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9880410022779044,
+        "resident_tokens": 1735,
+        "resident_versions": 20,
+        "session_id": "S06",
+        "session_index": 6
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S07",
+        "session_index": 7
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S08",
+        "session_index": 8
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S09",
+        "session_index": 9
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9629840546697038,
+        "resident_tokens": 1691,
+        "resident_versions": 19,
+        "session_id": "S10",
+        "session_index": 10
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9629840546697038,
+        "resident_tokens": 1691,
+        "resident_versions": 19,
+        "session_id": "S11",
+        "session_index": 11
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9629840546697038,
+        "resident_tokens": 1691,
+        "resident_versions": 19,
+        "session_id": "S12",
+        "session_index": 12
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S13",
+        "session_index": 13
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S14",
+        "session_index": 14
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9880410022779044,
+        "resident_tokens": 1735,
+        "resident_versions": 20,
+        "session_id": "S15",
+        "session_index": 15
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S16",
+        "session_index": 16
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S17",
+        "session_index": 17
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S18",
+        "session_index": 18
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S19",
+        "session_index": 19
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S20",
+        "session_index": 20
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S21",
+        "session_index": 21
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S22",
+        "session_index": 22
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S23",
+        "session_index": 23
+      },
+      {
+        "budget_tokens": 1756,
+        "budget_utilization": 0.9988610478359908,
+        "resident_tokens": 1754,
+        "resident_versions": 20,
+        "session_id": "S24",
+        "session_index": 24
+      }
+    ],
+    "reuse_factor": 0.5,
+    "reuse_profile": {
+      "definition": "fraction of non-initial session tasks whose gold artifact was gold for an earlier task in the same session",
+      "per_session": {
+        "S01": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 1,
+          "tasks": 8
+        },
+        "S02": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 2,
+          "tasks": 8
+        },
+        "S03": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 3,
+          "tasks": 8
+        },
+        "S04": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 4,
+          "tasks": 8
+        },
+        "S05": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 5,
+          "tasks": 8
+        },
+        "S06": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 6,
+          "tasks": 8
+        },
+        "S07": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 7,
+          "tasks": 8
+        },
+        "S08": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 8,
+          "tasks": 8
+        },
+        "S09": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 9,
+          "tasks": 8
+        },
+        "S10": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 1,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 10,
+          "tasks": 8
+        },
+        "S11": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 11,
+          "tasks": 8
+        },
+        "S12": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 3,
+          "reuse_rate_within_session": 0.5714285714285714,
+          "reuse_tasks": 4,
+          "session_index": 12,
+          "tasks": 8
+        },
+        "S13": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 13,
+          "tasks": 8
+        },
+        "S14": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 14,
+          "tasks": 8
+        },
+        "S15": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 15,
+          "tasks": 8
+        },
+        "S16": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 16,
+          "tasks": 8
+        },
+        "S17": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 17,
+          "tasks": 8
+        },
+        "S18": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 18,
+          "tasks": 8
+        },
+        "S19": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 19,
+          "tasks": 8
+        },
+        "S20": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 20,
+          "tasks": 8
+        },
+        "S21": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 21,
+          "tasks": 8
+        },
+        "S22": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 22,
+          "tasks": 8
+        },
+        "S23": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 23,
+          "tasks": 8
+        },
+        "S24": {
+          "eligible_followups": 7,
+          "hot_supersession_traps": 1,
+          "policy_resident_hits": 2,
+          "reuse_rate_within_session": 0.42857142857142855,
+          "reuse_tasks": 3,
+          "session_index": 24,
+          "tasks": 8
+        }
+      },
+      "reuse_count": 84,
+      "reuse_denominator_eligible_followups": 168,
+      "reuse_factor_measured": 0.5,
+      "reuse_factor_requested": 0.5,
+      "rho_measured_all_tasks": 0.4375,
+      "task_structure_histogram": {
+        "new-gold": 108,
+        "reuse-gold": 84
+      }
+    },
+    "schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+    "snapshot_sha256": "f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73",
+    "structure": {
+      "corrected_events": 24,
+      "r_measured": 0.5,
+      "r_requested": 0.5,
+      "reuse_opportunities": 168,
+      "reused_doc_ids": 52,
+      "reused_occurrences": 84,
+      "rho_measured_all_tasks": 0.4375,
+      "session_length": 8,
+      "sessions": 24,
+      "sigma_defined": true,
+      "sigma_denominator_reused_doc_ids": 52,
+      "sigma_measured": 0.46153846153846156,
+      "supersession_events": 24,
+      "tasks": 192,
+      "validated_outcome_events": 24
+    },
+    "tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74",
+    "why": "proves the parameterized re-implementation of prepare_bundle is byte-identical to the library path at the frozen value, so the rho = 0.25 / 0.75 builds differ only in reuse_factor"
+  },
+  "degenerate_control_rho_000": {
+    "executed": false,
+    "hot_supersession_trap_tasks": 0,
+    "reuse_factor": 0.0,
+    "structure": {
+      "r_measured": 0.0,
+      "reused_doc_ids": 0,
+      "reused_occurrences": 0,
+      "sigma_defined": false,
+      "sigma_measured": null,
+      "supersession_events": 0
+    },
+    "task_structure_histogram": {
+      "new-gold": 192
+    },
+    "why_excluded": "preregistration §2: zero reuse also removes the supersession dynamics, so a sign flip there could not be attributed to reuse density. Measured here to show the degeneracy is real on THIS harness, not only in e4_fixture._schedule as §2 assumed."
+  },
+  "operative_axis": {
+    "e4_fixture_RHO_GRID": [
+      0.0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "e4_fixture_schedule_branch_is_in_path": false,
+    "grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "library_default_frozen_at": 0.5,
+    "what": "e5_killgate.build_reuse_schedule(reuse_factor=r)",
+    "why": "fixture/e4-v2 is built by e4_fixture._schedule_v2, which takes no rho argument; e5_killgate._source_manifest keeps that corpus and discards its task schedule, then builds the session schedule from reuse_factor. e5_killgate emits engine_source_labels_non_control saying rho/sigma are replay_cell compatibility labels and 'E5 controls r'."
+  },
+  "rho": {
+    "025": {
+      "H12_gold_containment": {
+        "fired": false,
+        "gold_containment_rate": 1.0,
+        "is_one": true,
+        "mean_budget_utilization": 0.9835118878132119,
+        "plan_tokens_mean": 1727.046875
+      },
+      "H13_non_degenerate_branch": {
+        "corrected_events": 24,
+        "degenerate_zero_reuse_branch": false,
+        "fired": false,
+        "hot_supersession_trap_tasks": 24,
+        "new_gold_tasks": 150,
+        "reuse_gold_tasks": 42,
+        "reused_occurrences": 42,
+        "sigma_defined": true,
+        "sigma_measured": 0.6153846153846154,
+        "supersession_events": 24,
+        "validated_outcome_events": 24
+      },
+      "cell": {
+        "budget_pct": 5,
+        "budget_tokens": 1756,
+        "rho": 0.5,
+        "sigma": 0.3
+      },
+      "fixture_manifest_sha256": "00971ff9992b837d2748ddcb27f5c53618490b5dfa38d69871b6f2b5b2f35077",
+      "identity": {
+        "manifest_sha256": "00971ff9992b837d2748ddcb27f5c53618490b5dfa38d69871b6f2b5b2f35077",
+        "matches_committed": true,
+        "schedule_sha256": "d5737bc7449e1d9595930f061fe6cf0501a39a860173c249ffd6fecd2158ebdf",
+        "snapshot_sha256": "5b91ca6eb26779d87b5d4183221e59c4c6b812e28fce0e0ddc93555e82246dfe",
+        "tasks_sha256": "6bdb731374207db63fd1eeec64de73ce75689c837aec6c837ee495da1e1d8e43"
+      },
+      "resident_ramp": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.29100227790432803,
+          "resident_tokens": 511,
+          "resident_versions": 6,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5820045558086561,
+          "resident_tokens": 1022,
+          "resident_versions": 12,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.873006833712984,
+          "resident_tokens": 1533,
+          "resident_versions": 18,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_versions": 20,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S08",
+          "session_index": 8
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_versions": 20,
+          "session_id": "S09",
+          "session_index": 9
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_versions": 20,
+          "session_id": "S10",
+          "session_index": 10
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S11",
+          "session_index": 11
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S12",
+          "session_index": 12
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S13",
+          "session_index": 13
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S14",
+          "session_index": 14
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S15",
+          "session_index": 15
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S16",
+          "session_index": 16
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S17",
+          "session_index": 17
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9772209567198178,
+          "resident_tokens": 1716,
+          "resident_versions": 20,
+          "session_id": "S18",
+          "session_index": 18
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S19",
+          "session_index": 19
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S20",
+          "session_index": 20
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9772209567198178,
+          "resident_tokens": 1716,
+          "resident_versions": 20,
+          "session_id": "S21",
+          "session_index": 21
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S22",
+          "session_index": 22
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9772209567198178,
+          "resident_tokens": 1716,
+          "resident_versions": 20,
+          "session_id": "S23",
+          "session_index": 23
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_versions": 20,
+          "session_id": "S24",
+          "session_index": 24
+        }
+      ],
+      "reuse_factor": 0.25,
+      "reuse_profile": {
+        "definition": "fraction of non-initial session tasks whose gold artifact was gold for an earlier task in the same session",
+        "per_session": {
+          "S01": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 1,
+            "tasks": 8
+          },
+          "S02": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 2,
+            "tasks": 8
+          },
+          "S03": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 3,
+            "tasks": 8
+          },
+          "S04": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 4,
+            "tasks": 8
+          },
+          "S05": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 5,
+            "tasks": 8
+          },
+          "S06": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 6,
+            "tasks": 8
+          },
+          "S07": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 7,
+            "tasks": 8
+          },
+          "S08": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 8,
+            "tasks": 8
+          },
+          "S09": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 9,
+            "tasks": 8
+          },
+          "S10": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 10,
+            "tasks": 8
+          },
+          "S11": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 11,
+            "tasks": 8
+          },
+          "S12": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 12,
+            "tasks": 8
+          },
+          "S13": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 13,
+            "tasks": 8
+          },
+          "S14": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 14,
+            "tasks": 8
+          },
+          "S15": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 15,
+            "tasks": 8
+          },
+          "S16": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 16,
+            "tasks": 8
+          },
+          "S17": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 17,
+            "tasks": 8
+          },
+          "S18": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 1,
+            "reuse_rate_within_session": 0.2857142857142857,
+            "reuse_tasks": 2,
+            "session_index": 18,
+            "tasks": 8
+          },
+          "S19": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 0,
+            "reuse_rate_within_session": 0.14285714285714285,
+            "reuse_tasks": 1,
+            "session_index": 19,
+            "tasks": 8
+          },
+          "S20": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 0,
+            "reuse_rate_within_session": 0.14285714285714285,
+            "reuse_tasks": 1,
+            "session_index": 20,
+            "tasks": 8
+          },
+          "S21": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 0,
+            "reuse_rate_within_session": 0.14285714285714285,
+            "reuse_tasks": 1,
+            "session_index": 21,
+            "tasks": 8
+          },
+          "S22": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 0,
+            "reuse_rate_within_session": 0.14285714285714285,
+            "reuse_tasks": 1,
+            "session_index": 22,
+            "tasks": 8
+          },
+          "S23": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 0,
+            "reuse_rate_within_session": 0.14285714285714285,
+            "reuse_tasks": 1,
+            "session_index": 23,
+            "tasks": 8
+          },
+          "S24": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 0,
+            "reuse_rate_within_session": 0.14285714285714285,
+            "reuse_tasks": 1,
+            "session_index": 24,
+            "tasks": 8
+          }
+        },
+        "reuse_count": 42,
+        "reuse_denominator_eligible_followups": 168,
+        "reuse_factor_measured": 0.25,
+        "reuse_factor_requested": 0.25,
+        "rho_measured_all_tasks": 0.21875,
+        "task_structure_histogram": {
+          "new-gold": 150,
+          "reuse-gold": 42
+        }
+      },
+      "structure": {
+        "corrected_events": 24,
+        "r_measured": 0.25,
+        "r_requested": 0.25,
+        "reuse_opportunities": 168,
+        "reused_doc_ids": 39,
+        "reused_occurrences": 42,
+        "rho_measured_all_tasks": 0.21875,
+        "session_length": 8,
+        "sessions": 24,
+        "sigma_defined": true,
+        "sigma_denominator_reused_doc_ids": 39,
+        "sigma_measured": 0.6153846153846154,
+        "supersession_events": 24,
+        "tasks": 192,
+        "validated_outcome_events": 24
+      }
+    },
+    "075": {
+      "H12_gold_containment": {
+        "fired": false,
+        "gold_containment_rate": 1.0,
+        "is_one": true,
+        "mean_budget_utilization": 0.9869495064540622,
+        "plan_tokens_mean": 1733.0833333333333
+      },
+      "H13_non_degenerate_branch": {
+        "corrected_events": 24,
+        "degenerate_zero_reuse_branch": false,
+        "fired": false,
+        "hot_supersession_trap_tasks": 24,
+        "new_gold_tasks": 66,
+        "reuse_gold_tasks": 126,
+        "reused_occurrences": 126,
+        "sigma_defined": true,
+        "sigma_measured": 0.5,
+        "supersession_events": 24,
+        "validated_outcome_events": 24
+      },
+      "cell": {
+        "budget_pct": 5,
+        "budget_tokens": 1756,
+        "rho": 0.5,
+        "sigma": 0.3
+      },
+      "fixture_manifest_sha256": "1b3d2138ac2c265a31fb8d3bf856a375f72eca10d4ee1acb28705eb871cacf44",
+      "identity": {
+        "manifest_sha256": "1b3d2138ac2c265a31fb8d3bf856a375f72eca10d4ee1acb28705eb871cacf44",
+        "matches_committed": true,
+        "schedule_sha256": "22feae85280e68365e2655df2e47ea5a86c90918dce3385dde823fa8548269e0",
+        "snapshot_sha256": "0b63531feb12c6b98815754f6cce0bfbec747d482b0071bc7e8bbbe5ea7ac435",
+        "tasks_sha256": "6ea879c480fa9e8172efc0aabd7addb7df9b1c7ff9a71b69721d2bc41480b258"
+      },
+      "resident_ramp": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.10421412300683372,
+          "resident_tokens": 183,
+          "resident_versions": 2,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.20842824601366744,
+          "resident_tokens": 366,
+          "resident_versions": 4,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.31264236902050113,
+          "resident_tokens": 549,
+          "resident_versions": 6,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.4168564920273349,
+          "resident_tokens": 732,
+          "resident_versions": 8,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5210706150341685,
+          "resident_tokens": 915,
+          "resident_versions": 10,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.6252847380410023,
+          "resident_tokens": 1098,
+          "resident_versions": 12,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.7761958997722096,
+          "resident_tokens": 1363,
+          "resident_versions": 15,
+          "session_id": "S08",
+          "session_index": 8
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9271070615034168,
+          "resident_tokens": 1628,
+          "resident_versions": 18,
+          "session_id": "S09",
+          "session_index": 9
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S10",
+          "session_index": 10
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9954441913439636,
+          "resident_tokens": 1748,
+          "resident_versions": 19,
+          "session_id": "S11",
+          "session_index": 11
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9954441913439636,
+          "resident_tokens": 1748,
+          "resident_versions": 19,
+          "session_id": "S12",
+          "session_index": 12
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S13",
+          "session_index": 13
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S14",
+          "session_index": 14
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S15",
+          "session_index": 15
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S16",
+          "session_index": 16
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S17",
+          "session_index": 17
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.984624145785877,
+          "resident_tokens": 1729,
+          "resident_versions": 19,
+          "session_id": "S18",
+          "session_index": 18
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9629840546697038,
+          "resident_tokens": 1691,
+          "resident_versions": 19,
+          "session_id": "S19",
+          "session_index": 19
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9629840546697038,
+          "resident_tokens": 1691,
+          "resident_versions": 19,
+          "session_id": "S20",
+          "session_index": 20
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9629840546697038,
+          "resident_tokens": 1691,
+          "resident_versions": 19,
+          "session_id": "S21",
+          "session_index": 21
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9629840546697038,
+          "resident_tokens": 1691,
+          "resident_versions": 19,
+          "session_id": "S22",
+          "session_index": 22
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9988610478359908,
+          "resident_tokens": 1754,
+          "resident_versions": 20,
+          "session_id": "S23",
+          "session_index": 23
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9629840546697038,
+          "resident_tokens": 1691,
+          "resident_versions": 19,
+          "session_id": "S24",
+          "session_index": 24
+        }
+      ],
+      "reuse_factor": 0.75,
+      "reuse_profile": {
+        "definition": "fraction of non-initial session tasks whose gold artifact was gold for an earlier task in the same session",
+        "per_session": {
+          "S01": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 5,
+            "reuse_rate_within_session": 0.8571428571428571,
+            "reuse_tasks": 6,
+            "session_index": 1,
+            "tasks": 8
+          },
+          "S02": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 5,
+            "reuse_rate_within_session": 0.8571428571428571,
+            "reuse_tasks": 6,
+            "session_index": 2,
+            "tasks": 8
+          },
+          "S03": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 5,
+            "reuse_rate_within_session": 0.8571428571428571,
+            "reuse_tasks": 6,
+            "session_index": 3,
+            "tasks": 8
+          },
+          "S04": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 5,
+            "reuse_rate_within_session": 0.8571428571428571,
+            "reuse_tasks": 6,
+            "session_index": 4,
+            "tasks": 8
+          },
+          "S05": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 5,
+            "reuse_rate_within_session": 0.8571428571428571,
+            "reuse_tasks": 6,
+            "session_index": 5,
+            "tasks": 8
+          },
+          "S06": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 5,
+            "reuse_rate_within_session": 0.8571428571428571,
+            "reuse_tasks": 6,
+            "session_index": 6,
+            "tasks": 8
+          },
+          "S07": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 7,
+            "tasks": 8
+          },
+          "S08": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 8,
+            "tasks": 8
+          },
+          "S09": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 9,
+            "tasks": 8
+          },
+          "S10": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 10,
+            "tasks": 8
+          },
+          "S11": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 11,
+            "tasks": 8
+          },
+          "S12": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 3,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 12,
+            "tasks": 8
+          },
+          "S13": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 13,
+            "tasks": 8
+          },
+          "S14": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 14,
+            "tasks": 8
+          },
+          "S15": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 3,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 15,
+            "tasks": 8
+          },
+          "S16": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 16,
+            "tasks": 8
+          },
+          "S17": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 17,
+            "tasks": 8
+          },
+          "S18": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 18,
+            "tasks": 8
+          },
+          "S19": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 19,
+            "tasks": 8
+          },
+          "S20": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 20,
+            "tasks": 8
+          },
+          "S21": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 21,
+            "tasks": 8
+          },
+          "S22": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 22,
+            "tasks": 8
+          },
+          "S23": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 23,
+            "tasks": 8
+          },
+          "S24": {
+            "eligible_followups": 7,
+            "hot_supersession_traps": 1,
+            "policy_resident_hits": 4,
+            "reuse_rate_within_session": 0.7142857142857143,
+            "reuse_tasks": 5,
+            "session_index": 24,
+            "tasks": 8
+          }
+        },
+        "reuse_count": 126,
+        "reuse_denominator_eligible_followups": 168,
+        "reuse_factor_measured": 0.75,
+        "reuse_factor_requested": 0.75,
+        "rho_measured_all_tasks": 0.65625,
+        "task_structure_histogram": {
+          "new-gold": 66,
+          "reuse-gold": 126
+        }
+      },
+      "structure": {
+        "corrected_events": 24,
+        "r_measured": 0.75,
+        "r_requested": 0.75,
+        "reuse_opportunities": 168,
+        "reused_doc_ids": 48,
+        "reused_occurrences": 126,
+        "rho_measured_all_tasks": 0.65625,
+        "session_length": 8,
+        "sessions": 24,
+        "sigma_defined": true,
+        "sigma_denominator_reused_doc_ids": 48,
+        "sigma_measured": 0.5,
+        "supersession_events": 24,
+        "tasks": 192,
+        "validated_outcome_events": 24
+      }
+    }
+  },
+  "schedule_seed": 4352,
+  "seed_choice": "E19 leg B's own seed 4352, reused unchanged so that reuse density is the only altered build input",
+  "slice_overlap": {
+    "distinct_required_versions": {
+      "025": 174,
+      "075": 90,
+      "control_050": 132
+    },
+    "note": "the fixture corpus is frozen and shared by every cell, so artifact recurrence across rho builds is structural and is reported, not designed away (E19 §6.1)",
+    "overlap_025_vs_050": 132,
+    "overlap_025_vs_075": 90,
+    "overlap_075_vs_050": 90
+  }
+}

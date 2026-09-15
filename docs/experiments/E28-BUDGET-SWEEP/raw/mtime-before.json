@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "budget_pct": null,
+    "budget_tokens": null,
+    "cell": "E28-BUDGET-SWEEP",
+    "cell_name": null,
+    "cell_tag": null,
+    "generated_at_utc": "2026-09-13T12:09:49Z",
+    "imported_runner_sha256": "d9cb64e409e177228b290149d3a656e1b2fdfbc0a356725ca93d853683726614",
+    "leg": null,
+    "model": null,
+    "namespace": "o10",
+    "phase": "mtime",
+    "pi_version": "0.84.3",
+    "provider": null,
+    "reuse_factor": 0.5
+  },
+  "paths": {
+    "<HOME>/.pi": {
+      "exists": true,
+      "mtime_ns": 1787847668687481309,
+      "size": null
+    },
+    "<HOME>/.pi/agent": {
+      "exists": true,
+      "mtime_ns": 1787850563832214657,
+      "size": null
+    },
+    "<HOME>/.pi/agent/auth.json": {
+      "exists": true,
+      "mtime_ns": 1787847668687571523,
+      "size": 2
+    },
+    "<HOME>/.pi/agent/models-store.json": {
+      "exists": true,
+      "mtime_ns": 1787847668690018934,
+      "size": 2
+    }
+  },
+  "sibling_cell_roots": {
+    "<REPO>/tmp/e17": {
+      "exists": false
+    },
+    "<REPO>/tmp/e17b": {
+      "exists": false
+    },
+    "<REPO>/tmp/e18": {
+      "exists": false
+    },
+    "<REPO>/tmp/e19": {
+      "exists": false
+    },
+    "<REPO>/tmp/e21": {
+      "exists": false
+    },
+    "<REPO>/tmp/e23": {
+      "exists": false
+    },
+    "<REPO>/tmp/e25": {
+      "exists": false
+    },
+    "<REPO>/tmp/e26": {
+      "exists": false
+    },
+    "<REPO>/tmp/e27": {
+      "exists": false
+    }
+  }
+}

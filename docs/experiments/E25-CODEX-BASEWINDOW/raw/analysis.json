@@ -1,0 +1,612 @@
+{
+  "_meta": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 1313,
+    "generated_at_utc": "2026-09-10T11:54:40Z",
+    "namespace": ""
+  },
+  "accounting_contract": {
+    "gross": "gross = input_tokens (the visible prefix; already contains cached and write)",
+    "priced": "fresh*0.20 + write*0.25 + cached*0.02 + output*1.20 per million",
+    "reporting_level": "codex exec turn.completed.usage is the CUMULATIVE thread total; per-turn components are consecutive differences (measured, see raw/probe-home-layout.json)"
+  },
+  "cell": "E25-CODEX-BASEWINDOW",
+  "descriptive_window_profile": {
+    "caveat": "descriptive; the judgment is the pooled test over the whole preregistered window, and no sub-range of it is selected, tested or re-pooled",
+    "n_sessions": 12,
+    "per_session": {
+      "S01": {
+        "gross_ratio": 1.171328648725524,
+        "priced_ratio": 0.7245774922794876
+      },
+      "S02": {
+        "gross_ratio": 1.4152783895121384,
+        "priced_ratio": 0.8588087455554221
+      },
+      "S03": {
+        "gross_ratio": 1.3268061857939062,
+        "priced_ratio": 0.7941753949992019
+      },
+      "S04": {
+        "gross_ratio": 1.3937713034124342,
+        "priced_ratio": 0.838600226881568
+      },
+      "S05": {
+        "gross_ratio": 1.644488400204265,
+        "priced_ratio": 0.9743826332891184
+      },
+      "S06": {
+        "gross_ratio": 1.5427866687383467,
+        "priced_ratio": 0.912574482875309
+      },
+      "S07": {
+        "gross_ratio": 1.756097877251449,
+        "priced_ratio": 1.0087374300759526
+      },
+      "S08": {
+        "gross_ratio": 1.7612442393326375,
+        "priced_ratio": 1.007908757567306
+      },
+      "S09": {
+        "gross_ratio": 1.7537816976196026,
+        "priced_ratio": 1.0132995755301766
+      },
+      "S10": {
+        "gross_ratio": 1.7659323571336012,
+        "priced_ratio": 1.0126958762412606
+      },
+      "S11": {
+        "gross_ratio": 1.7470008291444266,
+        "priced_ratio": 1.0123590047478546
+      },
+      "S12": {
+        "gross_ratio": 1.7662482566248257,
+        "priced_ratio": 1.0143446980709705
+      }
+    },
+    "priced_ratio_max": 1.0143446980709705,
+    "priced_ratio_min": 0.7245774922794876,
+    "sessions_with_gross_ratio_above_one": 12,
+    "sessions_with_priced_ratio_below_one": 6
+  },
+  "e18_leg_b_contrast": {
+    "available": true,
+    "e18_leg_b": {
+      "component_delta_karc_minus_rag": {
+        "api_calls": 108,
+        "cache_read": 335522,
+        "creation": -140979,
+        "creation_1h": 0,
+        "creation_5m": -140979,
+        "gross": 196588,
+        "output": 3094,
+        "tool_calls": 113,
+        "turns": 0,
+        "uncached": 2045
+      },
+      "component_totals": {
+        "karc-full": {
+          "api_calls": 204,
+          "cache_read": 1232566,
+          "creation": 109368,
+          "creation_1h": 0,
+          "creation_5m": 109368,
+          "gross": 1344267,
+          "output": 4682,
+          "tool_calls": 113,
+          "turns": 96,
+          "uncached": 2333
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "cache_read": 897044,
+          "creation": 250347,
+          "creation_1h": 0,
+          "creation_5m": 250347,
+          "gross": 1147679,
+          "output": 1588,
+          "tool_calls": 0,
+          "turns": 96,
+          "uncached": 288
+        }
+      },
+      "gross_ratio_karc_over_rag": {
+        "ci95_hi": 1.367426807764753,
+        "ci95_lo": 0.9515715721644545,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": false,
+        "point": 1.171291798490693,
+        "usable_resamples": 10000
+      },
+      "priced_ratio_karc_over_rag": {
+        "ci95_hi": 0.7997494343433659,
+        "ci95_lo": 0.5966795178122455,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": true,
+        "point": 0.7040578934652494,
+        "usable_resamples": 10000
+      },
+      "reversal_threshold_mu_w_star": 0.3841792039949212
+    },
+    "held_fixed": [
+      "provider openai",
+      "model gpt-5.6-luna",
+      "published luna rate card",
+      "schedule seed 4200 / identical snapshot_sha256",
+      "measurement window S01..S12 (no warm-up)",
+      "arms karc-full and rag-bm25",
+      "statistics: session bootstrap seed 1313"
+    ],
+    "source": "docs/experiments/E18-PI-REVERSAL/raw/analysis.json",
+    "this_cell": {
+      "component_delta_karc_minus_rag": {
+        "api_calls": 120,
+        "cache_read": 1242871,
+        "creation": -155699,
+        "gross": 1087532,
+        "output": 4910,
+        "reasoning": 361,
+        "tool_calls": 109,
+        "turns": 0,
+        "uncached": 360
+      },
+      "component_totals": {
+        "karc-full": {
+          "api_calls": 216,
+          "cache_read": 2756830,
+          "creation": 182911,
+          "gross": 2940389,
+          "output": 6797,
+          "reasoning": 630,
+          "tool_calls": 109,
+          "turns": 96,
+          "uncached": 648
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "cache_read": 1513959,
+          "creation": 338610,
+          "gross": 1852857,
+          "output": 1887,
+          "reasoning": 269,
+          "tool_calls": 0,
+          "turns": 96,
+          "uncached": 288
+        }
+      },
+      "gross_ratio_karc_over_rag": {
+        "ci95_hi": 1.6947496228984078,
+        "ci95_lo": 1.4665207905793396,
+        "degenerate_resamples": 0,
+        "entirely_above_one": true,
+        "entirely_below_one": false,
+        "point": 1.5869486959867922,
+        "usable_resamples": 10000
+      },
+      "priced_ratio_karc_over_rag": {
+        "ci95_hi": 0.9838865110880354,
+        "ci95_lo": 0.8714472278953468,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": true,
+        "point": 0.9308906125590258,
+        "usable_resamples": 10000
+      },
+      "reversal_threshold_mu_w_star": 0.9897757853293854
+    },
+    "varied": [
+      "harness: pi 0.84.3 -> Codex CLI 0.145.0"
+    ]
+  },
+  "harness": {
+    "model": "gpt-5.6-luna",
+    "name": "codex-cli",
+    "provider": "openai",
+    "reasoning_effort": "low",
+    "route": "metered OpenAI API key",
+    "version": "codex-cli 0.145.0"
+  },
+  "harness_fixed_cost_attribution": {
+    "available": false
+  },
+  "judgments": {
+    "R1_component_signature_sign_preserved": {
+      "criterion": "delta_read > 0 AND delta_creation < 0",
+      "delta_creation": -155699,
+      "delta_output": 4910,
+      "delta_read": 1242871,
+      "delta_uncached": 360,
+      "verdict": "PASS"
+    },
+    "R2_component_priced_ordering": {
+      "criterion": "paired priced ratio 95% CI entirely below 1.0 AND paired mean USD difference CI excludes 0",
+      "paired_mean_usd_difference": -0.0006752775000000004,
+      "paired_mean_usd_difference_ci95": [
+        -0.0012569458333333337,
+        -0.00015742500000000053
+      ],
+      "priced_ratio": 0.9308906125590258,
+      "priced_ratio_ci95": [
+        0.8714472278953468,
+        0.9838865110880354
+      ],
+      "priced_ratio_ci_entirely_below_one": true,
+      "usd_difference_ci_excludes_zero": true,
+      "verdict": "PASS"
+    },
+    "R3_reversal_threshold_below_actual_rate": {
+      "criterion": "mu_w_star from THIS cell's own component totals < 1.25",
+      "mu_w_star": 0.9897757853293854,
+      "note": "computed from this cell's totals only; no threshold is carried over from another cell (E18's failure mode)",
+      "observed_mu_w": 1.25,
+      "verdict": "PASS"
+    },
+    "cost": {
+      "cap_usd": 2.0,
+      "priced_usd_cell_total": 0.226404,
+      "priced_usd_measurement": 0.226404,
+      "priced_usd_warmup": 0,
+      "rate_card_source": "docs/analysis/openai-luna-rate-card.md (2026-08-28)",
+      "warmup_note": "warm-up cost is reported but enters no judgment"
+    },
+    "gross_ordering_measured_not_predicted": {
+      "ci_entirely_above_one": true,
+      "ci_entirely_below_one": false,
+      "gross_ratio": 1.5869486959867922,
+      "gross_ratio_ci95": [
+        1.4665207905793396,
+        1.6947496228984078
+      ],
+      "paired_mean_session_gross_difference": 90627.66666666667,
+      "paired_mean_session_gross_difference_ci95": [
+        72063.0,
+        107260.66666666667
+      ],
+      "status": "REPORTED ONLY — the preregistration §3 declines to predict the gross direction"
+    },
+    "hold_fired": [],
+    "inclusion_relation_verdict": "inclusive",
+    "steady_state_reached": null
+  },
+  "measurement_window": {
+    "arms": [
+      "karc-full",
+      "rag-bm25"
+    ],
+    "measured_sessions": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12"
+    ],
+    "note": "one preregistered window, pooled once; no sub-range is selected or tested. This is the growth-region window that base and E18 measured, not a steady-state window; steady state is not claimed for this cell.",
+    "warmup_sessions": []
+  },
+  "preregistration": "docs/experiments/E25-CODEX-BASEWINDOW/preregistration.md",
+  "statistics": {
+    "bootstrap": {
+      "ci": "two-sided 95% percentile",
+      "method": "paired percentile bootstrap over sessions, common random numbers",
+      "n_sessions": 12,
+      "resamples": 10000,
+      "seed": 1313,
+      "unit": "session"
+    },
+    "cold_first_call_prefix_tokens": {
+      "karc-full": {
+        "max": 12130,
+        "mean": 11243.916666666666,
+        "min": 8641,
+        "n": 12
+      },
+      "rag-bm25": {
+        "max": 10374,
+        "mean": 10364.916666666666,
+        "min": 10358,
+        "n": 12
+      }
+    },
+    "component_delta_karc_minus_rag": {
+      "api_calls": 120,
+      "cache_read": 1242871,
+      "creation": -155699,
+      "gross": 1087532,
+      "output": 4910,
+      "reasoning": 361,
+      "tool_calls": 109,
+      "turns": 0,
+      "uncached": 360
+    },
+    "component_totals": {
+      "karc-full": {
+        "api_calls": 216,
+        "cache_read": 2756830,
+        "creation": 182911,
+        "gross": 2940389,
+        "output": 6797,
+        "reasoning": 630,
+        "tool_calls": 109,
+        "turns": 96,
+        "uncached": 648
+      },
+      "rag-bm25": {
+        "api_calls": 96,
+        "cache_read": 1513959,
+        "creation": 338610,
+        "gross": 1852857,
+        "output": 1887,
+        "reasoning": 269,
+        "tool_calls": 0,
+        "turns": 96,
+        "uncached": 288
+      }
+    },
+    "gross_ratio_karc_over_rag": {
+      "ci95_hi": 1.6947496228984078,
+      "ci95_lo": 1.4665207905793396,
+      "degenerate_resamples": 0,
+      "entirely_above_one": true,
+      "entirely_below_one": false,
+      "point": 1.5869486959867922,
+      "usable_resamples": 10000
+    },
+    "mu_w_star_below_observed": true,
+    "multipliers": {
+      "mu_output": 5.999999999999999,
+      "mu_read": 0.09999999999999999,
+      "mu_write": 1.25
+    },
+    "observed_mu_w": 1.25,
+    "paired_mean_session_gross_difference": {
+      "ci95_hi": 107260.66666666667,
+      "ci95_lo": 72063.0,
+      "excludes_zero": true,
+      "point": 90627.66666666667
+    },
+    "paired_mean_session_priced_usd_difference": {
+      "ci95_hi": -0.00015742500000000053,
+      "ci95_lo": -0.0012569458333333337,
+      "excludes_zero": true,
+      "point": -0.0006752775000000004
+    },
+    "per_position_profile": {
+      "karc-full": {
+        "1": {
+          "api_calls_mean": 4,
+          "creation_mean": 12653.333333333334,
+          "gross_mean": 48110.666666666664,
+          "n": 12,
+          "output_mean": 163.83333333333334,
+          "read_mean": 35445.333333333336
+        },
+        "2": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 321.9166666666667,
+          "gross_mean": 23832.916666666668,
+          "n": 12,
+          "output_mean": 51.5,
+          "read_mean": 23505.5
+        },
+        "3": {
+          "api_calls_mean": 2.3333333333333335,
+          "creation_mean": 465.8333333333333,
+          "gross_mean": 31118.416666666668,
+          "n": 12,
+          "output_mean": 70,
+          "read_mean": 30645.583333333332
+        },
+        "4": {
+          "api_calls_mean": 2.1666666666666665,
+          "creation_mean": 418.5833333333333,
+          "gross_mean": 29286.833333333332,
+          "n": 12,
+          "output_mean": 64,
+          "read_mean": 28861.75
+        },
+        "5": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 321.1666666666667,
+          "gross_mean": 25899.583333333332,
+          "n": 12,
+          "output_mean": 50.75,
+          "read_mean": 25572.916666666668
+        },
+        "6": {
+          "api_calls_mean": 2.1666666666666665,
+          "creation_mean": 418.6666666666667,
+          "gross_mean": 31525,
+          "n": 12,
+          "output_mean": 64.66666666666667,
+          "read_mean": 31099.833333333332
+        },
+        "7": {
+          "api_calls_mean": 2,
+          "creation_mean": 369.9166666666667,
+          "gross_mean": 30559.333333333332,
+          "n": 12,
+          "output_mean": 57.416666666666664,
+          "read_mean": 30183.416666666668
+        },
+        "8": {
+          "api_calls_mean": 1.6666666666666667,
+          "creation_mean": 273.1666666666667,
+          "gross_mean": 24699.666666666668,
+          "n": 12,
+          "output_mean": 44.25,
+          "read_mean": 24421.5
+        }
+      },
+      "rag-bm25": {
+        "1": {
+          "api_calls_mean": 1,
+          "creation_mean": 10361.916666666666,
+          "gross_mean": 10364.916666666666,
+          "n": 12,
+          "output_mean": 17.166666666666668,
+          "read_mean": 0
+        },
+        "2": {
+          "api_calls_mean": 1,
+          "creation_mean": 2556,
+          "gross_mean": 12920.916666666666,
+          "n": 12,
+          "output_mean": 25.166666666666668,
+          "read_mean": 10361.916666666666
+        },
+        "3": {
+          "api_calls_mean": 1,
+          "creation_mean": 2557.5833333333335,
+          "gross_mean": 15478.5,
+          "n": 12,
+          "output_mean": 21.25,
+          "read_mean": 12917.916666666666
+        },
+        "4": {
+          "api_calls_mean": 1,
+          "creation_mean": 2553.4166666666665,
+          "gross_mean": 18031.916666666668,
+          "n": 12,
+          "output_mean": 21.25,
+          "read_mean": 15475.5
+        },
+        "5": {
+          "api_calls_mean": 1,
+          "creation_mean": 2548.9166666666665,
+          "gross_mean": 20580.833333333332,
+          "n": 12,
+          "output_mean": 21.666666666666668,
+          "read_mean": 18028.916666666668
+        },
+        "6": {
+          "api_calls_mean": 1,
+          "creation_mean": 2549.5,
+          "gross_mean": 23130.333333333332,
+          "n": 12,
+          "output_mean": 16.5,
+          "read_mean": 20577.833333333332
+        },
+        "7": {
+          "api_calls_mean": 1,
+          "creation_mean": 2546.5,
+          "gross_mean": 25676.833333333332,
+          "n": 12,
+          "output_mean": 16.25,
+          "read_mean": 23127.333333333332
+        },
+        "8": {
+          "api_calls_mean": 1,
+          "creation_mean": 2543.6666666666665,
+          "gross_mean": 28220.5,
+          "n": 12,
+          "output_mean": 18,
+          "read_mean": 25673.833333333332
+        }
+      }
+    },
+    "per_session_gross": {
+      "karc-full": {
+        "S01": 181194.0,
+        "S02": 218502.0,
+        "S03": 204969.0,
+        "S04": 215084.0,
+        "S05": 254404.0,
+        "S06": 238305.0,
+        "S07": 270850.0,
+        "S08": 271723.0,
+        "S09": 270833.0,
+        "S10": 272554.0,
+        "S11": 269695.0,
+        "S12": 272276.0
+      },
+      "rag-bm25": {
+        "S01": 154691.0,
+        "S02": 154388.0,
+        "S03": 154483.0,
+        "S04": 154318.0,
+        "S05": 154701.0,
+        "S06": 154464.0,
+        "S07": 154234.0,
+        "S08": 154279.0,
+        "S09": 154428.0,
+        "S10": 154340.0,
+        "S11": 154376.0,
+        "S12": 154155.0
+      }
+    },
+    "per_session_priced_usd": {
+      "karc-full": {
+        "S01": 0.00709044,
+        "S02": 0.008378769999999999,
+        "S03": 0.00781058,
+        "S04": 0.008176,
+        "S05": 0.00955693,
+        "S06": 0.00895325,
+        "S07": 0.009838659999999999,
+        "S08": 0.00982961,
+        "S09": 0.00987351,
+        "S10": 0.00991169,
+        "S11": 0.00985737,
+        "S12": 0.00987354
+      },
+      "rag-bm25": {
+        "S01": 0.00978562,
+        "S02": 0.009756270000000001,
+        "S03": 0.00983483,
+        "S04": 0.009749580000000002,
+        "S05": 0.009808190000000001,
+        "S06": 0.00981098,
+        "S07": 0.00975344,
+        "S08": 0.009752480000000001,
+        "S09": 0.009743920000000001,
+        "S10": 0.00978743,
+        "S11": 0.009737029999999999,
+        "S12": 0.00973391
+      }
+    },
+    "priced_ratio_karc_over_rag": {
+      "ci95_hi": 0.9838865110880354,
+      "ci95_lo": 0.8714472278953468,
+      "degenerate_resamples": 0,
+      "entirely_above_one": false,
+      "entirely_below_one": true,
+      "point": 0.9308906125590258,
+      "usable_resamples": 10000
+    },
+    "priced_totals_usd": {
+      "karc-full": 0.10915035,
+      "rag-bm25": 0.11725368
+    },
+    "rate_card_source": "docs/analysis/openai-luna-rate-card.md (2026-08-28)",
+    "rate_card_usd_per_million": {
+      "input": 0.2,
+      "output": 1.2,
+      "read": 0.02,
+      "write": 0.25
+    },
+    "reversal_threshold_mu_w_star": 0.9897757853293854,
+    "single_api_call_turn_prefix_tokens": {
+      "karc-full": {
+        "max": 16612,
+        "mean": 14000.619047619048,
+        "min": 10045,
+        "n": 42
+      },
+      "rag-bm25": {
+        "max": 28278,
+        "mean": 19300.59375,
+        "min": 10358,
+        "n": 96
+      }
+    }
+  }
+}

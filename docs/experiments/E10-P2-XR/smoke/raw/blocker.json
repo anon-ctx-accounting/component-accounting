@@ -1,0 +1,40 @@
+{
+  "schema": "e10-p2-xr-smoke-blocker-v1",
+  "experiment_id": "E10-P2-XR",
+  "stage": "Stage A provider probe",
+  "status": "STOP-AUTH-REVOKED",
+  "primary_result_available": false,
+  "partial_included_in_primary": false,
+  "valid_turns": 0,
+  "valid_turn_target": 64,
+  "api_calls_total": 2,
+  "model_spend_attempts": 0,
+  "model_spend_attempt_cap": 80,
+  "gross_input_tokens": 0,
+  "mcp_calls": 0,
+  "rate_card_equivalent_usd": 0.0,
+  "actual_subscription_billed_usd": null,
+  "error_class": "api_error",
+  "error_kind": "first_party_oauth_access_revoked",
+  "error_detail_persisted": false,
+  "error_detail_digest": "e25ed0a02ac842e77a5baaf16b6372e8f13e7b7a0e34aa44800ea291b29e1978",
+  "error_detail_length": 75,
+  "auth_status_non_sensitive": {
+    "logged_in": true,
+    "auth_method": "claude.ai",
+    "api_provider": "firstParty",
+    "subscription_type": "team"
+  },
+  "api_key_fallback_used": false,
+  "canary_executed": false,
+  "resume_contract": {
+    "automatic_resume_allowed": false,
+    "required_before_retry": [
+      "user completes Claude first-party re-login",
+      "new non-model auth preflight passes",
+      "append-only auth amendment and execution-source refreeze are committed",
+      "RAG one-call provider probe passes exact model, usage schema, and MCP/tool-zero gates"
+    ],
+    "resume_point": "provider probe; smoke remains 0/64"
+  }
+}

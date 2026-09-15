@@ -1,0 +1,43 @@
+# E15-CODEX-WRITE — Codex cache-write bucket 개방 + 1턴 smoke
+# 사전 선언(실행 전 커밋됨): attempt cap 2 model turns, raw에는 토큰 카운트만.
+
+cell_id: E15-CODEX-WRITE
+purpose: >
+  Codex CLI >=0.145.0을 pin(0.144.5)과 병존 설치하고 driver가
+  cache_write_input_tokens를 버전 인식으로 파싱하게 한 뒤,
+  ChatGPT-subscription route가 그 값을 실제로 실어 보내는지 1턴으로 확인한다.
+
+codex_cli:
+  pinned_release_untouched: "0.144.5"                      # 재현용, 손대지 않음
+  pinned_path: "~/.codex/packages/standalone/releases/0.144.5-aarch64-apple-darwin/bin/codex"
+  new_release: "0.145.0"
+  new_path: >-
+    ~/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/
+    vendor/aarch64-apple-darwin/bin/codex
+  install_method: "npm install --prefix ~/.local/opt/codex-0.145.0 @openai/codex@0.145.0"
+  path_default_changed: false
+
+driver:
+  module: "src/karc/bench/driver.py"
+  schema_before: "codex-exec-jsonl-0.144.x-v1"
+  schema_after: "codex-exec-jsonl-0.145.x-v2"   # v1도 계속 인식
+  fresh_before: "input_tokens - cached_input_tokens"
+  fresh_after: "input_tokens - cached_input_tokens - cache_write_input_tokens"
+  write_bucket_field: "cache_creation_input_tokens"   # Anthropic 이름과 대칭
+  committed_raw_recomputed: false
+
+smoke:
+  model: "gpt-5.6-luna"
+  reasoning_effort: "low"
+  sandbox: "read-only"
+  home: "controlled ephemeral CODEX_HOME (auth.json symlink bridge)"
+  route: "chatgpt-subscription"
+  prompt: "Reply with exactly: ok"
+  attempt_cap_model_turns: 2
+  attempt_1: "as-is (warm prefix 착지)"
+  attempt_2: 'developer_instructions="E15-CODEX-WRITE cache-write probe marker" (prefix 교란)'
+  script: "docs/experiments/E15-CODEX-WRITE/scripts/smoke_turn.py"
+
+privacy_r9: >
+  raw에는 토큰 카운트·schema label·model id·git hash만 기록한다.
+  prompt/출력/transcript/자격증명 미저장. auth.json은 symlink로만 연결하고 읽지 않는다.

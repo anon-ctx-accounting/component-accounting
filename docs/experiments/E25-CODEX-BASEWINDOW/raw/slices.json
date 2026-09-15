@@ -1,0 +1,186 @@
+{
+ "_meta": {
+  "cell": "E25-CODEX-BASEWINDOW",
+  "codex_version": "codex-cli 0.145.0",
+  "generated_at_utc": "2026-09-10T11:15:22+00:00",
+  "namespace": "",
+  "phase": "slices",
+  "derived_from": "E21 runner with schedule window overridden"
+ },
+ "distinct_required_versions": {
+  "measure": 66,
+  "warmup": 0
+ },
+ "measure_sessions": [
+  "S01",
+  "S02",
+  "S03",
+  "S04",
+  "S05",
+  "S06",
+  "S07",
+  "S08",
+  "S09",
+  "S10",
+  "S11",
+  "S12"
+ ],
+ "overlap_warmup_vs_measure": 0,
+ "resident_ramp": [
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.0,
+   "resident_tokens": 0,
+   "resident_versions": 0,
+   "session_id": "S01",
+   "session_index": 1
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.19760820045558086,
+   "resident_tokens": 347,
+   "resident_versions": 4,
+   "session_id": "S02",
+   "session_index": 2
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.3952164009111617,
+   "resident_tokens": 694,
+   "resident_versions": 8,
+   "session_id": "S03",
+   "session_index": 3
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.5928246013667426,
+   "resident_tokens": 1041,
+   "resident_versions": 12,
+   "session_id": "S04",
+   "session_index": 4
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.7904328018223234,
+   "resident_tokens": 1388,
+   "resident_versions": 16,
+   "session_id": "S05",
+   "session_index": 5
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9880410022779044,
+   "resident_tokens": 1735,
+   "resident_versions": 20,
+   "session_id": "S06",
+   "session_index": 6
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9880410022779044,
+   "resident_tokens": 1735,
+   "resident_versions": 20,
+   "session_id": "S07",
+   "session_index": 7
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9772209567198178,
+   "resident_tokens": 1716,
+   "resident_versions": 20,
+   "session_id": "S08",
+   "session_index": 8
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9880410022779044,
+   "resident_tokens": 1735,
+   "resident_versions": 20,
+   "session_id": "S09",
+   "session_index": 9
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9988610478359908,
+   "resident_tokens": 1754,
+   "resident_versions": 20,
+   "session_id": "S10",
+   "session_index": 10
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9880410022779044,
+   "resident_tokens": 1735,
+   "resident_versions": 20,
+   "session_id": "S11",
+   "session_index": 11
+  },
+  {
+   "budget_tokens": 1756,
+   "budget_utilization": 0.9880410022779044,
+   "resident_tokens": 1735,
+   "resident_versions": 20,
+   "session_id": "S12",
+   "session_index": 12
+  }
+ ],
+ "schedule_identity": {
+  "equals_E19_committed_constants": true,
+  "schedule_sha256": "9944a77572e2d130a0150f865024785929771cd13a9264ab315b4bfa5f26eea3",
+  "snapshot_sha256": "a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301",
+  "tasks_sha256": "618193d35103b819d83ce2d13dea40d7e3a65cbae5072266ab693613fe3b3584",
+  "what_this_proves": "the measurement window's task sequence is bit-identical to E19's, so the E19 leg B contrast holds provider, model, rate card and task sequence fixed and varies the harness"
+ },
+ "unused_sessions": [],
+ "warmup_sessions": [],
+ "window_reuse_profile": [
+  {
+   "reuse_turns": 4,
+   "session_id": "S01"
+  },
+  {
+   "reuse_turns": 4,
+   "session_id": "S02"
+  },
+  {
+   "reuse_turns": 4,
+   "session_id": "S03"
+  },
+  {
+   "reuse_turns": 4,
+   "session_id": "S04"
+  },
+  {
+   "reuse_turns": 4,
+   "session_id": "S05"
+  },
+  {
+   "reuse_turns": 4,
+   "session_id": "S06"
+  },
+  {
+   "reuse_turns": 3,
+   "session_id": "S07"
+  },
+  {
+   "reuse_turns": 3,
+   "session_id": "S08"
+  },
+  {
+   "reuse_turns": 3,
+   "session_id": "S09"
+  },
+  {
+   "reuse_turns": 3,
+   "session_id": "S10"
+  },
+  {
+   "reuse_turns": 3,
+   "session_id": "S11"
+  },
+  {
+   "reuse_turns": 3,
+   "session_id": "S12"
+  }
+ ]
+}

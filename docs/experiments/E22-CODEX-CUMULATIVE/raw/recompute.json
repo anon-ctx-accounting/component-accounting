@@ -1,0 +1,204 @@
+{
+  "arm_classification": {
+    "full-history": {
+      "aggregation": "session-final",
+      "provider_session_reused_values": [
+        "False",
+        "True"
+      ],
+      "session_modes": [
+        "persistent-unbounded"
+      ],
+      "sessions": 12,
+      "sessions_with_single_thread": 12,
+      "usage_is_thread_cumulative": true
+    },
+    "karc-full": {
+      "aggregation": "session-final",
+      "provider_session_reused_values": [
+        "None"
+      ],
+      "session_modes": [],
+      "sessions": 12,
+      "sessions_with_single_thread": 12,
+      "usage_is_thread_cumulative": true
+    },
+    "rag-bm25": {
+      "aggregation": "session-final",
+      "provider_session_reused_values": [
+        "None"
+      ],
+      "session_modes": [],
+      "sessions": 12,
+      "sessions_with_single_thread": 12,
+      "usage_is_thread_cumulative": true
+    },
+    "sliding-window-compaction": {
+      "aggregation": "per-turn sum",
+      "provider_session_reused_values": [
+        "False"
+      ],
+      "session_modes": [
+        "rebuilt-bounded-window"
+      ],
+      "sessions": 12,
+      "sessions_with_single_thread": 0,
+      "usage_is_thread_cumulative": false
+    },
+    "stateless-rag": {
+      "aggregation": "per-turn sum",
+      "provider_session_reused_values": [
+        "False"
+      ],
+      "session_modes": [
+        "isolated-per-turn"
+      ],
+      "sessions": 12,
+      "sessions_with_single_thread": 0,
+      "usage_is_thread_cumulative": false
+    }
+  },
+  "arms": {
+    "full-history": {
+      "cache_read_share": 0.9309,
+      "corrected": {
+        "cache_read": 14893312,
+        "fresh": 1106226,
+        "gross": 15999538,
+        "output": 4561
+      },
+      "corrected_gross_per_turn": 83330.9,
+      "corrected_gross_per_turn_over_corpus": 2.372,
+      "correction_factor_gross": 8.397982991758887,
+      "max_single_turn_gross": 162523,
+      "negative_diffs": 0,
+      "published": {
+        "cache_read": 118766848,
+        "fresh": 15597000,
+        "gross": 134363848
+      },
+      "published_gross_per_turn_over_corpus": 19.922,
+      "turns": 192
+    },
+    "karc-full": {
+      "cache_read_share": 0.912,
+      "corrected": {
+        "cache_read": 6171648,
+        "fresh": 595799,
+        "gross": 6767447,
+        "output": 13678
+      },
+      "corrected_gross_per_turn": 35247.1,
+      "corrected_gross_per_turn_over_corpus": 1.003,
+      "correction_factor_gross": 8.266478185939247,
+      "max_single_turn_gross": 61566,
+      "negative_diffs": 0,
+      "published": {
+        "cache_read": 49814016,
+        "fresh": 6128937,
+        "gross": 55942953
+      },
+      "published_gross_per_turn_over_corpus": 8.295,
+      "turns": 192
+    },
+    "rag-bm25": {
+      "cache_read_share": 0.8902,
+      "corrected": {
+        "cache_read": 5451264,
+        "fresh": 672170,
+        "gross": 6123434,
+        "output": 3665
+      },
+      "corrected_gross_per_turn": 31892.9,
+      "corrected_gross_per_turn_over_corpus": 0.908,
+      "correction_factor_gross": 6.73443479590047,
+      "max_single_turn_gross": 88085,
+      "negative_diffs": 0,
+      "published": {
+        "cache_read": 35241984,
+        "fresh": 5995883,
+        "gross": 41237867
+      },
+      "published_gross_per_turn_over_corpus": 6.114,
+      "turns": 192
+    },
+    "sliding-window-compaction": {
+      "cache_read_share": 0.3002,
+      "corrected": {
+        "cache_read": 1200384,
+        "fresh": 2798423,
+        "gross": 3998807,
+        "output": 6792
+      },
+      "corrected_gross_per_turn": 20827.1,
+      "corrected_gross_per_turn_over_corpus": 0.593,
+      "correction_factor_gross": 1.0,
+      "max_single_turn_gross": 22618,
+      "negative_diffs": 0,
+      "published": {
+        "cache_read": 1200384,
+        "fresh": 2798423,
+        "gross": 3998807
+      },
+      "published_gross_per_turn_over_corpus": 0.593,
+      "turns": 192
+    },
+    "stateless-rag": {
+      "cache_read_share": 0.5086,
+      "corrected": {
+        "cache_read": 1187328,
+        "fresh": 1147188,
+        "gross": 2334516,
+        "output": 3241
+      },
+      "corrected_gross_per_turn": 12158.9,
+      "corrected_gross_per_turn_over_corpus": 0.346,
+      "correction_factor_gross": 1.0,
+      "max_single_turn_gross": 12402,
+      "negative_diffs": 0,
+      "published": {
+        "cache_read": 1187328,
+        "fresh": 1147188,
+        "gross": 2334516
+      },
+      "published_gross_per_turn_over_corpus": 0.346,
+      "turns": 192
+    }
+  },
+  "code_git_hash": "d84da534ae33ede1e5916498a2db3ddb6cf46066",
+  "corpus_tokens": 35128,
+  "model_calls": 0,
+  "multiples_vs_near_stateless": {
+    "full-history": {
+      "over_sliding_window": 4.0011,
+      "over_stateless_rag": 6.8535
+    },
+    "karc-full": {
+      "over_sliding_window": 1.6924,
+      "over_stateless_rag": 2.8989
+    },
+    "rag-bm25": {
+      "over_sliding_window": 1.5313,
+      "over_stateless_rag": 2.623
+    }
+  },
+  "published_multiples_claim_L34": {
+    "note": "논문은 near-stateless가 stateful보다 이 배수만큼 작다고 적었다",
+    "sliding_window_over_karc_full": 13.99,
+    "sliding_window_over_rag_bm25": 10.31,
+    "stateless_rag_over_karc_full": 23.96,
+    "stateless_rag_over_rag_bm25": 17.66
+  },
+  "sanity": {
+    "every_arm_max_turn_gross_under_10x_corpus": true,
+    "no_negative_per_turn_diffs": true,
+    "order_of_magnitude_claim_survives": false,
+    "published_totals_reproduce_as_naive_sum": true
+  },
+  "sources": [
+    "docs/experiments/E10-P2-H16/run/raw/turns.jsonl",
+    "docs/experiments/E11-BASE3/run/raw/turns.jsonl"
+  ],
+  "what": "Codex cell의 누적 usage를 차분해 arm 총계를 다시 계산한다",
+  "why": "E21이 codex exec --json의 turn.completed.usage가 스레드 누적임을 rollout last_token_usage/total_token_usage 대조로 확정했다. driver는 그 값을 그대로 저장하고(driver.py:545) 표 3은 전 행을 단순 합산했으므로 지속 thread arm의 총계가 삼각 중복 계상이다."
+}

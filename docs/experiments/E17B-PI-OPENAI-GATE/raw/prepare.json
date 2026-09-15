@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T16:48:49Z",
+    "phase": "prepare",
+    "pi_version": "0.84.3"
+  },
+  "fixture_manifest_sha256": "d8ec0bcf8354a5dc1046c7787b9ce4550086148ecfb4e42c1791bbc4b81ccc43",
+  "index_db_bytes": 573440,
+  "managed_artifacts": 408,
+  "mcp_config_sha256": "bbdd30040cb366c235e3d2047ca388b0328265251137c7971203ae2f1f4f7463",
+  "workdir": "<REPO>/tmp/e17b/work"
+}

@@ -1,0 +1,898 @@
+{
+  "H12_gold_containment": {
+    "fired": false,
+    "gold_containment_rate": 1.0,
+    "is_one": true,
+    "mean_budget_utilization": 0.9826665717539863,
+    "plan_tokens_mean": 3451.125
+  },
+  "H13_non_degenerate_branch": {
+    "fired": false,
+    "hot_supersession_trap_tasks": 24,
+    "new_gold_tasks": 108,
+    "reuse_gold_tasks": 84,
+    "reused_occurrences": 84,
+    "sigma_defined": true,
+    "sigma_measured": 0.46153846153846156,
+    "supersession_events": 24
+  },
+  "H14_axis_purity": {
+    "budget_tokens": {
+      "c05": 1756,
+      "c10": 3512,
+      "ratio": 2.0
+    },
+    "fired": false,
+    "manifest_sha256_differs": true,
+    "schedule_sha256_equal_across_budgets": true,
+    "snapshot_sha256_differs": true,
+    "structure_equal_across_budgets": true,
+    "tasks_sha256_equal_across_budgets": true,
+    "what_the_budget_moves": {
+      "note": "both arms move together: the policy replay admits a larger resident set and bm25_plans is budget-parity, so the retrieval payload grows by the same number",
+      "rag_plan_tokens_mean": {
+        "c05": 1729.125,
+        "c10": 3451.125
+      },
+      "resident_tokens_last_session": {
+        "c05": 1754,
+        "c10": 3445
+      },
+      "resident_versions_last_session": {
+        "c05": 20,
+        "c10": 39
+      }
+    }
+  },
+  "_meta": {
+    "budget_pct": 10,
+    "budget_tokens": 3512,
+    "cell": "E27-BUDGET-10PCT",
+    "generated_at_utc": "2026-09-10T20:32:28Z",
+    "imported_runner_sha256": "87fd1dcfd347ac5075c0b85debabb15052a6c1b4223f2639736ab401ab2ae914",
+    "model": "gpt-5.6-luna",
+    "namespace": "",
+    "phase": "build",
+    "pi_version": "0.84.3",
+    "provider": "openai",
+    "reuse_factor": 0.5
+  },
+  "cell": "E27-BUDGET-10PCT",
+  "cell_parameters": {
+    "budget_pct": 10,
+    "budget_tokens": 3512,
+    "rho": 0.5,
+    "sigma": 0.3
+  },
+  "control_c05_reproduces_e19_leg_b": {
+    "budget_pct": 5,
+    "budget_tokens": 1756,
+    "manifest_sha256": "861e9114aa9d8b96c43bf671b3f079b517811ff35662af3e81cca18afe61baae",
+    "matches_e19_manifest": true,
+    "matches_e19_schedule": true,
+    "matches_e19_snapshot": true,
+    "matches_e19_tasks": true,
+    "schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+    "snapshot_sha256": "f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73",
+    "tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74",
+    "why": "the override path is the E23/E19 builder with the budget opened up; at c = 5% it must be byte-identical to E19 leg B, which is what makes the c = 10% build a one-axis change"
+  },
+  "e19_leg_b_warmup": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08"
+  ],
+  "e19_leg_b_window": [
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+  ],
+  "identity": {
+    "manifest_sha256": "052b65cfc2e1543aa50131e24db05eea752a4376504819460846d33b0336682a",
+    "matches_committed": true,
+    "schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+    "snapshot_sha256": "4a36203e6fdf29aae53276502ba70b5bf1fab3b33167dbdabf88909a7144dd9d",
+    "tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74"
+  },
+  "imported_from": {
+    "path": "docs/experiments/E23-REUSE-DENSITY/scripts/run_e23_reuse_density.py",
+    "sha256": "87fd1dcfd347ac5075c0b85debabb15052a6c1b4223f2639736ab401ab2ae914"
+  },
+  "manipulated_axis": {
+    "control_point_not_measured_here": 5,
+    "grid_available_e4_fixture": [
+      1,
+      2,
+      5,
+      10,
+      20
+    ],
+    "grid_available_e5_killgate": [
+      5,
+      10
+    ],
+    "held_fixed": [
+      "harness pi 0.84.3",
+      "provider openai",
+      "model gpt-5.6-luna",
+      "arms karc-full / rag-bm25",
+      "reuse factor 0.50",
+      "schedule seed 4352",
+      "24-session build",
+      "session length 8",
+      "rate card",
+      "statistics",
+      "12 sessions x 2 arms"
+    ],
+    "name": "resident budget",
+    "not_held_fixed": [
+      "measurement window position (see window_candidates and the steady phase)"
+    ],
+    "operative_knob": "e5_killgate._manifest_at_budget(manifest, budget_pct)",
+    "value_measured": 10
+  },
+  "resident_ramp_c05": [
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.0,
+      "resident_tokens": 0,
+      "resident_versions": 0,
+      "session_id": "S01",
+      "session_index": 1
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.19760820045558086,
+      "resident_tokens": 347,
+      "resident_versions": 4,
+      "session_id": "S02",
+      "session_index": 2
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.3952164009111617,
+      "resident_tokens": 694,
+      "resident_versions": 8,
+      "session_id": "S03",
+      "session_index": 3
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.5928246013667426,
+      "resident_tokens": 1041,
+      "resident_versions": 12,
+      "session_id": "S04",
+      "session_index": 4
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.7904328018223234,
+      "resident_tokens": 1388,
+      "resident_versions": 16,
+      "session_id": "S05",
+      "session_index": 5
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S06",
+      "session_index": 6
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S07",
+      "session_index": 7
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S08",
+      "session_index": 8
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S09",
+      "session_index": 9
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9629840546697038,
+      "resident_tokens": 1691,
+      "resident_versions": 19,
+      "session_id": "S10",
+      "session_index": 10
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9629840546697038,
+      "resident_tokens": 1691,
+      "resident_versions": 19,
+      "session_id": "S11",
+      "session_index": 11
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9629840546697038,
+      "resident_tokens": 1691,
+      "resident_versions": 19,
+      "session_id": "S12",
+      "session_index": 12
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S13",
+      "session_index": 13
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S14",
+      "session_index": 14
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S15",
+      "session_index": 15
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S16",
+      "session_index": 16
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S17",
+      "session_index": 17
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S18",
+      "session_index": 18
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S19",
+      "session_index": 19
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S20",
+      "session_index": 20
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S21",
+      "session_index": 21
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S22",
+      "session_index": 22
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S23",
+      "session_index": 23
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S24",
+      "session_index": 24
+    }
+  ],
+  "resident_ramp_c10": [
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.0,
+      "resident_tokens": 0,
+      "resident_versions": 0,
+      "session_id": "S01",
+      "session_index": 1
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.09880410022779043,
+      "resident_tokens": 347,
+      "resident_versions": 4,
+      "session_id": "S02",
+      "session_index": 2
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.19760820045558086,
+      "resident_tokens": 694,
+      "resident_versions": 8,
+      "session_id": "S03",
+      "session_index": 3
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.2964123006833713,
+      "resident_tokens": 1041,
+      "resident_versions": 12,
+      "session_id": "S04",
+      "session_index": 4
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.3952164009111617,
+      "resident_tokens": 1388,
+      "resident_versions": 16,
+      "session_id": "S05",
+      "session_index": 5
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.4940205011389522,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S06",
+      "session_index": 6
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.5928246013667426,
+      "resident_tokens": 2082,
+      "resident_versions": 24,
+      "session_id": "S07",
+      "session_index": 7
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.691628701594533,
+      "resident_tokens": 2429,
+      "resident_versions": 28,
+      "session_id": "S08",
+      "session_index": 8
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.7904328018223234,
+      "resident_tokens": 2776,
+      "resident_versions": 32,
+      "session_id": "S09",
+      "session_index": 9
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.8892369020501139,
+      "resident_tokens": 3123,
+      "resident_versions": 36,
+      "session_id": "S10",
+      "session_index": 10
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 3470,
+      "resident_versions": 40,
+      "session_id": "S11",
+      "session_index": 11
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9934510250569476,
+      "resident_tokens": 3489,
+      "resident_versions": 40,
+      "session_id": "S12",
+      "session_index": 12
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9934510250569476,
+      "resident_tokens": 3489,
+      "resident_versions": 40,
+      "session_id": "S13",
+      "session_index": 13
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9934510250569476,
+      "resident_tokens": 3489,
+      "resident_versions": 40,
+      "session_id": "S14",
+      "session_index": 14
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 3508,
+      "resident_versions": 40,
+      "session_id": "S15",
+      "session_index": 15
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 3508,
+      "resident_versions": 40,
+      "session_id": "S16",
+      "session_index": 16
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 3508,
+      "resident_versions": 40,
+      "session_id": "S17",
+      "session_index": 17
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9809225512528473,
+      "resident_tokens": 3445,
+      "resident_versions": 39,
+      "session_id": "S18",
+      "session_index": 18
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9809225512528473,
+      "resident_tokens": 3445,
+      "resident_versions": 39,
+      "session_id": "S19",
+      "session_index": 19
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9863325740318907,
+      "resident_tokens": 3464,
+      "resident_versions": 39,
+      "session_id": "S20",
+      "session_index": 20
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9863325740318907,
+      "resident_tokens": 3464,
+      "resident_versions": 39,
+      "session_id": "S21",
+      "session_index": 21
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9809225512528473,
+      "resident_tokens": 3445,
+      "resident_versions": 39,
+      "session_id": "S22",
+      "session_index": 22
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 3508,
+      "resident_versions": 40,
+      "session_id": "S23",
+      "session_index": 23
+    },
+    {
+      "budget_tokens": 3512,
+      "budget_utilization": 0.9809225512528473,
+      "resident_tokens": 3445,
+      "resident_versions": 39,
+      "session_id": "S24",
+      "session_index": 24
+    }
+  ],
+  "retrieval_audit_c05": {
+    "gold_containment_rate": 1.0,
+    "mean_budget_utilization": 0.9846953302961275,
+    "plan_tokens_mean": 1729.125,
+    "rank_order_preserved": true
+  },
+  "retrieval_audit_c10": {
+    "gold_containment_rate": 1.0,
+    "mean_budget_utilization": 0.9826665717539863,
+    "plan_tokens_mean": 3451.125,
+    "rank_order_preserved": true
+  },
+  "reuse_profile": {
+    "definition": "fraction of non-initial session tasks whose gold artifact was gold for an earlier task in the same session",
+    "per_session": {
+      "S01": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 1,
+        "tasks": 8
+      },
+      "S02": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 2,
+        "tasks": 8
+      },
+      "S03": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 3,
+        "tasks": 8
+      },
+      "S04": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 4,
+        "tasks": 8
+      },
+      "S05": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 5,
+        "tasks": 8
+      },
+      "S06": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 6,
+        "tasks": 8
+      },
+      "S07": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 7,
+        "tasks": 8
+      },
+      "S08": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 8,
+        "tasks": 8
+      },
+      "S09": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 9,
+        "tasks": 8
+      },
+      "S10": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 10,
+        "tasks": 8
+      },
+      "S11": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 11,
+        "tasks": 8
+      },
+      "S12": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 3,
+        "reuse_rate_within_session": 0.5714285714285714,
+        "reuse_tasks": 4,
+        "session_index": 12,
+        "tasks": 8
+      },
+      "S13": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 13,
+        "tasks": 8
+      },
+      "S14": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 14,
+        "tasks": 8
+      },
+      "S15": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 15,
+        "tasks": 8
+      },
+      "S16": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 16,
+        "tasks": 8
+      },
+      "S17": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 17,
+        "tasks": 8
+      },
+      "S18": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 18,
+        "tasks": 8
+      },
+      "S19": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 19,
+        "tasks": 8
+      },
+      "S20": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 20,
+        "tasks": 8
+      },
+      "S21": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 1,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 21,
+        "tasks": 8
+      },
+      "S22": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 22,
+        "tasks": 8
+      },
+      "S23": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 23,
+        "tasks": 8
+      },
+      "S24": {
+        "eligible_followups": 7,
+        "hot_supersession_traps": 1,
+        "policy_resident_hits": 2,
+        "reuse_rate_within_session": 0.42857142857142855,
+        "reuse_tasks": 3,
+        "session_index": 24,
+        "tasks": 8
+      }
+    },
+    "reuse_count": 84,
+    "reuse_denominator_eligible_followups": 168,
+    "reuse_factor_measured": 0.5,
+    "reuse_factor_requested": 0.5,
+    "rho_measured_all_tasks": 0.4375,
+    "task_structure_histogram": {
+      "new-gold": 108,
+      "reuse-gold": 84
+    }
+  },
+  "schedule_seed": 4352,
+  "structure": {
+    "corrected_events": 24,
+    "r_measured": 0.5,
+    "r_requested": 0.5,
+    "reuse_opportunities": 168,
+    "reused_doc_ids": 52,
+    "reused_occurrences": 84,
+    "rho_measured_all_tasks": 0.4375,
+    "session_length": 8,
+    "sessions": 24,
+    "sigma_defined": true,
+    "sigma_denominator_reused_doc_ids": 52,
+    "sigma_measured": 0.46153846153846156,
+    "supersession_events": 24,
+    "tasks": 192,
+    "validated_outcome_events": 24
+  },
+  "window_candidates": {
+    "10": {
+      "overlap_with_e19_window_versions": 58,
+      "required_versions_in_window": 70,
+      "sessions_shared_with_e19_leg_b": 10,
+      "warmup_vs_window_version_overlap": 0,
+      "window": [
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22"
+      ]
+    },
+    "11": {
+      "overlap_with_e19_window_versions": 53,
+      "required_versions_in_window": 71,
+      "sessions_shared_with_e19_leg_b": 9,
+      "warmup_vs_window_version_overlap": 0,
+      "window": [
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23"
+      ]
+    },
+    "12": {
+      "overlap_with_e19_window_versions": 48,
+      "required_versions_in_window": 72,
+      "sessions_shared_with_e19_leg_b": 8,
+      "warmup_vs_window_version_overlap": 0,
+      "window": [
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24"
+      ]
+    },
+    "8": {
+      "overlap_with_e19_window_versions": 68,
+      "required_versions_in_window": 68,
+      "sessions_shared_with_e19_leg_b": 12,
+      "warmup_vs_window_version_overlap": 0,
+      "window": [
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20"
+      ]
+    },
+    "9": {
+      "overlap_with_e19_window_versions": 63,
+      "required_versions_in_window": 69,
+      "sessions_shared_with_e19_leg_b": 11,
+      "warmup_vs_window_version_overlap": 0,
+      "window": [
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21"
+      ]
+    }
+  }
+}

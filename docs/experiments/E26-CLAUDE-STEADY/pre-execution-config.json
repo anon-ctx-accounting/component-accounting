@@ -1,0 +1,110 @@
+{
+  "arms": [
+    "karc-full",
+    "rag-bm25"
+  ],
+  "authority": "docs/analysis/e10-p2-xr-preregistration.md",
+  "causal_runtime_effect_claim": "forbidden",
+  "cell": "E26-CLAUDE-STEADY",
+  "cross_runtime_comparison_axis": "gross_input_tokens",
+  "experiment_id": "E10-P2-XR",
+  "fixture": {
+    "corpus_content_hash": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a",
+    "corpus_seed": 4000,
+    "root": "fixture/e4-v2"
+  },
+  "forbidden_cross_runtime_axes": [
+    "fresh_input_tokens_provider",
+    "cache_creation_input_tokens_provider",
+    "cache_read_input_tokens_provider",
+    "cache_hit_rate"
+  ],
+  "privacy": {
+    "forbidden": [
+      "prompt",
+      "output",
+      "transcript",
+      "command",
+      "tool_response",
+      "credential"
+    ],
+    "persist": "normalized usage, grades, IDs, counts, and hashes only",
+    "session_storage": "isolated temporary runtime directory, deleted at session exit"
+  },
+  "runtime": {
+    "actual_incremental_billing_observed": false,
+    "api_key_required": false,
+    "api_provider": "firstParty",
+    "auth_method": "claude.ai",
+    "cli_contract_observed_locally_without_model_call": "2026-08-03",
+    "cli_pin": "2.1.220 (Claude Code)",
+    "exact_pin_failure_action": "stop-and-request-amendment",
+    "fallback_model": null,
+    "model_pin": "claude-sonnet-5",
+    "model_substitution": "forbidden",
+    "name": "claude-code",
+    "subscription_type": "team"
+  },
+  "schedule": {
+    "measure_window": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20"
+    ],
+    "seed": 4352,
+    "session_count": 24,
+    "session_length": 8,
+    "snapshot_sha256": "f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73",
+    "tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74",
+    "warmup_executed": false,
+    "why_no_warmup": "resident set is fixed by the model-independent policy replay over the schedule (E19 report 7.3), so steady state comes from the schedule position; executing warm-up turns would instead pre-write this harness's cross-session shared prefix into the provider cache and break the accounting boundary the other seven cells share (E24 section 4)"
+  },
+  "schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+  "schema": "e10-p2-xr-pre-execution-v1",
+  "source_experiment": "E10-P2-XR canary apparatus, schedule window replaced",
+  "stages": {
+    "canary": {
+      "dollar_cap_semantics": "rate-card-equivalent usage guard, not actual subscription billing",
+      "dollar_cap_usd": null,
+      "model_spend_attempt_cap": 240,
+      "paired_sessions": 12,
+      "planned_valid_turns": 192,
+      "requires_post_smoke_user_reapproval": true,
+      "schedule_seed": 4200,
+      "smoke_rows_included": false
+    },
+    "smoke": {
+      "dollar_cap_semantics": "rate-card-equivalent usage guard, not actual subscription billing",
+      "dollar_cap_usd": null,
+      "model_spend_attempt_cap": 80,
+      "paired_sessions": 4,
+      "planned_valid_turns": 64,
+      "requires_user_approval": true,
+      "schedule_seed": 4100
+    }
+  },
+  "tool_contract": {
+    "karc-full": {
+      "allowed": [
+        "mcp__karc__search",
+        "mcp__karc__get"
+      ],
+      "native_managed_access": "forbidden"
+    },
+    "network_tools": "forbidden",
+    "rag-bm25": {
+      "all_mcp_calls": 0,
+      "allowed": [],
+      "native_tools": 0
+    }
+  }
+}

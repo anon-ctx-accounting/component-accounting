@@ -1,0 +1,23 @@
+{
+  "actual_subscription_billed_usd": null,
+  "freeze_sha256": "66f143a390a2ae120fdad83871b64f1aba62a4a98bdef7a6b0ef287f449e6aea",
+  "gross_input_tokens": 8592,
+  "mcp_calls": 0,
+  "rate_card_equivalent_usd": 0.0328587,
+  "reported_model": "claude-sonnet-5",
+  "schema": "e10-p2-xr-provider-probe-v1",
+  "status": "PASS",
+  "tool_calls": 0,
+  "usage_schema": [
+    "cache_creation",
+    "cache_creation_input_tokens",
+    "cache_read_input_tokens",
+    "inference_geo",
+    "input_tokens",
+    "iterations",
+    "output_tokens",
+    "server_tool_use",
+    "service_tier",
+    "speed"
+  ]
+}

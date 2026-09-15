@@ -1,0 +1,102 @@
+# E20-CODEX-METERED — pre-registered configuration
+#
+# One question: does Codex CLI 0.145.0 report cache_write_input_tokens when the
+# billing route is a metered API key instead of a ChatGPT subscription?
+#
+# E15 measured the subscription route through the Codex CLI and got write = 0 on
+# 4/4 turns while cached grew 7,936 -> 54,272.  E16 measured the metered route
+# through a hand-written HTTP client and got cold write 8,379 / warm 19, and then
+# attributed the difference to the route.  The client differed too, so the rival
+# reading "the CLI drops the field" was not excluded.  This cell holds the client
+# fixed and changes only the route.
+
+cell: E20-CODEX-METERED
+purpose: >
+  Remove the client confound from E16 section 1.1 by measuring the metered
+  billing route through the same Codex CLI, model, argv builder, parser and
+  multi-turn design that produced the E15 subscription negative.
+
+client_held_fixed:
+  binary: <HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex
+  cli_version: codex-cli 0.145.0
+  invoked_by: absolute path only
+  path_codex_untouched: >
+    the PATH `codex` (0.144.5), ~/.codex/packages/standalone/current and the
+    0.144.5 release directory are not modified or read for content
+  model: gpt-5.6-luna            # identical to E15 and E16
+  reasoning_effort: low          # identical to E15 section 8
+  sandbox: read-only
+  driver: karc.bench.driver.CodexPersistentSession (subclassed for the home only)
+  parser: karc.bench.driver.CodexCliDriver.parse_output (unmodified)
+
+manipulated_variable:
+  name: billing route
+  e15_level: ChatGPT subscription (user auth.json symlinked into a controlled home)
+  e20_level: metered OpenAI API key (isolated home, key written by `codex login --with-api-key`)
+
+design:
+  kind: single persistent `codex exec` session, sequential turns
+  turns: 4
+  prose_sentences_per_turn: 40      # ~1.7k tokens of new coherent prose per turn
+  rationale: >
+    Growth of cached_input_tokens inside one session proves the provider wrote
+    to the cache between turns, so no cold start is needed (E15 section 8).
+    A one-word prompt cannot accumulate and yields an inconclusive read, so each
+    turn appends several hundred tokens of new content.
+  content_shape: >
+    coherent technical prose, not random vocabulary — E16 section 4 showed
+    random-vocabulary fixtures draw refusals that are billed creation and never
+    register a read.
+
+route_provenance_required:                # all four must be recorded
+  - isolated temporary CODEX_HOME with no auth.json bridge to the user's ~/.codex
+  - `codex exec` with no credential must fail, and must succeed after the key is
+    injected — the control that the turns were billed to the key
+  - `codex login status` classification before and after credential injection
+  - mtimes of ~/.codex, auth.json, config.toml, sessions and
+    packages/standalone/current compared before and after the run
+
+verdicts:
+  A: any turn reports cache_write_input_tokens > 0 — route attribution holds with
+     the client fixed, and Codex CLI 0.145.0 itself is not at fault
+  B: every turn reports 0 while cached_input_tokens grows — the route alone does
+     not explain E15, the CLI is implicated, and E16 section 1.1 must be weakened
+  C: every turn reports 0 and cached never grows — inconclusive; check
+     input_tokens for real accumulation and retry once within budget
+read_of_zero: >
+  per E16 section 1.2 a fully warm call legitimately reports write = 0, so zero
+  alone is never evidence of omission; only zero *while cached grows* is.
+
+recorded_per_turn:
+  - input_tokens, cached_input_tokens, cache_write_input_tokens, output_tokens (raw)
+  - normalized fresh and gross, usage_schema, fresh_semantics
+  - stop/finish reason, or the explicit absence of such a field in the CLI's JSONL
+  - event type histogram and non-usage fields of turn.completed
+
+caps:
+  model_bearing_turns: 8 across all rounds
+  cumulative_input_tokens_abort: 600000
+  model_spend_usd: 1.00
+  expected_spend_usd: "<0.05"
+
+rate_card_usd_per_million:
+  source: docs/analysis/openai-luna-rate-card.md, as carried in E18 config.yaml
+  uncached_input: 0.20
+  cache_write: 0.25
+  cache_read: 0.02
+  output: 1.20
+
+privacy_R9: >
+  raw/ carries token counts, ids, digests, lengths, key names, mtimes and schema
+  labels only.  Prompt text, model output and transcripts are never persisted;
+  each turn's prose is reproducible from (round, turn) via the script constants.
+  The API key is read from os.environ, handed to the CLI on stdin only, and is
+  never printed, logged, placed in argv, placed in the child environment, or
+  stored.  `codex login status` prints a partially masked key, so only its
+  classification, length and digest are recorded.
+
+frozen_and_untouched:
+  - docs/paper2/
+  - src/karc/bench/e5_cross_runtime.py (line-frozen by E13-RECOMP)
+  - raw/ and report.md of E13, E15, E16, E17, E17B, E18, E19
+  - tmp/e17, tmp/e17b, tmp/e18, tmp/e19

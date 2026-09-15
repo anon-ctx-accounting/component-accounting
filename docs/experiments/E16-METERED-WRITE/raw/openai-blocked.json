@@ -1,0 +1,17 @@
+{
+  "code_git_hash": "c55941ffbef910ce260f783c61b9919c54f8d716",
+  "endpoint": "POST https://api.openai.com/v1/responses",
+  "error": {
+    "code": "credit_balance_exhausted",
+    "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+    "param": null,
+    "type": "insufficient_quota"
+  },
+  "gpt_5_6_luna_available": true,
+  "model": "gpt-5.6-luna",
+  "model_count": 118,
+  "models_endpoint_http": 200,
+  "probe": "openai-metered-write",
+  "responses_http": 429,
+  "verdict": "BLOCKED-BILLING"
+}

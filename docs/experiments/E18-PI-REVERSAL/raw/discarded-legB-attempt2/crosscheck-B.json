@@ -1,0 +1,805 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T17:53:32Z"
+  },
+  "api_calls": 300,
+  "cacheWrite1h": {
+    "equal_to_cacheWrite_calls": 34,
+    "key_absent_calls": 300,
+    "key_present_calls": 0,
+    "value_zero_calls": 300
+  },
+  "closure": {
+    "inclusive_true_anywhere": 2,
+    "total_eq_four_sum_fail": 0,
+    "total_eq_four_sum_pass": 300,
+    "write1h_le_write_fail": 0
+  },
+  "cold_start_assert_not_preregistered": {
+    "by_arm": {
+      "karc-full": {
+        "calls": 4,
+        "tokens": 11922
+      },
+      "rag-bm25": {
+        "calls": 28,
+        "tokens": 291416
+      }
+    },
+    "calls": 32,
+    "clean": false,
+    "detail": [
+      {
+        "arm": "karc-full",
+        "cacheRead": 1411,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 1414,
+        "session_id": "S02"
+      },
+      {
+        "arm": "karc-full",
+        "cacheRead": 2113,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 2116,
+        "session_id": "S03"
+      },
+      {
+        "arm": "karc-full",
+        "cacheRead": 4205,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 4208,
+        "session_id": "S06"
+      },
+      {
+        "arm": "karc-full",
+        "cacheRead": 4193,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 4196,
+        "session_id": "S07"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 3035,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 3038,
+        "session_id": "S01"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 5604,
+        "call_index": 0,
+        "position": 2,
+        "prefix_tokens": 5607,
+        "session_id": "S01"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 8173,
+        "call_index": 0,
+        "position": 3,
+        "prefix_tokens": 8176,
+        "session_id": "S01"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 10711,
+        "call_index": 0,
+        "position": 4,
+        "prefix_tokens": 10714,
+        "session_id": "S01"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 13246,
+        "call_index": 0,
+        "position": 5,
+        "prefix_tokens": 13249,
+        "session_id": "S01"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 15780,
+        "call_index": 0,
+        "position": 6,
+        "prefix_tokens": 15783,
+        "session_id": "S01"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 3030,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 3033,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 5596,
+        "call_index": 0,
+        "position": 2,
+        "prefix_tokens": 5599,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 8138,
+        "call_index": 0,
+        "position": 3,
+        "prefix_tokens": 8141,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 10680,
+        "call_index": 0,
+        "position": 4,
+        "prefix_tokens": 10683,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 13246,
+        "call_index": 0,
+        "position": 5,
+        "prefix_tokens": 13249,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 15791,
+        "call_index": 0,
+        "position": 6,
+        "prefix_tokens": 15794,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 18333,
+        "call_index": 0,
+        "position": 7,
+        "prefix_tokens": 18336,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 20876,
+        "call_index": 0,
+        "position": 8,
+        "prefix_tokens": 20879,
+        "session_id": "S02"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 3031,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 3034,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 5573,
+        "call_index": 0,
+        "position": 2,
+        "prefix_tokens": 5576,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 8116,
+        "call_index": 0,
+        "position": 3,
+        "prefix_tokens": 8119,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 10657,
+        "call_index": 0,
+        "position": 4,
+        "prefix_tokens": 10660,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 13224,
+        "call_index": 0,
+        "position": 5,
+        "prefix_tokens": 13227,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 15765,
+        "call_index": 0,
+        "position": 6,
+        "prefix_tokens": 15768,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 18332,
+        "call_index": 0,
+        "position": 7,
+        "prefix_tokens": 18335,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 20873,
+        "call_index": 0,
+        "position": 8,
+        "prefix_tokens": 20876,
+        "session_id": "S03"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 3028,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 3031,
+        "session_id": "S04"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 3024,
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 3027,
+        "session_id": "S06"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 5565,
+        "call_index": 0,
+        "position": 2,
+        "prefix_tokens": 5568,
+        "session_id": "S06"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 8125,
+        "call_index": 0,
+        "position": 3,
+        "prefix_tokens": 8128,
+        "session_id": "S06"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 10663,
+        "call_index": 0,
+        "position": 4,
+        "prefix_tokens": 10666,
+        "session_id": "S06"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheRead": 13201,
+        "call_index": 0,
+        "position": 5,
+        "prefix_tokens": 13204,
+        "session_id": "S06"
+      }
+    ],
+    "tokens_mis_bucketed_as_read": 303338,
+    "what": "calls with cacheWrite == 0 and cacheRead > 0, i.e. served a prefix written by an earlier identical request outside this dataset"
+  },
+  "completion_rate": 1.0,
+  "cost": {
+    "pi_reported_usd": 0.11944,
+    "rate_card_source": "docs/analysis/openai-luna-rate-card.md (observed 2026-08-28)",
+    "standard_rate_card_usd": 0.11944
+  },
+  "hold_conditions": {
+    "H1_three_path_mismatch": [],
+    "H2_prime_refusal_or_zero_output": [],
+    "H3_closure_violation": 0,
+    "H4_legA_cacheWrite1h_zero_calls": null,
+    "H4_prime_prime_first_eligible_cold_write_zero": [],
+    "H5_session_completion_failure_rate": 0.0,
+    "H6_priced_usd_this_leg": 0.11944,
+    "H8_prime_eligible_call_with_no_cache_activity": 0
+  },
+  "hold_fired": [],
+  "incidental_grade_diagnostic": {
+    "note": "NOT a claim (preregistration §7 forbids the accuracy axis). Recorded so that a silently non-functioning arm is detectable, and because it independently reproduces the baseline's position-1 floor (E13 §1.4).",
+    "per_arm": {
+      "karc-full": {
+        "n": 96,
+        "n_position_1": 12,
+        "n_positions_2_to_8": 84,
+        "passed": 84,
+        "passed_at_position_1": 0,
+        "passed_positions_2_to_8": 84
+      },
+      "rag-bm25": {
+        "n": 96,
+        "n_position_1": 12,
+        "n_positions_2_to_8": 84,
+        "passed": 84,
+        "passed_at_position_1": 0,
+        "passed_positions_2_to_8": 84
+      }
+    }
+  },
+  "inclusion_relation": {
+    "discriminating_calls": 298,
+    "exclusive_hypothesis_holds": 298,
+    "inclusive_hypothesis_holds": 0,
+    "input_ge_read_plus_write_count": 0,
+    "note": "gross = input + cacheRead + cacheWrite (E17 §3 / E17B §2)"
+  },
+  "incomplete_units": [],
+  "leg": "B",
+  "openai_cache_threshold": {
+    "eligible_calls": 298,
+    "eligible_calls_with_no_cache_activity": 0,
+    "first_eligible_cold_calls": [
+      {
+        "arm": "karc-full",
+        "cacheWrite": 1453,
+        "position": 1,
+        "prefix_tokens": 1456,
+        "session_id": "S01"
+      },
+      {
+        "arm": "karc-full",
+        "cacheWrite": 4166,
+        "position": 1,
+        "prefix_tokens": 4169,
+        "session_id": "S08"
+      },
+      {
+        "arm": "karc-full",
+        "cacheWrite": 4189,
+        "position": 1,
+        "prefix_tokens": 4192,
+        "session_id": "S09"
+      },
+      {
+        "arm": "karc-full",
+        "cacheWrite": 4212,
+        "position": 1,
+        "prefix_tokens": 4215,
+        "session_id": "S10"
+      },
+      {
+        "arm": "karc-full",
+        "cacheWrite": 4213,
+        "position": 1,
+        "prefix_tokens": 4216,
+        "session_id": "S11"
+      },
+      {
+        "arm": "karc-full",
+        "cacheWrite": 4202,
+        "position": 1,
+        "prefix_tokens": 4205,
+        "session_id": "S12"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3032,
+        "position": 1,
+        "prefix_tokens": 3035,
+        "session_id": "S05"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3029,
+        "position": 1,
+        "prefix_tokens": 3032,
+        "session_id": "S07"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3028,
+        "position": 1,
+        "prefix_tokens": 3031,
+        "session_id": "S08"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3033,
+        "position": 1,
+        "prefix_tokens": 3036,
+        "session_id": "S09"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3031,
+        "position": 1,
+        "prefix_tokens": 3034,
+        "session_id": "S10"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3026,
+        "position": 1,
+        "prefix_tokens": 3029,
+        "session_id": "S11"
+      },
+      {
+        "arm": "rag-bm25",
+        "cacheWrite": 3024,
+        "position": 1,
+        "prefix_tokens": 3027,
+        "session_id": "S12"
+      }
+    ],
+    "min_prefix_tokens": 1024,
+    "sub_threshold_calls": 2,
+    "sub_threshold_prefix_tokens": [
+      732,
+      991
+    ]
+  },
+  "per_unit": [
+    {
+      "arm": "karc-full",
+      "session_id": "S01",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 16,
+      "stdout_usage_rows": 16,
+      "three_paths": {
+        "bridge_audit_lines": 9,
+        "db_ingest_observations_mcp": 9,
+        "pi_tool_execution_start": 9
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S02",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 16,
+      "stdout_usage_rows": 16,
+      "three_paths": {
+        "bridge_audit_lines": 8,
+        "db_ingest_observations_mcp": 8,
+        "pi_tool_execution_start": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S03",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 16,
+      "stdout_usage_rows": 16,
+      "three_paths": {
+        "bridge_audit_lines": 8,
+        "db_ingest_observations_mcp": 8,
+        "pi_tool_execution_start": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S04",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 16,
+      "stdout_usage_rows": 16,
+      "three_paths": {
+        "bridge_audit_lines": 8,
+        "db_ingest_observations_mcp": 8,
+        "pi_tool_execution_start": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S05",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 16,
+      "stdout_usage_rows": 16,
+      "three_paths": {
+        "bridge_audit_lines": 8,
+        "db_ingest_observations_mcp": 8,
+        "pi_tool_execution_start": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S06",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 16,
+      "stdout_usage_rows": 16,
+      "three_paths": {
+        "bridge_audit_lines": 9,
+        "db_ingest_observations_mcp": 9,
+        "pi_tool_execution_start": 9
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S07",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 18,
+      "stdout_usage_rows": 18,
+      "three_paths": {
+        "bridge_audit_lines": 10,
+        "db_ingest_observations_mcp": 10,
+        "pi_tool_execution_start": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S08",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 18,
+      "stdout_usage_rows": 18,
+      "three_paths": {
+        "bridge_audit_lines": 10,
+        "db_ingest_observations_mcp": 10,
+        "pi_tool_execution_start": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S09",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 18,
+      "stdout_usage_rows": 18,
+      "three_paths": {
+        "bridge_audit_lines": 10,
+        "db_ingest_observations_mcp": 10,
+        "pi_tool_execution_start": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S10",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 18,
+      "stdout_usage_rows": 18,
+      "three_paths": {
+        "bridge_audit_lines": 11,
+        "db_ingest_observations_mcp": 11,
+        "pi_tool_execution_start": 11
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S11",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 18,
+      "stdout_usage_rows": 18,
+      "three_paths": {
+        "bridge_audit_lines": 10,
+        "db_ingest_observations_mcp": 10,
+        "pi_tool_execution_start": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S12",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 18,
+      "stdout_usage_rows": 18,
+      "three_paths": {
+        "bridge_audit_lines": 10,
+        "db_ingest_observations_mcp": 10,
+        "pi_tool_execution_start": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S01",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S02",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S03",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S04",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S05",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S06",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S07",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S08",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S09",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S10",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S11",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S12",
+      "session_store_equals_stdout": true,
+      "session_store_usage_rows": 8,
+      "stdout_usage_rows": 8,
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    }
+  ],
+  "pi_rate_card_reverse_verification": {
+    "calls": 300,
+    "exact_within_1e_9_usd": true,
+    "max_abs_residual_usd": 2.168404344971009e-19,
+    "pi_catalog_usd_per_million": {
+      "input": 0.2,
+      "output": 1.2,
+      "read": 0.02,
+      "write_1h": 0.25,
+      "write_5m": 0.25
+    },
+    "what_this_checks": "pi's reported usage.cost is reproduced from the four recorded buckets at the pi catalog rates; an exact residual means the components and the rate card are mutually consistent"
+  },
+  "session_store_equals_stdout_all_units": true,
+  "stop_reasons": {
+    "normalized": {
+      "stop": 192,
+      "toolUse": 108
+    },
+    "provider_raw": {
+      "completed": 300
+    }
+  },
+  "turns_executed": 192,
+  "turns_expected": 192
+}

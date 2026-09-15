@@ -1,0 +1,121 @@
+# E19-STEADY-STATE — confirmed configuration
+# Committed BEFORE the first model call (E18 §8.1 deviation not repeated).
+cell: E19-STEADY-STATE
+preregistration: docs/experiments/E19-STEADY-STATE/preregistration.md
+status: confirmed
+date: 2026-08-28
+
+harness:
+  name: pi
+  version: "0.84.3"
+  binary: tmp/vendor/piprobe/node_modules/.bin/pi
+  isolation:
+    PI_CODING_AGENT_DIR: tmp/e19/leg<LEG><NS>/pi-home
+    PI_CODING_AGENT_SESSION_DIR: tmp/e19/leg<LEG><NS>/sessions
+    untouched: [tmp/e17, tmp/e17b, tmp/e18]
+  flags:
+    - --no-context-files
+    - --no-skills
+    - --no-prompt-templates
+    - --no-themes
+    - --no-approve
+    - --no-extensions
+    - --thinking off
+  adaptations_inherited_from_E18:
+    - AGENTS.md is not auto-loaded by pi; the same bytes are injected with
+      --append-system-prompt and the file is moved out of the workdir so it
+      cannot also be discovered (verified by the model-free registry probe).
+    - The MCP server is reached through the pi bridge's .mcp.json.
+
+legs:
+  A:
+    provider: anthropic
+    model: claude-sonnet-5
+    PI_CACHE_RETENTION: long
+    rate_card: E13-RECOMP §4.1 recovered Anthropic claude-sonnet-5 standard card
+    parallelism: 6
+    tpm_throttle: 0
+  B:
+    provider: openai
+    model: gpt-5.6-luna
+    PI_CACHE_RETENTION: unset (appendix B.3 of E18; no response-side bucket)
+    rate_card: docs/analysis/openai-luna-rate-card.md (observed 2026-08-28)
+    parallelism: 3
+    tpm_throttle: 120000
+
+schedule:
+  builder: karc.bench.e5_cache_canary.prepare_bundle
+  fixture: fixture/e4-v2
+  schedule_seed: 4352
+  session_count: 24
+  session_length: 8
+  reuse_factor: 0.5
+  budget_pct: 5
+  resident_budget_tokens: 1756
+  schedule_sha256: acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b
+  tasks_sha256: 73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74
+  snapshot_sha256: f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73
+  seed_selection:
+    method: >-
+      model-free search over seeds 4300..4399 minimizing the overlap between the
+      E19 24-session required-version set and E18's required-version set. The
+      criterion is structural and outcome-independent; no cost, token or ratio
+      quantity was computed during the search.
+    record: raw/seed-search.json
+    chosen: 4352
+    overlap_versions_with_E18: 9
+    range_over_search: [9, 33]
+
+windows:
+  warmup:
+    sessions: S01..S08 (extendable to S12 per preregistration §3)
+    arms: [karc-full]
+    judged: false
+    note: rag-bm25 has no resident state and is not warmed up (§2)
+  measurement:
+    sessions: S(W+1)..S(W+12) where W is the executed warm-up length
+    arms: [karc-full, rag-bm25]
+    turns: 12 x 8 x 2 = 192 per leg
+  unused: the remainder of the 24-session build
+
+slice_disjointness:
+  warmup_vs_measurement: exact (0 shared required versions) — verified, raw/slices.json
+  vs_E18: >-
+    NOT attainable. The fixture corpus is frozen and shared by every cell, so a
+    residual overlap exists (warm-up 3, measurement 5 required versions against
+    E18's 66). The task SEQUENCE is different (different tasks_sha256, different
+    anchors, different order) and E18's data is never re-analyzed. The residue is
+    measured and reported rather than designed away.
+
+steady_state:
+  definition: input state quantity only (resident injection tokens per turn)
+  criterion:
+    relative_change_last_vs_previous_warmup_session: <= 0.05
+    budget_utilization_last_warmup_session: ">= 0.95 of 1756"
+  H10: if unmet after 12 warm-up sessions, do not measure; report.
+
+accounting:
+  gross: input + cacheRead + cacheWrite
+  priced: U*p_in + W_5m*p_w5 + W_1h*p_w1 + R*p_read + O*p_out
+  control_column: pi usage.cost at the pi catalog rates
+
+statistics:
+  unit: session
+  method: paired percentile bootstrap, common random numbers
+  seed: 1313
+  resamples: 10000
+  ci: two-sided 95% percentile
+  comparison: ratio CIs against 1.0, difference CIs against 0
+
+judgments:
+  Q1: paired gross ratio 95% CI entirely above 1.0
+  Q2: paired priced ratio 95% CI entirely below 1.0 AND paired mean USD difference CI excludes 0
+  Q3: delta_read > 0 AND delta_creation < 0
+  REVERSAL: Q1 PASS AND Q2 PASS
+
+hold_conditions:
+  inherited: [H1, H2', H3, H4, H4'', H5, H7, H8']
+  H6': cell total standard-priced spend > $25 (warm-up included); runner stops at $20
+  H10: steady state unmet after 12 warm-up sessions
+  H11: any call with cacheWrite == 0 and cacheRead > 0 (cold-start misattribution)
+  H12: execution namespace overlapping a previous execution (workdir path AND pi session id)

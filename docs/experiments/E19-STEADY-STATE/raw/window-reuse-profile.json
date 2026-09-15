@@ -1,0 +1,202 @@
+{
+  "what": "Measured reuse-density profile of the E19 measurement window. karc.bench.e5_killgate._repeat_allocation spreads the r=0.5 reuse budget as [4]*(n/2) + [3]*(n/2) over an n-session build, so a 24-session build carries 4 reuse tasks per session in S01..S12 and 3 in S13..S24. The E19 window S09..S20 therefore contains 4 sessions at 4/7 reuse and 8 at 3/7. E18's 12-session build split 6/6.",
+  "why_it_matters": "More reuse means more resident hits, fewer karc MCP round trips, and therefore a lower karc gross. In leg A the four 4/7 sessions have a per-session gross ratio just below 1.0 and the eight 3/7 sessions just above it, so the pooled Q1 result rests on the window's reuse mix. Leg B is above 1.0 in all twelve sessions.",
+  "not_a_selection": "The window was fixed before execution (warm-up length 8 forces S09..S20 in a 24-session build) and the two arms see identical tasks in every session, so the pairing is intact. No sub-range of the window is judged, and no alternative pooling is computed - re-slicing is what the preregistration forbids.",
+  "disclosed_oversight": "Before fixing the window this profile was not checked. Resident-token disjointness and the resident ramp were checked; reuse density was not.",
+  "e19_window": [
+    {
+      "session_id": "S09",
+      "reuse_tasks": 4,
+      "policy_resident_hits": 3,
+      "legA_karc_tool_calls": 8,
+      "legA_karc_gross": 136374,
+      "legA_rag_gross": 141921,
+      "legB_karc_tool_calls": 8,
+      "legB_karc_gross": 114979,
+      "legB_rag_gross": 95704
+    },
+    {
+      "session_id": "S10",
+      "reuse_tasks": 4,
+      "policy_resident_hits": 1,
+      "legA_karc_tool_calls": 8,
+      "legA_karc_gross": 133726,
+      "legA_rag_gross": 141755,
+      "legB_karc_tool_calls": 9,
+      "legB_karc_gross": 117137,
+      "legB_rag_gross": 95644
+    },
+    {
+      "session_id": "S11",
+      "reuse_tasks": 4,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 8,
+      "legA_karc_gross": 135082,
+      "legA_rag_gross": 141756,
+      "legB_karc_tool_calls": 8,
+      "legB_karc_gross": 119135,
+      "legB_rag_gross": 95641
+    },
+    {
+      "session_id": "S12",
+      "reuse_tasks": 4,
+      "policy_resident_hits": 3,
+      "legA_karc_tool_calls": 8,
+      "legA_karc_gross": 133302,
+      "legA_rag_gross": 141732,
+      "legB_karc_tool_calls": 8,
+      "legB_karc_gross": 112784,
+      "legB_rag_gross": 95519
+    },
+    {
+      "session_id": "S13",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 159468,
+      "legA_rag_gross": 141605,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 142951,
+      "legB_rag_gross": 95480
+    },
+    {
+      "session_id": "S14",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 157282,
+      "legA_rag_gross": 141874,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 136672,
+      "legB_rag_gross": 95673
+    },
+    {
+      "session_id": "S15",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 158375,
+      "legA_rag_gross": 141857,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 141399,
+      "legB_rag_gross": 95664
+    },
+    {
+      "session_id": "S16",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 157390,
+      "legA_rag_gross": 142118,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 136627,
+      "legB_rag_gross": 95848
+    },
+    {
+      "session_id": "S17",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 159619,
+      "legA_rag_gross": 141870,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 142107,
+      "legB_rag_gross": 95636
+    },
+    {
+      "session_id": "S18",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 158353,
+      "legA_rag_gross": 141803,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 138777,
+      "legB_rag_gross": 95570
+    },
+    {
+      "session_id": "S19",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 157586,
+      "legA_rag_gross": 141749,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 136832,
+      "legB_rag_gross": 95564
+    },
+    {
+      "session_id": "S20",
+      "reuse_tasks": 3,
+      "policy_resident_hits": 2,
+      "legA_karc_tool_calls": 10,
+      "legA_karc_gross": 157663,
+      "legA_rag_gross": 141991,
+      "legB_karc_tool_calls": 10,
+      "legB_karc_gross": 136595,
+      "legB_rag_gross": 95727
+    }
+  ],
+  "e19_window_reuse_mix": {
+    "sessions_with_4_of_7_reuse": 4,
+    "sessions_with_3_of_7_reuse": 8
+  },
+  "e18_window_reuse_mix": {
+    "sessions_with_4_of_7_reuse": 6,
+    "sessions_with_3_of_7_reuse": 6,
+    "per_session": [
+      {
+        "session_id": "S01",
+        "reuse_tasks": 4
+      },
+      {
+        "session_id": "S02",
+        "reuse_tasks": 4
+      },
+      {
+        "session_id": "S03",
+        "reuse_tasks": 4
+      },
+      {
+        "session_id": "S04",
+        "reuse_tasks": 4
+      },
+      {
+        "session_id": "S05",
+        "reuse_tasks": 4
+      },
+      {
+        "session_id": "S06",
+        "reuse_tasks": 4
+      },
+      {
+        "session_id": "S07",
+        "reuse_tasks": 3
+      },
+      {
+        "session_id": "S08",
+        "reuse_tasks": 3
+      },
+      {
+        "session_id": "S09",
+        "reuse_tasks": 3
+      },
+      {
+        "session_id": "S10",
+        "reuse_tasks": 3
+      },
+      {
+        "session_id": "S11",
+        "reuse_tasks": 3
+      },
+      {
+        "session_id": "S12",
+        "reuse_tasks": 3
+      }
+    ]
+  },
+  "_meta": {
+    "generated_at_utc": "2026-08-28T03:43:12Z",
+    "model_free": true
+  }
+}

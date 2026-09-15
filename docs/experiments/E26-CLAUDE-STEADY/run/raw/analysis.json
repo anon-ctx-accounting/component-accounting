@@ -1,0 +1,382 @@
+{
+ "cell": "E26-CLAUDE-STEADY",
+ "preregistration": "docs/experiments/E26-CLAUDE-STEADY/preregistration.md",
+ "harness": {
+  "name": "claude-code",
+  "version": "2.1.220",
+  "route": "Anthropic subscription (OAuth)",
+  "provider": "anthropic",
+  "model": "claude-sonnet-5"
+ },
+ "measurement_window": {
+  "sessions": [
+   "S09",
+   "S10",
+   "S11",
+   "S12",
+   "S13",
+   "S14",
+   "S15",
+   "S16",
+   "S17",
+   "S18",
+   "S19",
+   "S20"
+  ],
+  "warmup_executed": false,
+  "note": "steady-state window of the seed-4352 24-session build, the window E19 both legs and E21 measured. Steady state comes from the schedule position (resident set fixed by model-independent policy replay), not from executing warm-up turns."
+ },
+ "_meta": {
+  "model_calls": 0,
+  "turns_sha256": "cbc56685fe80ad492b862807ed04795bac929725a316b34a30fddafc6a770a91",
+  "estimators": "E24 profile with E13 bootstrap (seed 1313, 10000)",
+  "rate_card_usd_per_million": {
+   "input": 3.0,
+   "write_5m": 3.75,
+   "write_1h": 6.0,
+   "read": 0.3,
+   "output": 15.0
+  }
+ },
+ "attempts_to_turns_join": {
+  "turns": 192,
+  "joined": 192,
+  "component_mismatched": 0,
+  "key": "arm + session_id + session_attempt + position",
+  "crosscheck_fields": [
+   "fresh_input_tokens_provider",
+   "cache_read_input_tokens_provider",
+   "cache_creation_input_tokens_provider",
+   "gross_input_tokens",
+   "output_tokens",
+   "rate_card_equivalent_usd"
+  ]
+ },
+ "P2_cost_inversion": {
+  "turns": 192,
+  "turns_with_reported_cost": 192,
+  "missing": 0,
+  "missing_share": 0.0,
+  "max_abs_residual_usd": 1.3877787807814457e-17,
+  "exact_within_1e_9_usd": true,
+  "reported_total_usd": 6.3979419,
+  "our_priced_total_usd": 6.3979419,
+  "worst_five": [
+   {
+    "arm": "karc-full",
+    "session_id": "S10",
+    "position": 1,
+    "reported": 0.08696999999999999,
+    "modelled": 0.08697,
+    "abs_residual": 1.3877787807814457e-17
+   },
+   {
+    "arm": "karc-full",
+    "session_id": "S11",
+    "position": 1,
+    "reported": 0.0868854,
+    "modelled": 0.08688539999999999,
+    "abs_residual": 1.3877787807814457e-17
+   },
+   {
+    "arm": "karc-full",
+    "session_id": "S17",
+    "position": 7,
+    "reported": 0.03740879999999999,
+    "modelled": 0.037408800000000006,
+    "abs_residual": 1.3877787807814457e-17
+   },
+   {
+    "arm": "karc-full",
+    "session_id": "S18",
+    "position": 1,
+    "reported": 0.08739000000000001,
+    "modelled": 0.08739,
+    "abs_residual": 1.3877787807814457e-17
+   },
+   {
+    "arm": "karc-full",
+    "session_id": "S19",
+    "position": 1,
+    "reported": 0.0877191,
+    "modelled": 0.08771910000000001,
+    "abs_residual": 1.3877787807814457e-17
+   }
+  ],
+  "what_this_checks": "the amount the harness reports for each call is reproduced from the four recorded components at the published card.  The amount is the harness's own rate-card conversion, not a billed charge."
+ },
+ "this_run": {
+  "component_totals": {
+   "karc-full": {
+    "turns": 96,
+    "uncached": 416,
+    "creation": 177213,
+    "creation_1h": 177213,
+    "creation_5m": 0,
+    "cache_read": 6715268,
+    "output": 9323,
+    "gross": 6892897,
+    "priced_usd": 3.2189514,
+    "tool_calls": 112,
+    "api_calls": 208,
+    "mean_prefix_tokens_per_call": 33138.92788461538,
+    "api_calls_per_turn": 2.1666666666666665
+   },
+   "rag-bm25": {
+    "turns": 96,
+    "uncached": 96,
+    "creation": 424236,
+    "creation_1h": 424236,
+    "creation_5m": 0,
+    "cache_read": 2023955,
+    "output": 1740,
+    "gross": 2448287,
+    "priced_usd": 3.1789905,
+    "tool_calls": 0,
+    "api_calls": 96,
+    "mean_prefix_tokens_per_call": 25502.989583333332,
+    "api_calls_per_turn": 1.0
+   }
+  },
+  "per_position_profile": {
+   "karc-full": {
+    "1": {
+     "n": 12,
+     "gross_mean": 94406.83333333333
+    },
+    "2": {
+     "n": 12,
+     "gross_mean": 80594.5
+    },
+    "3": {
+     "n": 12,
+     "gross_mean": 59947.083333333336
+    },
+    "4": {
+     "n": 12,
+     "gross_mean": 60612.833333333336
+    },
+    "5": {
+     "n": 12,
+     "gross_mean": 66984.08333333333
+    },
+    "6": {
+     "n": 12,
+     "gross_mean": 62110.25
+    },
+    "7": {
+     "n": 12,
+     "gross_mean": 68794.16666666667
+    },
+    "8": {
+     "n": 12,
+     "gross_mean": 80958.33333333333
+    }
+   },
+   "rag-bm25": {
+    "1": {
+     "n": 12,
+     "gross_mean": 12348.666666666666
+    },
+    "2": {
+     "n": 12,
+     "gross_mean": 16105.083333333334
+    },
+    "3": {
+     "n": 12,
+     "gross_mean": 19871.833333333332
+    },
+    "4": {
+     "n": 12,
+     "gross_mean": 23630.583333333332
+    },
+    "5": {
+     "n": 12,
+     "gross_mean": 27389.833333333332
+    },
+    "6": {
+     "n": 12,
+     "gross_mean": 31141.666666666668
+    },
+    "7": {
+     "n": 12,
+     "gross_mean": 34893.25
+    },
+    "8": {
+     "n": 12,
+     "gross_mean": 38643.0
+    }
+   }
+  },
+  "component_delta_karc_minus_rag": {
+   "turns": 0,
+   "uncached": 320,
+   "creation": -247023,
+   "creation_1h": -247023,
+   "creation_5m": 0,
+   "cache_read": 4691313,
+   "output": 7583,
+   "gross": 4444610,
+   "priced_usd": 0.03996090000000008,
+   "tool_calls": 112,
+   "api_calls": 112,
+   "mean_prefix_tokens_per_call": 7635.938301282051,
+   "api_calls_per_turn": 1.1666666666666665
+  },
+  "gross_ratio": 2.815395825734483,
+  "priced_ratio": 1.012570311235595,
+  "gross_ratio_boot": {
+   "point": 2.815395825734483,
+   "ci95_lo": 2.72611365063208,
+   "ci95_hi": 2.9034868533368403,
+   "degenerate_resamples": 0,
+   "usable_resamples": 10000
+  },
+  "priced_ratio_boot": {
+   "point": 1.012570311235595,
+   "ci95_lo": 0.9561226086005086,
+   "ci95_hi": 1.092043913454893,
+   "degenerate_resamples": 0,
+   "usable_resamples": 10000
+  },
+  "paired_mean_session_priced_usd_difference": {
+   "point": 0.003330074999999976,
+   "ci95_lo": -0.011619500000000027,
+   "ci95_hi": 0.024390849999999964,
+   "excludes_zero": false
+  },
+  "paired_mean_session_gross_difference": {
+   "point": 370384.1666666667,
+   "ci95_lo": 352173.3333333333,
+   "ci95_hi": 388369.8333333333,
+   "excludes_zero": true
+  },
+  "reversal_threshold_mu_w_star": 2.0539233188812376,
+  "observed_mu_w": 2.0,
+  "per_session_ratios": {
+   "S09": {
+    "gross_ratio": 2.5849765580219577,
+    "priced_ratio": 1.383104481394654
+   },
+   "S10": {
+    "gross_ratio": 2.5768135127846827,
+    "priced_ratio": 0.9026496156267978
+   },
+   "S11": {
+    "gross_ratio": 2.5870059821516134,
+    "priced_ratio": 0.9047139141374393
+   },
+   "S12": {
+    "gross_ratio": 2.5787713551576017,
+    "priced_ratio": 0.9068148379886241
+   },
+   "S13": {
+    "gross_ratio": 2.940364564166728,
+    "priced_ratio": 1.0078682097554004
+   },
+   "S14": {
+    "gross_ratio": 2.9273784904291915,
+    "priced_ratio": 1.004674574639753
+   },
+   "S15": {
+    "gross_ratio": 2.935130684519288,
+    "priced_ratio": 1.00797541986909
+   },
+   "S16": {
+    "gross_ratio": 2.926139645063088,
+    "priced_ratio": 1.0067434262623702
+   },
+   "S17": {
+    "gross_ratio": 2.938629078897068,
+    "priced_ratio": 1.00850780079859
+   },
+   "S18": {
+    "gross_ratio": 2.931500066185879,
+    "priced_ratio": 1.0055268779429178
+   },
+   "S19": {
+    "gross_ratio": 2.931506916487278,
+    "priced_ratio": 1.0073440452401343
+   },
+   "S20": {
+    "gross_ratio": 2.9262985184278194,
+    "priced_ratio": 1.00449481189365
+   }
+  }
+ },
+ "growth_window_contrast_e24": {
+  "held_fixed": [
+   "harness claude-code 2.1.220",
+   "provider anthropic",
+   "model claude-sonnet-5",
+   "published Anthropic rate card",
+   "arms karc-full and rag-bm25",
+   "statistics: session bootstrap seed 1313"
+  ],
+  "varied": [
+   "schedule window: seed4200 S01-S12 (growth) -> seed4352 S09-S20 (steady state)"
+  ],
+  "e24": {
+   "gross_ratio": 2.6918380143750293,
+   "priced_ratio": 0.9644437823631938,
+   "gross_ratio_boot": {
+    "point": 2.6918380143750293,
+    "ci95_lo": 2.5520098482892926,
+    "ci95_hi": 2.8312375672151417,
+    "degenerate_resamples": 0,
+    "usable_resamples": 10000
+   },
+   "priced_ratio_boot": {
+    "point": 0.9644437823631938,
+    "ci95_lo": 0.9006755693547189,
+    "ci95_hi": 1.0347325904543208,
+    "degenerate_resamples": 0,
+    "usable_resamples": 10000
+   },
+   "reversal_threshold_mu_w_star": 1.8540809012966988
+  },
+  "this_cell": {
+   "gross_ratio": 2.815395825734483,
+   "priced_ratio": 1.012570311235595,
+   "gross_ratio_boot": {
+    "point": 2.815395825734483,
+    "ci95_lo": 2.72611365063208,
+    "ci95_hi": 2.9034868533368403,
+    "degenerate_resamples": 0,
+    "usable_resamples": 10000
+   },
+   "priced_ratio_boot": {
+    "point": 1.012570311235595,
+    "ci95_lo": 0.9561226086005086,
+    "ci95_hi": 1.092043913454893,
+    "degenerate_resamples": 0,
+    "usable_resamples": 10000
+   },
+   "reversal_threshold_mu_w_star": 2.0539233188812376
+  }
+ },
+ "judgments": {
+  "P1_component_sign_preserved": true,
+  "P2_harness_cost_inverts": true,
+  "P3_priced_ci_excludes_parity": false,
+  "P4_gross_ci_excludes_parity": true,
+  "threshold_predicts_direction": {
+   "mu_w_star": 2.0539233188812376,
+   "actual_mu_w": 2.0,
+   "predicts_managed_arm_cheaper": false,
+   "observed_managed_arm_cheaper": false,
+   "agree": true
+  }
+ },
+ "hold_conditions": {
+  "H1_model_mismatch": 0,
+  "H2_refusals": 0,
+  "H6_gross_closure_failures": 0,
+  "H7_first_call_read_without_write": 0,
+  "valid_turns": 192,
+  "accuracy": {
+   "karc-full": "84/96",
+   "rag-bm25": "84/96"
+  }
+ }
+}

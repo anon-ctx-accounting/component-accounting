@@ -1,0 +1,200 @@
+{
+  "closure_input_eq_cached_plus_write_plus_fresh": {
+    "holds": true,
+    "rows_checked": 9,
+    "violations": []
+  },
+  "code_git_hash": "0f120064f93149f64f6b63685e65ba02badbf297",
+  "cold_call_write_tokens": [
+    [
+      "E16-OAI-B",
+      8379
+    ],
+    [
+      "E16-OAI-C-cold",
+      8381
+    ]
+  ],
+  "endpoint": "https://api.openai.com/v1/responses",
+  "model": "gpt-5.6-luna",
+  "probe": "openai-metered-write",
+  "provenance_notes": [
+    "run A rows in this file are a SECOND execution: importing the probe module re-ran its module-level code, so run A's original cold call was overwritten by a warm one (cached=8379, write=0). The script now guards module-level execution behind __main__.",
+    "run A's overwritten rows are themselves informative: a fully warm call legitimately reports write=0, so write=0 alone is not evidence of a route omitting writes. The E15 subscription negative rests on write=0 WHILE cached grows.",
+    "run B and run C independently reproduce the cold write with no prompt_cache_key."
+  ],
+  "runs": [
+    {
+      "label": "E16-OAI-A",
+      "prefix_chars": 43141,
+      "prefix_sha256": "fdd254f3720fca34",
+      "prompt_cache_key": "karc-e16-a",
+      "rows": [
+        {
+          "cache_write_tokens": 0,
+          "cached_tokens": 8379,
+          "call": 0,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 8379
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 24,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        },
+        {
+          "cache_write_tokens": 0,
+          "cached_tokens": 8379,
+          "call": 1,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 8379
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 24,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        },
+        {
+          "cache_write_tokens": 0,
+          "cached_tokens": 8379,
+          "call": 2,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 8379
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 23,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        },
+        {
+          "cache_write_tokens": 0,
+          "cached_tokens": 8379,
+          "call": 3,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 8379
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 23,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        }
+      ],
+      "store": false
+    },
+    {
+      "label": "E16-OAI-B",
+      "prefix_chars": 43141,
+      "prefix_sha256": "609bfd74fd0003e4",
+      "prompt_cache_key": null,
+      "rows": [
+        {
+          "cache_write_tokens": 8379,
+          "cached_tokens": 0,
+          "call": 0,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 8379,
+            "cached_tokens": 0
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 24,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        },
+        {
+          "cache_write_tokens": 19,
+          "cached_tokens": 8360,
+          "call": 1,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 19,
+            "cached_tokens": 8360
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 23,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        },
+        {
+          "cache_write_tokens": 19,
+          "cached_tokens": 8360,
+          "call": 2,
+          "fresh_normalized": 3,
+          "input_tokens": 8382,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 19,
+            "cached_tokens": 8360
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 26,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        }
+      ],
+      "store": true
+    },
+    {
+      "label": "E16-OAI-C-cold",
+      "prefix_chars": 43146,
+      "prefix_sha256": "680680d871e20b55",
+      "prompt_cache_key": null,
+      "rows": [
+        {
+          "cache_write_tokens": 8381,
+          "cached_tokens": 0,
+          "call": 0,
+          "fresh_normalized": 3,
+          "input_tokens": 8384,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 8381,
+            "cached_tokens": 0
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 20,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        },
+        {
+          "cache_write_tokens": 19,
+          "cached_tokens": 8362,
+          "call": 1,
+          "fresh_normalized": 3,
+          "input_tokens": 8384,
+          "input_tokens_details_verbatim": {
+            "cache_write_tokens": 19,
+            "cached_tokens": 8362
+          },
+          "model": "gpt-5.6-luna",
+          "output_tokens": 27,
+          "status": "completed",
+          "unexpected_detail_keys": [],
+          "write_key_present": true
+        }
+      ],
+      "store": true
+    }
+  ],
+  "verdict": "METERED-ROUTE-REPORTS-WRITES"
+}

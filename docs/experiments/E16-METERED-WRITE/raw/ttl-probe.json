@@ -1,0 +1,84 @@
+{
+  "model": "claude-sonnet-4-6",
+  "rows": [
+    {
+      "note": "no-beta-header",
+      "phase": "cold",
+      "prefix_chars": 46806,
+      "prefix_sha256": "a61f177927b1ce8e",
+      "prefix_tokens_est": 11701,
+      "ttl": "1h",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9486,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 9486,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "global",
+        "input_tokens": 12,
+        "output_tokens": 0,
+        "service_tier": "standard"
+      }
+    },
+    {
+      "note": "no-beta-header",
+      "phase": "warm",
+      "prefix_chars": 46806,
+      "prefix_sha256": "a61f177927b1ce8e",
+      "prefix_tokens_est": 11701,
+      "ttl": "1h",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9486,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 9486,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "global",
+        "input_tokens": 12,
+        "output_tokens": 0,
+        "service_tier": "standard"
+      }
+    },
+    {
+      "note": "no-beta-header",
+      "phase": "cold",
+      "prefix_chars": 46806,
+      "prefix_sha256": "e7255ecc8aea7f34",
+      "prefix_tokens_est": 11701,
+      "ttl": "5m",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 9486
+        },
+        "cache_creation_input_tokens": 9486,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "not_available",
+        "input_tokens": 29,
+        "output_tokens": 0
+      }
+    },
+    {
+      "note": "no-beta-header",
+      "phase": "warm",
+      "prefix_chars": 46806,
+      "prefix_sha256": "e7255ecc8aea7f34",
+      "prefix_tokens_est": 11701,
+      "ttl": "5m",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 9486
+        },
+        "cache_creation_input_tokens": 9486,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "global",
+        "input_tokens": 12,
+        "output_tokens": 0,
+        "service_tier": "standard"
+      }
+    }
+  ]
+}

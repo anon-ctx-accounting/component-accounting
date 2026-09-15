@@ -1,0 +1,68 @@
+{
+  "cell": "E18-PI-REVERSAL",
+  "executed_utc_date": "2026-08-28",
+  "deviations_from_the_work_order": [
+    {
+      "item": "scripts were committed AFTER leg A executed, not before",
+      "what_happened": "leg A's 192 turns ran from the working-tree runner; the runner was then patched (token pacer, fail-fast on an error/zero-usage turn, unit re-materialize-on-retry) in response to the leg B rate-limit incident, and only then committed as f4ffc51. Leg B ran from the committed file.",
+      "why_it_does_not_change_leg_A's_numbers": "all three additions are inert on a run with no provider error: the pacer is a no-op unless --tpm is passed and leg A did not pass it; the fail-fast branch requires a call with stopReason 'error', an errorMessage or totalTokens == 0, and leg A had none across all 300 assistant messages; the re-materialize rebuilds a byte-identical workdir because materialization is deterministic. No accounting field, price, threshold or statistic was touched.",
+      "not_remedied_by_re-running_leg_A": "a second leg A execution would have created a choice between two datasets for one preregistered cell, which is a worse hazard than this disclosure."
+    },
+    {
+      "item": "leg B was executed three times; attempts 1 and 2 were discarded in full",
+      "attempt_1": "provider tokens-per-minute ceiling reached at parallelism 6 -> a zero-usage turn -> H2'. See raw/discarded-legB-attempt1.json.",
+      "attempt_2": "throttled and clean on every preregistered check, but a non-preregistered instrumentation assert found 32 of 300 calls served from the cache attempt 1 had written (same workdir paths, same session ids, OpenAI's 30-minute retention), mis-bucketing 303,338 tokens as read instead of creation, asymmetrically by arm. See raw/discarded-legB-attempt2/.",
+      "attempt_3": "run in a fresh execution namespace (--ns r2) that changes the workdir path and the pi session id, with the cold start verified empirically (0 such calls out of 300). This is the reported leg B.",
+      "why_this_is_not_run_selection": "the discarded attempt 2 was the CONSERVATIVE dataset: correcting its contamination moves the priced ratio from 0.8229 down to 0.4275, i.e. further from 1.0 and further from the preregistered P4 prediction. Discarding it made the reported result less extreme, not more. Attempt 3's independent cold measurement lands at 0.7041, between the two, and P4 fails on all three."
+    },
+    {
+      "item": "one instrumentation assert was added that is not in the preregistration",
+      "what": "a call with cacheWrite == 0 and cacheRead > 0 - a call that extends the prefix yet is charged nothing for writing it - means the prefix was written by an identical earlier request outside this dataset.",
+      "status": "an execution-integrity check, not a judgement criterion. No preregistered threshold, price or statistic was altered. Reported in raw/crosscheck-*.json as cold_start_assert_not_preregistered. Leg A: 0/300. Leg B (reported attempt): 0/300.",
+      "why_it_was_needed": "H8' covers a cache-eligible call with BOTH buckets at zero; it does not cover a call whose creation was silently converted into read. That gap was found by measurement, not by reading the preregistration."
+    },
+    {
+      "item": "leg B was executed at parallelism 3 under a 120,000 tokens/minute pacer, leg A at parallelism 6 with no pacer",
+      "why": "the OpenAI leg shares one organization-wide TPM ceiling of 200,000 which leg A's Anthropic route does not share. The asymmetry is a provider property, not a design choice; the pairing the preregistration requires is on harness, fixture, session identity and turn order, all of which are identical.",
+      "residual_risk_checked": "OpenAI cache retention is 30 minutes and non-configurable (rate card section 5.2). A throttled leg B unit spans far less than 30 minutes of wall clock, so no cache entry expired inside a session."
+    },
+    {
+      "item": "an incidental per-turn grade is recorded in raw",
+      "why": "preregistration section 7 forbids using the accuracy axis, and this cell does not use it. It is recorded because a silently broken arm (a karc arm that never finds anything) is otherwise undetectable, and because it independently reproduces the baseline's position-1 floor.",
+      "status": "diagnostic only, never entered into any judgement"
+    },
+    {
+      "item": "leg A's first two units (karc-full--S01, rag-bm25--S01) were run as a separate batch before the other 22",
+      "why": "to check every HOLD condition against live data before committing the rest of the budget. They are ordinary units of the preregistered cell, run in the preregistered ABBA order, not a pilot: nothing was re-run, discarded or reinterpreted, and their rows are the S01 rows of the final dataset."
+    }
+  ],
+  "discarded_executions": [
+    "raw/discarded-legB-attempt1.json - leg B attempt 1, discarded in full on H2'"
+  ],
+  "model_free_gates_recorded": {
+    "mtime-before.json": "user ~/.pi mtime snapshot taken before any pi process started",
+    "mtime-after.json": "the same four paths after both legs finished",
+    "auth-A.json / auth-B.json": "pi auth check inside the isolated home, with and without the env key: credentials_not_configured without, api_key with, proving the user's auth.json is invisible and the metered route is forced",
+    "prepare-A.json / prepare-B.json": "48 materialized units, schedule identity gate",
+    "registry-A.json / registry-B.json": "pi's own tool registry plus the with/without system-prompt-append contrast"
+  },
+  "R9_note": "the pi event streams (tmp/e18/leg*/units/*/streams/*.jsonl) and pi session stores (tmp/e18/leg*/sessions/*.jsonl) contain full transcripts. They are gitignored and were deliberately left on disk so the orchestrating session can audit them; they must be deleted at teardown with `rm -rf tmp/e18`.",
+  "executions": {
+    "leg_A": {
+      "attempt": 1,
+      "namespace": "",
+      "parallelism": 6,
+      "tpm_throttle": null,
+      "wall_seconds": 153.5,
+      "note": "plus a first batch of 2 units run separately as a live HOLD-condition check; those are ordinary S01 units"
+    },
+    "leg_B": {
+      "attempt": 3,
+      "namespace": "r2",
+      "parallelism": 3,
+      "tpm_throttle": 120000,
+      "wall_seconds": 1405.4,
+      "unit_retries_used": 0
+    }
+  }
+}

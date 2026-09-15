@@ -1,0 +1,212 @@
+# E23-REUSE-DENSITY — confirmed configuration (R-16)
+#
+# Frozen before the first model call.  Everything here is either quoted from
+# the preregistration or measured model-free by `scripts/run_e23_reuse_density.py`
+# phases `build` and `steady`, whose outputs are committed under `raw/`.
+
+cell: E23-REUSE-DENSITY
+preregistration: docs/experiments/E23-REUSE-DENSITY/preregistration.md
+preregistration_status: approved 2026-09-08 (user)
+derived_from: docs/experiments/E19-STEADY-STATE/scripts/
+
+question: >
+  Does the component allocation sign (delta cache-read > 0, delta cache-creation
+  < 0) survive a change of reuse density, the workload axis that all six
+  reported cells hold at a single point?
+
+harness:
+  runtime: pi 0.84.3
+  binary: tmp/vendor/piprobe/node_modules/.bin/pi
+  isolation_root: tmp/e23/
+  never_touched: [tmp/e17, tmp/e17b, tmp/e18, tmp/e19, tmp/e21]
+  env:
+    PI_CODING_AGENT_DIR: tmp/e23/rho<tag>v1/pi-home
+    PI_CODING_AGENT_SESSION_DIR: tmp/e23/rho<tag>v1/sessions
+    PI_OFFLINE: "1"
+    PI_SKIP_VERSION_CHECK: "1"
+    PI_TELEMETRY: "0"
+    PI_CACHE_RETENTION: unset          # E17B appendix B.3, OpenAI leg default
+  settings:
+    defaultProjectTrust: never
+    compaction.enabled: false          # verified autoCompactionEnabled=false
+  flags_per_turn:
+    - --mode json
+    - --provider openai --model gpt-5.6-luna --thinking off
+    - --no-extensions --no-context-files --no-skills --no-prompt-templates
+    - --no-themes --no-approve
+    - --append-system-prompt <unit>/context/system-append.md
+    - karc-full adds: -e <bridge> --no-builtin-tools --tools karc_search,karc_get
+    - rag-bm25 adds: --no-tools
+
+provider:
+  name: openai
+  api: openai-responses
+  model: gpt-5.6-luna
+  route: metered API key (isolated home makes the user's auth.json invisible)
+  key_source: ~/api-key.txt OPENAI_API_KEY, passed only as KARC_OPENAI_KEY
+
+arms: [karc-full, rag-bm25]
+
+manipulated_axis:
+  name: reuse density
+  operative_knob: karc.bench.e5_killgate.build_reuse_schedule(reuse_factor=r)
+  grid_available: [0.0, 0.25, 0.5, 0.75, 1.0]     # e5_killgate.R_GRID
+  values_measured: [0.25, 0.75]
+  control_point_not_measured_here: 0.50           # E19 leg B
+  excluded_value: 0.0
+  excluded_because: >
+    preregistration §2 — zero reuse also removes the supersession dynamics, so a
+    sign flip there could not be attributed to reuse density.  Measured on this
+    harness as a negative control (raw/build.json degenerate_control_rho_000):
+    reused_occurrences 0, supersession_events 0, sigma undefined, all 192 tasks
+    `new-gold`, hot-supersession traps 0.
+  note_on_the_preregistration_citation: >
+    §2 argues from e4_fixture._schedule / RHO_GRID.  That function is not in this
+    harness's path: fixture/e4-v2 is built by e4_fixture._schedule_v2, which
+    takes no rho argument, and e5_killgate._source_manifest keeps that corpus
+    while discarding its task schedule.  The operative knob is `reuse_factor`.
+    Both preregistered values are in R_GRID and in RHO_GRID, so the chosen
+    points are unaffected, and §2's substantive claim about 0.0 holds on the
+    operative path too.
+
+held_fixed:
+  schedule_seed: 4352                  # E19 leg B's own seed, reused unchanged
+  session_count_built: 24
+  session_length: 8
+  resident_budget_pct: 5
+  resident_budget_tokens: 1756
+  replay_engine_cell_labels: {rho: 0.5, sigma: 0.3}   # non-control (e5_killgate)
+  paired_design: 12 sessions x 8 turns x 2 arms = 192 turns per rho
+  submission_order: ABBA (E13 §5.0)
+  parallelism: 3
+  tokens_per_minute_ceiling: 120000    # E18 leg B attempt-1 cause, applied up front
+  fixture: fixture/e4-v2 (frozen, seed 4000, 408 artifacts)
+
+sigma_is_not_a_knob_here: >
+  build_reuse_schedule derives sigma from the built schedule as
+  len(superseded_artifacts)/len(reused_artifacts).  The numerator is fixed at 24
+  (one anchor supersession per session) but the denominator moves with r, so the
+  measured sigma differs across the three points: 0.6154 at r=0.25, 0.4615 at
+  r=0.50, 0.5000 at r=0.75.  The replay engine's sigma label stays frozen at 0.3.
+  This coupling is a property of the operative path, not a design choice.
+
+schedule_identity:            # gated before any model call
+  "0.25":
+    snapshot_sha256: 5b91ca6eb26779d87b5d4183221e59c4c6b812e28fce0e0ddc93555e82246dfe
+    schedule_sha256: d5737bc7449e1d9595930f061fe6cf0501a39a860173c249ffd6fecd2158ebdf
+    tasks_sha256: 6bdb731374207db63fd1eeec64de73ce75689c837aec6c837ee495da1e1d8e43
+    manifest_sha256: 00971ff9992b837d2748ddcb27f5c53618490b5dfa38d69871b6f2b5b2f35077
+  "0.75":
+    snapshot_sha256: 0b63531feb12c6b98815754f6cce0bfbec747d482b0071bc7e8bbbe5ea7ac435
+    schedule_sha256: 22feae85280e68365e2655df2e47ea5a86c90918dce3385dde823fa8548269e0
+    tasks_sha256: 6ea879c480fa9e8172efc0aabd7addb7df9b1c7ff9a71b69721d2bc41480b258
+    manifest_sha256: 1b3d2138ac2c265a31fb8d3bf856a375f72eca10d4ee1acb28705eb871cacf44
+  faithfulness_check:
+    what: >
+      This cell re-implements e5_cache_canary.prepare_bundle with reuse_factor
+      opened up, because the library hard-codes REUSE_FACTOR = 0.5 and no
+      committed module may be edited.  At r = 0.50 the re-implementation must
+      reproduce E19's committed identity exactly.
+    result: PASS (snapshot / schedule / tasks all match E19-STEADY-STATE)
+
+steady_state:
+  quantity: resident injection tokens per turn (an INPUT state quantity)
+  criterion: >
+    last warm-up session within 5% of the previous session AND >= 95%
+    utilization of the 1,756-token budget; smallest warm-up in 8..12 wins
+  decided: model-free, before any model call (raw/steady-<tag>.json)
+  "0.25": {warmup_sessions: 8,  window: S09-S20, last_util: 0.9664, rel_change: 0.01132}
+  "0.75": {warmup_sessions: 11, window: S12-S23, last_util: 0.9954, rel_change: 0.01099}
+  warmup_turns_executed: 0
+  warmup_turns_omitted_because: >
+    E19 §6.3 measured that executing warm-up turns is a no-op for the
+    measurement window on this harness — the resident set is fixed by the
+    schedule position through a model-free policy replay, and every pi unit has
+    its own workdir and session id, so no harness or provider state carries
+    over.  The steady-state judgment is made on the input state quantity either
+    way.  The preregistration's turn budget (192 per rho) and cost estimate
+    ($0.3) contain no warm-up execution.
+
+gold_containment:
+  H12_gate: gold_containment_rate == 1.0 for both rho, measured on the built object
+  "0.25": {gold_containment_rate: 1.0, mean_budget_utilization: 0.98351, plan_tokens_mean: 1727.05}
+  "0.75": {gold_containment_rate: 1.0, mean_budget_utilization: 0.98695, plan_tokens_mean: 1733.08}
+
+accounting:
+  gross: input + cacheRead + cacheWrite      # pi's usage.input is fresh-only
+  inclusion_relation: re-measured in this cell, never assumed
+  closure_assert_per_call: totalTokens == input + output + cacheRead + cacheWrite
+  openai_cache_min_prefix_tokens: 1024
+  stop_reason_layers: [pi normalized stopReason, provider rawStopReason]
+  refusal_detection: >
+    H2 disjunction (output_tokens == 0, errorMessage present, content block
+    absent, normalized stopReason == error) because the OpenAI leg's
+    rawStopReason is always "completed" (E17B §5)
+  mcp_round_trip_paths:
+    - pi tool_execution_start events
+    - bridge audit JSONL, scoped per turn (E17 §7.4)
+    - DB ingest_observations where source_channel = 'mcp'
+
+rate_card_usd_per_million:            # judged column
+  input: 0.20
+  output: 1.20
+  read: 0.02
+  write_5m: 0.25
+  write_1h: 0.25
+  source: docs/analysis/openai-luna-rate-card.md, observed 2026-08-28; identical to E19 leg B
+pi_catalog_rates_control_column:
+  input: 0.20
+  output: 1.20
+  read: 0.02
+  write_5m: 0.25
+  write_1h: 0.25
+
+statistics:
+  method: session-unit paired percentile bootstrap
+  seed: 1313
+  resamples: 10000
+  ci: two-sided 95% percentile
+  common_random_numbers: one shared 10000 x 12 index matrix
+  percentile_convention: floor(alpha/2*B), ceil((1-alpha/2)*B)-1   # E13
+
+registered_prediction:
+  S1:
+    statement: the component allocation sign holds at both rho
+    criterion: delta_cache_read(karc - rag) > 0 AND delta_creation(karc - rag) < 0
+    judged_on: component totals over the measurement window, per rho
+not_predicted:
+  - gross ratio direction
+  - priced ratio direction
+  - USD difference direction
+  - mu_w* value
+  reason: >
+    preregistration §4 — changing rho moves both arms' call counts and that
+    interaction was never modelled.  These are measured and reported only.
+
+hold_conditions:
+  H1: MCP round-trip three-path mismatch
+  H2: refusal or non-answering turn, 1 or more
+  H3: closure identity violation
+  H4: first cache-eligible cold call with cacheWrite == 0
+  H5: completion failure rate above 10%
+  H6: model cost above $3 (expected $0.3); runner stops the wave at $2.4
+  H7: user ~/.pi mtime change
+  H8: cache-eligible call with read == write == 0
+  H9: cold-start misattribution (write == 0 while read ~= prefix)
+  H10: execution namespace overlap; workdir path and pi session id both change, per rho
+  H11: steady state not reached after the maximum warm-up
+  H12: gold artifact containment rate not 1.0
+  H13: degenerate zero-reuse branch
+  redesign_not_partial_discard: [H2, H3, H4, H9, H12, H13]
+
+execution_namespace:
+  ns: v1
+  workdir: tmp/e23/rho025v1/... and tmp/e23/rho075v1/...
+  pi_session_id: e23r025v1-<arm>-<Sxx> and e23r075v1-<arm>-<Sxx>
+  rationale: >
+    E18 leg B attempt 2 was discarded because a re-run reused both levers and
+    was served the discarded execution's provider-side cache.  Both levers are
+    new here, and they also differ between the two rho values.
+
+privacy_R9: raw carries counts, public ids, sha256 and usage numbers only
+teardown: rm -rf tmp/e23   # transcripts under tmp/e23/*/streams are audit-only

@@ -1,0 +1,73 @@
+{
+  "approval_sha256": "c617169ef5d209a6c5e31f0941f61541738cfd43330d5d098af4c1f3cef783ad",
+  "auth_amendment_path": "raw/tool-exposure-amendment-7.json",
+  "auth_amendment_sha256": "b9723d6b92fd33fd642c54c33ffae0ff15b4d07f15781b1b7cc83ea38238a9db",
+  "canary_authorized": false,
+  "cli_pin": "2.1.220 (Claude Code)",
+  "cli_preflight": {
+    "argv_isolation": {
+      "karc-full": {
+        "allowed_tools": "mcp__karc__search,mcp__karc__get",
+        "chrome_disabled": true,
+        "disallowed_tools": "Agent,AskUserQuestion,Bash,Edit,EnterPlanMode,ExitPlanMode,Glob,Grep,LSP,NotebookEdit,Read,Skill,Task,TaskOutput,TaskStop,TodoWrite,WebFetch,WebSearch,ToolSearch,Write",
+        "setting_sources_empty": true,
+        "slash_commands_disabled": true,
+        "strict_mcp": true,
+        "tools": null,
+        "tools_flag_present": false
+      },
+      "rag-bm25": {
+        "allowed_tools": "",
+        "chrome_disabled": true,
+        "disallowed_tools": "WebSearch,WebFetch,Bash,Read,Grep,Glob",
+        "setting_sources_empty": true,
+        "slash_commands_disabled": true,
+        "strict_mcp": true,
+        "tools": "",
+        "tools_flag_present": true
+      }
+    },
+    "contract_ok": true,
+    "help_exit": 0,
+    "help_sha256": "fcd5b45507c7c602d54d85a300eab288a8a3c6770c6def696ca19a3100725de4",
+    "memory_discovery_absence": {
+      "fixture_claude_md_count": 0,
+      "home_claude_md": true,
+      "user_claude_md": true
+    },
+    "required_flags": {
+      "--allowedTools": true,
+      "--model": true,
+      "--output-format": true,
+      "--resume": true,
+      "--session-id": true,
+      "--setting-sources": true,
+      "--strict-mcp-config": true
+    },
+    "version": "2.1.220 (Claude Code)",
+    "version_exit": 0
+  },
+  "concurrency_sessions": 1,
+  "execution_code_git_hash": "e73b9b902eb6c3230d1bc78aa177e1791e59c87f",
+  "execution_epoch": "tool-exposure-v3",
+  "experiment_id": "E10-P2-XR",
+  "fixture_corpus_sha256": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a",
+  "model_pin": "claude-sonnet-5",
+  "model_spend_attempt_cap": 80,
+  "plan_sha256": "895e8a17b70eb8fad2db481e1595c29b8e743135f3e2844c90ae41979339edb5",
+  "prior_model_spend_attempts": 27,
+  "prior_operational_attempt_rows": 32,
+  "rate_card_equivalent_cap_usd": 75.0,
+  "schema": "e10-p2-xr-pre-smoke-refreeze-auth7-v1",
+  "sha256": "07d89b87bf803f62f26c35f18fa0e1858ad441b26a1ceb35dbb2a1899fac51df",
+  "smoke_schedule_sha256": "f57a333a848241e96f08ca13fd8d8a87f4df92705a54d9ecf020badd4f25fda1",
+  "source_sha256": {
+    "scripts/run_e5_xr.py": "cdb1cd3bf4b81c991f388cb1f814e94ce3db21b7e4bc7146071d66d1910f89eb",
+    "src/karc/bench/driver.py": "d10159b40d8988c37569402ade59f00e65300498ebf8934e6c209ac24280da1f",
+    "src/karc/bench/e5_cache_canary.py": "18a2e9861ae9e793e709c66eeef65221e9cc8729868d443dbf3133f073eb74ce",
+    "src/karc/bench/e5_cross_runtime.py": "e74228c70c71ed3810495f2a0081e27efc68522f4f71545488545098db3f01f3",
+    "src/karc/bench/e5_runtime_accounting.py": "12d44ce10f375b5d95f66496466373478361fdc20314bb51966024ba7d90c262"
+  },
+  "supersedes_freeze_sha256": "5a03b0424d53571ff2b89698879dd2d7ef5938b036bd9c8efa91084418aa55a6",
+  "valid_turn_target": 64
+}

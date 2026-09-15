@@ -1,0 +1,150 @@
+{
+  "canary_verdict_sha256": "102eec7a1d80bd95855d17c20bdf4a6dd39d5bc42398e3ac02ec049775f2c787",
+  "corpus_content_hash": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a",
+  "embedder": {
+    "model_id": "BAAI/bge-m3",
+    "revision": "5617a9f61b028005a4858fdac845db406aefb181"
+  },
+  "fixture_version": "e4-v2",
+  "manifest_sha256": "d8ec0bcf8354a5dc1046c7787b9ce4550086148ecfb4e42c1791bbc4b81ccc43",
+  "n_tasks": 640,
+  "pass": true,
+  "path": "fixture/e4-v2",
+  "post_freeze_mutation": "prohibited",
+  "rag_va_rules": {
+    "conflict_abstain": "group by artifact_id; if multiple unresolved current versions remain, keep a unique greatest valid_from_seq, otherwise exclude the group",
+    "freshness_filter": "exclude not-yet-valid and superseded-at-or-before-task-seq",
+    "metadata_fields": [
+      "artifact_id",
+      "version_id",
+      "valid_from_seq",
+      "superseded_at_seq"
+    ],
+    "tuning": "none"
+  },
+  "retrieval_config_sha256": "def2d5015a5c33b7e2746fa49b0b844a43a518ffe7d7577a3f173acb291fabbd",
+  "retrieval_plans_sha256": "0d3230471f5bef8a8affe56dcef509d93ef7c95d4a79b6613fc04116417838b3",
+  "schema": "e4-fixture-freeze-v2",
+  "seed": 4000,
+  "smoke_selection": {
+    "rule": "A-B3 stratified seeded selection",
+    "schema": "e4-smoke-selection-v2",
+    "selection_seed": 4040,
+    "structure_counts": {
+      "corrected-demote": 2,
+      "harmful-current-forbidden": 4,
+      "hot-supersession-trap": 3,
+      "rehab-post-validated": 4,
+      "rehab-validated-by-injector": 2
+    },
+    "tasks": [
+      {
+        "seq": 29,
+        "structure": "rehab-post-validated",
+        "task_id": "E4-0029",
+        "task_sha256": "06aa007af10708fa06ebdf5ee0639f0a8231a14143c9c1028a4f4337ec15587d",
+        "tier": "controlled"
+      },
+      {
+        "seq": 64,
+        "structure": "hot-supersession-trap",
+        "task_id": "E4-0064",
+        "task_sha256": "d2b43ccc16781ca0aee3723195d5b8ff32c6a0982d3f33976ce4455097751939",
+        "tier": "controlled"
+      },
+      {
+        "seq": 72,
+        "structure": "harmful-current-forbidden",
+        "task_id": "E4-0072",
+        "task_sha256": "9aec188fd9ff4c0eedd623d1bc2908a1deb24549f94528c64d8282698e415d2d",
+        "tier": "controlled"
+      },
+      {
+        "seq": 124,
+        "structure": "rehab-validated-by-injector",
+        "task_id": "E4-0124",
+        "task_sha256": "3ed604fc51ce615fefd113d26ce28781753f2ecf266b20674d8acb210f3fb07a",
+        "tier": "controlled"
+      },
+      {
+        "seq": 131,
+        "structure": "corrected-demote",
+        "task_id": "E4-0131",
+        "task_sha256": "a72f40af0afdf5d9378dd6e27ccdb2090a4ceb306a6c6259eea236dbbf7f90ac",
+        "tier": "controlled"
+      },
+      {
+        "seq": 160,
+        "structure": "hot-supersession-trap",
+        "task_id": "E4-0160",
+        "task_sha256": "afc548c7c15f0ddb6a23500c418b52e9822f382ad5d61c03c8e024349ec38bb4",
+        "tier": "controlled"
+      },
+      {
+        "seq": 344,
+        "structure": "harmful-current-forbidden",
+        "task_id": "E4-0344",
+        "task_sha256": "49e58ab25169c7e69c11472bfcb614717e7f303d5a469239a7cfdb0738cc806a",
+        "tier": "controlled"
+      },
+      {
+        "seq": 355,
+        "structure": "corrected-demote",
+        "task_id": "E4-0355",
+        "task_sha256": "e605c291c4745254919ef30f8e2f6250a1e93388273a6691a151b61d650c1f64",
+        "tier": "controlled"
+      },
+      {
+        "seq": 384,
+        "structure": "hot-supersession-trap",
+        "task_id": "E4-0384",
+        "task_sha256": "a655e69ab980ea3d9392049b1802be3d1f390c68dd4b54794e0b21664f35a8db",
+        "tier": "controlled"
+      },
+      {
+        "seq": 461,
+        "structure": "rehab-post-validated",
+        "task_id": "E4-0461",
+        "task_sha256": "514beda9039f41bedfb16d55fdb15a5e10cf900572ce6678f1138ba4c9092030",
+        "tier": "controlled"
+      },
+      {
+        "seq": 524,
+        "structure": "rehab-validated-by-injector",
+        "task_id": "E4-0524",
+        "task_sha256": "e51361bfadda61e6dafaeb9ee10c3374abcd9f6e29492583e1b1863ffe0e4bb4",
+        "tier": "controlled"
+      },
+      {
+        "seq": 525,
+        "structure": "rehab-post-validated",
+        "task_id": "E4-0525",
+        "task_sha256": "676e488218c6282b98ca1bf0d81fa9cac4c69243358984a95e4f1b5146a21866",
+        "tier": "controlled"
+      },
+      {
+        "seq": 552,
+        "structure": "harmful-current-forbidden",
+        "task_id": "E4-0552",
+        "task_sha256": "97387d0df85dff7ba255d0d31fb26863098e14369f0f422800df0370eca28120",
+        "tier": "controlled"
+      },
+      {
+        "seq": 557,
+        "structure": "rehab-post-validated",
+        "task_id": "E4-0557",
+        "task_sha256": "fb059a18d40d6643e93eec2e04fa03d9acc44d6e29967ad4a739ea8fca5ecc27",
+        "tier": "controlled"
+      },
+      {
+        "seq": 632,
+        "structure": "harmful-current-forbidden",
+        "task_id": "E4-0632",
+        "task_sha256": "67c3d5a76d7c69e8b6b7fb5a98ef50bdf37c4c9de83a700b3f2f3933409b68ee",
+        "tier": "controlled"
+      }
+    ]
+  },
+  "tasks_sha256": "d9175adf0998b4aaaf8ba1c287e6cef898d854bebe931bb05772a17399f4dfdd",
+  "trap_verdict_sha256": "cde3d1dae6d1571b03e39ff4e4db228475ffbafcca94468eb84737dbf181f4b1"
+}

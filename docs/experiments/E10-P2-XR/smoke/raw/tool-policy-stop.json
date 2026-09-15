@@ -1,0 +1,28 @@
+{
+  "answer_grade": "not_persisted_before_fail-closed exception",
+  "artifact_residual_zero": true,
+  "canary_executed": false,
+  "diagnosis": {
+    "claude_binary_sha256": "8addc857f3fe64d5a0368af9ee50321b50afb4a6918ba3ef018ab84f5dbbe081",
+    "cli_pin": "2.1.220 (Claude Code)",
+    "local_cli_evidence": "ToolSearch fetches deferred tool schemas; when ToolSearch is disallowed, deferred loading is disabled",
+    "provider_data_access_by_toolsearch": false,
+    "recovery": "add ToolSearch to K-ARC-only disallowedTools so strict-config MCP schemas are eagerly loaded"
+  },
+  "execution_epoch": "tool-exposure-v2",
+  "invalid_probe_attempt_index": 31,
+  "model_spend_attempt_cap": 80,
+  "model_spend_attempts": 27,
+  "operational_attempt_rows": 32,
+  "primary_eligible": false,
+  "rag_argv_changed": false,
+  "rate_card_equivalent_cap_usd": 75.0,
+  "rate_card_equivalent_total_usd": 0.820923,
+  "recovery_budget": {
+    "expected_additional_model_spend_attempts": 49,
+    "expected_final_model_spend_attempts": 76,
+    "expected_remaining_attempt_headroom": 4
+  },
+  "schema": "e10-p2-xr-tool-policy-stop-v1",
+  "status": "STOP-TOOL-POLICY"
+}

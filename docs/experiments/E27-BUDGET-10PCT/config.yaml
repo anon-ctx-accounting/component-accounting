@@ -1,0 +1,250 @@
+# E27-BUDGET-10PCT — confirmed configuration (R-16)
+#
+# Frozen before the first model call.  `cell.json` in this directory is the
+# machine-readable form of the same facts and is authoritative where the two
+# could ever disagree; this file is the R-16 document view.  Everything here is
+# either quoted from the preregistration or measured model-free by
+# `scripts/run_e27.py` phases `build` and `steady`, whose outputs are committed
+# under `raw/`.
+
+cell: E27-BUDGET-10PCT
+preregistration: docs/experiments/E27-BUDGET-10PCT/preregistration.md
+preregistration_status: registered before observation, 2026-09-11
+parent_cell: E19-STEADY-STATE leg B (paper name pi-O-s)
+derived_from:
+  runner: docs/experiments/E23-REUSE-DENSITY/scripts/run_e23_reuse_density.py
+  runner_sha256: 87fd1dcfd347ac5075c0b85debabb15052a6c1b4223f2639736ab401ab2ae914
+  analyzer: docs/experiments/E23-REUSE-DENSITY/scripts/analyze_e23.py
+  analyzer_sha256: e52e673bdf88f81fdc6c1a9c4d66d0dbd3bb11c07a931bda53432655576516cd
+  how: >
+    run_e27.py imports the E23 runner as a module and replaces only the budget
+    constants, the execution namespace, the raw/run roots and the spend cap.
+    analyze_e27.py imports the E23 analyzer and reuses its bootstrap, statistics,
+    judgment and E19 contrast functions unchanged; it re-states `crosscheck`
+    because this cell has its own session-id namespace and one extra gate (H14).
+
+question: >
+  All eight committed component-accounting cells hold the resident budget at
+  c = 5% of the corpus.  Does the component allocation sign, and the priced
+  ordering, survive doubling that capacity to c = 10%?
+
+harness:
+  runtime: pi 0.84.3
+  binary: tmp/vendor/piprobe/node_modules/.bin/pi
+  isolation_root: tmp/e27/
+  never_touched: [~/.pi, ~/.codex, ~/.claude, tmp/e17, tmp/e17b, tmp/e18, tmp/e19, tmp/e21, tmp/e23]
+  env:
+    PI_CODING_AGENT_DIR: tmp/e27/budget10v1/pi-home
+    PI_CODING_AGENT_SESSION_DIR: tmp/e27/budget10v1/sessions
+    PI_OFFLINE: "1"
+    PI_SKIP_VERSION_CHECK: "1"
+    PI_TELEMETRY: "0"
+    PI_CACHE_RETENTION: unset          # E17B appendix B.3, OpenAI leg default
+    note: >
+      the child environment is constructed from scratch (HOME, PATH, LANG plus
+      the PI_* isolation variables), so no variable of the calling session --
+      FORCE_COLOR included -- reaches pi.
+  settings:
+    defaultProjectTrust: never
+    compaction.enabled: false
+  flags_per_turn:
+    - --mode json
+    - --provider openai --model gpt-5.6-luna --thinking off
+    - --no-extensions --no-context-files --no-skills --no-prompt-templates
+    - --no-themes --no-approve
+    - --append-system-prompt <unit>/context/system-append.md
+    - karc-full adds: -e <bridge> --no-builtin-tools --tools karc_search,karc_get
+    - rag-bm25 adds: --no-tools
+
+provider:
+  name: openai
+  api: openai-responses
+  model: gpt-5.6-luna
+  route: metered API key (the isolated home makes the user's auth.json invisible)
+  key_source: >
+    ~/api-key.txt OPENAI_API_KEY, read by run_e27.py itself, never printed, never
+    in argv, never exported into the calling session; placed only into the
+    constructed pi child environment, which is the only channel pi accepts it on.
+
+arms: [karc-full, rag-bm25]
+
+manipulated_axis:
+  name: resident budget
+  operative_knob: e5_killgate._manifest_at_budget(manifest, budget_pct)
+  grid_available: [5, 10]                # e5_killgate.BUDGET_GRID
+  grid_available_e4_fixture: [1, 2, 5, 10, 20]
+  value_measured: {budget_pct: 10, budget_tokens: 3512}
+  control_point_not_measured_here: {budget_pct: 5, budget_tokens: 1756}
+  what_it_moves:
+    karc_full: >
+      the model-free policy replay runs with c = budget_tokens, so the resident
+      set admitted per session grows: 20 versions / 1,754 tokens at c = 5%,
+      39 versions / 3,445 tokens at c = 10% (last session of the build).
+    rag_bm25: >
+      e3_retrieval.bm25_plans is budget-parity by construction, so the retrieval
+      plan pasted into each turn grows with the same number: plan tokens mean
+      1,729.125 at c = 5%, 3,451.125 at c = 10%.
+    note: both arms move together; this is not a one-sided enlargement.
+
+held_fixed:
+  reuse_factor: 0.50                   # E19 leg B's value
+  schedule_seed: 4352
+  session_count_built: 24
+  session_length: 8
+  paired_design: 12 sessions x 8 turns x 2 arms = 192 turns
+  submission_order: ABBA (E13 §5.0)
+  parallelism: 3
+  fixture: fixture/e4-v2 (frozen, seed 4000, 408 artifacts, 35,128 corpus tokens)
+
+not_held_fixed:
+  measurement_window: >
+    S09-S20 at c = 5% (E19 leg B) becomes S13-S24 at c = 10%.  E19's steady-state
+    criterion is applied unchanged; a larger budget fills more slowly, so the
+    criterion is first met after 12 warm-up sessions instead of 8.  Eight of the
+    twelve window sessions are shared with E19 leg B.  Disclosed as a confound
+    this cell does not resolve (preregistration §2.2).
+
+schedule_identity:            # gated before any model call
+  c10_measured:
+    snapshot_sha256: 4a36203e6fdf29aae53276502ba70b5bf1fab3b33167dbdabf88909a7144dd9d
+    schedule_sha256: acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b
+    tasks_sha256: 73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74
+    manifest_sha256: 052b65cfc2e1543aa50131e24db05eea752a4376504819460846d33b0336682a
+  c05_control:
+    snapshot_sha256: f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73
+    schedule_sha256: acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b
+    tasks_sha256: 73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74
+    manifest_sha256: 861e9114aa9d8b96c43bf671b3f079b517811ff35662af3e81cca18afe61baae
+    result: PASS (byte-identical to E19-STEADY-STATE's committed leg B identity)
+  axis_purity_H14:
+    schedule_and_tasks_equal_across_budgets: true
+    manifest_and_snapshot_differ: true
+    structure_statistics_equal: true
+    meaning: >
+      the budget does not touch the task sequence, unlike E23's rho which
+      rebuilt it.  The only things that move are the resident sets and the
+      budget-parity retrieval plans.
+
+steady_state:
+  quantity: resident injection tokens per turn (an INPUT state quantity)
+  criterion: >
+    last warm-up session within 5% of the previous session AND >= 95%
+    utilization of the 3,512-token budget; smallest warm-up in 8..12 wins
+  decided: model-free, before any model call (raw/steady-b10.json)
+  warmup_sessions: 12
+  measurement_window: S13-S24
+  last_warmup_utilization: 0.9935
+  last_warmup_relative_change: 0.00548
+  window_utilization_range: [0.9809, 0.9989]
+  warmup_vs_window_required_version_overlap: 0
+  warmup_turns_executed: 0
+  warmup_turns_omitted_because: >
+    E19 §6.3 measured that executing warm-up turns is a no-op for the
+    measurement window on this harness -- the resident set is fixed by the
+    schedule position through a model-free policy replay, and every pi unit has
+    its own workdir and session id, so no harness or provider state carries
+    over.  E23 inherited the same decision.  The $10 ceiling covers warm-up
+    execution had it been run.
+
+gold_containment:
+  H12_gate: gold_containment_rate == 1.0, re-measured at c = 10%
+  gold_containment_rate: 1.0
+  mean_budget_utilization: 0.98267
+  plan_tokens_mean: 3451.125
+
+accounting:
+  gross: input + cacheRead + cacheWrite      # pi's usage.input is fresh-only
+  inclusion_relation: re-measured in this cell, never assumed
+  closure_assert_per_call: totalTokens == input + output + cacheRead + cacheWrite
+  openai_cache_min_prefix_tokens: 1024
+  stop_reason_layers: [pi normalized stopReason, provider rawStopReason]
+  refusal_detection: >
+    disjunction (output_tokens == 0, errorMessage present, content block absent,
+    normalized stopReason == error) because the OpenAI leg's rawStopReason is
+    always "completed" (E17B §5)
+  mcp_round_trip_paths:
+    - pi tool_execution_start events
+    - bridge audit JSONL, scoped per turn (E17 §7.4)
+    - DB ingest_observations where source_channel = 'mcp'
+
+rate_card_usd_per_million:            # judged column
+  input: 0.20
+  output: 1.20
+  read: 0.02
+  write_5m: 0.25
+  write_1h: 0.25
+  source: docs/analysis/openai-luna-rate-card.md, observed 2026-08-28; identical to E19 leg B
+pi_catalog_rates_control_column:
+  input: 0.20
+  output: 1.20
+  read: 0.02
+  write_5m: 0.25
+  write_1h: 0.25
+
+statistics:
+  method: session-unit paired percentile bootstrap
+  seed: 1313
+  resamples: 10000
+  ci: two-sided 95% percentile
+  common_random_numbers: one shared 10000 x 12 index matrix
+  percentile_convention: floor(alpha/2*B), ceil((1-alpha/2)*B)-1   # E13
+  ratio_definition: ratio of session sums
+
+registered_hypotheses:                # brief's H1..H4, renamed to avoid the hold numbering
+  B1:
+    quantity: paired gross-input ratio karc/rag with 95% CI
+    predicted_direction: false
+  B2:
+    quantity: paired priced cost ratio karc/rag with 95% CI, read against 1.0
+    predicted_direction: false
+  B3:
+    quantity: component allocation sign
+    criterion: delta_cache_read(karc - rag) > 0 AND delta_creation(karc - rag) < 0
+    predicted_direction: true
+    judged_on: component totals over the measurement window
+  B4:
+    quantity: break-even cache-write price mu_w* versus the actual 1.25
+    predicted_direction: false
+  why_only_B3_is_directional: >
+    raising the budget grows both arms' payloads and moves both arms' call
+    counts, and that interaction was never modelled.  E23 declined to predict the
+    gross ordering for the same reason and was right to (the ordering flipped at
+    rho = 0.75).  B3 is the only quantity the paper claims transports.
+
+hold_conditions:
+  H1: MCP round-trip three-path mismatch
+  H2: refusal or non-answering turn, 1 or more
+  H3: closure identity violation
+  H4: first cache-eligible cold call with cacheWrite == 0
+  H5: completion failure rate above 10%
+  H6: model cost above $10 (expected under $0.3); the wave stops itself at $8
+  H7: user ~/.pi mtime change, or any sibling cell root touched
+  H8: cache-eligible call with read == write == 0
+  H9: cold-start misattribution (write == 0 while read > 0)
+  H10: execution namespace overlap; workdir path and pi session id both change
+  H11: steady state not reached within warm-up 8..12
+  H12: gold artifact containment rate not 1.0
+  H13: degenerate zero-reuse branch
+  H14: axis purity violated (the budget moved the task sequence, or the c = 5%
+       control does not reproduce E19 leg B)
+  redesign_not_partial_discard: [H2, H3, H4, H9, H12, H13, H14]
+
+execution_namespace:
+  ns: v1
+  workdir: tmp/e27/budget10v1/units/<arm>--<Sxx>/work
+  pi_session_id: e27b10v1-<arm>-<Sxx>
+  rationale: >
+    E18 leg B attempt 2 was discarded because a re-run reused both levers and was
+    served the discarded execution's provider-side cache.  Both levers are new
+    here and share no prefix with any earlier cell.
+
+privacy_R9: >
+  raw carries counts, public ids, sha256 and usage numbers only; prompts appear
+  as sha256 and character count.  Transcripts under tmp/e27/*/streams are
+  audit-only and are removed at teardown.
+teardown: rm -rf tmp/e27
+
+not_pooled_with_the_eight_cells: >
+  a different capacity grid point, so this cell does not enter the abstract's
+  range figures, §4's tables or figures, or the claims ledger.  It is insurance
+  for the user, not paper content (preregistration §1, §8).

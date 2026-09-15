@@ -1,0 +1,22 @@
+{
+  "approved_on_kst": "2026-08-04",
+  "experiment": "E11-BASE3",
+  "schema": "e11-base3-user-approval-v1",
+  "scope": {
+    "all_e11_mcp_and_local_tool_calls": 0,
+    "arms": [
+      "full-history",
+      "sliding-window-compaction",
+      "stateless-rag"
+    ],
+    "exact_runtime_pin": "codex-cli 0.144.5/gpt-5.6-luna/high",
+    "infra_failure_attempt_cap": 144,
+    "model_spend_attempt_cap": 720,
+    "no_substitution": true,
+    "planned_valid_turns": 576,
+    "probe_attempt_cap_separate": 2,
+    "total_api_call_cap": 864
+  },
+  "sha256": "a8cb0f967c2f88054e05a1297cc590e5274abf93b0f01b53971b08c3559567a1",
+  "user_message": "승인"
+}

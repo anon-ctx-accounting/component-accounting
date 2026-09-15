@@ -1,0 +1,212 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T16:50:13Z",
+    "phase": "smoke",
+    "pi_version": "0.84.3"
+  },
+  "model": "gpt-5.6-luna",
+  "provider": "openai",
+  "regime": "short",
+  "rows": [
+    {
+      "api_call_count": 3,
+      "api_calls": [
+        {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "toolCall",
+            "toolCall"
+          ],
+          "cost_cacheWrite": 0,
+          "cost_total": 0.0002062,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 647,
+          "output": 64,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "toolUse",
+          "totalTokens": 711,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        },
+        {
+          "cacheRead": 0,
+          "cacheWrite": 1778,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "toolCall",
+            "toolCall"
+          ],
+          "cost_cacheWrite": 0.0004445,
+          "cost_total": 0.0005219000000000001,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 3,
+          "output": 64,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "toolUse",
+          "totalTokens": 1845,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        },
+        {
+          "cacheRead": 1778,
+          "cacheWrite": 430,
+          "cacheWrite1h": null,
+          "cacheWrite1h_key_present": false,
+          "content_block_types": [
+            "text"
+          ],
+          "cost_cacheWrite": 0.0001075,
+          "cost_total": 0.00016286,
+          "endTurn": null,
+          "errorMessage_present": false,
+          "input": 3,
+          "output": 16,
+          "rawStopReason": "completed",
+          "reasoning": 0,
+          "responseModel": "gpt-5.6-luna",
+          "stopReason": "stop",
+          "totalTokens": 2227,
+          "usage_keys": [
+            "cacheRead",
+            "cacheWrite",
+            "cost",
+            "input",
+            "output",
+            "reasoning",
+            "totalTokens"
+          ]
+        }
+      ],
+      "bridge_audit_lines_this_turn": 4,
+      "bridge_audit_mcp_tools": [
+        "search",
+        "search",
+        "get",
+        "get"
+      ],
+      "bridge_audit_outcomes": [
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "closure": [
+        {
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": false,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": true,
+          "input": 647,
+          "input_ge_read_plus_write": true,
+          "output": 64,
+          "totalTokens": 711
+        },
+        {
+          "cacheRead": 0,
+          "cacheWrite": 1778,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": true,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": false,
+          "input": 3,
+          "input_ge_read_plus_write": false,
+          "output": 64,
+          "totalTokens": 1845
+        },
+        {
+          "cacheRead": 1778,
+          "cacheWrite": 430,
+          "cacheWrite1h_le_cacheWrite": true,
+          "discriminating": true,
+          "exclusive_hypothesis_total_eq_four_sum": true,
+          "inclusive_hypothesis_total_eq_input_plus_output": false,
+          "input": 3,
+          "input_ge_read_plus_write": false,
+          "output": 16,
+          "totalTokens": 2227
+        }
+      ],
+      "event_types": {
+        "agent_end": 1,
+        "agent_settled": 1,
+        "agent_start": 1,
+        "message_end": 8,
+        "message_start": 8,
+        "message_update": 26,
+        "session": 1,
+        "tool_execution_end": 4,
+        "tool_execution_start": 4,
+        "turn_end": 3,
+        "turn_start": 3
+      },
+      "position": 1,
+      "prompt_chars": 303,
+      "prompt_sha256": "fa28d6e3fe711c0c49099203c38f9eaf96a96d699118e65156b8e87454bd870a",
+      "raw_stop_reasons": [
+        "completed",
+        "completed",
+        "completed"
+      ],
+      "regime": "short",
+      "returncode": 0,
+      "stderr_tail": [
+        "Warning: No project session found with id 'e17b-pilot'; creating a new session with that id."
+      ],
+      "stop_reasons": [
+        "toolUse",
+        "toolUse",
+        "stop"
+      ],
+      "stream_errors": [],
+      "task_id": "E4-0001",
+      "tool_execution_end_errors": 0,
+      "tool_execution_start_count": 4,
+      "tool_execution_start_names": [
+        "karc_search",
+        "karc_search",
+        "karc_get",
+        "karc_get"
+      ],
+      "usage_turn": {
+        "cacheRead": 1778,
+        "cacheWrite": 2208,
+        "cacheWrite1h": 0,
+        "cost_total": 0.000891,
+        "input": 653,
+        "output": 144,
+        "reasoning": 0
+      },
+      "wall_seconds": 7.83
+    }
+  ],
+  "session_id_sha256": "0866160738626c98c718eb4b6395aebefd1f1794733250a64461750ec8fe5a0a",
+  "thinking": "off",
+  "turns_executed": 1,
+  "turns_requested": 1
+}

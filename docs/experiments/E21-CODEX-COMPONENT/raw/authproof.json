@@ -1,0 +1,255 @@
+{
+  "_meta": {
+    "cell": "E21-CODEX-COMPONENT",
+    "codex_version": "codex-cli 0.145.0",
+    "generated_at_utc": "2026-09-07T16:17:04+00:00",
+    "namespace": "",
+    "phase": "authproof"
+  },
+  "argv_shape": {
+    "initial_tail": [
+      "exec",
+      "--json",
+      "--strict-config",
+      "--model",
+      "gpt-5.6-luna",
+      "--dangerously-bypass-hook-trust",
+      "--disable",
+      "multi_agent",
+      "-c",
+      "approval_policy=\"never\"",
+      "-c",
+      "sandbox_mode=\"read-only\"",
+      "-c",
+      "model_reasoning_effort=\"low\"",
+      "-c",
+      "web_search=\"disabled\"",
+      "-c",
+      "memories.use_memories=false",
+      "-c",
+      "memories.generate_memories=false",
+      "-c",
+      "mcp_servers.karc.command=\"<REPO>/.venv/bin/karc\"",
+      "-c",
+      "mcp_servers.karc.args=[\"mcp\", \"serve\", \"--root\", \"<REPO>/tmp/e21/run/units/karc-full--S01-a90/work\", \"--db\", \"<REPO>/tmp/e21/run/units/karc-full--S01-a90/work/.karc/index.db\", \"--runtime\", \"codex\"]",
+      "-c",
+      "mcp_servers.karc.required=true",
+      "-c",
+      "mcp_servers.karc.startup_timeout_sec=10",
+      "-c",
+      "mcp_servers.karc.tool_timeout_sec=60",
+      "-c",
+      "project_doc_max_bytes=4540",
+      "--sandbox",
+      "read-only",
+      "-C",
+      "<cwd>",
+      "<prompt>"
+    ],
+    "note": "the failing and succeeding runs used the same home, the same request object and the same argv builder; only auth.json differs"
+  },
+  "exec_with_credential": {
+    "error_class": null,
+    "event_summary": {
+      "cost_field_present": false,
+      "error_event_digests": [],
+      "event_type_counts": {
+        "item.completed": 3,
+        "thread.started": 1,
+        "turn.completed": 1,
+        "turn.started": 1
+      },
+      "item_completed_type_counts": {
+        "agent_message": 1,
+        "error": 2
+      },
+      "stop_reason_field_present": false,
+      "turn_completed_count": 1,
+      "turn_completed_non_usage_fields": {}
+    },
+    "model_verification": "hook",
+    "ok": true,
+    "reported_model": "gpt-5.6-luna",
+    "thread_id_assigned": true,
+    "usage_raw": {
+      "cache_write_input_tokens": 8597,
+      "cached_input_tokens": 0,
+      "input_tokens": 8600,
+      "output_tokens": 5,
+      "reasoning_output_tokens": 0
+    },
+    "usage_raw_unexpected_keys": [],
+    "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+    "write_key_present": true
+  },
+  "exec_without_credential": {
+    "error_class": "api_error",
+    "event_summary": {
+      "cost_field_present": false,
+      "error_event_digests": [
+        "c30a2a34ee420cc6",
+        "5785037526f29c95",
+        "5dc184ae6223ffea",
+        "700a3a5fee4c19f8",
+        "c2dfd450eb8fe7a9",
+        "2f8524b4fd268d08",
+        "9cace7dfb406d520",
+        "23d8f8916ce93f28",
+        "009ed18ae576c1e9",
+        "cf31cc2b833bee5c",
+        "78b9d217c0898790"
+      ],
+      "event_type_counts": {
+        "error": 10,
+        "item.completed": 3,
+        "thread.started": 1,
+        "turn.failed": 1,
+        "turn.started": 1
+      },
+      "item_completed_type_counts": {
+        "error": 3
+      },
+      "stop_reason_field_present": false,
+      "turn_completed_count": 0,
+      "turn_completed_non_usage_fields": {}
+    },
+    "ok": false,
+    "thread_id_assigned": false,
+    "unauthorized_in_error": true,
+    "usage_raw_empty": true
+  },
+  "home_manifest": {
+    "auth_bridge": "none-metered-api-key-written-by-cli-login",
+    "excluded": [
+      "auth.json",
+      "guard-events.jsonl",
+      "tmp",
+      "log"
+    ],
+    "generated_files": [
+      {
+        "name": "hooks.json",
+        "sha256": "fcf938cbd58c8a42e126979ce82db9273d6f6a8390c0d6a92a8d75459aa57e7d"
+      }
+    ],
+    "schema_version": 1,
+    "user_auth_json_linked": false
+  },
+  "login_with_api_key": {
+    "auth_json_present_in_isolated_home": true,
+    "returncode": 0,
+    "succeeded": true
+  },
+  "probe_workdir": "<REPO>/tmp/e21/run/units/karc-full--S01-a90/work",
+  "rollout_token_count_events": [
+    {
+      "last": {
+        "cache_write_input_tokens": 8597,
+        "cached_input_tokens": 0,
+        "input_tokens": 8600,
+        "output_tokens": 5,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 8605
+      },
+      "total": {
+        "cache_write_input_tokens": 8597,
+        "cached_input_tokens": 0,
+        "input_tokens": 8600,
+        "output_tokens": 5,
+        "reasoning_output_tokens": 0,
+        "total_tokens": 8605
+      }
+    }
+  ],
+  "rollout_usage_sessions_subtree": {
+    "available": true,
+    "jsonl_files": 2,
+    "records": [
+      {
+        "fields": {
+          "payload.info.last_token_usage.cache_write_input_tokens": 8597,
+          "payload.info.last_token_usage.cached_input_tokens": 0,
+          "payload.info.last_token_usage.input_tokens": 8600,
+          "payload.info.last_token_usage.output_tokens": 5,
+          "payload.info.last_token_usage.reasoning_output_tokens": 0,
+          "payload.info.last_token_usage.total_tokens": 8605,
+          "payload.info.total_token_usage.cache_write_input_tokens": 8597,
+          "payload.info.total_token_usage.cached_input_tokens": 0,
+          "payload.info.total_token_usage.input_tokens": 8600,
+          "payload.info.total_token_usage.output_tokens": 5,
+          "payload.info.total_token_usage.reasoning_output_tokens": 0,
+          "payload.info.total_token_usage.total_tokens": 8605
+        },
+        "file": "rollout-2026-09-08T01-17-02-01a07ca8-a483-7e21-a48b-ef6ba0caf17d.jsonl",
+        "line": 10
+      }
+    ]
+  },
+  "status_after_credential": {
+    "auth_type": "api-key",
+    "line_length": 45,
+    "line_sha256": "7668d453f2227bb885482b03fddbb50cf73322abd893b52474f9283bedb4b187",
+    "returncode": 0
+  },
+  "status_before_any_credential": {
+    "auth_type": "not-logged-in",
+    "line_length": 13,
+    "line_sha256": "b6237a3a920e95a949268e005b215c0dba02984cb6543685d1d679e2c794a966",
+    "returncode": 1
+  },
+  "user_codex_mtimes_after": {
+    ".": {
+      "mtime_ns": 1785988342198487044,
+      "mtime_utc": "2026-08-06T03:52:22+00:00",
+      "size": 768
+    },
+    "auth.json": {
+      "mtime_ns": 1788641473644882649,
+      "mtime_utc": "2026-09-05T20:51:13+00:00",
+      "size": 3997
+    },
+    "config.toml": {
+      "mtime_ns": 1785678463171474520,
+      "mtime_utc": "2026-08-02T13:47:43+00:00",
+      "size": 1551
+    },
+    "packages/standalone/current": {
+      "mtime_ns": 1784322758515921804,
+      "mtime_utc": "2026-07-17T21:12:38+00:00",
+      "size": 77
+    },
+    "sessions": {
+      "mtime_ns": 1784322834735576624,
+      "mtime_utc": "2026-07-17T21:13:54+00:00",
+      "size": 96
+    }
+  },
+  "user_codex_mtimes_before": {
+    ".": {
+      "mtime_ns": 1785988342198487044,
+      "mtime_utc": "2026-08-06T03:52:22+00:00",
+      "size": 768
+    },
+    "auth.json": {
+      "mtime_ns": 1788641473644882649,
+      "mtime_utc": "2026-09-05T20:51:13+00:00",
+      "size": 3997
+    },
+    "config.toml": {
+      "mtime_ns": 1785678463171474520,
+      "mtime_utc": "2026-08-02T13:47:43+00:00",
+      "size": 1551
+    },
+    "packages/standalone/current": {
+      "mtime_ns": 1784322758515921804,
+      "mtime_utc": "2026-07-17T21:12:38+00:00",
+      "size": 77
+    },
+    "sessions": {
+      "mtime_ns": 1784322834735576624,
+      "mtime_utc": "2026-07-17T21:13:54+00:00",
+      "size": 96
+    }
+  },
+  "user_codex_untouched": true
+}

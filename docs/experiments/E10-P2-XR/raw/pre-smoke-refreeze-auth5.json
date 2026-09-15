@@ -1,0 +1,80 @@
+{
+  "approval_sha256": "c617169ef5d209a6c5e31f0941f61541738cfd43330d5d098af4c1f3cef783ad",
+  "auth": "recovered claude.ai first-party Team subscription; API-key env stripped",
+  "auth_amendment_path": "raw/auth-recovery-amendment-5.json",
+  "auth_amendment_sha256": "3dd0fbf5ac659c22c653668412ca7239d21771533a5a04ff889b451638252373",
+  "canary_authorized": false,
+  "cli_pin": "2.1.220 (Claude Code)",
+  "cli_preflight": {
+    "argv_isolation": {
+      "karc-full": {
+        "chrome_disabled": true,
+        "setting_sources_empty": true,
+        "slash_commands_disabled": true,
+        "strict_mcp": true,
+        "tools": "mcp__karc__search,mcp__karc__get"
+      },
+      "rag-bm25": {
+        "chrome_disabled": true,
+        "setting_sources_empty": true,
+        "slash_commands_disabled": true,
+        "strict_mcp": true,
+        "tools": ""
+      }
+    },
+    "contract_ok": true,
+    "help_exit": 0,
+    "help_sha256": "fcd5b45507c7c602d54d85a300eab288a8a3c6770c6def696ca19a3100725de4",
+    "memory_discovery_absence": {
+      "fixture_claude_md_count": 0,
+      "home_claude_md": true,
+      "user_claude_md": true
+    },
+    "required_flags": {
+      "--allowedTools": true,
+      "--model": true,
+      "--output-format": true,
+      "--resume": true,
+      "--session-id": true,
+      "--setting-sources": true,
+      "--strict-mcp-config": true
+    },
+    "version": "2.1.220 (Claude Code)",
+    "version_exit": 0
+  },
+  "concurrency_sessions": 1,
+  "execution_code_git_hash": "8b7563786798fbbb336380efc80b2121f0a22f92",
+  "execution_order": "session order; even index karc-first, odd index rag-first",
+  "experiment_id": "E10-P2-XR",
+  "fixture_corpus_sha256": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a",
+  "model_pin": "claude-sonnet-5",
+  "model_spend_attempt_cap": 80,
+  "plan_sha256": "895e8a17b70eb8fad2db481e1595c29b8e743135f3e2844c90ae41979339edb5",
+  "prior_api_calls": 4,
+  "prior_model_spend_attempts": 0,
+  "rate_card_equivalent_cap_usd": 75.0,
+  "schema": "e10-p2-xr-pre-smoke-refreeze-auth5-v1",
+  "session_isolation": {
+    "artifact_cleanup": "exact-cwd-and-session-uuid; residual-zero-fail-closed",
+    "chrome": "disabled",
+    "claude_config_dir": "unset",
+    "cwd": "unique-system-tmp-per-session",
+    "home": "default-keychain-auth",
+    "mcp": "strict-explicit-config",
+    "setting_sources": "empty",
+    "settings": "explicit-arm-local",
+    "slash_commands_skills": "disabled",
+    "user_project_global_config_loaded": false
+  },
+  "sha256": "66f143a390a2ae120fdad83871b64f1aba62a4a98bdef7a6b0ef287f449e6aea",
+  "smoke_schedule_sha256": "f57a333a848241e96f08ca13fd8d8a87f4df92705a54d9ecf020badd4f25fda1",
+  "source_sha256": {
+    "scripts/run_e5_xr.py": "614854eb1a9d7c7dc17ca1e7bce3f9fafeb01be6516defd2ec4de09252e861a9",
+    "src/karc/bench/driver.py": "d10159b40d8988c37569402ade59f00e65300498ebf8934e6c209ac24280da1f",
+    "src/karc/bench/e5_cache_canary.py": "18a2e9861ae9e793e709c66eeef65221e9cc8729868d443dbf3133f073eb74ce",
+    "src/karc/bench/e5_cross_runtime.py": "e24e74f532157fe0c5a90943f5aeafec7bbd80b5b88ffdae626c01a31d45e3fd",
+    "src/karc/bench/e5_runtime_accounting.py": "12d44ce10f375b5d95f66496466373478361fdc20314bb51966024ba7d90c262"
+  },
+  "supersedes_freeze_sha256": "4a4a14e8f4a4282f670d494bd7aca7be968d717ea1078f864d2a01f0153ab2b5",
+  "valid_turn_target": 64
+}

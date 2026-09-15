@@ -1,0 +1,8 @@
+{
+  "canonical_plan_sha256": "895e8a17b70eb8fad2db481e1595c29b8e743135f3e2844c90ae41979339edb5",
+  "correction": "The prior authorization labeled the byte SHA-256 of pre-execution-config.json as plan_sha256. This amendment distinguishes the file hash from the canonical plan hash used by the frozen runner contract.",
+  "experiment_id": "E10-P2-XR",
+  "plan_file_sha256": "9fcc0be8be601f18e7f12f49eb8b334392736266b048a2fad5180d6d2876c848",
+  "schema": "e10-p2-xr-canary-authorization-amendment-v1",
+  "supersedes_authorization_sha256": "0939f1b71a2c45798efd28702cea863497ae296902eb0fef9215549a172f86dc"
+}

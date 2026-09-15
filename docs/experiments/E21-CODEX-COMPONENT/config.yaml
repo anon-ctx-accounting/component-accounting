@@ -1,0 +1,154 @@
+# E21-CODEX-COMPONENT — confirmed configuration
+# Committed BEFORE the first model call (E19 practice; E18 §8.1 not repeated).
+cell: E21-CODEX-COMPONENT
+preregistration: docs/experiments/E21-CODEX-COMPONENT/preregistration.md
+status: confirmed
+date: 2026-09-08
+
+harness:
+  name: codex-cli
+  version: "codex-cli 0.145.0"
+  binary: >-
+    <HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex
+  invoked_by: absolute path only
+  untouched:
+    - PATH `codex` (0.144.5, <HOME>/.local/bin/codex)
+    - ~/.codex/packages/standalone/current (-> 0.144.5 release)
+    - ~/.codex/auth.json — never linked, copied or opened; only lstat mtimes recorded
+  isolation:
+    CODEX_HOME: a fresh 0700 temp dir per unit under tmp/e21/run/homes, no auth bridge
+    workdirs: tmp/e21/run/units/<arm>--<Sxx>[-a<attempt>]/work
+    untouched: [tmp/e17, tmp/e17b, tmp/e18, tmp/e19]
+  driver:
+    module: src/karc/bench/driver.py
+    classes: CodexPersistentSession / CodexCliDriver.parse_output (both unmodified)
+    forbidden: src/karc/bench/e5_cross_runtime.py (v1 reading; write would be
+      folded into fresh) — not imported, not modified
+  materialization:
+    module: src/karc/bench/e5_cache_canary.py materialize_session (unmodified)
+    note: Codex-native. AGENTS.md stays in the workdir (Codex auto-loads it) and
+      the MCP server is registered with Codex `mcp_servers.*` overrides. Neither
+      of E19's two pi adaptations is needed.
+
+route:
+  billing: metered OpenAI API key
+  key_delivery: >-
+    `codex login --with-api-key` stdin only. The key is never placed in argv, in
+    the child environment, in a file this cell writes, or in any output.
+  proof: >-
+    H11 authproof phase — same isolated home, same DriverRequest, same argv
+    builder: with no credential the exec fails 401; after the stdin key
+    injection the identical call succeeds.
+
+provider:
+  provider: openai
+  model: gpt-5.6-luna
+  reasoning_effort: low
+  sandbox: read-only
+  web_search: disabled
+  multi_agent: disabled
+  memories: disabled
+  reasoning_effort_note: >-
+    Not fixed by the preregistration. "low" follows E20 — the predecessor cell
+    on this binary and this billing route — rather than E5-G1's "high". Declared
+    in the committed script before the first model call.
+
+schedule:
+  builder: karc.bench.e5_cache_canary.prepare_bundle
+  fixture: fixture/e4-v2
+  schedule_seed: 4352            # E19's seed, so the task sequence is identical
+  session_count: 24
+  session_length: 8
+  resident_budget_tokens: 1756
+  schedule_sha256: acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b
+  tasks_sha256: 73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74
+  snapshot_sha256: f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73
+  gate: the three hashes above are asserted at every phase; they are E19's
+    committed constants, so the measurement window's task sequence is
+    bit-identical to E19 leg B's.
+
+windows:
+  warmup:
+    sessions: S01..S08
+    arms: [karc-full]
+    judged: false
+    note: rag-bm25 carries no resident state and is not warmed up (E19 §2)
+  measurement:
+    sessions: S09..S20
+    arms: [karc-full, rag-bm25]
+    turns: 12 x 8 x 2 = 192
+  unused: S21..S24
+  window_reuse_profile: >-
+    S09..S12 have 4 reuse turns each, S13..S20 have 3 (recorded in
+    raw/slices.json BEFORE execution; E19 §5 disclosed this profile only
+    afterwards).
+
+steady_state:
+  definition: input state quantity only (resident injection tokens per session)
+  criterion:
+    relative_change_last_vs_previous_warmup_session: <= 0.05
+    budget_utilization_last_warmup_session: ">= 0.95 of 1756"
+  H12: if unmet, do not measure; report.
+
+accounting:
+  inclusion_relation: >-
+    MEASURED, not assumed. Every turn records both candidate readings
+    (inclusive gross = input_tokens; exclusive gross = input + cached + write),
+    the closure identity input == cached + write + fresh, the component
+    magnitude tests (cached > input?, cached + write > input?), and the two
+    candidate total identities. gross is defined from whichever reading
+    survives.
+  priced: fresh*p_in + write*p_write + cached*p_read + output*p_out
+  rates_usd_per_million:
+    input: 0.20
+    cache_write: 0.25
+    cache_read: 0.02
+    output: 1.20
+  rate_card_source: docs/analysis/openai-luna-rate-card.md (observed 2026-08-28)
+  multipliers: {mu_r: 0.10, mu_w: 1.25, mu_o: 6.00}
+  cost_field: >-
+    Codex exec emits no cost field, so E19's inversion of a harness-reported
+    cost is unavailable here. The substitutes are the rate-card arithmetic
+    identity and the aggregation-invariance residual (see analyze_e21.py).
+
+statistics:
+  unit: session
+  method: paired percentile bootstrap, common random numbers
+  seed: 1313
+  resamples: 10000
+  ci: two-sided 95% percentile
+  comparison: ratio CIs against 1.0, difference CIs against 0 (never mixed)
+
+judgments:
+  R1: delta_read(karc - rag) > 0 AND delta_creation(karc - rag) < 0
+  R2: paired priced ratio 95% CI entirely below 1.0 AND paired mean USD
+      difference CI excludes 0
+  R3: mu_w_star computed from THIS cell's own component totals is < 1.25
+  gross: measured and reported only — not a preregistered prediction
+
+execution:
+  parallelism: 3
+  tpm_throttle: 120000       # E19 leg B's setting, adopted from the start
+  retries: up to 2 per unit, each retry on a NEW workdir path
+
+hold_conditions:
+  H1: MCP round-trip cross-check mismatch (Codex mcp_tool_call items vs the
+      server's ingest_observations rows; guard-hook PreToolUse recorded too)
+  H2: any refused or answerless turn, by the three-signal disjunction
+      (output_tokens == 0 / error|turn.failed event / no agent_message item)
+  H3: any closure violation (input == cached + write + fresh)
+  H4: first cache-eligible cold turn with write == 0 (prefix >= 1024)
+  H5: completion failure rate > 10%
+  H6: model cost > $2 (runner stops at $1.6)
+  H7: any user ~/.codex path mtime change
+  H8: an eligible turn with read == write == 0
+  H9: cold-start misattribution — an eligible turn with write == 0 and
+      cacheRead ~ prefix (the assert that caught E18 leg B attempt 2)
+  H10: execution namespace overlapping a previous execution (workdir path AND
+       session/thread id both new)
+  H11: run on a subscription entitlement (the no-credential control must fail
+       first)
+  H12: steady state unmet
+  policy: H2, H3, H4 and H9 are whole-dataset redesign causes, not partial
+    discards. Any discard is accompanied by a sensitivity analysis of whether
+    the discarded data favoured or disfavoured us.

@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T16:49:01Z",
+    "phase": "registry",
+    "pi_version": "0.84.3"
+  },
+  "argv_tail": [
+    "--mode",
+    "rpc",
+    "--provider",
+    "openai",
+    "--model",
+    "gpt-5.6-luna",
+    "--thinking",
+    "off",
+    "--no-extensions",
+    "-e",
+    "<REPO>/integrations/pi/karc-mcp-bridge/index.ts",
+    "-e",
+    "<REPO>/docs/experiments/E17B-PI-OPENAI-GATE/scripts/tool-registry-probe.ts",
+    "--no-builtin-tools",
+    "--tools",
+    "karc_search,karc_get",
+    "--no-context-files",
+    "--no-skills",
+    "--no-prompt-templates",
+    "--no-themes",
+    "--no-approve",
+    "--no-session"
+  ],
+  "bridge_audit_lines": 0,
+  "get_state": {
+    "api": "openai-responses",
+    "autoCompactionEnabled": false,
+    "messageCount": 0,
+    "model": "gpt-5.6-luna",
+    "provider": "openai"
+  },
+  "probe": {
+    "active_tools": [
+      "karc_search",
+      "karc_get"
+    ],
+    "all_tools": [
+      {
+        "description_chars": 192,
+        "description_sha256": "6351b9f0161f6272789336561f1ef6401e6f48d2dea5294cbc708a1cbcc3d183",
+        "name": "karc_search",
+        "parameters_sha256": "7ad17e703bba2fe48ccd7cfc0ea0f1b7f56d9cac192c883ae696a2bfb643aaec",
+        "source": null
+      },
+      {
+        "description_chars": 97,
+        "description_sha256": "5ca7bed62bee0cfeab8b6b2fce2fc13c677b3e81c02a8e0d8230714c359399a5",
+        "name": "karc_get",
+        "parameters_sha256": "265a2c9496ae7f3af9307a5808ece1fc4bcd9833f80d218fccc63ff4c76c4025",
+        "source": null
+      }
+    ],
+    "commands": [
+      "karc-bridge-stats",
+      "llama"
+    ],
+    "model_id": "gpt-5.6-luna",
+    "ok": true,
+    "probe": "e17b-tool-registry",
+    "session_id": "01a0441f-f8e4-7d02-998f-2404eea757e9",
+    "system_prompt_chars": 1800,
+    "system_prompt_sha256": "38f91bf0d9ef8b066a93dde38e8c55a309c25b0f7122b15aac8156d120f85619"
+  },
+  "returncode": 0,
+  "rpc_event_types": [
+    "response"
+  ],
+  "stderr_tail": []
+}

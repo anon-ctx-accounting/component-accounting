@@ -1,0 +1,30 @@
+{
+  "cell": "E15-CODEX-WRITE",
+  "check": "codex-turn-usage-is-per-invocation-not-cumulative",
+  "source_committed_raw": "docs/experiments/E10-P2-H16/run/raw/turns.jsonl",
+  "source_recomputed": false,
+  "model_turns_spent": 0,
+  "sessions_with_at_least_3_turns": 24,
+  "sessions_with_monotone_gross": 24,
+  "sessions_falsifying_cumulative_reading": 12,
+  "example": {
+    "arm": "karc-full",
+    "gross_series_first6": [
+      55151,
+      69626,
+      114318,
+      161144,
+      210097,
+      226799
+    ],
+    "increment_series_first5": [
+      14475,
+      44692,
+      46826,
+      48953,
+      16702
+    ],
+    "turn1_gross": 55151
+  },
+  "conclusion": "cumulative reading falsified"
+}

@@ -1,0 +1,942 @@
+{
+  "_meta": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 1313,
+    "generated_at_utc": "2026-08-28T03:38:49Z",
+    "namespace": {
+      "A": "r1",
+      "B": "r1"
+    }
+  },
+  "accounting_contract": {
+    "gross": "input + cacheRead + cacheWrite",
+    "why": "pi usage.input excludes cache buckets on both legs (E17 §3, E17B §2); treating it as provider raw input_tokens under-counts gross by ~5.5x"
+  },
+  "cell": "E19-STEADY-STATE",
+  "descriptive_window_profile": {
+    "A": {
+      "n_sessions": 12,
+      "per_session": {
+        "S09": {
+          "gross_ratio": 0.9609148751770351,
+          "priced_ratio": 0.4847582421462307
+        },
+        "S10": {
+          "gross_ratio": 0.9433600225741596,
+          "priced_ratio": 0.47666546123916137
+        },
+        "S11": {
+          "gross_ratio": 0.9529191004260843,
+          "priced_ratio": 0.4776962713172921
+        },
+        "S12": {
+          "gross_ratio": 0.940521547709762,
+          "priced_ratio": 0.47613733485032417
+        },
+        "S13": {
+          "gross_ratio": 1.1261466756117369,
+          "priced_ratio": 0.5392950164013034
+        },
+        "S14": {
+          "gross_ratio": 1.108603408658387,
+          "priced_ratio": 0.5354406377642908
+        },
+        "S15": {
+          "gross_ratio": 1.1164412048753323,
+          "priced_ratio": 0.5357297043386651
+        },
+        "S16": {
+          "gross_ratio": 1.1074599980298063,
+          "priced_ratio": 0.535581327779422
+        },
+        "S17": {
+          "gross_ratio": 1.1251074927750757,
+          "priced_ratio": 0.5396022451666551
+        },
+        "S18": {
+          "gross_ratio": 1.1167112120335958,
+          "priced_ratio": 0.5376451014775081
+        },
+        "S19": {
+          "gross_ratio": 1.1117256559129165,
+          "priced_ratio": 0.537010998455212
+        },
+        "S20": {
+          "gross_ratio": 1.110373192667141,
+          "priced_ratio": 0.5365604150618883
+        }
+      },
+      "sessions_with_gross_ratio_above_one": 8,
+      "sessions_with_priced_ratio_below_one": 12
+    },
+    "B": {
+      "n_sessions": 12,
+      "per_session": {
+        "S09": {
+          "gross_ratio": 1.2014022402407423,
+          "priced_ratio": 0.7199207464015582
+        },
+        "S10": {
+          "gross_ratio": 1.2247187486930702,
+          "priced_ratio": 0.7364216671827458
+        },
+        "S11": {
+          "gross_ratio": 1.2456477870369402,
+          "priced_ratio": 0.7276923568525723
+        },
+        "S12": {
+          "gross_ratio": 1.1807493797045614,
+          "priced_ratio": 0.7100201189643106
+        },
+        "S13": {
+          "gross_ratio": 1.4971826560536239,
+          "priced_ratio": 0.8532489777473268
+        },
+        "S14": {
+          "gross_ratio": 1.4285326058553616,
+          "priced_ratio": 0.8340039773454128
+        },
+        "S15": {
+          "gross_ratio": 1.4780795283492223,
+          "priced_ratio": 0.846102575049336
+        },
+        "S16": {
+          "gross_ratio": 1.4254548869042651,
+          "priced_ratio": 0.8330760618439034
+        },
+        "S17": {
+          "gross_ratio": 1.485915345685725,
+          "priced_ratio": 0.8501816161143025
+        },
+        "S18": {
+          "gross_ratio": 1.4520979386836874,
+          "priced_ratio": 0.840536616934567
+        },
+        "S19": {
+          "gross_ratio": 1.4318362563308358,
+          "priced_ratio": 0.83570291198604
+        },
+        "S20": {
+          "gross_ratio": 1.4269223938909608,
+          "priced_ratio": 0.8333793701007188
+        }
+      },
+      "sessions_with_gross_ratio_above_one": 12,
+      "sessions_with_priced_ratio_below_one": 12
+    },
+    "caveat": "descriptive; the judgment is the pooled test over the whole preregistered window, and no sub-range of it is selected or tested"
+  },
+  "e18_pooled_contrast": {
+    "A": {
+      "component_delta_karc_minus_rag": {
+        "api_calls": 108,
+        "cache_read": 80526,
+        "creation": -262350,
+        "creation_1h": -262350,
+        "creation_5m": 0,
+        "gross": -181512,
+        "output": 6106,
+        "tool_calls": 109,
+        "turns": 0,
+        "uncached": 312
+      },
+      "mu_w_star": 0.14825462168858394,
+      "pooled_gross_ci_crosses_one": true,
+      "pooled_gross_ratio": 0.8933293214489093,
+      "pooled_gross_ratio_ci95": [
+        0.7439187759994359,
+        1.032369154915828
+      ],
+      "pooled_priced_ratio": 0.44943150297975737,
+      "pooled_priced_ratio_ci95": [
+        0.3900141067637325,
+        0.5052991656845
+      ],
+      "window": "E18 pooled all 12 of its sessions, warm-up included; E19 pools 12 post-warm-up sessions only"
+    },
+    "B": {
+      "component_delta_karc_minus_rag": {
+        "api_calls": 108,
+        "cache_read": 335522,
+        "creation": -140979,
+        "creation_1h": 0,
+        "creation_5m": -140979,
+        "gross": 196588,
+        "output": 3094,
+        "tool_calls": 113,
+        "turns": 0,
+        "uncached": 2045
+      },
+      "mu_w_star": 0.3841792039949212,
+      "pooled_gross_ci_crosses_one": true,
+      "pooled_gross_ratio": 1.171291798490693,
+      "pooled_gross_ratio_ci95": [
+        0.9515715721644545,
+        1.367426807764753
+      ],
+      "pooled_priced_ratio": 0.7040578934652494,
+      "pooled_priced_ratio_ci95": [
+        0.5966795178122455,
+        0.7997494343433659
+      ],
+      "window": "E18 pooled all 12 of its sessions, warm-up included; E19 pools 12 post-warm-up sessions only"
+    },
+    "available": true,
+    "excluded": "E18 §4 per-session regime observation (post hoc)",
+    "sha256": "ef5ad2a31ba6a4b699d77da3b1d618f4cca3352f4dc936f0bfb0b0c83da8072d",
+    "source": "docs/experiments/E18-PI-REVERSAL/raw/analysis.json"
+  },
+  "judgments": {
+    "A": {
+      "Q1_gross_ordering_karc_more_expensive": {
+        "ci95": [
+          1.0158528602604948,
+          1.1020726326029033
+        ],
+        "criterion": "paired gross ratio 95% CI entirely above 1.0",
+        "paired_mean_session_gross_difference": 8515.75,
+        "paired_mean_session_gross_difference_ci95": [
+          2248.25,
+          14478.916666666666
+        ],
+        "ratio": 1.060039446990096,
+        "verdict": "PASS"
+      },
+      "Q2_priced_reversal": {
+        "criterion": "paired priced ratio 95% CI entirely below 1.0 AND paired mean USD difference CI excludes 0",
+        "paired_mean_usd_difference": -0.10644740000000001,
+        "paired_mean_usd_difference_ci95": [
+          -0.109888475,
+          -0.1031875
+        ],
+        "priced_ratio": 0.517678074081609,
+        "priced_ratio_ci95": [
+          0.5020443825029528,
+          0.5324270721727606
+        ],
+        "priced_ratio_ci_entirely_below_one": true,
+        "usd_difference_ci_excludes_zero": true,
+        "verdict": "PASS"
+      },
+      "Q3_component_signature": {
+        "criterion": "delta_read > 0 AND delta_creation < 0",
+        "delta_creation": -246135,
+        "delta_output": 6272,
+        "delta_read": 348004,
+        "delta_uncached": 320,
+        "verdict": "PASS"
+      },
+      "REVERSAL": {
+        "definition": "Q1 PASS and Q2 PASS",
+        "verdict": "ESTABLISHED"
+      },
+      "hold_fired": [],
+      "observed_mu_w": 2.0,
+      "reversal_threshold_mu_w_star": 0.27009730432486234,
+      "steady_state_reached": true
+    },
+    "B": {
+      "Q1_gross_ordering_karc_more_expensive": {
+        "ci95": [
+          1.3047897373482338,
+          1.4360903304195332
+        ],
+        "criterion": "paired gross ratio 95% CI entirely above 1.0",
+        "paired_mean_session_gross_difference": 35693.75,
+        "paired_mean_session_gross_difference_ci95": [
+          29138.166666666668,
+          41710.833333333336
+        ],
+        "ratio": 1.3732126830883442,
+        "verdict": "PASS"
+      },
+      "Q2_priced_reversal": {
+        "criterion": "paired priced ratio 95% CI entirely below 1.0 AND paired mean USD difference CI excludes 0",
+        "paired_mean_usd_difference": -0.0013635691666666666,
+        "paired_mean_usd_difference_ci95": [
+          -0.0015868033333333335,
+          -0.0011557591666666665
+        ],
+        "priced_ratio": 0.8016847577827391,
+        "priced_ratio_ci95": [
+          0.769222762038129,
+          0.8318806227115109
+        ],
+        "priced_ratio_ci_entirely_below_one": true,
+        "usd_difference_ci_excludes_zero": true,
+        "verdict": "PASS"
+      },
+      "Q3_component_signature": {
+        "criterion": "delta_read > 0 AND delta_creation < 0",
+        "delta_creation": -124627,
+        "delta_output": 3062,
+        "delta_read": 552616,
+        "delta_uncached": 336,
+        "verdict": "PASS"
+      },
+      "REVERSAL": {
+        "definition": "Q1 PASS and Q2 PASS",
+        "verdict": "ESTABLISHED"
+      },
+      "hold_fired": [],
+      "observed_mu_w": 1.25,
+      "reversal_threshold_mu_w_star": 0.5935278872154508,
+      "steady_state_reached": true
+    },
+    "H6_prime_budget": {
+      "cap_usd": 25.0,
+      "standard_rate_card_total_usd_incl_warmup": 4.898712,
+      "within_cap": true
+    }
+  },
+  "legs": {
+    "A": {
+      "bootstrap": {
+        "ci": "two-sided 95% percentile",
+        "method": "paired percentile bootstrap over sessions, common random numbers",
+        "n_sessions": 12,
+        "resamples": 10000,
+        "seed": 1313,
+        "unit": "session"
+      },
+      "component_delta_karc_minus_rag": {
+        "api_calls": 112,
+        "cache_read": 348004,
+        "creation": -246135,
+        "creation_1h": -246135,
+        "creation_5m": 0,
+        "gross": 102189,
+        "output": 6272,
+        "tool_calls": 112,
+        "turns": 0,
+        "uncached": 320
+      },
+      "component_totals": {
+        "karc-full": {
+          "api_calls": 208,
+          "cache_read": 1679517,
+          "creation": 124287,
+          "creation_1h": 124287,
+          "creation_5m": 0,
+          "gross": 1804220,
+          "output": 8012,
+          "tool_calls": 112,
+          "turns": 96,
+          "uncached": 416
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "cache_read": 1331513,
+          "creation": 370422,
+          "creation_1h": 370422,
+          "creation_5m": 0,
+          "gross": 1702031,
+          "output": 1740,
+          "tool_calls": 0,
+          "turns": 96,
+          "uncached": 96
+        }
+      },
+      "gross_ratio_karc_over_rag": {
+        "ci95_hi": 1.1020726326029033,
+        "ci95_lo": 1.0158528602604948,
+        "degenerate_resamples": 0,
+        "entirely_above_one": true,
+        "entirely_below_one": false,
+        "point": 1.060039446990096,
+        "usable_resamples": 10000
+      },
+      "leg": "A",
+      "multipliers": {
+        "mu_output": 5.0,
+        "mu_read": 0.09999999999999999,
+        "mu_write_1h": 2.0,
+        "mu_write_5m": 1.25
+      },
+      "observed_mu_w": 2.0,
+      "paired_mean_session_gross_difference": {
+        "ci95_hi": 14478.916666666666,
+        "ci95_lo": 2248.25,
+        "excludes_zero": true,
+        "point": 8515.75
+      },
+      "paired_mean_session_priced_usd_difference": {
+        "ci95_hi": -0.1031875,
+        "ci95_lo": -0.109888475,
+        "excludes_zero": true,
+        "point": -0.10644740000000001
+      },
+      "per_position_profile": {
+        "karc-full": {
+          "1": {
+            "api_calls_mean": 3,
+            "creation_mean": 7506.916666666667,
+            "gross_mean": 21428.916666666668,
+            "n": 12,
+            "output_mean": 130.5,
+            "read_mean": 13916
+          },
+          "2": {
+            "api_calls_mean": 2.5,
+            "creation_mean": 535.75,
+            "gross_mean": 19627.666666666668,
+            "n": 12,
+            "output_mean": 102.41666666666667,
+            "read_mean": 19086.916666666668
+          },
+          "3": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 346.1666666666667,
+            "gross_mean": 15215.666666666666,
+            "n": 12,
+            "output_mean": 64.75,
+            "read_mean": 14865.833333333334
+          },
+          "4": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 347.0833333333333,
+            "gross_mean": 15820,
+            "n": 12,
+            "output_mean": 65.25,
+            "read_mean": 15469.25
+          },
+          "5": {
+            "api_calls_mean": 2,
+            "creation_mean": 395.6666666666667,
+            "gross_mean": 17986.083333333332,
+            "n": 12,
+            "output_mean": 73.75,
+            "read_mean": 17586.416666666668
+          },
+          "6": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 345.1666666666667,
+            "gross_mean": 17092.166666666668,
+            "n": 12,
+            "output_mean": 64.33333333333333,
+            "read_mean": 16743.333333333332
+          },
+          "7": {
+            "api_calls_mean": 2,
+            "creation_mean": 392.5833333333333,
+            "gross_mean": 19630.5,
+            "n": 12,
+            "output_mean": 73.83333333333333,
+            "read_mean": 19233.916666666668
+          },
+          "8": {
+            "api_calls_mean": 2.3333333333333335,
+            "creation_mean": 487.9166666666667,
+            "gross_mean": 23550.666666666668,
+            "n": 12,
+            "output_mean": 92.83333333333333,
+            "read_mean": 23058.083333333332
+          }
+        },
+        "rag-bm25": {
+          "1": {
+            "api_calls_mean": 1,
+            "creation_mean": 4574.166666666667,
+            "gross_mean": 4575.166666666667,
+            "n": 12,
+            "output_mean": 18.5,
+            "read_mean": 0
+          },
+          "2": {
+            "api_calls_mean": 1,
+            "creation_mean": 3756.4166666666665,
+            "gross_mean": 8331.583333333334,
+            "n": 12,
+            "output_mean": 18.416666666666668,
+            "read_mean": 4574.166666666667
+          },
+          "3": {
+            "api_calls_mean": 1,
+            "creation_mean": 3766.75,
+            "gross_mean": 12098.333333333334,
+            "n": 12,
+            "output_mean": 18.083333333333332,
+            "read_mean": 8330.583333333334
+          },
+          "4": {
+            "api_calls_mean": 1,
+            "creation_mean": 3758.75,
+            "gross_mean": 15857.083333333334,
+            "n": 12,
+            "output_mean": 18.583333333333332,
+            "read_mean": 12097.333333333334
+          },
+          "5": {
+            "api_calls_mean": 1,
+            "creation_mean": 3759.25,
+            "gross_mean": 19616.333333333332,
+            "n": 12,
+            "output_mean": 17.75,
+            "read_mean": 15856.083333333334
+          },
+          "6": {
+            "api_calls_mean": 1,
+            "creation_mean": 3751.8333333333335,
+            "gross_mean": 23368.166666666668,
+            "n": 12,
+            "output_mean": 17.666666666666668,
+            "read_mean": 19615.333333333332
+          },
+          "7": {
+            "api_calls_mean": 1,
+            "creation_mean": 3751.5833333333335,
+            "gross_mean": 27119.75,
+            "n": 12,
+            "output_mean": 17.833333333333332,
+            "read_mean": 23367.166666666668
+          },
+          "8": {
+            "api_calls_mean": 1,
+            "creation_mean": 3749.75,
+            "gross_mean": 30869.5,
+            "n": 12,
+            "output_mean": 18.166666666666668,
+            "read_mean": 27118.75
+          }
+        }
+      },
+      "per_session_gross": {
+        "karc-full": {
+          "S09": 136374.0,
+          "S10": 133726.0,
+          "S11": 135082.0,
+          "S12": 133302.0,
+          "S13": 159468.0,
+          "S14": 157282.0,
+          "S15": 158375.0,
+          "S16": 157390.0,
+          "S17": 159619.0,
+          "S18": 158353.0,
+          "S19": 157586.0,
+          "S20": 157663.0
+        },
+        "rag-bm25": {
+          "S09": 141921.0,
+          "S10": 141755.0,
+          "S11": 141756.0,
+          "S12": 141732.0,
+          "S13": 141605.0,
+          "S14": 141874.0,
+          "S15": 141857.0,
+          "S16": 142118.0,
+          "S17": 141870.0,
+          "S18": 141803.0,
+          "S19": 141749.0,
+          "S20": 141991.0
+        }
+      },
+      "per_session_priced_usd": {
+        "karc-full": {
+          "S09": 0.1070925,
+          "S10": 0.1051851,
+          "S11": 0.1054365,
+          "S12": 0.104958,
+          "S13": 0.118767,
+          "S14": 0.11817629999999998,
+          "S15": 0.11838329999999998,
+          "S16": 0.11834279999999998,
+          "S17": 0.1191411,
+          "S18": 0.1185651,
+          "S19": 0.1184715,
+          "S20": 0.11848589999999999
+        },
+        "rag-bm25": {
+          "S09": 0.2209194,
+          "S10": 0.2206686,
+          "S11": 0.22071870000000002,
+          "S12": 0.2204364,
+          "S13": 0.2202264,
+          "S14": 0.2207085,
+          "S15": 0.2209758,
+          "S16": 0.2209614,
+          "S17": 0.2207943,
+          "S18": 0.22052670000000002,
+          "S19": 0.2206128,
+          "S20": 0.2208249
+        }
+      },
+      "priced_ratio_karc_over_rag": {
+        "ci95_hi": 0.5324270721727606,
+        "ci95_lo": 0.5020443825029528,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": true,
+        "point": 0.517678074081609,
+        "usable_resamples": 10000
+      },
+      "priced_totals_usd": {
+        "karc-full": 1.3710050999999999,
+        "rag-bm25": 2.6483739
+      },
+      "rate_card_source": "E13-RECOMP §4.1 recovered Anthropic claude-sonnet-5 card",
+      "rate_card_usd_per_million": {
+        "input": 3.0,
+        "output": 15.0,
+        "read": 0.3,
+        "write_1h": 6.0,
+        "write_5m": 3.75
+      },
+      "reversal_predicted_by_threshold": true,
+      "reversal_threshold_mu_w_star": 0.27009730432486234,
+      "single_api_call_turn_prefix_tokens": {
+        "karc-full": {
+          "max": 10628,
+          "mean": 8978.2,
+          "min": 7660,
+          "n": 40
+        },
+        "rag-bm25": {
+          "max": 30904,
+          "mean": 17729.489583333332,
+          "min": 4571,
+          "n": 96
+        }
+      }
+    },
+    "B": {
+      "bootstrap": {
+        "ci": "two-sided 95% percentile",
+        "method": "paired percentile bootstrap over sessions, common random numbers",
+        "n_sessions": 12,
+        "resamples": 10000,
+        "seed": 1313,
+        "unit": "session"
+      },
+      "component_delta_karc_minus_rag": {
+        "api_calls": 112,
+        "cache_read": 552616,
+        "creation": -124627,
+        "creation_1h": 0,
+        "creation_5m": -124627,
+        "gross": 428325,
+        "output": 3062,
+        "tool_calls": 113,
+        "turns": 0,
+        "uncached": 336
+      },
+      "component_totals": {
+        "karc-full": {
+          "api_calls": 208,
+          "cache_read": 1449633,
+          "creation": 125738,
+          "creation_1h": 0,
+          "creation_5m": 125738,
+          "gross": 1575995,
+          "output": 4662,
+          "tool_calls": 113,
+          "turns": 96,
+          "uncached": 624
+        },
+        "rag-bm25": {
+          "api_calls": 96,
+          "cache_read": 897017,
+          "creation": 250365,
+          "creation_1h": 0,
+          "creation_5m": 250365,
+          "gross": 1147670,
+          "output": 1600,
+          "tool_calls": 0,
+          "turns": 96,
+          "uncached": 288
+        }
+      },
+      "gross_ratio_karc_over_rag": {
+        "ci95_hi": 1.4360903304195332,
+        "ci95_lo": 1.3047897373482338,
+        "degenerate_resamples": 0,
+        "entirely_above_one": true,
+        "entirely_below_one": false,
+        "point": 1.3732126830883442,
+        "usable_resamples": 10000
+      },
+      "leg": "B",
+      "multipliers": {
+        "mu_output": 5.999999999999999,
+        "mu_read": 0.09999999999999999,
+        "mu_write_1h": 1.25,
+        "mu_write_5m": 1.25
+      },
+      "observed_mu_w": 1.25,
+      "paired_mean_session_gross_difference": {
+        "ci95_hi": 41710.833333333336,
+        "ci95_lo": 29138.166666666668,
+        "excludes_zero": true,
+        "point": 35693.75
+      },
+      "paired_mean_session_priced_usd_difference": {
+        "ci95_hi": -0.0011557591666666665,
+        "ci95_lo": -0.0015868033333333335,
+        "excludes_zero": true,
+        "point": -0.0013635691666666666
+      },
+      "per_position_profile": {
+        "karc-full": {
+          "1": {
+            "api_calls_mean": 3,
+            "creation_mean": 5436.833333333333,
+            "gross_mean": 14804.666666666666,
+            "n": 12,
+            "output_mean": 74.16666666666667,
+            "read_mean": 9358.833333333334
+          },
+          "2": {
+            "api_calls_mean": 2.5,
+            "creation_mean": 996.9166666666666,
+            "gross_mean": 15466.5,
+            "n": 12,
+            "output_mean": 57.25,
+            "read_mean": 14462.083333333334
+          },
+          "3": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 589.5833333333334,
+            "gross_mean": 12708.833333333334,
+            "n": 12,
+            "output_mean": 39.5,
+            "read_mean": 12113.75
+          },
+          "4": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 590.25,
+            "gross_mean": 13797.166666666666,
+            "n": 12,
+            "output_mean": 39.25,
+            "read_mean": 13201.416666666666
+          },
+          "5": {
+            "api_calls_mean": 2,
+            "creation_mean": 691.8333333333334,
+            "gross_mean": 16197.416666666666,
+            "n": 12,
+            "output_mean": 43.666666666666664,
+            "read_mean": 15499.583333333334
+          },
+          "6": {
+            "api_calls_mean": 1.8333333333333333,
+            "creation_mean": 588.6666666666666,
+            "gross_mean": 15826.916666666666,
+            "n": 12,
+            "output_mean": 38.916666666666664,
+            "read_mean": 15232.75
+          },
+          "7": {
+            "api_calls_mean": 2,
+            "creation_mean": 689.9166666666666,
+            "gross_mean": 19083.333333333332,
+            "n": 12,
+            "output_mean": 43.166666666666664,
+            "read_mean": 18387.416666666668
+          },
+          "8": {
+            "api_calls_mean": 2.3333333333333335,
+            "creation_mean": 894.1666666666666,
+            "gross_mean": 23448.083333333332,
+            "n": 12,
+            "output_mean": 52.583333333333336,
+            "read_mean": 22546.916666666668
+          }
+        },
+        "rag-bm25": {
+          "1": {
+            "api_calls_mean": 1,
+            "creation_mean": 3029.6666666666665,
+            "gross_mean": 3032.6666666666665,
+            "n": 12,
+            "output_mean": 17,
+            "read_mean": 0
+          },
+          "2": {
+            "api_calls_mean": 1,
+            "creation_mean": 2547.75,
+            "gross_mean": 5580.416666666667,
+            "n": 12,
+            "output_mean": 16.75,
+            "read_mean": 3029.6666666666665
+          },
+          "3": {
+            "api_calls_mean": 1,
+            "creation_mean": 2554.9166666666665,
+            "gross_mean": 8135.333333333333,
+            "n": 12,
+            "output_mean": 17,
+            "read_mean": 5577.416666666667
+          },
+          "4": {
+            "api_calls_mean": 1,
+            "creation_mean": 2549.5,
+            "gross_mean": 10684.833333333334,
+            "n": 12,
+            "output_mean": 16.75,
+            "read_mean": 8132.333333333333
+          },
+          "5": {
+            "api_calls_mean": 1,
+            "creation_mean": 2550.4166666666665,
+            "gross_mean": 13235.25,
+            "n": 12,
+            "output_mean": 16.666666666666668,
+            "read_mean": 10681.833333333334
+          },
+          "6": {
+            "api_calls_mean": 1,
+            "creation_mean": 2544.5,
+            "gross_mean": 15779.75,
+            "n": 12,
+            "output_mean": 16.416666666666668,
+            "read_mean": 13232.25
+          },
+          "7": {
+            "api_calls_mean": 1,
+            "creation_mean": 2544.4166666666665,
+            "gross_mean": 18324.166666666668,
+            "n": 12,
+            "output_mean": 16.166666666666668,
+            "read_mean": 15776.75
+          },
+          "8": {
+            "api_calls_mean": 1,
+            "creation_mean": 2542.5833333333335,
+            "gross_mean": 20866.75,
+            "n": 12,
+            "output_mean": 16.583333333333332,
+            "read_mean": 18321.166666666668
+          }
+        }
+      },
+      "per_session_gross": {
+        "karc-full": {
+          "S09": 114979.0,
+          "S10": 117137.0,
+          "S11": 119135.0,
+          "S12": 112784.0,
+          "S13": 142951.0,
+          "S14": 136672.0,
+          "S15": 141399.0,
+          "S16": 136627.0,
+          "S17": 142107.0,
+          "S18": 138777.0,
+          "S19": 136832.0,
+          "S20": 136595.0
+        },
+        "rag-bm25": {
+          "S09": 95704.0,
+          "S10": 95644.0,
+          "S11": 95641.0,
+          "S12": 95519.0,
+          "S13": 95480.0,
+          "S14": 95673.0,
+          "S15": 95664.0,
+          "S16": 95848.0,
+          "S17": 95636.0,
+          "S18": 95570.0,
+          "S19": 95564.0,
+          "S20": 95727.0
+        }
+      },
+      "per_session_priced_usd": {
+        "karc-full": {
+          "S09": 0.0049561,
+          "S10": 0.00506569,
+          "S11": 0.00501006,
+          "S12": 0.00487017,
+          "S13": 0.0058531600000000005,
+          "S14": 0.00573708,
+          "S15": 0.00582666,
+          "S16": 0.005736870000000001,
+          "S17": 0.00584448,
+          "S18": 0.00576672,
+          "S19": 0.005746920000000001,
+          "S20": 0.005732450000000001
+        },
+        "rag-bm25": {
+          "S09": 0.006884230000000001,
+          "S10": 0.00687879,
+          "S11": 0.00688486,
+          "S12": 0.006859200000000001,
+          "S13": 0.006859850000000001,
+          "S14": 0.00687896,
+          "S15": 0.00688647,
+          "S16": 0.00688637,
+          "S17": 0.006874389999999999,
+          "S18": 0.0068607600000000005,
+          "S19": 0.006876750000000001,
+          "S20": 0.006878560000000001
+        }
+      },
+      "priced_ratio_karc_over_rag": {
+        "ci95_hi": 0.8318806227115109,
+        "ci95_lo": 0.769222762038129,
+        "degenerate_resamples": 0,
+        "entirely_above_one": false,
+        "entirely_below_one": true,
+        "point": 0.8016847577827391,
+        "usable_resamples": 10000
+      },
+      "priced_totals_usd": {
+        "karc-full": 0.06614636,
+        "rag-bm25": 0.08250919000000001
+      },
+      "rate_card_source": "docs/analysis/openai-luna-rate-card.md (observed 2026-08-28)",
+      "rate_card_usd_per_million": {
+        "input": 0.2,
+        "output": 1.2,
+        "read": 0.02,
+        "write_1h": 0.25,
+        "write_5m": 0.25
+      },
+      "reversal_predicted_by_threshold": true,
+      "reversal_threshold_mu_w_star": 0.5935278872154508,
+      "single_api_call_turn_prefix_tokens": {
+        "karc-full": {
+          "max": 10917,
+          "mean": 7990.5,
+          "min": 5533,
+          "n": 40
+        },
+        "rag-bm25": {
+          "max": 20892,
+          "mean": 11954.895833333334,
+          "min": 3029,
+          "n": 96
+        }
+      }
+    }
+  },
+  "measurement_window": {
+    "arms": [
+      "karc-full",
+      "rag-bm25"
+    ],
+    "measured_sessions": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20"
+    ],
+    "note": "one preregistered window, pooled once; no sub-range is selected or tested",
+    "warmup_sessions": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08"
+    ]
+  },
+  "preregistration": "docs/experiments/E19-STEADY-STATE/preregistration.md"
+}

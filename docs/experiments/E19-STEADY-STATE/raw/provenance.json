@@ -1,0 +1,41 @@
+{
+  "cell": "E19-STEADY-STATE",
+  "code_git_hash": "e66f20a400015a24478d2e469c50de5c1534726a",
+  "code_committed_before_execution": true,
+  "note": "Scripts and config.yaml were committed before the first model call (E18 §8.1 deviation deliberately not repeated). `git diff HEAD` over scripts/ and config.yaml was empty at analysis time.",
+  "execution_namespace": {
+    "ns": "r1",
+    "workdir_root": "tmp/e19/leg<LEG>r1",
+    "pi_session_id_prefix": "e19r1-",
+    "why": "H12 - both levers (workdir path, which enters pi's system prompt, and the pi session id, which pi uses as prompt_cache_key) are new relative to every earlier execution in this repository."
+  },
+  "phase_order": [
+    "mtime(before)",
+    "slices",
+    "auth A",
+    "auth B",
+    "prepare A",
+    "prepare B",
+    "registry A",
+    "registry B",
+    "wave A warmup (karc-full, S01..S08, parallel 6)",
+    "steady A -> steady state reached",
+    "wave A measure (S09..S20, both arms, parallel 6)",
+    "wave B warmup (karc-full, S01..S08, parallel 3, tpm 120000)",
+    "steady B -> steady state reached",
+    "wave B measure (S09..S20, both arms, parallel 3, tpm 120000)",
+    "mtime(interim), mtime(after)",
+    "analyze"
+  ],
+  "concurrency_note": "leg A's measurement wave and leg B's warm-up wave overlapped in wall time. They use different providers, different isolated homes and different workdirs; nothing in the accounting is shared. Recorded because it differs from E18's strictly sequential legs.",
+  "discarded_runs": [],
+  "reruns": 0,
+  "deviations": [
+    "Task slices: the preregistration §2 asks for warm-up / measurement / E18 slices that are mutually disjoint. Warm-up vs measurement is exactly disjoint (0 shared required versions, verified in raw/slices.json). Disjointness against E18 is NOT attainable - the fixture corpus is frozen and shared by every cell - so the seed was chosen model-free to minimize the residue (9 of 132 required versions over the whole 24-session build; 3 in the warm-up slice and 5 in the measurement slice against E18's 66). The task SEQUENCE differs (tasks_sha256 differs) and E18's data is never re-analyzed.",
+    "Warm-up was executed on BOTH legs. The preregistration does not say whether warm-up is per leg; running it on both is the conservative reading. Its cost enters no judgment.",
+    "Measured fact worth recording: in this harness the resident set is prescribed by the model-free policy replay over the schedule, so executing the warm-up turns does not itself cause the steady state - the schedule position does. Warm-up execution is therefore inert with respect to the measurement window (each pi unit has its own workdir and session id, so no harness or provider state carries across). It was executed as the preregistration prescribes and is reported honestly rather than skipped."
+  ],
+  "_meta": {
+    "generated_at_utc": "2026-08-28T03:40:17Z"
+  }
+}

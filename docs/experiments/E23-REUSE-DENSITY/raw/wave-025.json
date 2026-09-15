@@ -1,0 +1,329 @@
+{
+  "_meta": {
+    "cell": "E23-REUSE-DENSITY",
+    "generated_at_utc": "2026-09-07T19:39:24Z",
+    "namespace": "v1",
+    "phase": "wave",
+    "pi_version": "0.84.3"
+  },
+  "aborted": [],
+  "cell_standard_priced_usd_running": 0.169435,
+  "failed": [],
+  "namespace": "v1",
+  "parallel": 3,
+  "reuse_factor": 0.25,
+  "rho_tag": "025",
+  "sessions": [
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+  ],
+  "skipped": [],
+  "submission_order": [
+    "karc-full--S09",
+    "rag-bm25--S09",
+    "rag-bm25--S10",
+    "karc-full--S10",
+    "karc-full--S11",
+    "rag-bm25--S11",
+    "rag-bm25--S12",
+    "karc-full--S12",
+    "karc-full--S13",
+    "rag-bm25--S13",
+    "rag-bm25--S14",
+    "karc-full--S14",
+    "karc-full--S15",
+    "rag-bm25--S15",
+    "rag-bm25--S16",
+    "karc-full--S16",
+    "karc-full--S17",
+    "rag-bm25--S17",
+    "rag-bm25--S18",
+    "karc-full--S18",
+    "karc-full--S19",
+    "rag-bm25--S19",
+    "rag-bm25--S20",
+    "karc-full--S20"
+  ],
+  "tokens_per_minute_target": 120000,
+  "unit_attempts": {
+    "karc-full--S09": 1,
+    "karc-full--S10": 1,
+    "karc-full--S11": 1,
+    "karc-full--S12": 1,
+    "karc-full--S13": 1,
+    "karc-full--S14": 1,
+    "karc-full--S15": 1,
+    "karc-full--S16": 1,
+    "karc-full--S17": 1,
+    "karc-full--S18": 1,
+    "karc-full--S19": 1,
+    "karc-full--S20": 1,
+    "rag-bm25--S09": 1,
+    "rag-bm25--S10": 1,
+    "rag-bm25--S11": 1,
+    "rag-bm25--S12": 1,
+    "rag-bm25--S13": 1,
+    "rag-bm25--S14": 1,
+    "rag-bm25--S15": 1,
+    "rag-bm25--S16": 1,
+    "rag-bm25--S17": 1,
+    "rag-bm25--S18": 1,
+    "rag-bm25--S19": 1,
+    "rag-bm25--S20": 1
+  },
+  "unit_summaries": [
+    {
+      "arm": "karc-full",
+      "session_id": "S09",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S09",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S10",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S10",
+      "three_paths": {
+        "bridge_audit_lines": 13,
+        "db_ingest_observations_mcp": 13,
+        "pi_tool_execution_start": 13
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S11",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S11",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S12",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S12",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S13",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S13",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S14",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S14",
+      "three_paths": {
+        "bridge_audit_lines": 13,
+        "db_ingest_observations_mcp": 13,
+        "pi_tool_execution_start": 13
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S15",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S15",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S16",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S16",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S17",
+      "three_paths": {
+        "bridge_audit_lines": 12,
+        "db_ingest_observations_mcp": 12,
+        "pi_tool_execution_start": 12
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S17",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S18",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S18",
+      "three_paths": {
+        "bridge_audit_lines": 13,
+        "db_ingest_observations_mcp": 13,
+        "pi_tool_execution_start": 13
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S19",
+      "three_paths": {
+        "bridge_audit_lines": 15,
+        "db_ingest_observations_mcp": 15,
+        "pi_tool_execution_start": 15
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S19",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S20",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S20",
+      "three_paths": {
+        "bridge_audit_lines": 14,
+        "db_ingest_observations_mcp": 14,
+        "pi_tool_execution_start": 14
+      },
+      "turns_executed": 8
+    }
+  ],
+  "units": 24,
+  "wall_seconds": 1431.6,
+  "wave_standard_priced_usd": 0.155903
+}

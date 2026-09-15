@@ -1,0 +1,129 @@
+{
+  "$id": "urn:k-arc:e10-p2-h16:pre-execution:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analysis_contract": {
+      "type": "object"
+    },
+    "approval_gate": {
+      "type": "object"
+    },
+    "attempt_contract": {
+      "type": "object"
+    },
+    "authority": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "cost_plan": {
+      "type": "object"
+    },
+    "design": {
+      "additionalProperties": true,
+      "properties": {
+        "arms": {
+          "const": [
+            "karc-full",
+            "rag-bm25"
+          ]
+        },
+        "budget_pct": {
+          "const": 5
+        },
+        "granularity": {
+          "const": "whole-document E5-G1"
+        },
+        "paired_sessions": {
+          "const": 12
+        },
+        "planned_valid_turns": {
+          "const": 384
+        },
+        "reuse_factor": {
+          "const": 0.5
+        },
+        "session_length": {
+          "const": 16
+        }
+      },
+      "required": [
+        "arms",
+        "session_length",
+        "paired_sessions",
+        "reuse_factor",
+        "budget_pct",
+        "granularity",
+        "planned_valid_turns"
+      ],
+      "type": "object"
+    },
+    "embedding_calls_at_freeze": {
+      "const": 0
+    },
+    "experiment": {
+      "const": "E10-P2-H16"
+    },
+    "fixture": {
+      "type": "object"
+    },
+    "model_calls_at_freeze": {
+      "const": 0
+    },
+    "preparation_base_git_hash": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "preparation_source_sha256": {
+      "type": "object"
+    },
+    "privacy_contract": {
+      "type": "object"
+    },
+    "runtime_pin": {
+      "type": "object"
+    },
+    "schedule_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema": {
+      "const": "e10-p2-h16-pre-execution-v1"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "status": {
+      "const": "AWAITING_USER_APPROVAL"
+    },
+    "stopping_contract": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema",
+    "experiment",
+    "status",
+    "authority",
+    "design",
+    "runtime_pin",
+    "attempt_contract",
+    "analysis_contract",
+    "stopping_contract",
+    "privacy_contract",
+    "fixture",
+    "schedule_sha256",
+    "preparation_source_sha256",
+    "cost_plan",
+    "approval_gate",
+    "model_calls_at_freeze",
+    "embedding_calls_at_freeze",
+    "sha256"
+  ],
+  "title": "E10-P2-H16 pre-execution scientific contract",
+  "type": "object"
+}

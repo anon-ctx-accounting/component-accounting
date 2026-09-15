@@ -1,0 +1,89 @@
+cell: E17B-PI-OPENAI-GATE
+purpose: >
+  E17이 Anthropic leg에 대해 통과시킨 관문을 pi의 OpenAI leg에 대해 반복한다.
+  단일 질문: pi의 OpenAI leg가 4성분 usage(특히 cacheWrite)를 턴 단위로 내놓는가.
+  이 관문이 향후 provider 축 cell을 게이트한다.
+date: 2026-08-28
+derives_from:
+  gate: docs/experiments/E17-PI-GATE (GATE PASS, Anthropic leg)
+  script: docs/experiments/E17-PI-GATE/scripts/run_e17_pi_gate.py (파생, 처음부터 재작성 아님)
+  baseline: docs/experiments/E16-METERED-WRITE §1
+            (같은 모델 gpt-5.6-luna·같은 endpoint에서 provider가 cache_write_tokens를
+             cold 8,379 / 8,381, warm 19로 보낸다는 것은 이미 확정 사실.
+             이번 cell이 확인하는 것은 pi가 그것을 보존하는가다)
+gate_criteria:
+  pass_requires_all:
+    - (a) 연속 4턴 이상 완주
+    - (b) 턴 단위로 input / output / cacheRead / cacheWrite 회수
+    - (c) cold 호출에서 cacheWrite > 0
+    - (d) 포함 관계를 실측으로 판정 (가정 금지)
+  fail_if_any_unmet: 어디서 왜 막혔는지와 우회 가능성을 판정한다
+harness:
+  name: pi (@earendil-works/pi-coding-agent)
+  version: 0.84.3
+  install: tmp/vendor/piprobe/ (E17이 쓴 scratch 설치본 재사용, gitignored, 전역 설치 0건)
+  isolation:
+    PI_CODING_AGENT_DIR: tmp/e17b/pi-home     # E17의 tmp/e17을 덮어쓰지 않는다
+    PI_CODING_AGENT_SESSION_DIR: tmp/e17b/sessions
+    PI_OFFLINE: 1
+    PI_SKIP_VERSION_CHECK: 1
+    PI_TELEMETRY: 0
+  settings:
+    compaction.enabled: false
+    defaultProjectTrust: never
+  isolation_rationale: >
+    pi는 auth.json을 env보다 우선한다(E17 §6). 미격리 시 사용자 자격이 API key를 덮어
+    계량이 아닌 route로 새어 나간다. 격리 home이면 계량 route가 구조적으로 강제된다.
+provider_leg:
+  provider: openai
+  transport: pi-ai dist/api/openai-responses.js  (providers/openai.js가 openAIResponsesApi()로 바인딩)
+  endpoint: POST https://api.openai.com/v1/responses
+  model: gpt-5.6-luna       # E16 §1과 동일 모델 — 모델 교란 제거
+  thinking: "off"           # thinkingLevelMap.off = "none" → reasoning.effort="none"
+  route: 계량 API key (OPENAI_API_KEY, 격리 pi home에 자격증명 없음)
+  source_level_facts:       # dist 실측, 커밋된 코드 인용 아님
+    usage_mapping: >
+      openai-responses-shared.js:439-452 —
+      input = max(0, input_tokens - cached_tokens - cache_write_tokens),
+      cacheRead = input_tokens_details.cached_tokens,
+      cacheWrite = input_tokens_details.cache_write_tokens,
+      totalTokens = usage.total_tokens.  cacheWrite1h은 설정하지 않는다.
+    request_params: >
+      openai-responses.js:213-222 — prompt_cache_key = clamp64(sessionId),
+      prompt_cache_retention = long일 때 "24h"(Anthropic의 ttl:"1h"이 아니다),
+      store = false.
+    strict_mode: convertResponsesTools의 defaultStrict=false → MCP 스키마 그대로 통과
+arm:
+  name: managed-memory (K-ARC MCP via karc-mcp-bridge)
+  bridge: integrations/pi/karc-mcp-bridge/index.ts
+  tools: karc_search, karc_get
+  mcp_config: tmp/e17b/work/.mcp.json
+  builtin_tools: disabled (--no-builtin-tools)
+workload:
+  fixture: fixture/e4-v2 (신규 fixture 제작 없음)
+  session: S000 (task seq 1..N)
+  prompt_shape: E17과 byte-동형 (E16 §4 거부 함정 회피용 일관 산문)
+  turns: short regime 5턴 + long regime 2턴
+cold_call_strategy: >
+  OpenAI 자동 prefix 캐시는 최소 1,024 토큰이며 pi가 sessionId를 prompt_cache_key로
+  보내므로, 미사용 session id(e17b-short / e17b-long)를 쓰면 각 regime의 1턴 1호출이
+  cold이 된다. regime별 --append-system-prompt로 prefix 바이트도 갈라 두 regime이
+  하나의 캐시 엔트리를 공유하지 않게 한다(E17 §7.1).
+inclusion_test: >
+  가정 금지. totalTokens가 provider의 total_tokens 통과값이므로
+  inclusive 가설(total == input + output)과 exclusive 가설
+  (total == input + output + cacheRead + cacheWrite)은 cacheRead+cacheWrite>0인
+  모든 호출에서 상호 배타적이다. 두 항등식을 호출마다 함께 평가하고,
+  input >= cacheRead + cacheWrite 대소도 별도로 기록한다.
+stop_reason_layers: 정규화값(stopReason) + provider 원문(rawStopReason) 둘 다 (E17 §5)
+key_handling:
+  source: ~/api-key.txt (저장소 외부)
+  method: KARC_OPENAI_KEY로 subshell 주입 → pi 자식 프로세스 env의 OPENAI_API_KEY로만 전달.
+          전역 export 없음. ANTHROPIC_API_KEY는 이 cell에서 사용하지 않는다.
+  forbidden: pi auth check --credentials (비밀을 출력한다)
+  artifacts: raw/ 및 scripts/ 어디에도 키 값이 없다(커밋 전 grep 가드).
+privacy_R9:
+  raw: 카운트·id·sha256·usage 수치만. prompt/응답/tool 결과 텍스트 없음.
+  transient: pi event stream 원문은 tmp/e17b/streams/(gitignored)에만 두고 teardown에서 삭제.
+cost_cap: $2 (모델)
+teardown: rm -rf tmp/e17b   # 사용자 ~/.pi 는 읽기·쓰기 모두 없음(mtime 실측)

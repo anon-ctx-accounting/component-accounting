@@ -1,0 +1,28 @@
+{
+  "attempt_cap": 2,
+  "attempts": [
+    {
+      "cache_read_tokens": 0,
+      "error_class": null,
+      "error_digest": {
+        "length": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fresh_input_tokens": 12212,
+      "gross_input_tokens": 12212,
+      "mcp_get_calls": 0,
+      "mcp_search_calls": 0,
+      "model_verification": "hook",
+      "output_tokens": 16,
+      "reported_model": "gpt-5.6-luna",
+      "success": true
+    }
+  ],
+  "decision_bearing_cap": "excluded",
+  "execution_freeze_sha256": "6b516d164e8208119ce2138f5c1c7f74d9fe852a93110099481928f7b36f0cb0",
+  "experiment_raw": false,
+  "pass": true,
+  "privacy": "normalized-no-content",
+  "schema": "e10-p2-h16-provider-probe-v1",
+  "sha256": "b6532fde983503e21c36d5e8dcaec54a3e56ca813bd3fa99ab54d378406276bc"
+}

@@ -1,0 +1,39 @@
+{
+ "_meta": {
+  "cell": "E25-CODEX-BASEWINDOW",
+  "codex_version": "codex-cli 0.145.0",
+  "generated_at_utc": "2026-09-10T11:54:16+00:00",
+  "namespace": "",
+  "phase": "mtime",
+  "derived_from": "E21 runner with schedule window overridden"
+ },
+ "note": "lstat metadata only; contents never read",
+ "observed_at_utc": "2026-09-10T11:54:16+00:00",
+ "paths": {
+  ".": {
+   "mtime_ns": 1789039775670714930,
+   "mtime_utc": "2026-09-10T11:29:35+00:00",
+   "size": 992
+  },
+  "auth.json": {
+   "mtime_ns": 1788641473644882649,
+   "mtime_utc": "2026-09-05T20:51:13+00:00",
+   "size": 3997
+  },
+  "config.toml": {
+   "mtime_ns": 1788943285881726748,
+   "mtime_utc": "2026-09-09T08:41:25+00:00",
+   "size": 861
+  },
+  "packages/standalone/current": {
+   "mtime_ns": 1788884633314157086,
+   "mtime_utc": "2026-09-08T16:23:53+00:00",
+   "size": 77
+  },
+  "sessions": {
+   "mtime_ns": 1784322834735576624,
+   "mtime_utc": "2026-07-17T21:13:54+00:00",
+   "size": 96
+  }
+ }
+}

@@ -1,0 +1,284 @@
+{
+  "_meta": {
+    "budget_pct": 10,
+    "budget_tokens": 3512,
+    "cell": "E28-BUDGET-SWEEP",
+    "cell_name": "E28-O-10",
+    "cell_tag": "o10",
+    "generated_at_utc": "2026-09-13T12:10:37Z",
+    "imported_runner_sha256": "d9cb64e409e177228b290149d3a656e1b2fdfbc0a356725ca93d853683726614",
+    "leg": "B",
+    "model": "gpt-5.6-luna",
+    "namespace": "o10",
+    "phase": "registry",
+    "pi_version": "0.84.3",
+    "provider": "openai",
+    "reuse_factor": 0.5
+  },
+  "leg": "B",
+  "probes": [
+    {
+      "append_system_prompt": false,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "openai",
+        "--model",
+        "gpt-5.6-luna",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/integrations/pi/karc-mcp-bridge/index.ts",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-builtin-tools",
+        "--tools",
+        "karc_search,karc_get",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session"
+      ],
+      "arm": "karc-full",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "openai-responses",
+        "autoCompactionEnabled": false,
+        "model": "gpt-5.6-luna",
+        "provider": "openai"
+      },
+      "probe": {
+        "active_tools": [
+          "karc_search",
+          "karc_get"
+        ],
+        "all_tools": [
+          {
+            "description_chars": 192,
+            "description_sha256": "6351b9f0161f6272789336561f1ef6401e6f48d2dea5294cbc708a1cbcc3d183",
+            "name": "karc_search",
+            "parameters_sha256": "7ad17e703bba2fe48ccd7cfc0ea0f1b7f56d9cac192c883ae696a2bfb643aaec",
+            "source": null
+          },
+          {
+            "description_chars": 97,
+            "description_sha256": "5ca7bed62bee0cfeab8b6b2fce2fc13c677b3e81c02a8e0d8230714c359399a5",
+            "name": "karc_get",
+            "parameters_sha256": "265a2c9496ae7f3af9307a5808ece1fc4bcd9833f80d218fccc63ff4c76c4025",
+            "source": null
+          }
+        ],
+        "commands": [
+          "karc-bridge-stats",
+          "llama"
+        ],
+        "model_id": "gpt-5.6-luna",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09aad-3217-72ce-be41-8d1eb9d45a2f",
+        "system_prompt_chars": 1828,
+        "system_prompt_sha256": "7f4be21cc692d0e5177a0b3473cdde1903a136c34705263431606728c521c369"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "append_system_prompt": true,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "openai",
+        "--model",
+        "gpt-5.6-luna",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/integrations/pi/karc-mcp-bridge/index.ts",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-builtin-tools",
+        "--tools",
+        "karc_search,karc_get",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session",
+        "--append-system-prompt",
+        "<REPO>/tmp/e28/legBo10/units/karc-full--S01/context/system-append.md"
+      ],
+      "arm": "karc-full",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "openai-responses",
+        "autoCompactionEnabled": false,
+        "model": "gpt-5.6-luna",
+        "provider": "openai"
+      },
+      "probe": {
+        "active_tools": [
+          "karc_search",
+          "karc_get"
+        ],
+        "all_tools": [
+          {
+            "description_chars": 192,
+            "description_sha256": "6351b9f0161f6272789336561f1ef6401e6f48d2dea5294cbc708a1cbcc3d183",
+            "name": "karc_search",
+            "parameters_sha256": "7ad17e703bba2fe48ccd7cfc0ea0f1b7f56d9cac192c883ae696a2bfb643aaec",
+            "source": null
+          },
+          {
+            "description_chars": 97,
+            "description_sha256": "5ca7bed62bee0cfeab8b6b2fce2fc13c677b3e81c02a8e0d8230714c359399a5",
+            "name": "karc_get",
+            "parameters_sha256": "265a2c9496ae7f3af9307a5808ece1fc4bcd9833f80d218fccc63ff4c76c4025",
+            "source": null
+          }
+        ],
+        "commands": [
+          "karc-bridge-stats",
+          "llama"
+        ],
+        "model_id": "gpt-5.6-luna",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09aad-3377-7f1d-bd1b-3f0b03352d4d",
+        "system_prompt_chars": 2274,
+        "system_prompt_sha256": "f31caca4ad3d1f7ee4638a08959eac2d494a57d0918e557024f017480174f98a"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "append_system_prompt": false,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "openai",
+        "--model",
+        "gpt-5.6-luna",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-tools",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session"
+      ],
+      "arm": "rag-bm25",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "openai-responses",
+        "autoCompactionEnabled": false,
+        "model": "gpt-5.6-luna",
+        "provider": "openai"
+      },
+      "probe": {
+        "active_tools": [],
+        "all_tools": [],
+        "commands": [
+          "llama"
+        ],
+        "model_id": "gpt-5.6-luna",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09aad-3464-705a-bc37-7437a24c658c",
+        "system_prompt_chars": 1827,
+        "system_prompt_sha256": "52b528b06849f83c487091544dd28b1f79df8fab51e71dbfeb5ce655aa24744d"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "append_system_prompt": true,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "openai",
+        "--model",
+        "gpt-5.6-luna",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-tools",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session",
+        "--append-system-prompt",
+        "<REPO>/tmp/e28/legBo10/units/rag-bm25--S01/context/system-append.md"
+      ],
+      "arm": "rag-bm25",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "openai-responses",
+        "autoCompactionEnabled": false,
+        "model": "gpt-5.6-luna",
+        "provider": "openai"
+      },
+      "probe": {
+        "active_tools": [],
+        "all_tools": [],
+        "commands": [
+          "llama"
+        ],
+        "model_id": "gpt-5.6-luna",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09aad-34fb-7735-933e-6877c533b5c4",
+        "system_prompt_chars": 2126,
+        "system_prompt_sha256": "66d39b10abf1e2599d205cffcd08fc8fdc8333c0db186a15ec9cba8d3a337251"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    }
+  ],
+  "system_prompt_injection": {
+    "karc-full": {
+      "active_tools": [
+        "karc_search",
+        "karc_get"
+      ],
+      "delta_chars": 446,
+      "system_prompt_chars_append": 2274,
+      "system_prompt_chars_noappend": 1828
+    },
+    "rag-bm25": {
+      "active_tools": [],
+      "delta_chars": 299,
+      "system_prompt_chars_append": 2126,
+      "system_prompt_chars_noappend": 1827
+    }
+  }
+}

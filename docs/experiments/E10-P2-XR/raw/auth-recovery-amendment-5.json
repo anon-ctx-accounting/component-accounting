@@ -1,0 +1,22 @@
+{
+  "amendment": "AUTH-RECOVERY-5",
+  "api_key_fallback_allowed": false,
+  "auth_status_non_sensitive": {
+    "apiProvider": "firstParty",
+    "authMethod": "claude.ai",
+    "loggedIn": true,
+    "subscriptionType": "team"
+  },
+  "auth_storage": "default-HOME os-keychain with exact artifact cleanup",
+  "experiment_id": "E10-P2-XR",
+  "preserved_attempt_rows": 4,
+  "preserved_model_spend_attempts": 0,
+  "reason": "Claude Code namespaces keychain auth by CLAUDE_CONFIG_DIR; retain default-HOME keychain while isolating argv/cwd and deleting only exact experiment session artifacts",
+  "resume_point": "RAG one-call provider probe; smoke remains 0/64",
+  "schema": "e10-p2-xr-auth-recovery-amendment-v1",
+  "scientific_design_changed": false,
+  "sha256": "3dd0fbf5ac659c22c653668412ca7239d21771533a5a04ff889b451638252373",
+  "supersedes_blocker_sha256": "c01549bd252cde44e17a22b2ed58b00a0cbcad44727a670c745107d1f0c06e5b",
+  "user_relogin_completed": true,
+  "user_retry_approved": true
+}

@@ -1,0 +1,18 @@
+{
+  "api_calls_total": 602,
+  "auth_mode": "ChatGPT subscription",
+  "complete": true,
+  "dollar_cost": null,
+  "in_flight": 0,
+  "infra_failure_attempt_cap": 144,
+  "infra_failure_attempts": 26,
+  "model_spend_attempt_cap": 720,
+  "model_spend_attempts": 576,
+  "new_rows": 576,
+  "planned_valid_turns": 576,
+  "raw_rows": 576,
+  "schema": "e11-base3-cost-summary-v1",
+  "sha256": "dd8dc316b169810119ea0e69d82f5e464b0f4dc40364119363d7cf5ee261ea08",
+  "total_api_call_cap": 864,
+  "within_caps": true
+}

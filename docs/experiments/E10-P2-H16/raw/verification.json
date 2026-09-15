@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "caps": true,
+    "complete": true,
+    "exact_models": true,
+    "execution_freeze": true,
+    "paired_sessions": true,
+    "provider_probe": true,
+    "rag_karc_mcp_zero": true,
+    "row_audit": true,
+    "valid_turns": true
+  },
+  "failures": [],
+  "ledger": {
+    "api_calls_total": 388,
+    "in_flight": 0,
+    "infra_failure_attempt_cap": 96,
+    "infra_failure_attempts": 4,
+    "model_spend_attempt_cap": 480,
+    "model_spend_attempts": 384,
+    "total_api_call_cap": 576,
+    "within_caps": true
+  },
+  "pass": true,
+  "schema": "e10-p2-h16-verification-v1",
+  "summary_sha256": "26711c0dcdc78a64c34e6e4b5f590601caf5ff5a27d164866c6ad704dfcbac34"
+}

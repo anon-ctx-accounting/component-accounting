@@ -1,0 +1,36 @@
+{
+  "api_calls_total": 602,
+  "checks": {
+    "caps": true,
+    "complete": true,
+    "complete_sessions": true,
+    "exact_models": true,
+    "execution_freeze": true,
+    "local_tool_zero": true,
+    "mcp_zero": true,
+    "provider_probe": true,
+    "reference_hashes": true,
+    "row_audit": true,
+    "session_identity": true,
+    "valid_turns": true
+  },
+  "decision_conditions": {
+    "PAPER2_PREMISE_REWRITE_REQUIRED": {
+      "cost_condition": false,
+      "quality_condition": true,
+      "triggered": false
+    },
+    "SESSION_STATE_NECESSITY_CLAIM_REMOVE": {
+      "cost_condition": true,
+      "quality_condition": true,
+      "triggered": true
+    },
+    "adjudication": "PENDING_MAIN_USER"
+  },
+  "failures": [],
+  "infra_failure_attempts": 26,
+  "model_spend_attempts": 576,
+  "pass": true,
+  "schema": "e11-base3-verification-v1",
+  "sha256": "3bfea347533b8a81bf2add2fd7bb3c44c6cb0e932d76bc579393dc7a2c1bc203"
+}

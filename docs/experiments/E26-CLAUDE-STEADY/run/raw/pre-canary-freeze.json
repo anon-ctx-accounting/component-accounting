@@ -1,0 +1,77 @@
+{
+  "actual_subscription_billed_usd": null,
+  "approval_sha256": "24f98732af241e74a41678c3b67872b2bab5c8650704dd02519ec112b1c026e1",
+  "auth": {
+    "apiProvider": "firstParty",
+    "authMethod": "claude.ai",
+    "loggedIn": true,
+    "subscriptionType": "team"
+  },
+  "canonical_plan_sha256": "d2f4af424cd0ef9a03c3aa44e7124e2a4f103213baf8bd84a0b210ae0536d9d7",
+  "cli": {
+    "help_sha256": "fcd5b45507c7c602d54d85a300eab288a8a3c6770c6def696ca19a3100725de4",
+    "required_flags": {
+      "--allowedTools": true,
+      "--disallowedTools": true,
+      "--model": true,
+      "--output-format": true,
+      "--resume": true,
+      "--session-id": true,
+      "--setting-sources": true,
+      "--strict-mcp-config": true
+    },
+    "version": "2.1.220 (Claude Code)"
+  },
+  "cli_pin": "2.1.220 (Claude Code)",
+  "concurrency_sessions": 1,
+  "execution_code_git_hash": "5bfd7bb1f7591b80ae7ed0dd1adf6a68911cbbed",
+  "execution_epoch": "canary-v1",
+  "experiment_id": "E10-P2-XR",
+  "karc_search_get_calls_during_prepare": 0,
+  "model_calls_during_prepare": 0,
+  "model_pin": "claude-sonnet-5",
+  "model_spend_attempt_cap": 240,
+  "paired_sessions": 24,
+  "phase": "canary",
+  "plan_file_sha256": "4ef999a2321ee6052efd12a161a7421d6b75c1c23f8a560c216f61127ef2ca99",
+  "rate_card_equivalent_guard_usd": 7.79,
+  "schedule_seed": 4352,
+  "schedule_sha256": "f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73",
+  "schema": "e10-p2-xr-canary-freeze-v1",
+  "session_uuid_namespace": "E10-P2-XR:canary:4352",
+  "sha256": "81c3bc5e4d4e23585b5347c093e2e41b9f8068f67be0f1e0ed5e536d7cc366fb",
+  "smoke_manifest_audit": {
+    "entries": 46,
+    "verified": true
+  },
+  "smoke_manifest_sha256": "393dc199108d96ab65113821c27fbfe85f467064611bdd653376e8254018a7c8",
+  "smoke_rows_included": false,
+  "smoke_summary_sha256": "2e1af69f44a20c6dc620e0417e91c44738eaed6ffe1e672be587ed4db150c46e",
+  "smoke_validation_sha256": "9a55b02222b3834500f58d2b2983532f5d79a4c0dd99471d3e35fb0f42c014e0",
+  "source_sha256": {
+    "scripts/run_e10_xr_canary.py": "6af5b05ad0cf06f5f57866277ee89c911ee292b7f6535ad3f041abe2e3425570",
+    "src/karc/bench/driver.py": "a58217c6ed9d4927ede3bd45642e46db57aa34b996faedad0bfa5c527d3102c0",
+    "src/karc/bench/e5_cache_canary.py": "af8cbce3af5b91245102f30eefa5f140133885387a0a6cd81fa594614645f580",
+    "src/karc/bench/e5_cross_runtime.py": "44124ea2e3e803cd45bb9b6c5699b43ac381c6ba93787fbadda47f829c07e199",
+    "src/karc/bench/e5_runtime_accounting.py": "12d44ce10f375b5d95f66496466373478361fdc20314bb51966024ba7d90c262",
+    "src/karc/bench/mcp_index.py": "aa77391bbaca3bf12bc599efe4afdcf66069bbaf5e7e9d48f3a317ab6e6f409b",
+    "src/karc/cli.py": "0b68baa9403a821c10eca5007bc29240ff9458fd29b60c0fe0015e3c1076e686",
+    "src/karc/db/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/karc/db/connection.py": "cbdefc28ec16a9a926af51977c1efffaab815750aea3c199d2f33505219b6395",
+    "src/karc/ingest/pipeline.py": "7f5c6acef42e219facbbcceb7778a197ab6018a759fb37e6c4c1853a4a617aca",
+    "src/karc/mcp/ingest.py": "bca93dc400c0309394ade27862bbe6cf36edab97038f73a5f1fb62dd60332514",
+    "src/karc/mcp/server.py": "b81839568cb4c54a74b984264cc4f1a2754a834a21ffd4e56d6c861f2e423d62",
+    "src/karc/snapshot/cas.py": "6cce8838081b48d9a86fe5701d61d3870a7b4df34b52bd052b81da4d1d5c6471",
+    "src/karc/util.py": "1c382381a1303f86ab127dddd9d00974d038853624bc3d22bcf8a0e48ade86a2"
+  },
+  "tool_contract": {
+    "karc_always_load": true,
+    "karc_argv_sha256": "5e20db48eb3b6fa8d3c0a6a5f3d62a85b113d91ed7c288da014f7a5122b03c10",
+    "karc_tools_flag_absent": true,
+    "rag_argv_sha256": "b3fa09989526903a6cadcd39f10f34c8eda258b7132eec0a6889a02980fdab47",
+    "rag_empty_mcp_config": true,
+    "rag_tools_empty": true
+  },
+  "turns_within_session": "sequential persistent resume",
+  "valid_turn_target": 192
+}

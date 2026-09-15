@@ -1,0 +1,172 @@
+{
+  "bundle_audit": {
+    "checks": {
+      "budget_pct_exact": true,
+      "fixture_content_sha256_exact": true,
+      "h16_bundle_audit": true,
+      "planned_valid_turns": true,
+      "reuse_exact": true,
+      "schedule_sha256_exact": true,
+      "session_count_exact": true,
+      "session_length_exact": true
+    },
+    "failures": [],
+    "h16_audit": {
+      "checks": {
+        "balanced_reuse_allocation": true,
+        "bundle_sessions": true,
+        "model_spend_attempt_cap": true,
+        "planned_valid_turns": true,
+        "position_coverage": true,
+        "retrieval_budget_parity": true,
+        "retrieval_gold_containment": true,
+        "reuse_count": true,
+        "reuse_denominator": true,
+        "reuse_means_prior_session_gold": true,
+        "reuse_measured": true,
+        "reuse_requested": true,
+        "session_count": true,
+        "session_length": true,
+        "task_count": true
+      },
+      "failures": [],
+      "model_spend_attempt_cap": 480,
+      "pass": true,
+      "planned_valid_turns": 384,
+      "reuse_count": 90,
+      "reuse_denominator": 180,
+      "reuse_per_session": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "pass": true,
+    "planned_valid_turns": 576,
+    "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006"
+  },
+  "config_audit": {
+    "checks": {
+      "arms": true,
+      "awaiting_approval": true,
+      "calls_zero": true,
+      "collapse_rule_frozen": true,
+      "experiment": true,
+      "h16_reference_self_hash": true,
+      "infra_cap": true,
+      "model_spend_cap": true,
+      "no_substitution_stop": true,
+      "planned_valid_turns": true,
+      "probe_cap": true,
+      "reader_pin": true,
+      "same_h16_axes": true,
+      "schema": true,
+      "self_hash": true,
+      "total_cap": true,
+      "window_four": true
+    },
+    "failures": [],
+    "pass": true
+  },
+  "config_sha256": "5a61492b6095487bf9166a5af586f8e203ed83d9f54ebe9da5bf1264b6d36beb",
+  "embedding_calls": 0,
+  "materialization_audit": {
+    "arms": {
+      "full-history": {
+        "hook_mode": "deny-all",
+        "injected_artifact_count": 408,
+        "injected_knowledge_tokens": 35128,
+        "mcp_configured": false
+      },
+      "sliding-window-compaction": {
+        "hook_mode": "deny-all",
+        "injected_artifact_count": 0,
+        "injected_knowledge_tokens": 0,
+        "mcp_configured": false
+      },
+      "stateless-rag": {
+        "hook_mode": "deny-all",
+        "injected_artifact_count": 0,
+        "injected_knowledge_tokens": 0,
+        "mcp_configured": false
+      }
+    },
+    "checks": {
+      "all_arms_mcp_unconfigured": true,
+      "full_history_all_artifacts": true,
+      "full_history_all_tokens": true,
+      "rag_arms_no_preload": true
+    },
+    "pass": true
+  },
+  "mcp_tool_calls": 0,
+  "mock_turn_audit": {
+    "checks": {
+      "coverage": true,
+      "infra_cap": true,
+      "mcp_zero": true,
+      "model_spend_cap": true,
+      "per_turn_attempt_cap": true,
+      "privacy": true,
+      "row_shape": true,
+      "state_contract": true,
+      "task_schedule": true,
+      "token_identity": true,
+      "total_call_cap": true,
+      "unique_keys": true
+    },
+    "duplicate_keys": 0,
+    "expected_rows": 576,
+    "failures": [],
+    "infra_failure_attempts": 0,
+    "mcp_calls": 0,
+    "missing_keys": 0,
+    "model_spend_attempts": 576,
+    "pass": true,
+    "privacy_forbidden_keys": [],
+    "rows": 576,
+    "state_contract_mismatches": 0,
+    "task_mismatches": 0,
+    "token_accounting_mismatches": 0,
+    "total_api_calls": 576,
+    "unexpected_keys": 0
+  },
+  "model_calls": 0,
+  "pass": true,
+  "provider_calls": 0,
+  "reference_hashes": {
+    "fixture_manifest_file_sha256": "9b43d7f2904e81b8dc39139d2ad49271cc9a3644c7fea68560b4eb0fa8934e4b",
+    "h16_config_file_sha256": "a0baec55a75890533b444aa81b54438070a2e7951620aaa80699c9f5a106441c",
+    "h16_schedule_file_sha256": "0ae3e1586d30f8c83266faf3bbeb4a55fdb03a31a4479bfc808fc6b68b212da8",
+    "h16_summary_file_sha256": "5dfe3a6b827faf98017c07475687b80a3591c0dc092f92c8d31382d0dc0b31e3",
+    "h16_turns_file_sha256": "28eca47eada0a730204a91657cdf06827cb4109f60232415785934b49d1d049b"
+  },
+  "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006",
+  "schema": "e11-base3-model-free-dry-run-v1",
+  "schema_audit": {
+    "checks": {
+      "all_arms_enumerated": true,
+      "config_closed_world": true,
+      "config_draft_2020_12": true,
+      "config_hash_required": true,
+      "config_status_required": true,
+      "privacy_forbidden_keys_complete": true,
+      "turn_draft_2020_12": true,
+      "turn_state_fields_required": true,
+      "turn_token_fields_required": true
+    },
+    "failures": [],
+    "pass": true
+  },
+  "sha256": "c89cef4b901f6dea6008c1940195943be6119e8c40438987ccf392125e683329",
+  "status": "AWAITING_USER_APPROVAL"
+}

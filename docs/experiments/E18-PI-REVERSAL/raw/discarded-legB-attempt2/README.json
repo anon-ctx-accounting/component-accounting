@@ -1,0 +1,17 @@
+{
+  "attempt": 2,
+  "leg": "B",
+  "disposition": "DISCARDED IN FULL and replaced by attempt 3, which ran cold",
+  "completed_cleanly_on_every_preregistered_check": true,
+  "why_discarded_anyway": "an instrumentation check that is NOT in the preregistration caught a defect the preregistered HOLD conditions do not cover: 32 of the 300 API calls reported cacheWrite == 0 while reading essentially the whole prefix. A call that extends the prefix cannot legitimately be charged nothing for writing it, so those calls were served a cache entry written by the DISCARDED attempt 1 - OpenAI keeps a written prefix reusable for 30 minutes and pi routes it with prompt_cache_key = session id, and attempt 2 reused both the workdir paths and the session ids. 303,338 tokens (12.2 percent of leg B's gross) were therefore bucketed as read where a clean run would have been charged creation, and the mis-bucketing was heavily asymmetric between the arms (rag 291,416 tokens in 28 calls vs karc 11,922 in 4).",
+  "what_the_defect_would_have_done_to_the_result": "see sensitivity.json - it biases the priced ratio TOWARD 1.0 (0.4275 corrected vs 0.8229 observed), i.e. AGAINST the direction attempt 2 reported. Discarding therefore cannot have been a way of choosing a verdict: the discarded data was the conservative one, and P4 fails either way.",
+  "why_a_correction_was_not_applied_instead": "reclassifying provider buckets after the fact is arithmetic, not an observation. The cell reports measured components.",
+  "remedy": "an execution namespace (--ns r2) that changes both the workdir path - which appears inside pi's system prompt, verified: 1,825 -> 1,827 system prompt chars - and the pi session id, so neither the content-addressed cache nor the prompt_cache_key can match. The cold start was then verified empirically rather than assumed: crosscheck-B.json cold_start_assert_not_preregistered must report 0 calls.",
+  "leg_A_unaffected": "leg A reports 0 such calls out of 300. Anthropic caching is driven by explicit cache_control breakpoints and leg A was executed exactly once.",
+  "files_here": {
+    "crosscheck-B.json": "attempt 2's full instrumentation crosscheck, including the 32 offending calls",
+    "wave-B.json": "attempt 2's execution log summary",
+    "statistics-B.json": "attempt 2's statistics and judgements as they stood",
+    "sensitivity.json": "the read-to-creation reclassification used to decide the discard"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "bundle_audit": {
+    "checks": {
+      "balanced_reuse_allocation": true,
+      "bundle_sessions": true,
+      "model_spend_attempt_cap": true,
+      "planned_valid_turns": true,
+      "position_coverage": true,
+      "retrieval_budget_parity": true,
+      "retrieval_gold_containment": true,
+      "reuse_count": true,
+      "reuse_denominator": true,
+      "reuse_means_prior_session_gold": true,
+      "reuse_measured": true,
+      "reuse_requested": true,
+      "session_count": true,
+      "session_length": true,
+      "task_count": true
+    },
+    "failures": [],
+    "model_spend_attempt_cap": 480,
+    "pass": true,
+    "planned_valid_turns": 384,
+    "reuse_count": 90,
+    "reuse_denominator": 180,
+    "reuse_per_session": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
+    ]
+  },
+  "config_audit": {
+    "checks": {
+      "experiment": true,
+      "model_spend_attempt_cap": true,
+      "no_substitution": true,
+      "planned_valid_turns": true,
+      "schema": true,
+      "self_hash": true,
+      "status": true,
+      "zero_embedding_calls": true,
+      "zero_model_calls": true
+    },
+    "failures": [],
+    "pass": true
+  },
+  "config_sha256": "75dd169f2d3eb05f7a40717ebd1199e10c3a8b22f918aaf7d53a280f966d44a2",
+  "embedding_calls": 0,
+  "mcp_tool_calls": 0,
+  "mock_turn_audit": {
+    "api_calls_total": 384,
+    "failures": [],
+    "infra_failure_attempts": 0,
+    "model_spend_attempts": 384,
+    "pass": true,
+    "rag_karc_mcp_calls": 0,
+    "rows": 384
+  },
+  "model_calls": 0,
+  "pass": true,
+  "rag_karc_mcp_configured": false,
+  "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006",
+  "schema": "e10-p2-h16-model-free-dry-run-v1",
+  "sha256": "d926f5ee23caa350358f56e058b085c115896cbe4520b64ad548106cd5dfc8b6"
+}

@@ -1,0 +1,720 @@
+{
+  "_meta": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 1313,
+    "generated_at_utc": "2026-09-07T17:14:55Z",
+    "namespace": ""
+  },
+  "accounting_contract": {
+    "gross": "gross = input_tokens (the visible prefix; already contains cached and write)",
+    "priced": "fresh*0.20 + write*0.25 + cached*0.02 + output*1.20 per million",
+    "reporting_level": "codex exec turn.completed.usage is the CUMULATIVE thread total; per-turn components are consecutive differences (measured, see raw/probe-home-layout.json)"
+  },
+  "cell": "E21-CODEX-COMPONENT",
+  "descriptive_window_profile": {
+    "caveat": "descriptive; the judgment is the pooled test over the whole preregistered window, and no sub-range of it is selected, tested or re-pooled",
+    "n_sessions": 12,
+    "per_session": {
+      "S09": {
+        "gross_ratio": 1.542487549317638,
+        "priced_ratio": 0.9184181044140713
+      },
+      "S10": {
+        "gross_ratio": 1.530157537927596,
+        "priced_ratio": 0.9114502362678892
+      },
+      "S11": {
+        "gross_ratio": 1.5427190692431771,
+        "priced_ratio": 0.913983018317493
+      },
+      "S12": {
+        "gross_ratio": 1.4915747638405332,
+        "priced_ratio": 0.9066242876833508
+      },
+      "S13": {
+        "gross_ratio": 1.7200689507688918,
+        "priced_ratio": 1.0078927912030455
+      },
+      "S14": {
+        "gross_ratio": 1.7500777564667462,
+        "priced_ratio": 1.0079425462494898
+      },
+      "S15": {
+        "gross_ratio": 1.7578297023547393,
+        "priced_ratio": 1.0072763253891674
+      },
+      "S16": {
+        "gross_ratio": 1.7387703049118242,
+        "priced_ratio": 0.9898974738144214
+      },
+      "S17": {
+        "gross_ratio": 1.7655306074826933,
+        "priced_ratio": 1.0154688798726819
+      },
+      "S18": {
+        "gross_ratio": 1.7547584850484583,
+        "priced_ratio": 1.0025126036753946
+      },
+      "S19": {
+        "gross_ratio": 2.2123390585736122,
+        "priced_ratio": 1.2471395014018336
+      },
+      "S20": {
+        "gross_ratio": 1.7040095332465497,
+        "priced_ratio": 1.0037292552476023
+      }
+    },
+    "priced_ratio_max": 1.2471395014018336,
+    "priced_ratio_min": 0.9066242876833508,
+    "sessions_with_gross_ratio_above_one": 12,
+    "sessions_with_priced_ratio_below_one": 5
+  },
+  "e19_leg_b_contrast": {
+    "available": true,
+    "gross_formula": {
+      "E19_leg_B": "pi input(fresh) + cacheRead + cacheWrite",
+      "E21": "codex input_tokens == fresh + write + cached",
+      "same_construction": true
+    },
+    "harness_fixed_cost": {
+      "E19_leg_B_single_call_turn_prefix_tokens": {
+        "karc-full": {
+          "max": 10917,
+          "mean": 7990.5,
+          "min": 5533,
+          "n": 40
+        },
+        "rag-bm25": {
+          "max": 20892,
+          "mean": 11954.895833333334,
+          "min": 3029,
+          "n": 96
+        }
+      },
+      "E21_cold_first_call_prefix_tokens": {
+        "karc-full": {
+          "max": 12140,
+          "mean": 12087,
+          "min": 11975,
+          "n": 12
+        },
+        "rag-bm25": {
+          "max": 10378,
+          "mean": 10366.416666666666,
+          "min": 10354,
+          "n": 12
+        }
+      },
+      "E21_single_call_turn_prefix_tokens": {
+        "karc-full": {
+          "max": 18087,
+          "mean": 14753.725,
+          "min": 13088,
+          "n": 40
+        },
+        "rag-bm25": {
+          "max": 28341,
+          "mean": 19308.552083333332,
+          "min": 10354,
+          "n": 96
+        }
+      },
+      "codex_own_standing_prompt": {
+        "available": true,
+        "cache_write_on_that_call": 7717,
+        "cold_prefix_tokens": 7720,
+        "conditions": "bare git workdir, no AGENTS.md, no MCP server, reasoning_effort low, ~20-token user message",
+        "source": "raw/probe-home-layout.json"
+      },
+      "note": "E19 reported the prefix of single-API-call turns; both are given so the comparison is like for like",
+      "what": "the standing prefix a harness charges before any conversation exists, i.e. the cold first API call of a unit"
+    },
+    "held_fixed": [
+      "provider openai",
+      "model gpt-5.6-luna",
+      "published luna rate card",
+      "schedule seed 4352 / identical tasks_sha256",
+      "measurement window S09..S20",
+      "arms karc-full and rag-bm25",
+      "statistics: session bootstrap seed 1313"
+    ],
+    "judgments": {
+      "E19_leg_B": {
+        "component_delta_karc_minus_rag": {
+          "api_calls": 112,
+          "cache_read": 552616,
+          "creation": -124627,
+          "creation_1h": 0,
+          "creation_5m": -124627,
+          "gross": 428325,
+          "output": 3062,
+          "tool_calls": 113,
+          "turns": 0,
+          "uncached": 336
+        },
+        "gross_ratio": 1.3732126830883442,
+        "gross_ratio_ci95": [
+          1.3047897373482338,
+          1.4360903304195332
+        ],
+        "mu_w_star": 0.5935278872154508,
+        "priced_ratio": 0.8016847577827391,
+        "priced_ratio_ci95": [
+          0.769222762038129,
+          0.8318806227115109
+        ],
+        "priced_totals_usd": {
+          "karc-full": 0.06614636,
+          "rag-bm25": 0.08250919000000001
+        }
+      },
+      "E21": {
+        "component_delta_karc_minus_rag": {
+          "api_calls": 124,
+          "cache_read": 1460441,
+          "creation": -146214,
+          "gross": 1314599,
+          "output": 5506,
+          "reasoning": 303,
+          "tool_calls": 112,
+          "turns": 0,
+          "uncached": 372
+        },
+        "gross_ratio": 1.7092059272094997,
+        "gross_ratio_ci95": [
+          1.6165982980368359,
+          1.823397801799391
+        ],
+        "mu_w_star": 1.2273250167562613,
+        "priced_ratio": 0.9943517474249461,
+        "priced_ratio_ci95": [
+          0.951259764428428,
+          1.050084236465589
+        ],
+        "priced_totals_usd": {
+          "karc-full": 0.11673252,
+          "rag-bm25": 0.1173956
+        }
+      }
+    },
+    "karc-full": {
+      "E19_leg_B": {
+        "api_calls": 208,
+        "cache_read": 1449633,
+        "creation": 125738,
+        "gross": 1575995,
+        "output": 4662,
+        "tool_calls": 113,
+        "uncached": 624
+      },
+      "E21": {
+        "api_calls": 220,
+        "cache_read": 2975036,
+        "creation": 192524,
+        "gross": 3168220,
+        "output": 7474,
+        "tool_calls": 112,
+        "uncached": 660
+      },
+      "E21_over_E19": {
+        "cache_read": 2.052268401726506,
+        "creation": 1.5311520781307162,
+        "gross": 2.0102982560223857,
+        "output": 1.6031746031746033,
+        "uncached": 1.0576923076923077
+      },
+      "share_of_gross": {
+        "cache_read": {
+          "E19_leg_B": 0.91982081161425,
+          "E21": 0.9390244364343385
+        },
+        "creation": {
+          "E19_leg_B": 0.07978324804329963,
+          "E21": 0.06076724469891611
+        },
+        "output": {
+          "E19_leg_B": 0.0029581312123452166,
+          "E21": 0.0023590533485679656
+        },
+        "uncached": {
+          "E19_leg_B": 0.00039594034245032505,
+          "E21": 0.0002083188667453649
+        }
+      }
+    },
+    "rag-bm25": {
+      "E19_leg_B": {
+        "api_calls": 96,
+        "cache_read": 897017,
+        "creation": 250365,
+        "gross": 1147670,
+        "output": 1600,
+        "tool_calls": 0,
+        "uncached": 288
+      },
+      "E21": {
+        "api_calls": 96,
+        "cache_read": 1514595,
+        "creation": 338738,
+        "gross": 1853621,
+        "output": 1968,
+        "tool_calls": 0,
+        "uncached": 288
+      },
+      "E21_over_E19": {
+        "cache_read": 1.6884797055128276,
+        "creation": 1.3529766540850359,
+        "gross": 1.615116714735072,
+        "output": 1.23,
+        "uncached": 1.0
+      },
+      "share_of_gross": {
+        "cache_read": {
+          "E19_leg_B": 0.7815983688691001,
+          "E21": 0.8171006910258354
+        },
+        "creation": {
+          "E19_leg_B": 0.21815068791551578,
+          "E21": 0.18274393740683775
+        },
+        "output": {
+          "E19_leg_B": 0.0013941289743567402,
+          "E21": 0.0010617057100669447
+        },
+        "uncached": {
+          "E19_leg_B": 0.00025094321538421323,
+          "E21": 0.00015537156732686996
+        }
+      }
+    },
+    "source": "docs/experiments/E19-STEADY-STATE/raw/analysis.json",
+    "varied": [
+      "harness: pi 0.84.3 -> Codex CLI 0.145.0"
+    ]
+  },
+  "harness": {
+    "model": "gpt-5.6-luna",
+    "name": "codex-cli",
+    "provider": "openai",
+    "reasoning_effort": "low",
+    "route": "metered OpenAI API key",
+    "version": "codex-cli 0.145.0"
+  },
+  "harness_fixed_cost_attribution": {
+    "available": true,
+    "caveat": "E19 never measured pi's standing prompt in isolation, so no like-for-like number exists on the pi side [U]",
+    "codex_standing_prompt_tokens": 7720,
+    "extra_api_calls_karc_minus_rag": 124,
+    "harness_preamble_lower_bound_tokens": 957280,
+    "read_delta_karc_minus_rag": 1460441,
+    "share_of_read_delta": 0.6554732440406699,
+    "why_a_lower_bound": "those extra calls re-read the whole accumulated prefix, not only the standing prompt, so the true harness-attributable share is larger"
+  },
+  "judgments": {
+    "R1_component_signature_sign_preserved": {
+      "criterion": "delta_read > 0 AND delta_creation < 0",
+      "delta_creation": -146214,
+      "delta_output": 5506,
+      "delta_read": 1460441,
+      "delta_uncached": 372,
+      "verdict": "PASS"
+    },
+    "R2_component_priced_ordering": {
+      "criterion": "paired priced ratio 95% CI entirely below 1.0 AND paired mean USD difference CI excludes 0",
+      "paired_mean_usd_difference": -5.525666666666637e-05,
+      "paired_mean_usd_difference_ci95": [
+        -0.0004760916666666658,
+        0.0004905833333333332
+      ],
+      "priced_ratio": 0.9943517474249461,
+      "priced_ratio_ci95": [
+        0.951259764428428,
+        1.050084236465589
+      ],
+      "priced_ratio_ci_entirely_below_one": false,
+      "usd_difference_ci_excludes_zero": false,
+      "verdict": "FAIL"
+    },
+    "R3_reversal_threshold_below_actual_rate": {
+      "criterion": "mu_w_star from THIS cell's own component totals < 1.25",
+      "mu_w_star": 1.2273250167562613,
+      "note": "computed from this cell's totals only; no threshold is carried over from another cell (E18's failure mode)",
+      "observed_mu_w": 1.25,
+      "verdict": "PASS"
+    },
+    "cost": {
+      "cap_usd": 2.0,
+      "priced_usd_cell_total": 0.300287,
+      "priced_usd_measurement": 0.234128,
+      "priced_usd_warmup": 0.066159,
+      "rate_card_source": "docs/analysis/openai-luna-rate-card.md (2026-08-28)",
+      "warmup_note": "warm-up cost is reported but enters no judgment"
+    },
+    "gross_ordering_measured_not_predicted": {
+      "ci_entirely_above_one": true,
+      "ci_entirely_below_one": false,
+      "gross_ratio": 1.7092059272094997,
+      "gross_ratio_ci95": [
+        1.6165982980368359,
+        1.823397801799391
+      ],
+      "paired_mean_session_gross_difference": 109549.91666666667,
+      "paired_mean_session_gross_difference_ci95": [
+        95256.5,
+        127181.75
+      ],
+      "status": "REPORTED ONLY — the preregistration §3 declines to predict the gross direction"
+    },
+    "hold_fired": [],
+    "inclusion_relation_verdict": "inclusive",
+    "steady_state_reached": true
+  },
+  "measurement_window": {
+    "arms": [
+      "karc-full",
+      "rag-bm25"
+    ],
+    "measured_sessions": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20"
+    ],
+    "note": "one preregistered window, pooled once; no sub-range is selected or tested",
+    "warmup_sessions": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08"
+    ]
+  },
+  "preregistration": "docs/experiments/E21-CODEX-COMPONENT/preregistration.md",
+  "statistics": {
+    "bootstrap": {
+      "ci": "two-sided 95% percentile",
+      "method": "paired percentile bootstrap over sessions, common random numbers",
+      "n_sessions": 12,
+      "resamples": 10000,
+      "seed": 1313,
+      "unit": "session"
+    },
+    "cold_first_call_prefix_tokens": {
+      "karc-full": {
+        "max": 12140,
+        "mean": 12087,
+        "min": 11975,
+        "n": 12
+      },
+      "rag-bm25": {
+        "max": 10378,
+        "mean": 10366.416666666666,
+        "min": 10354,
+        "n": 12
+      }
+    },
+    "component_delta_karc_minus_rag": {
+      "api_calls": 124,
+      "cache_read": 1460441,
+      "creation": -146214,
+      "gross": 1314599,
+      "output": 5506,
+      "reasoning": 303,
+      "tool_calls": 112,
+      "turns": 0,
+      "uncached": 372
+    },
+    "component_totals": {
+      "karc-full": {
+        "api_calls": 220,
+        "cache_read": 2975036,
+        "creation": 192524,
+        "gross": 3168220,
+        "output": 7474,
+        "reasoning": 656,
+        "tool_calls": 112,
+        "turns": 96,
+        "uncached": 660
+      },
+      "rag-bm25": {
+        "api_calls": 96,
+        "cache_read": 1514595,
+        "creation": 338738,
+        "gross": 1853621,
+        "output": 1968,
+        "reasoning": 353,
+        "tool_calls": 0,
+        "turns": 96,
+        "uncached": 288
+      }
+    },
+    "gross_ratio_karc_over_rag": {
+      "ci95_hi": 1.823397801799391,
+      "ci95_lo": 1.6165982980368359,
+      "degenerate_resamples": 0,
+      "entirely_above_one": true,
+      "entirely_below_one": false,
+      "point": 1.7092059272094997,
+      "usable_resamples": 10000
+    },
+    "mu_w_star_below_observed": true,
+    "multipliers": {
+      "mu_output": 5.999999999999999,
+      "mu_read": 0.09999999999999999,
+      "mu_write": 1.25
+    },
+    "observed_mu_w": 1.25,
+    "paired_mean_session_gross_difference": {
+      "ci95_hi": 127181.75,
+      "ci95_lo": 95256.5,
+      "excludes_zero": true,
+      "point": 109549.91666666667
+    },
+    "paired_mean_session_priced_usd_difference": {
+      "ci95_hi": 0.0004905833333333332,
+      "ci95_lo": -0.0004760916666666658,
+      "excludes_zero": false,
+      "point": -5.525666666666637e-05
+    },
+    "per_position_profile": {
+      "karc-full": {
+        "1": {
+          "api_calls_mean": 4,
+          "creation_mean": 13459.333333333334,
+          "gross_mean": 51461.916666666664,
+          "n": 12,
+          "output_mean": 167.33333333333334,
+          "read_mean": 37990.583333333336
+        },
+        "2": {
+          "api_calls_mean": 2.5,
+          "creation_mean": 498.1666666666667,
+          "gross_mean": 34652.583333333336,
+          "n": 12,
+          "output_mean": 85.83333333333333,
+          "read_mean": 34146.916666666664
+        },
+        "3": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 301.5,
+          "gross_mean": 25702.833333333332,
+          "n": 12,
+          "output_mean": 56.5,
+          "read_mean": 25395.833333333332
+        },
+        "4": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 321.8333333333333,
+          "gross_mean": 26374.333333333332,
+          "n": 12,
+          "output_mean": 51.25,
+          "read_mean": 26047
+        },
+        "5": {
+          "api_calls_mean": 2,
+          "creation_mean": 342.5833333333333,
+          "gross_mean": 29173.166666666668,
+          "n": 12,
+          "output_mean": 68.83333333333333,
+          "read_mean": 28824.583333333332
+        },
+        "6": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 323.5833333333333,
+          "gross_mean": 28164.833333333332,
+          "n": 12,
+          "output_mean": 50.583333333333336,
+          "read_mean": 27835.75
+        },
+        "7": {
+          "api_calls_mean": 2,
+          "creation_mean": 349.6666666666667,
+          "gross_mean": 31387.583333333332,
+          "n": 12,
+          "output_mean": 64.16666666666667,
+          "read_mean": 31031.916666666668
+        },
+        "8": {
+          "api_calls_mean": 2.3333333333333335,
+          "creation_mean": 447,
+          "gross_mean": 37101.083333333336,
+          "n": 12,
+          "output_mean": 78.33333333333333,
+          "read_mean": 36647.083333333336
+        }
+      },
+      "rag-bm25": {
+        "1": {
+          "api_calls_mean": 1,
+          "creation_mean": 10363.416666666666,
+          "gross_mean": 10366.416666666666,
+          "n": 12,
+          "output_mean": 16.916666666666668,
+          "read_mean": 0
+        },
+        "2": {
+          "api_calls_mean": 1,
+          "creation_mean": 2547.6666666666665,
+          "gross_mean": 12914.083333333334,
+          "n": 12,
+          "output_mean": 30.75,
+          "read_mean": 10363.416666666666
+        },
+        "3": {
+          "api_calls_mean": 1,
+          "creation_mean": 2568.9166666666665,
+          "gross_mean": 15483,
+          "n": 12,
+          "output_mean": 26.916666666666668,
+          "read_mean": 12911.083333333334
+        },
+        "4": {
+          "api_calls_mean": 1,
+          "creation_mean": 2559.4166666666665,
+          "gross_mean": 18042.416666666668,
+          "n": 12,
+          "output_mean": 22.416666666666668,
+          "read_mean": 15480
+        },
+        "5": {
+          "api_calls_mean": 1,
+          "creation_mean": 2556.0833333333335,
+          "gross_mean": 20598.5,
+          "n": 12,
+          "output_mean": 17.916666666666668,
+          "read_mean": 18039.416666666668
+        },
+        "6": {
+          "api_calls_mean": 1,
+          "creation_mean": 2545.75,
+          "gross_mean": 23144.25,
+          "n": 12,
+          "output_mean": 16.333333333333332,
+          "read_mean": 20595.5
+        },
+        "7": {
+          "api_calls_mean": 1,
+          "creation_mean": 2544.3333333333335,
+          "gross_mean": 25688.583333333332,
+          "n": 12,
+          "output_mean": 16.166666666666668,
+          "read_mean": 23141.25
+        },
+        "8": {
+          "api_calls_mean": 1,
+          "creation_mean": 2542.5833333333335,
+          "gross_mean": 28231.166666666668,
+          "n": 12,
+          "output_mean": 16.583333333333332,
+          "read_mean": 25685.583333333332
+        }
+      }
+    },
+    "per_session_gross": {
+      "karc-full": {
+        "S09": 238484.0,
+        "S10": 236316.0,
+        "S11": 238148.0,
+        "S12": 230059.0,
+        "S13": 265429.0,
+        "S14": 270086.0,
+        "S15": 271430.0,
+        "S16": 269958.0,
+        "S17": 272379.0,
+        "S18": 271226.0,
+        "S19": 341594.0,
+        "S20": 263111.0
+      },
+      "rag-bm25": {
+        "S09": 154610.0,
+        "S10": 154439.0,
+        "S11": 154369.0,
+        "S12": 154239.0,
+        "S13": 154313.0,
+        "S14": 154328.0,
+        "S15": 154412.0,
+        "S16": 155258.0,
+        "S17": 154276.0,
+        "S18": 154566.0,
+        "S19": 154404.0,
+        "S20": 154407.0
+      }
+    },
+    "per_session_priced_usd": {
+      "karc-full": {
+        "S09": 0.00901758,
+        "S10": 0.008899710000000002,
+        "S11": 0.00892902,
+        "S12": 0.00881402,
+        "S13": 0.00986977,
+        "S14": 0.00983,
+        "S15": 0.0098439,
+        "S16": 0.009826930000000001,
+        "S17": 0.00988365,
+        "S18": 0.009863120000000001,
+        "S19": 0.012179289999999999,
+        "S20": 0.009775530000000001
+      },
+      "rag-bm25": {
+        "S09": 0.0098186,
+        "S10": 0.00976434,
+        "S11": 0.00976935,
+        "S12": 0.009721800000000001,
+        "S13": 0.009792480000000001,
+        "S14": 0.00975254,
+        "S15": 0.009772789999999998,
+        "S16": 0.00992722,
+        "S17": 0.00973309,
+        "S18": 0.009838399999999999,
+        "S19": 0.00976578,
+        "S20": 0.009739210000000002
+      }
+    },
+    "priced_ratio_karc_over_rag": {
+      "ci95_hi": 1.050084236465589,
+      "ci95_lo": 0.951259764428428,
+      "degenerate_resamples": 0,
+      "entirely_above_one": false,
+      "entirely_below_one": false,
+      "point": 0.9943517474249461,
+      "usable_resamples": 10000
+    },
+    "priced_totals_usd": {
+      "karc-full": 0.11673252,
+      "rag-bm25": 0.1173956
+    },
+    "rate_card_source": "docs/analysis/openai-luna-rate-card.md (2026-08-28)",
+    "rate_card_usd_per_million": {
+      "input": 0.2,
+      "output": 1.2,
+      "read": 0.02,
+      "write": 0.25
+    },
+    "reversal_threshold_mu_w_star": 1.2273250167562613,
+    "single_api_call_turn_prefix_tokens": {
+      "karc-full": {
+        "max": 18087,
+        "mean": 14753.725,
+        "min": 13088,
+        "n": 40
+      },
+      "rag-bm25": {
+        "max": 28341,
+        "mean": 19308.552083333332,
+        "min": 10354,
+        "n": 96
+      }
+    }
+  }
+}

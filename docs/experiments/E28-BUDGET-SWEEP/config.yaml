@@ -1,0 +1,292 @@
+# E28-BUDGET-SWEEP — confirmed configuration (R-16)
+#
+# Frozen before the first model call.  `cell.json` in this directory is the
+# machine-readable form of the same facts and is authoritative where the two
+# could ever disagree; this file is the R-16 document view.  Everything here is
+# either quoted from the preregistration or measured model-free by
+# `scripts/run_e28.py build`, whose outputs are committed under `raw/<tag>/`.
+
+cell: E28-BUDGET-SWEEP
+preregistration: docs/experiments/E28-BUDGET-SWEEP/preregistration.md
+preregistration_status: registered before observation, 2026-09-13
+parent_cells:
+  - E18-PI-REVERSAL leg B (paper name pi-O-g)
+  - E18-PI-REVERSAL leg A (paper name pi-A-g)
+derived_from:
+  runner: docs/experiments/E18-PI-REVERSAL/scripts/run_e18_pi_reversal.py
+  analyzer: docs/experiments/E18-PI-REVERSAL/scripts/analyze_e18.py
+  budget_override_pattern: docs/experiments/E27-BUDGET-10PCT/scripts/run_e27.py
+  how: >
+    run_e28.py imports E18's runner as a module and replaces only the run/raw
+    roots, the execution namespace, the batch spend guard, and `build_bundle`
+    (the same builder at this cell's budget).  analyze_e28.py imports E18's
+    analyzer and reuses its bootstrap, crosscheck, statistics and per-position
+    profile functions unchanged, adding only this batch's cross-cell tables.
+
+question: >
+  E27 raised the resident budget on E19 leg B's steady-state cell and the
+  measurement window moved with it, so that contrast is budget plus window
+  position.  With the window held fixed -- by moving to E18's growth window
+  S01-S12, which is the whole 12-session build and has no warm-up to grow --
+  what does the budget alone do, at 2.5%, 10% and 20%?
+
+harness:
+  runtime: pi 0.84.3
+  binary: tmp/vendor/piprobe/node_modules/.bin/pi
+  isolation_root: tmp/e28/
+  never_touched: [~/.pi, ~/.codex, ~/.claude, tmp/e17, tmp/e17b, tmp/e18,
+                  tmp/e19, tmp/e21, tmp/e23, tmp/e25, tmp/e26, tmp/e27]
+  env:
+    PI_CODING_AGENT_DIR: tmp/e28/leg<L><tag>/pi-home
+    PI_CODING_AGENT_SESSION_DIR: tmp/e28/leg<L><tag>/sessions
+    PI_OFFLINE: "1"
+    PI_SKIP_VERSION_CHECK: "1"
+    PI_TELEMETRY: "0"
+    PI_CACHE_RETENTION: long on leg A; unset on leg B (E17B appendix B.3)
+    note: >
+      the child environment is constructed from scratch (HOME, PATH, LANG plus
+      the PI_* isolation variables), so no variable of the calling session --
+      FORCE_COLOR included -- reaches pi.
+  settings:
+    defaultProjectTrust: never
+    compaction.enabled: false
+  flags_per_turn:
+    - --mode json
+    - --provider <leg> --model <model> --thinking off
+    - --no-extensions --no-context-files --no-skills --no-prompt-templates
+    - --no-themes --no-approve
+    - --append-system-prompt <unit>/context/system-append.md
+    - karc-full adds: -e <bridge> --no-builtin-tools --tools karc_search,karc_get
+    - rag-bm25 adds: --no-tools
+
+cells:
+  E28-O-025: {leg: B, provider: openai,    model: gpt-5.6-luna,     budget_pct: 2.5, budget_tokens: 878,  control: pi-O-g, order: 2}
+  E28-O-10:  {leg: B, provider: openai,    model: gpt-5.6-luna,     budget_pct: 10,  budget_tokens: 3512, control: pi-O-g, order: 1}
+  E28-O-20:  {leg: B, provider: openai,    model: gpt-5.6-luna,     budget_pct: 20,  budget_tokens: 7025, control: pi-O-g, order: 3}
+  E28-A-10:  {leg: A, provider: anthropic, model: claude-sonnet-5,  budget_pct: 10,  budget_tokens: 3512, control: pi-A-g, order: 4}
+
+provider_keys:
+  leg_B: >
+    ~/api-key.txt OPENAI_API_KEY, read by run_e28.py itself, never printed,
+    never in argv, never exported into the calling session; placed only into the
+    constructed pi child environment as OPENAI_API_KEY.
+  leg_A: >
+    ~/api-key.txt CLAUDE_API_KEY, same handling; placed into the pi child
+    environment as ANTHROPIC_API_KEY.
+
+arms: [karc-full, rag-bm25]
+
+manipulated_axis:
+  name: resident budget
+  operative_knob: e5_killgate._manifest_at_budget(manifest, budget_pct)
+  grid_available_e4_fixture: [1, 2, 5, 10, 20]
+  grid_available_e5_killgate: [5, 10]
+  values_measured: [2.5, 10, 20]
+  control_point_not_re_run_here: {budget_pct: 5, budget_tokens: 1756}
+  budget_pct_20_arithmetic: >
+    int(35128 * 20 / 100) = int(7025.6) = 7025.  The requesting brief wrote
+    7,024; the machine value 7,025 is registered.  The knob position (pct = 20)
+    is unchanged and no number was hand-picked.
+  what_it_moves:
+    karc_full: >
+      the model-free policy replay runs with c = budget_tokens, so the resident
+      set admitted per session grows.  Last session (S12) of the build:
+      10 versions / 858 tokens at 2.5%, 20 / 1,735 at 5%, 40 / 3,432 at 10%,
+      49 / 4,227 at 20%.
+    rag_bm25: >
+      e3_retrieval.bm25_plans is budget-parity by construction, so the retrieval
+      plan pasted into each turn grows with the same number: plan tokens mean
+      826.927 / 1,728.927 / 3,450.927 / 6,976.927.
+    note: both arms move together; this is not a one-sided enlargement.
+
+held_fixed:
+  measurement_window: S01-S12 (the whole build; no warm-up)
+  reuse_factor: 0.50
+  schedule_seed: 4200
+  session_count_built: 12
+  session_length: 8
+  paired_design: 12 sessions x 8 turns x 2 arms = 192 turns per cell
+  submission_order: ABBA (E13 §5.0)
+  fixture: fixture/e4-v2 (frozen, seed 4000, 408 artifacts, 35,128 corpus tokens)
+
+not_held_fixed: []      # this is the point of the batch
+
+window_fixity: >
+  E18 measures the growth window S01-S12 of a 12-session build with no warm-up,
+  so the window is the whole schedule and no budget value can move it.  E27
+  inherited E19's steady-state criterion and therefore could not hold the window
+  fixed; that is the confound this batch removes, and the reason it runs on
+  E18's bundle (seed 4200) rather than E19/E23's (seed 4352).
+
+schedule_identity:            # gated before any model call
+  schedule_sha256_all_budgets: 9944a77572e2d130a0150f865024785929771cd13a9264ab315b4bfa5f26eea3
+  tasks_sha256_all_budgets: 618193d35103b819d83ce2d13dea40d7e3a65cbae5072266ab693613fe3b3584
+  c05_control_e18:
+    snapshot_sha256: a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301
+    manifest_sha256: 0b663cef5e449eac060488136475082c191d7b0e950b01a2813ac70d2d8a3418
+    result: PASS (byte-identical to E18's committed identity and to the E10-P2-XR canary schedule sha256)
+  c025:
+    snapshot_sha256: a7c7caf66e77974e3172fa43a476c717d2f8f097fd292617ad2846ce1a0664b7
+    manifest_sha256: 11652d372f13b1d1cff6f5fa93971eee00e0995a5d047647d7e965e4a16c64ca
+  c10:
+    snapshot_sha256: 7d16fa0f260d668e880b3164c51ac8da9420b08253d566ddf4818b880302bbed
+    manifest_sha256: 5eece713507dcaae31c313c78fbf723e35ce8daccaff5fcdee0f94909f256ff0
+  c20:
+    snapshot_sha256: 5ce38390128a7ede023fe41725c51f3274c4bfa863830a8753f3e5dd1497d719
+    manifest_sha256: e3dce84106730f4cafe1932cb45a574f2048b054273bb0d8a4211a09209078e4
+  axis_purity_H14:
+    schedule_and_tasks_equal_across_budgets: true
+    manifest_and_snapshot_differ: true
+    structure_statistics_equal: true
+    meaning: >
+      the budget does not touch the task sequence.  The only things that move
+      are the resident sets and the budget-parity retrieval plans.
+
+fractional_budget_pct:
+  what: >
+    e4_replay.replay_cell guards its explicit-manifest branch with
+    int(cell["budget_pct"]) != budget_pct, an int() cast that assumes an integer
+    percentage.  At 2.5% the manifest honestly carries budget_pct 2.5 and
+    budget_tokens 878, and the guard is called with int(2.5) == 2.  budget_pct is
+    used for nothing else; PolicyConfig.c comes from budget_tokens.
+  falsifier: >
+    phase_build also builds the genuine c = 2% bundle (702 tokens, snapshot
+    ccabdc72...) and requires the 2.5% resident ramp to DIFFER from it.  Measured:
+    878 gives 10 versions / 858 tokens, 702 gives 8 versions / 694 tokens.
+
+resident_utilization_trajectory:      # model-free, an INPUT state quantity
+  note: >
+    this is a growth window, so the resident set is not expected to fill.  The
+    trajectory itself is one of the batch's observations.
+  c025: [0.000, 0.395, 0.790, 0.977, 0.977, 0.977, 0.977, 0.977, 0.999, 0.999, 0.999, 0.977]
+  c05:  [0.000, 0.198, 0.395, 0.593, 0.790, 0.988, 0.988, 0.977, 0.988, 0.999, 0.988, 0.988]
+  c10:  [0.000, 0.099, 0.198, 0.296, 0.395, 0.494, 0.593, 0.715, 0.837, 0.959, 0.983, 0.977]
+  c20:  [0.000, 0.049, 0.099, 0.148, 0.198, 0.247, 0.296, 0.357, 0.419, 0.480, 0.541, 0.602]
+
+gold_containment:
+  H12_gate: gold_containment_rate == 1.0, re-measured at every budget
+  gold_containment_rate: 1.0
+  mean_budget_utilization: {c025: 0.94183, c05: 0.98458, c10: 0.98261, c20: 0.99316}
+  plan_tokens_mean: {c025: 826.927, c05: 1728.927, c10: 3450.927, c20: 6976.927}
+
+accounting:
+  gross: input + cacheRead + cacheWrite      # pi's usage.input is fresh-only
+  inclusion_relation: re-measured in every cell, never assumed
+  closure_assert_per_call: totalTokens == input + output + cacheRead + cacheWrite
+  openai_cache_min_prefix_tokens: 1024
+  stop_reason_layers: [pi normalized stopReason, provider rawStopReason]
+  refusal_detection: >
+    disjunction (output_tokens == 0, errorMessage present, content block absent,
+    normalized stopReason == error) because the OpenAI leg's rawStopReason is
+    always "completed" (E17B §5); the Anthropic leg additionally has the
+    discriminating provider layer.
+  mcp_round_trip_paths:
+    - pi tool_execution_start events
+    - bridge audit JSONL, scoped per turn (E17 §7.4)
+    - DB ingest_observations where source_channel = 'mcp'
+
+rate_cards_usd_per_million:            # judged column
+  A:
+    input: 3.00
+    output: 15.00
+    read: 0.30
+    write_5m: 3.75
+    write_1h: 6.00
+    source: E13-RECOMP §4.1 recovered Anthropic claude-sonnet-5 card
+  B:
+    input: 0.20
+    output: 1.20
+    read: 0.02
+    write_5m: 0.25
+    write_1h: 0.25
+    source: docs/analysis/openai-luna-rate-card.md, observed 2026-08-28
+pi_catalog_rates_control_column:
+  A: {input: 2.00, output: 10.00, read: 0.20, write_5m: 2.50, write_1h: 4.00}
+  B: {input: 0.20, output: 1.20, read: 0.02, write_5m: 0.25, write_1h: 0.25}
+
+statistics:
+  method: session-unit paired percentile bootstrap
+  seed: 1313
+  resamples: 10000
+  ci: two-sided 95% percentile
+  common_random_numbers: one shared 10000 x 12 index matrix
+  percentile_convention: floor(alpha/2*B), ceil((1-alpha/2)*B)-1   # E13
+  ratio_definition: ratio of session sums
+  difference_definition: mean of per-session paired differences
+
+registered_hypotheses:                 # applied independently per cell
+  B1: {quantity: paired gross-input ratio karc/rag with 95% CI, predicted_direction: false}
+  B2: {quantity: paired priced cost ratio karc/rag with 95% CI read against 1.0, predicted_direction: false}
+  B3:
+    quantity: component allocation sign
+    criterion: delta_cache_read(karc - rag) > 0 AND delta_creation(karc - rag) < 0
+    predicted_direction: true
+    judged_on: component totals over S01-S12
+  B4: {quantity: break-even cache-write price mu_w* versus the actual rate (OpenAI 1.25, Anthropic 2.00), predicted_direction: false}
+  why_only_B3_is_directional: >
+    moving the budget grows both arms' payloads and moves both arms' call
+    counts, and that interaction was never modelled.  E23 declined to predict the
+    gross ordering for the same reason and was right to (it flipped at rho =
+    0.75); E27 registered the same three as measured-not-predicted.  B3 is the
+    only quantity the paper claims transports.
+
+batch_level_questions:                 # measured, no criterion attached
+  i: where the gross ratio sits relative to 1.0 at c = 2.5 / 5 / 10 / 20%, and
+     whether at 20% it passes beyond parity
+  ii: whether the cost ratio stays below 1.0 at c = 2.5%
+  iii: the difference between E27 (steady state, S13-S24, c = 10%) and E28-O-10
+       with the window held fixed -- read, not causally attributed (the two
+       cells also differ in schedule seed and session count)
+
+hold_conditions:
+  H1: MCP round-trip three-path mismatch
+  H2: refusal or non-answering turn, 1 or more
+  H3: closure identity violation
+  H4: first cache-eligible cold call with cacheWrite == 0 (leg A also: cacheWrite1h zero calls)
+  H5: completion failure rate above 10%
+  H6: cumulative batch model cost above $10; the wave stops itself at a cumulative $9
+  H7: user ~/.pi mtime change, or any sibling cell root touched
+  H8: cache-eligible call with read == write == 0
+  H9: cold-start misattribution (write == 0 while read > 0)
+  H10: execution namespace overlap; workdir path and pi session id both change
+  H12: gold artifact containment rate not 1.0
+  H13: degenerate zero-reuse branch
+  H14: axis purity violated (the budget moved the task sequence, or the c = 5%
+       control does not reproduce E18)
+  H15: at c = 2.5% the policy replay admits no resident set at all -- that cell only
+  H16: at c = 20% a unit fails against pi's token pacer or a context limit -- that cell only
+  H11_not_applicable: this batch does not choose a window
+  redesign_not_partial_discard: [H2, H3, H4, H9, H12, H13, H14]
+  stop_that_cell_only: [H15, H16]
+
+budget:
+  batch_cap_usd: 10.0
+  batch_stop_usd: 9.0
+  currency: >
+    standard rate cards.  pi charges at catalog rates, which are <= standard on
+    both providers (the Anthropic catalog is 2/3 of the public card), so a
+    standard-dollar ceiling bounds real spend from above.
+  ledger: tmp/e28/spend-ledger.json (cumulative across the four cells)
+  expectation: OpenAI cells under $1 together; the Anthropic cell $4-6 standard
+
+execution_namespace:
+  workdir: tmp/e28/leg<L><tag>/units/<arm>--<Sxx>/work
+  pi_session_id: e18<tag>-<arm>-<Sxx>
+  rationale: >
+    E18's runner derives both the workdir path and the pi session id from one
+    NAMESPACE string, so setting it to the cell tag moves both levers at once.
+    E18 leg B attempt 2 was discarded because a re-run reused both levers and was
+    served the discarded execution's provider-side cache; no earlier execution
+    used any of these four suffixes.  The literal "e18" prefix is E18's own code,
+    kept rather than forked.
+
+privacy_R9: >
+  raw carries counts, public ids, sha256 and usage numbers only; prompts appear
+  as sha256 and character count.  Transcripts under tmp/e28/*/streams are
+  audit-only and are removed at teardown.
+teardown: rm -rf tmp/e28
+
+not_pooled_with_the_eight_cells: >
+  different capacity grid points, so these cells do not enter the abstract's
+  range figures, §4's tables or figures, or the claims ledger.  Whether any of it
+  reaches the 6-page paper is the user's decision.

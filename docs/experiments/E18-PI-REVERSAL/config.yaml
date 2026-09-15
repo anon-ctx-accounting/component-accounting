@@ -1,0 +1,234 @@
+# E18-PI-REVERSAL — confirmed configuration (R-16)
+#
+# Preregistration: docs/experiments/E18-PI-REVERSAL/preregistration.md
+#   sections 1-9 (user-approved) + appendix A (paired provider leg)
+#   + appendix B (supersedes A's H8/H4' and A.1's TTL wording)
+#   + appendix C (releases H9; fixes the leg B rate card)
+# Report: returned as text to the orchestrating session; no report.md in this cell.
+
+cell: E18-PI-REVERSAL
+executed: 2026-08-28
+question: >
+  Does the gross-versus-priced cost-ordering reversal that E13-RECOMP measured in
+  Claude Code reproduce on a different harness (pi), and does it survive a change
+  of provider rate card (OpenAI)?
+
+code_git_hash:
+  scripts_commit: f4ffc51
+  caveat: >
+    Leg A was executed BEFORE this commit existed, from the same working-tree file
+    minus the three additions that the leg B rate-limit incident forced in
+    (the tokens-per-minute pacer, the fail-fast on an error/zero-usage turn, and
+    the unit re-materialize-on-retry).  All three are inert on a run with no
+    provider error: the pacer is disabled unless --tpm is passed and leg A did not
+    pass it, the fail-fast branch never evaluates true when no turn errors, and the
+    re-materialize produces a byte-identical workdir because materialization is
+    deterministic.  Leg A had zero error turns and zero retries (verified over all
+    300 assistant messages).  Leg B was executed from the committed file.
+    See raw/provenance.json.
+
+harness:
+  name: pi
+  version: 0.84.3
+  install: tmp/vendor/piprobe (scratch, gitignored; no global install)
+  isolation:
+    PI_CODING_AGENT_DIR: tmp/e18/leg{A,B}/pi-home
+    PI_CODING_AGENT_SESSION_DIR: tmp/e18/leg{A,B}/sessions
+    PI_OFFLINE: "1"
+    PI_SKIP_VERSION_CHECK: "1"
+    PI_TELEMETRY: "0"
+    rationale: >
+      pi prefers auth.json over the environment (E17 section 6), so an unisolated
+      run lets a user OAuth credential override the metered API key and bill a
+      subscription route.  Isolation is required, not hygiene.
+  flags_common:
+    - --mode json
+    - --thinking off
+    - --no-extensions
+    - --no-context-files
+    - --no-skills
+    - --no-prompt-templates
+    - --no-themes
+    - --no-approve
+    - --append-system-prompt <unit context/system-append.md>
+    - --session-dir <leg sessions> --session-id e18-<arm>-<Sxx>
+  compaction: disabled (settings compaction.enabled=false; autoCompactionEnabled
+    verified false by the model-free registry probe on both legs)
+
+legs:
+  A:
+    provider: anthropic
+    model: claude-sonnet-5
+    api: anthropic-messages
+    PI_CACHE_RETENTION: long          # preregistration section 3 (1-hour TTL)
+    key: CLAUDE_API_KEY from ~/api-key.txt, injected as ANTHROPIC_API_KEY into the
+      pi subprocess environment only; never exported globally, never logged
+    execution: 24 units, ThreadPoolExecutor parallelism 6, no token throttle
+  B:
+    provider: openai
+    model: gpt-5.6-luna
+    api: openai-responses
+    PI_CACHE_RETENTION: unset         # appendix B.3 - not observable in usage on
+                                      # this leg, and appendix C.3 shows OpenAI
+                                      # has no price lever on retention at all
+    key: OPENAI_API_KEY from ~/api-key.txt, injected as OPENAI_API_KEY into the
+      pi subprocess environment only
+    execution: attempt 3 of 3. 24 units, ThreadPoolExecutor parallelism 3,
+      global sliding-window token pacer at 120,000 tokens/minute (measured
+      provider ceiling 200,000), execution namespace "r2"
+    attempt_1: DISCARDED IN FULL on H2' - see raw/discarded-legB-attempt1.json
+    attempt_2: DISCARDED IN FULL on a non-preregistered cold-start assert -
+      see raw/discarded-legB-attempt2/
+    namespace_rationale: >
+      a discarded execution leaves a live server-side prompt cache behind (OpenAI
+      keeps a written prefix reusable for 30 minutes, and pi routes it with
+      prompt_cache_key = session id), so a re-run that reuses the workdir paths
+      and the session ids is served that cache and reports cacheWrite == 0 on
+      calls a clean run would be charged creation for.  The namespace changes both
+      the workdir path (which appears inside pi's system prompt: 1,825 -> 1,827
+      chars) and the pi session id.  Cold start verified, not assumed.
+
+design:
+  arms:
+    - karc-full   # K-ARC managed memory over MCP through integrations/pi/karc-mcp-bridge
+    - rag-bm25    # budget-parity BM25 evidence in the turn message, no tools
+  arm_construction: >
+    src/karc/bench/e5_cache_canary.py, unmodified: materialize_session's body is
+    reproduced for pi (KARC_SESSION_INSTRUCTION / RAG_SESSION_INSTRUCTION,
+    materialize._codex_agents for the resident-knowledge injection,
+    mcp_index.build_index) and task_prompt is called directly.
+  pi_adaptations:
+    - >
+      Codex auto-loads AGENTS.md as a project doc; pi does not.  The same
+      AGENTS.md bytes are injected with --append-system-prompt <path> and the file
+      is moved out of the workdir so it cannot also be discovered.  Injection was
+      verified model-free: system prompt 1,825 -> 2,271 chars (karc, S01) and
+      1,824 -> 2,123 chars (rag).
+    - >
+      the MCP server is reached through the bridge's .mcp.json rather than Codex
+      mcp_servers.* config overrides.
+  scale: 12 sessions x 8 turns x 2 arms = 192 turns per leg, 384 turns total
+  fixture: fixture/e4-v2 (existing; no new fixture)
+  schedule:
+    source: docs/experiments/E10-P2-XR/canary/raw/schedule.json
+    method: regenerated with e5_cache_canary.prepare_bundle(seed=4200,
+      sessions=12, length=8) so the task prompts come from the same deterministic
+      builder, then gated on the snapshot sha256
+    snapshot_sha256: a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301
+    identical_for_both_legs: true
+  workdir_isolation: one workdir, one .karc/index.db and one pi session id per
+    (leg, arm, session) - 48 units in total - so no cache prefix, no MCP
+    observation row and no session history is shared between arms or sessions
+  submission_order: the ABBA block order of the baseline cell (E13 section 5.0),
+    K01 R01 R02 K02 ... K12, so neither arm is systematically earlier
+
+accounting:
+  gross: input + cacheRead + cacheWrite
+  gross_justification: >
+    pi's usage.input excludes both cache buckets on BOTH legs (E17 section 3,
+    E17B section 2).  Treating it as a provider raw input_tokens under-counts
+    gross by about 5.5x.  Re-verified here on 300 leg A calls and on leg B:
+    the exclusive closure holds and the inclusive one never does.
+  per_call_asserts:
+    - totalTokens == input + output + cacheRead + cacheWrite
+    - cacheWrite1h <= cacheWrite            # leg A only; the key does not exist on leg B
+  stop_reason: two layers recorded (pi normalized stopReason + provider rawStopReason)
+  refusal_detection:
+    leg_A: provider rawStopReason
+    leg_B: H2' disjunction - output_tokens == 0 OR errorMessage present OR
+      content block absent (rawStopReason is always "completed" on this leg)
+  round_trip_crosscheck: pi tool_execution_start == bridge audit JSONL lines ==
+    DB ingest_observations(source_channel='mcp'), per unit; a disagreeing run is
+    discarded
+  second_usage_route: pi's own session JSONL, compared field-by-field with the
+    --mode json stdout stream
+
+rate_cards_usd_per_million:
+  judged:
+    A:
+      source: Anthropic claude-sonnet-5 card recovered exactly from committed
+        E10-P2-XR raw by E13-RECOMP section 4.1 (== committed ClaudeRates shape)
+      uncached_input: 3.00
+      cache_creation_5m: 3.75
+      cache_creation_1h: 6.00
+      cache_read: 0.30
+      output: 15.00
+      multipliers: {mu_r: 0.10, mu_w_5m: 1.25, mu_w_1h: 2.00, mu_o: 5.00}
+    B:
+      source: docs/analysis/openai-luna-rate-card.md, primary source
+        developers.openai.com, rates observed 2026-08-28 (appendix C.1)
+      uncached_input: 0.20
+      cache_write: 0.25
+      cache_read: 0.02
+      output: 1.20
+      multipliers: {mu_r: 0.10, mu_w: 1.25, mu_o: 6.00}
+      caveat: appendix C.4 - no promotional expiry is documented for Luna, so the
+        absolute dollar figures are to be read as of the observation date; the
+        multiplier-based judgements are unaffected
+      location: this cell's scripts, because src/karc/bench/e5_cross_runtime.py is
+        line-frozen and carries only ClaudeRates
+  control:
+    A: {input: 2.00, output: 10.00, read: 0.20, write_5m: 2.50, write_1h: 4.00}
+    B: {input: 0.20, output: 1.20, read: 0.02, write: 0.25}
+    note: pi's own catalog, used only to reverse-verify that pi's reported
+      usage.cost is reproducible from the four recorded buckets.  The Anthropic
+      entry is the introductory card expiring 2026-08-31; its ratios equal the
+      standard card's, so no judgement moves (E17 section 8).
+
+statistics:
+  unit: session
+  method: paired percentile bootstrap, common random numbers
+  seed: 1313
+  resamples: 10000
+  ci: two-sided 95 percent percentile
+  percentile_convention: lo = sorted[floor(0.025*B)], hi = sorted[ceil(0.975*B)-1]
+  ratio_comparisons_are_against: 1.0
+  difference_comparisons_are_against: 0
+  reversal_threshold: >
+    mu_w* solves dU + mu_w*dW + mu_r*dR + mu_o*dO = 0 with d = karc - rag, and is
+    recomputed from each leg's OWN component totals with that leg's own mu_r and
+    mu_o.  E13's 1.7217 / appendix C.2's 1.7486 are prediction inputs, not results,
+    and are never carried across.
+
+predictions_and_judgement_rules:
+  P1: leg gross ratio karc/rag - 95 percent CI entirely above 1.0
+  P2: leg A priced ratio - 95 percent CI entirely below 1.0 AND paired mean USD
+    difference CI excludes 0
+  P3: leg A component signature - delta_read > 0 AND delta_creation < 0
+  P4: leg B priced ratio - 95 percent CI entirely above 1.0 (a prediction against
+    our own headline)
+  P5: leg B component signature - delta_read > 0 AND delta_creation < 0
+  section_5_rule: if P1 fails, P2 is NOT judged and the cell turns to root-cause
+  section_5_duty: if P2 fails, that is the result and is reported as such
+
+hold_conditions:
+  H1: any unit whose three round-trip paths disagree
+  H2': a turn with output_tokens == 0, or an errorMessage, or no content block
+  H3: any per-call closure violation
+  H4: leg A only - any call with cacheWrite1h == 0
+  H4'': the first cache-eligible cold call (cacheRead == 0 and prefix >= 1024)
+    reporting cacheWrite == 0
+  H5: session completion failure rate above 10 percent
+  H6: model spend above 15 USD across both legs
+  H7: any mtime change on the user's ~/.pi paths
+  H8': a cache-eligible call (prefix >= 1024) with cacheRead == 0 AND
+    cacheWrite == 0.  Sub-threshold session-opening calls reporting 0/0 are
+    expected and are recorded, not held on (appendix B.1).
+  H9: released by appendix C.1
+  escalation: H2', H3 and H4/H4'' are full-redesign causes, not partial-discard
+    causes
+
+privacy_R9: raw/ carries counts, public identifiers, sha256 and usage numbers
+  only.  Prompts, model text and tool results are never written there.  The pi
+  event streams and session stores under tmp/e18/{sessions,streams} hold
+  transcripts and are gitignored; they are left in place for parent-session audit
+  and must be deleted at teardown (rm -rf tmp/e18).
+
+not_claimed:
+  - accuracy or quality (preregistration section 7; the axis is degenerate in the
+    baseline and the incidental grade recorded here is diagnostic only)
+  - absolute token or dollar comparison between harnesses (E17 section 10)
+  - absolute token or dollar comparison between providers (appendix A.5)
+  - which provider is cheaper
+  - closeness of the two legs' mu_w* (appendix A.3)
+  - the real lifetime of a 1-hour or 30-minute cache entry

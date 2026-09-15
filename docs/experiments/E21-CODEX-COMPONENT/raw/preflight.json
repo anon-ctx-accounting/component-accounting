@@ -1,0 +1,45 @@
+{
+  "_meta": {
+    "cell": "E21-CODEX-COMPONENT",
+    "codex_version": "codex-cli 0.145.0",
+    "generated_at_utc": "2026-09-07T16:09:32+00:00",
+    "namespace": "",
+    "phase": "preflight"
+  },
+  "binary": "<HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "binary_version": {
+    "returncode": 0,
+    "stderr_tail": [],
+    "stdout": "codex-cli 0.145.0"
+  },
+  "binary_version_is_pinned": true,
+  "driver_preflight": {
+    "available": true,
+    "binary": "<HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "contract_ok": true,
+    "driver_schema": "codex-exec-jsonl-0.145.x-v2",
+    "hooks_feature_stable": true,
+    "required_flags": {
+      "--ephemeral": true,
+      "--ignore-user-config": true,
+      "--json": true,
+      "--model": true,
+      "--sandbox": true,
+      "--strict-config": true
+    },
+    "resolved": "<HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "version": "codex-cli 0.145.0"
+  },
+  "karc_command": "<REPO>/.venv/bin/karc",
+  "model": "gpt-5.6-luna",
+  "path_codex": "<HOME>/.local/bin/codex",
+  "path_codex_left_alone": true,
+  "path_codex_version": {
+    "returncode": 0,
+    "stderr_tail": [],
+    "stdout": "codex-cli 0.144.5"
+  },
+  "python": "<REPO>/.venv/bin/python",
+  "reasoning_effort": "low",
+  "user_standalone_current_symlink": "<HOME>/.codex/packages/standalone/releases/0.144.5-aarch64-apple-darwin"
+}

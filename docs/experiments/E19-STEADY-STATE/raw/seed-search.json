@@ -1,0 +1,32 @@
+{
+  "search_range": [
+    4300,
+    4399
+  ],
+  "criterion": "minimize |E19 required-version set \u2229 E18 required-version set| over a 24-session build; outcome-independent, computed model-free before any execution",
+  "best": [
+    {
+      "seed": 4352,
+      "overlap": 9
+    },
+    {
+      "seed": 4303,
+      "overlap": 13
+    },
+    {
+      "seed": 4326,
+      "overlap": 13
+    },
+    {
+      "seed": 4358,
+      "overlap": 13
+    },
+    {
+      "seed": 4348,
+      "overlap": 14
+    }
+  ],
+  "worst_overlap": 33,
+  "median_overlap": 21,
+  "chosen_seed": 4352
+}

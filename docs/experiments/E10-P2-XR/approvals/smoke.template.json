@@ -1,0 +1,17 @@
+{
+  "schema": "e10-p2-xr-approval-v1",
+  "experiment_id": "E10-P2-XR",
+  "phase": "smoke",
+  "approved": false,
+  "approved_at": null,
+  "approved_by": null,
+  "plan_sha256": null,
+  "model_pin": "claude-sonnet-5",
+  "cli_pin": "2.1.220 (Claude Code)",
+  "dollar_cap_usd": null,
+  "dollar_cap_semantics": "rate-card-equivalent usage guard, not actual subscription billing",
+  "model_spend_attempt_cap": 80,
+  "karc_mcp_allowed": true,
+  "rag_mcp_allowed": false,
+  "notes": "Template only; copying it does not constitute approval."
+}

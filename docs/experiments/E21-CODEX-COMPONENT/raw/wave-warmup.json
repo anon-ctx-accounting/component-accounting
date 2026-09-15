@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "cell": "E21-CODEX-COMPONENT",
+    "codex_version": "codex-cli 0.145.0",
+    "generated_at_utc": "2026-09-07T16:34:29+00:00",
+    "namespace": "",
+    "phase": "wave"
+  },
+  "aborted": [],
+  "cell_priced_usd_running": 0.073262,
+  "discarded_attempts": [],
+  "failed": [],
+  "namespace": "",
+  "parallel": 3,
+  "skipped": [],
+  "stage": "warmup",
+  "submission_order": [
+    "karc-full--S01",
+    "karc-full--S02",
+    "karc-full--S03",
+    "karc-full--S04",
+    "karc-full--S05",
+    "karc-full--S06",
+    "karc-full--S07",
+    "karc-full--S08"
+  ],
+  "tokens_per_minute_target": 120000,
+  "unit_attempts": {
+    "karc-full--S01": 1,
+    "karc-full--S02": 1,
+    "karc-full--S03": 1,
+    "karc-full--S04": 1,
+    "karc-full--S05": 1,
+    "karc-full--S06": 1,
+    "karc-full--S07": 1,
+    "karc-full--S08": 1
+  },
+  "unit_summaries": [
+    {
+      "arm": "karc-full",
+      "session_id": "S01",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 9,
+        "db_ingest_observations_mcp": 9,
+        "guard_hook_pretooluse_mcp": 9
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S02",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S03",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S04",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S05",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S06",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S07",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "session_id": "S08",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "turns_executed": 8
+    }
+  ],
+  "units": 8,
+  "wall_seconds": 742.0,
+  "wave_priced_usd": 0.066159
+}

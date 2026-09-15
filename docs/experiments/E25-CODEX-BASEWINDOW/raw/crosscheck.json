@@ -1,0 +1,754 @@
+{
+  "H9_cold_start_assert": {
+    "calls": 0,
+    "clean": true,
+    "detail": [],
+    "what": "an API call with write == 0 while the prefix is served from cache, i.e. served an entry written by an execution outside this dataset (the assert that caught E18 leg B attempt 2)"
+  },
+  "_meta": {
+    "generated_at_utc": "2026-09-10T11:54:40Z"
+  },
+  "api_calls": 312,
+  "api_calls_per_arm": {
+    "karc-full": 216,
+    "rag-bm25": 96
+  },
+  "completion_rate": 1.0,
+  "cost": {
+    "cap_usd": 2.0,
+    "priced_usd_cell_total": 0.226404,
+    "priced_usd_measurement": 0.226404,
+    "priced_usd_warmup": 0,
+    "rate_card_source": "docs/analysis/openai-luna-rate-card.md (2026-08-28)",
+    "warmup_note": "warm-up cost is reported but enters no judgment"
+  },
+  "hold_conditions": {
+    "H10_namespace": {
+      "all_workdirs_under_cell_root": true,
+      "cell_root": "<REPO>/tmp/e25/run",
+      "distinct_from_previous_cells": true,
+      "namespace": "",
+      "thread_ids": 24,
+      "thread_ids_distinct": true
+    },
+    "H11_metered_route_proved": true,
+    "H12_steady_state_not_reached": null,
+    "H1_three_path_mismatch": [],
+    "H2_refusal_or_answerless_turns": [],
+    "H3_closure_violation_calls": 0,
+    "H3_closure_violation_turns": 0,
+    "H3_non_monotone_cumulative_turns": 0,
+    "H4_first_eligible_cold_call_write_zero": [],
+    "H5_completion_failure_rate": 0.0,
+    "H6_priced_usd_cell_total": 0.226404,
+    "H6_priced_usd_measurement": 0.226404,
+    "H6_priced_usd_warmup": 0,
+    "H7_user_codex_mtimes_unchanged": null,
+    "H8_eligible_call_with_no_cache_activity": 0,
+    "H9_cold_start_misattribution_calls": 0
+  },
+  "hold_fired": [],
+  "incidental_grade_diagnostic": {
+    "note": "NOT a claim (preregistration §6 excludes the accuracy axis).  Recorded so a silently non-functioning arm is detectable and because it independently reproduces the position-1 fixture floor.",
+    "per_arm": {
+      "karc-full": {
+        "n": 96,
+        "n_position_1": 12,
+        "n_positions_2_to_8": 84,
+        "passed": 84,
+        "passed_at_position_1": 0,
+        "passed_positions_2_to_8": 84
+      },
+      "rag-bm25": {
+        "n": 96,
+        "n_position_1": 12,
+        "n_positions_2_to_8": 84,
+        "passed": 84,
+        "passed_at_position_1": 6,
+        "passed_positions_2_to_8": 78
+      }
+    }
+  },
+  "inclusion_relation": {
+    "contrast_with_other_cells": {
+      "codex_metered": "measured here",
+      "openai_raw_http": "inclusive (E16 §1)",
+      "pi_anthropic_and_pi_openai": "exclusive (E17 §3, E17B §2)"
+    },
+    "gross_definition": "gross = input_tokens (the visible prefix; already contains cached and write)",
+    "per_call": {
+      "cached_gt_input": 0,
+      "cached_plus_write_gt_input": 0,
+      "cached_plus_write_le_input": 312,
+      "closure_input_eq_cached_plus_write_plus_fresh": 312,
+      "discriminating": 312,
+      "exclusive_reading_holds": false,
+      "inclusive_reading_holds": true,
+      "level": "api call (rollout)",
+      "n": 312
+    },
+    "per_turn": {
+      "cached_gt_input": 0,
+      "cached_plus_write_gt_input": 0,
+      "cached_plus_write_le_input": 192,
+      "closure_input_eq_cached_plus_write_plus_fresh": 192,
+      "discriminating": 192,
+      "exclusive_reading_holds": false,
+      "inclusive_reading_holds": true,
+      "level": "turn (differenced)",
+      "n": 192
+    },
+    "total_identity_on_calls": {
+      "conclusion": "reasoning_output_tokens is INSIDE output_tokens; output must not be double-counted",
+      "n": 312,
+      "total_eq_input_plus_output": 312,
+      "total_eq_input_plus_output_plus_reasoning": 248
+    },
+    "total_tokens_on_stdout_usage": {
+      "note": "codex exec's stdout usage block carries no total_tokens; the rollout route does",
+      "turns": 192,
+      "turns_with_total_tokens_key": 0
+    },
+    "verdict": "inclusive"
+  },
+  "incomplete_units": [],
+  "measurement_window": {
+    "arms": [
+      "karc-full",
+      "rag-bm25"
+    ],
+    "sessions": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12"
+    ]
+  },
+  "nonfatal_error_items": {
+    "hook_trust_notices": 384,
+    "total_items": 384,
+    "transport_stayed_on_websocket": true,
+    "turns": 192,
+    "turns_with_unclassified_notice": 0,
+    "unclassified": [],
+    "what": "documented non-fatal ErrorItems.  Two per turn are the --dangerously-bypass-hook-trust notice (fixed body, stable digest).  A third, longer notice would be the WebSocket -> HTTPS transport fallback."
+  },
+  "openai_cache_threshold": {
+    "eligible_calls": 312,
+    "eligible_calls_with_no_cache_activity": 0,
+    "first_eligible_cold_call_per_unit": [
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 8641,
+        "session_id": "S01",
+        "write": 8638
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 9333,
+        "session_id": "S02",
+        "write": 9330
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10020,
+        "session_id": "S03",
+        "write": 10017
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10723,
+        "session_id": "S04",
+        "write": 10720
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 11426,
+        "session_id": "S05",
+        "write": 11423
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12122,
+        "session_id": "S06",
+        "write": 12119
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12110,
+        "session_id": "S07",
+        "write": 12107
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12078,
+        "session_id": "S08",
+        "write": 12075
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12101,
+        "session_id": "S09",
+        "write": 12098
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12124,
+        "session_id": "S10",
+        "write": 12121
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12130,
+        "session_id": "S11",
+        "write": 12127
+      },
+      {
+        "arm": "karc-full",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 12119,
+        "session_id": "S12",
+        "write": 12116
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10374,
+        "session_id": "S01",
+        "write": 10371
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10359,
+        "session_id": "S02",
+        "write": 10356
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10370,
+        "session_id": "S03",
+        "write": 10367
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10367,
+        "session_id": "S04",
+        "write": 10364
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10366,
+        "session_id": "S05",
+        "write": 10363
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10358,
+        "session_id": "S06",
+        "write": 10355
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10363,
+        "session_id": "S07",
+        "write": 10360
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10367,
+        "session_id": "S08",
+        "write": 10364
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10367,
+        "session_id": "S09",
+        "write": 10364
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10360,
+        "session_id": "S10",
+        "write": 10357
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10370,
+        "session_id": "S11",
+        "write": 10367
+      },
+      {
+        "arm": "rag-bm25",
+        "call_index": 0,
+        "position": 1,
+        "prefix_tokens": 10358,
+        "session_id": "S12",
+        "write": 10355
+      }
+    ],
+    "min_prefix_tokens": 1024,
+    "sub_threshold_calls": 0,
+    "sub_threshold_prefix_tokens": []
+  },
+  "per_unit": [
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 17,
+      "session_id": "S01",
+      "thread_id_sha256": "df6caa5aba05985cc770b6c5dafa305c5c17a3b28dbfdf822f3259f2f510c4e4",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 9,
+        "db_ingest_observations_mcp": 9,
+        "guard_hook_pretooluse_mcp": 9
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 17,
+      "session_id": "S02",
+      "thread_id_sha256": "469f0770eb3edcec10d17a7e4dcdf825977a7e633a5bf50662b6eda8accb95cb",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 17,
+      "session_id": "S03",
+      "thread_id_sha256": "f921909c0186d1472c84bd302ddd7f55b47d75e3a4cd77e147920084c03f66d6",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 17,
+      "session_id": "S04",
+      "thread_id_sha256": "58e0a0355d1602c6fe45f5b7669f226b6fefecad5cba9908b25723c66c0c26e0",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 17,
+      "session_id": "S05",
+      "thread_id_sha256": "19441c3ff41cfc0ab37dc606e6b323b11c05bc0765b9f5b20778882f531e75bc",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 17,
+      "session_id": "S06",
+      "thread_id_sha256": "e49192223bcffd29c9e2a3fac614208e6471e3eb42c1bda382b50be466309096",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 8,
+        "db_ingest_observations_mcp": 8,
+        "guard_hook_pretooluse_mcp": 8
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 19,
+      "session_id": "S07",
+      "thread_id_sha256": "57dcb71d241bebb9a3441c2671093162d1822d8ab51d8e8259f108cf6b1ac2d2",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 10,
+        "db_ingest_observations_mcp": 10,
+        "guard_hook_pretooluse_mcp": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 19,
+      "session_id": "S08",
+      "thread_id_sha256": "e602e5cc373a0f5ebb2dfc041c0bd25cd0d4f11886f2be25f47fc7f4799e9f39",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 10,
+        "db_ingest_observations_mcp": 10,
+        "guard_hook_pretooluse_mcp": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 19,
+      "session_id": "S09",
+      "thread_id_sha256": "2f486c86edbda3e731bbfe7fbd548795cb4f07c5527a05c4c212d6fc615a4a38",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 10,
+        "db_ingest_observations_mcp": 10,
+        "guard_hook_pretooluse_mcp": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 19,
+      "session_id": "S10",
+      "thread_id_sha256": "f9d19c7c1727dea4a3926c00c1ee64b1a5c4e6574a90937b0d7aa146293e1e0e",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 10,
+        "db_ingest_observations_mcp": 10,
+        "guard_hook_pretooluse_mcp": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 19,
+      "session_id": "S11",
+      "thread_id_sha256": "2cf7f0f3428c90f2a17fb3ca71f60c5e0bf6bc0389a3240f71ba2f739a0111f2",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 10,
+        "db_ingest_observations_mcp": 10,
+        "guard_hook_pretooluse_mcp": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "karc-full",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 19,
+      "session_id": "S12",
+      "thread_id_sha256": "20ffadaef9a39e6698f79259dc96c2787dee6752eabb5a349d825ab1bbfd27ca",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 10,
+        "db_ingest_observations_mcp": 10,
+        "guard_hook_pretooluse_mcp": 10
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S01",
+      "thread_id_sha256": "277a97548ef53422324ea09df23ded63af50c3c5d9b6201794fb1bab2d82919a",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S02",
+      "thread_id_sha256": "249b0eb39f45f9d261be64d75485d333a93511aae3f4a0d21aa5f9a57cb4e2dc",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S03",
+      "thread_id_sha256": "64a9d037ef47514096714eec9d915c51f3a2ea1480b6006befca78d5d2fabde7",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S04",
+      "thread_id_sha256": "79265dfa1290b17640b59488cd1293bea3a97fa259dd35de34f60328960f055c",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S05",
+      "thread_id_sha256": "90b34f496b77ccc0e167d32705a4d9fdb8705e612b0d91d9448f66ce16ad64e2",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S06",
+      "thread_id_sha256": "6939ff3a3c79f6a8e08f460aef64774ff4d0a81faeb019f8d0121d210186d106",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S07",
+      "thread_id_sha256": "ee9b8e8289d4534e25dfe273e763e4f48f5a5eba0d2b09295315e23fb4a6e6bb",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S08",
+      "thread_id_sha256": "a85cead3ac540e2745bb77c47fcf55bf0bb4f0cfdfe140162fc0a71968fee892",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S09",
+      "thread_id_sha256": "f3b258f62a58ae2eecbd7e62cca7afc15f58bdc508b6c02f2632d532a433f47c",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S10",
+      "thread_id_sha256": "d1d7cbce2d024196ba7e296144c8076879ae2938518f6318f631d73c50f91340",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S11",
+      "thread_id_sha256": "9740867da44473886e80d217cbed38f4484f22f50a137d9e67f8ca2f82c0025d",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "attempt": 1,
+      "rollout_final_equals_stdout_final": true,
+      "rollout_token_count_events": 8,
+      "session_id": "S12",
+      "thread_id_sha256": "559568f4b645526f321ffdc6c252ce1f173e88236c370167aeab0d2eaacc6261",
+      "three_paths": {
+        "codex_mcp_tool_call_items": 0,
+        "db_ingest_observations_mcp": null,
+        "guard_hook_pretooluse_mcp": 0
+      },
+      "three_paths_agree": true,
+      "turns_executed": 8
+    }
+  ],
+  "rate_card_verification": {
+    "aggregation_invariance": {
+      "abs_residual_usd": 2.7755575615628914e-17,
+      "exact_within_1e_9_usd": true,
+      "priced_from_component_totals": 0.22640403,
+      "sum_of_per_turn_priced_usd": 0.22640403
+    },
+    "cache_write_rule_1_25x_input": true,
+    "harness_reported_cost_field": false,
+    "multipliers_match": true,
+    "note": "codex exec reports no cost, so E19's inversion of a harness-reported cost is NOT available here.  The two substitutes below are what this harness admits.",
+    "published_multipliers": {
+      "mu_output": 6.0,
+      "mu_read": 0.1,
+      "mu_write": 1.25
+    },
+    "recovered_from_committed_card": {
+      "mu_output": 5.999999999999999,
+      "mu_read": 0.09999999999999999,
+      "mu_write": 1.25
+    }
+  },
+  "second_acquisition_route": {
+    "disagreements": [],
+    "turns": 192,
+    "turns_with_agreement": 192,
+    "units": 24,
+    "units_whose_rollout_final_equals_stdout_final": 24,
+    "what": "the isolated home's rollout token_count events, one per API call, carrying last_token_usage and total_token_usage"
+  },
+  "steady_state": null,
+  "stop_reason": {
+    "cost_field_ever_present": false,
+    "turn_completed_non_usage_fields_nonempty": 0,
+    "turns_with_stop_reason_field": 0,
+    "what": "codex exec emits no stop reason (E20 §5); H2 is the three-signal disjunction instead"
+  },
+  "turns_executed": 192,
+  "turns_expected": 192,
+  "warmup_window": {
+    "arms": [
+      "karc-full"
+    ],
+    "sessions": [],
+    "turns": 0,
+    "units": 0
+  }
+}

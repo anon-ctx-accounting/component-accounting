@@ -1,0 +1,205 @@
+{
+  "cell": "E15-CODEX-WRITE",
+  "probe": "multiturn-cache-write",
+  "round": 1,
+  "code_git_hash": "2bb701b5636c18ddef76103e3d32980ab707b83c",
+  "binary_path": "<HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "cli_version": "codex-cli 0.145.0",
+  "model_requested": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "route": "chatgpt-subscription (auth.json bridge, controlled CODEX_HOME)",
+  "sandbox": "read-only",
+  "planned_turns": 4,
+  "filler_lines_per_turn": 100,
+  "model_turns_spent_this_round": 4,
+  "model_turns_spent_cumulative": 4,
+  "attempt_cap_model_turns": 8,
+  "thread_id": "01a043dc-6120-7360-8703-ccf07db30b1b",
+  "turns": [
+    {
+      "turn": 1,
+      "observed_at_utc": "2026-08-27T15:35:14+00:00",
+      "prompt_chars": 6730,
+      "prompt_sha256": "8f81adb24d196957d0ae5863dfbf693eef930bafda463cc09a6a6e3b37b9527a",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 13317,
+        "cached_input_tokens": 7936,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 16,
+        "reasoning_output_tokens": 9
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 5381,
+        "cache_read_input_tokens": 7936,
+        "output_tokens": 16,
+        "reasoning_output_tokens": 9,
+        "cache_creation_input_tokens": 0
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 13317,
+      "fresh_input_tokens": 5381,
+      "session_turn": 1,
+      "persistent_session": true,
+      "hook_event_count": 2,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ]
+    },
+    {
+      "turn": 2,
+      "observed_at_utc": "2026-08-27T15:35:17+00:00",
+      "prompt_chars": 6714,
+      "prompt_sha256": "b055d06ba8d1655236f57b55b7faa3934aea7eef9d519361d9bac34dfd888279",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 29532,
+        "cached_input_tokens": 20992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 21,
+        "reasoning_output_tokens": 9
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 8540,
+        "cache_read_input_tokens": 20992,
+        "output_tokens": 21,
+        "reasoning_output_tokens": 9,
+        "cache_creation_input_tokens": 0
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 29532,
+      "fresh_input_tokens": 8540,
+      "session_turn": 2,
+      "persistent_session": true,
+      "hook_event_count": 1,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ]
+    },
+    {
+      "turn": 3,
+      "observed_at_utc": "2026-08-27T15:35:20+00:00",
+      "prompt_chars": 6684,
+      "prompt_sha256": "2deda12596e01257d2d097989119a01911f8cabf2bd043ee79e37a4375c1524e",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 48393,
+        "cached_input_tokens": 36096,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 36,
+        "reasoning_output_tokens": 17
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 12297,
+        "cache_read_input_tokens": 36096,
+        "output_tokens": 36,
+        "reasoning_output_tokens": 17,
+        "cache_creation_input_tokens": 0
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 48393,
+      "fresh_input_tokens": 12297,
+      "session_turn": 3,
+      "persistent_session": true,
+      "hook_event_count": 1,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ]
+    },
+    {
+      "turn": 4,
+      "observed_at_utc": "2026-08-27T15:35:23+00:00",
+      "prompt_chars": 6713,
+      "prompt_sha256": "4c42d0fcc3d29fab7dcf8ff802e4ac85ff48ad790b50ffa32edbc4f3f091d3c9",
+      "ok": true,
+      "error_class": null,
+      "error_detail": null,
+      "reported_model": "gpt-5.6-luna",
+      "model_verification": "hook",
+      "usage_raw": {
+        "input_tokens": 69908,
+        "cached_input_tokens": 54272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 49,
+        "reasoning_output_tokens": 23
+      },
+      "usage_raw_unexpected_keys": [],
+      "usage_normalized": {
+        "input_tokens": 15636,
+        "cache_read_input_tokens": 54272,
+        "output_tokens": 49,
+        "reasoning_output_tokens": 23,
+        "cache_creation_input_tokens": 0
+      },
+      "write_key_present": true,
+      "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+      "fresh_semantics": "uncached",
+      "gross_input_tokens": 69908,
+      "fresh_input_tokens": 15636,
+      "session_turn": 4,
+      "persistent_session": true,
+      "hook_event_count": 1,
+      "event_types": [
+        "item.completed",
+        "thread.started",
+        "turn.completed",
+        "turn.started"
+      ]
+    }
+  ],
+  "evaluation": {
+    "cached_series": [
+      7936,
+      20992,
+      36096,
+      54272
+    ],
+    "write_series": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "input_series": [
+      13317,
+      29532,
+      48393,
+      69908
+    ],
+    "any_write_gt_zero": false,
+    "cached_grew_between_turns": true,
+    "input_grew_between_turns": true,
+    "outcome": "route-omits-writes"
+  },
+  "privacy": "token-counts-and-hashes-only"
+}

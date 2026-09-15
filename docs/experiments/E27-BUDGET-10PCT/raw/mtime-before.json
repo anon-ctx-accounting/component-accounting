@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "budget_pct": 10,
+    "budget_tokens": 3512,
+    "cell": "E27-BUDGET-10PCT",
+    "generated_at_utc": "2026-09-10T20:32:27Z",
+    "imported_runner_sha256": "87fd1dcfd347ac5075c0b85debabb15052a6c1b4223f2639736ab401ab2ae914",
+    "model": "gpt-5.6-luna",
+    "namespace": "",
+    "phase": "mtime",
+    "pi_version": "0.84.3",
+    "provider": "openai",
+    "reuse_factor": 0.5
+  },
+  "sibling_cell_roots": {
+    "<REPO>/tmp/e17": {
+      "exists": false
+    },
+    "<REPO>/tmp/e17b": {
+      "exists": false
+    },
+    "<REPO>/tmp/e18": {
+      "exists": false
+    },
+    "<REPO>/tmp/e19": {
+      "exists": false
+    },
+    "<REPO>/tmp/e21": {
+      "exists": false
+    },
+    "<REPO>/tmp/e23": {
+      "exists": false
+    }
+  },
+  "user_pi_paths": {
+    "<HOME>/.pi": {
+      "exists": true,
+      "mtime_ns": 1787847668687481309,
+      "size": null
+    },
+    "<HOME>/.pi/agent": {
+      "exists": true,
+      "mtime_ns": 1787850563832214657,
+      "size": null
+    },
+    "<HOME>/.pi/agent/auth.json": {
+      "exists": true,
+      "mtime_ns": 1787847668687571523,
+      "size": 2
+    },
+    "<HOME>/.pi/agent/models-store.json": {
+      "exists": true,
+      "mtime_ns": 1787847668690018934,
+      "size": 2
+    }
+  }
+}

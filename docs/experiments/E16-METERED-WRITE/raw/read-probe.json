@@ -1,0 +1,58 @@
+{
+  "model": "claude-sonnet-4-6",
+  "prefix_chars": 12712,
+  "rows": [
+    {
+      "c1h": 2555,
+      "c5m": 0,
+      "call": 0,
+      "create": 2555,
+      "geo": "global",
+      "input": 13,
+      "output": 0,
+      "read": 0,
+      "stop_reason": "refusal",
+      "text": "",
+      "tier": "standard"
+    },
+    {
+      "c1h": 2555,
+      "c5m": 0,
+      "call": 1,
+      "create": 2555,
+      "geo": "global",
+      "input": 13,
+      "output": 0,
+      "read": 0,
+      "stop_reason": "refusal",
+      "text": "",
+      "tier": "standard"
+    },
+    {
+      "c1h": 2555,
+      "c5m": 0,
+      "call": 2,
+      "create": 2555,
+      "geo": "global",
+      "input": 13,
+      "output": 0,
+      "read": 0,
+      "stop_reason": "refusal",
+      "text": "",
+      "tier": "standard"
+    },
+    {
+      "c1h": 2555,
+      "c5m": 0,
+      "call": 3,
+      "create": 2555,
+      "geo": "global",
+      "input": 13,
+      "output": 0,
+      "read": 0,
+      "stop_reason": "refusal",
+      "text": "",
+      "tier": "standard"
+    }
+  ]
+}

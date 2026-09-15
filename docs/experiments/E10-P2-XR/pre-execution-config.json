@@ -1,0 +1,94 @@
+{
+  "schema": "e10-p2-xr-pre-execution-v1",
+  "experiment_id": "E10-P2-XR",
+  "authority": "docs/analysis/e10-p2-xr-preregistration.md",
+  "source_experiment": "E5-G1",
+  "fixture": {
+    "root": "fixture/e4-v2",
+    "corpus_seed": 4000,
+    "corpus_content_hash": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a"
+  },
+  "cell": {
+    "reuse_factor": 0.5,
+    "session_length": 8,
+    "budget_pct": 5
+  },
+  "arms": [
+    "karc-full",
+    "rag-bm25"
+  ],
+  "runtime": {
+    "name": "claude-code",
+    "auth_method": "claude.ai",
+    "api_provider": "firstParty",
+    "subscription_type": "team",
+    "api_key_required": false,
+    "actual_incremental_billing_observed": false,
+    "model_pin": "claude-sonnet-5",
+    "model_substitution": "forbidden",
+    "fallback_model": null,
+    "cli_pin": "2.1.220 (Claude Code)",
+    "cli_contract_observed_locally_without_model_call": "2026-08-03",
+    "exact_pin_failure_action": "stop-and-request-amendment"
+  },
+  "cross_runtime_comparison_axis": "gross_input_tokens",
+  "forbidden_cross_runtime_axes": [
+    "fresh_input_tokens_provider",
+    "cache_creation_input_tokens_provider",
+    "cache_read_input_tokens_provider",
+    "cache_hit_rate"
+  ],
+  "causal_runtime_effect_claim": "forbidden",
+  "schedule_sha256": {
+    "smoke": "f57a333a848241e96f08ca13fd8d8a87f4df92705a54d9ecf020badd4f25fda1",
+    "canary": "a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301"
+  },
+  "stages": {
+    "smoke": {
+      "schedule_seed": 4100,
+      "paired_sessions": 4,
+      "planned_valid_turns": 64,
+      "model_spend_attempt_cap": 80,
+      "dollar_cap_usd": null,
+      "dollar_cap_semantics": "rate-card-equivalent usage guard, not actual subscription billing",
+      "requires_user_approval": true
+    },
+    "canary": {
+      "schedule_seed": 4200,
+      "paired_sessions": 12,
+      "planned_valid_turns": 192,
+      "model_spend_attempt_cap": 240,
+      "dollar_cap_usd": null,
+      "dollar_cap_semantics": "rate-card-equivalent usage guard, not actual subscription billing",
+      "requires_post_smoke_user_reapproval": true,
+      "smoke_rows_included": false
+    }
+  },
+  "tool_contract": {
+    "karc-full": {
+      "allowed": [
+        "mcp__karc__search",
+        "mcp__karc__get"
+      ],
+      "native_managed_access": "forbidden"
+    },
+    "rag-bm25": {
+      "allowed": [],
+      "all_mcp_calls": 0,
+      "native_tools": 0
+    },
+    "network_tools": "forbidden"
+  },
+  "privacy": {
+    "persist": "normalized usage, grades, IDs, counts, and hashes only",
+    "forbidden": [
+      "prompt",
+      "output",
+      "transcript",
+      "command",
+      "tool_response",
+      "credential"
+    ],
+    "session_storage": "isolated temporary runtime directory, deleted at session exit"
+  }
+}

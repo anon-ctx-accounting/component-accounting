@@ -1,0 +1,85 @@
+{
+  "actual_subscription_billed_usd": null,
+  "artifact_audit": {
+    "residual_zero_all": true,
+    "rows": 24,
+    "unique_session_ids": 24
+  },
+  "budget": {
+    "model_spend_attempt_cap": 240,
+    "model_spend_attempts": 192,
+    "rate_card_equivalent_guard_usd": 7.79,
+    "rate_card_equivalent_total_usd": 6.1223073,
+    "within_both_guards": true
+  },
+  "cardinality": {
+    "attempt_indexes_contiguous": true,
+    "attempt_rows": 192,
+    "complete_arm_sessions": 24,
+    "paired_sessions": 12,
+    "positions_per_arm_session": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "turn_rows": 192,
+    "unique_arm_session_position_keys": 192
+  },
+  "execution_epoch": "canary-v1",
+  "freeze": {
+    "approval_phase": "canary",
+    "freeze_sha256": "5f0796f208b208cca8c6c5f990b0376ef4d174bc30d2294eb1bf20bafd142e18",
+    "schedule_rows_match_turns": true,
+    "schedule_sha256": "a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301",
+    "smoke_manifest_entries_verified": 46,
+    "smoke_manifest_sha256": "393dc199108d96ab65113821c27fbfe85f467064611bdd653376e8254018a7c8",
+    "source_files_verified": 14
+  },
+  "model_contract": {
+    "all_successful_attempts_exact": true,
+    "model_verification": "assistant-event-exact",
+    "reported_model": "claude-sonnet-5",
+    "successful_attempts": 192
+  },
+  "paper2_files_unchanged": true,
+  "phase": "canary",
+  "phase_local_rows_only": true,
+  "primary_direction": {
+    "accuracy_is_diagnostic": true,
+    "direction_reproduced": true,
+    "karc_minus_rag_cache_hit_rate": 0.15131866097864988,
+    "karc_minus_rag_gross_input_per_task": 43258.58333333333,
+    "karc_to_rag_gross_input_per_task_ratio": 2.6964462173528516,
+    "predicate": "K-R provider cache-hit > 0 and K-R gross input per task > 0"
+  },
+  "privacy": {
+    "forbidden_exact_keys_absent": true,
+    "session_artifacts_residual_zero": true
+  },
+  "schema": "e10-p2-xr-canary-validation-v1",
+  "smoke_rows_included": false,
+  "status": "PASS",
+  "tests": {
+    "passed": 378,
+    "skipped": 3
+  },
+  "tool_contract": {
+    "karc_mcp_calls": 111,
+    "karc_native_tool_calls": 0,
+    "karc_tool_names_subset_search_get": true,
+    "rag_mcp_calls": 0,
+    "rag_native_tool_calls": 0,
+    "rag_tool_calls": 0
+  },
+  "usage_accounting": {
+    "gross_bucket_closure_all_attempts": true,
+    "gross_bucket_closure_all_turns": true,
+    "ttl_creation_bucket_closure_all_attempts": true,
+    "ttl_creation_bucket_closure_all_turns": true
+  }
+}

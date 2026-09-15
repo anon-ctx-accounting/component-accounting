@@ -1,0 +1,49 @@
+{
+  "cell": {
+    "budget_pct": 5,
+    "budget_tokens": 1756,
+    "rho": 0.5,
+    "sigma": 0.3
+  },
+  "corpus_content_hash": "4378159b89fe3128e031e4398c96495cd661ff2c91cfc6e457827b250fb9228a",
+  "fixture_version": "e4-v2",
+  "freeze_sha256": "e546046eb4fd18b4e8c9dccbf459aef6c7fb115283071964d9cfa2b887a12dd0",
+  "generator_profile": "balanced-pool-v2",
+  "manifest_sha256": "d8ec0bcf8354a5dc1046c7787b9ce4550086148ecfb4e42c1791bbc4b81ccc43",
+  "n_artifacts": 408,
+  "n_tasks": 640,
+  "retrieval_config_sha256": "def2d5015a5c33b7e2746fa49b0b844a43a518ffe7d7577a3f173acb291fabbd",
+  "retrieval_plans_sha256": "0d3230471f5bef8a8affe56dcef509d93ef7c95d4a79b6613fc04116417838b3",
+  "seed": 4000,
+  "status": "frozen — canary and trap potency passed",
+  "structure": {
+    "corrected_events": 160,
+    "cycles": 40,
+    "distinct_task_references": 640,
+    "format_rule": "fact-key = E4-XXXX-XXXX; expected value not embedded",
+    "harmful_target_docs": 40,
+    "hot_window_tasks": 3,
+    "max_task_type_share": 0.3125,
+    "profile": "balanced-pool-v2",
+    "rehabilitation_target_docs": 40,
+    "required_occurrences": 640,
+    "reused_doc_ids": 160,
+    "reused_occurrences": 320,
+    "rho_measured": 0.5,
+    "sigma_denominator_reused_doc_ids": 160,
+    "sigma_measured": 0.3,
+    "sigma_requested": 0.3,
+    "supersession_events": 48,
+    "task_type_counts": {
+      "corrected": 160,
+      "harmful": 160,
+      "plain-stale": 120,
+      "rehabilitation": 200
+    },
+    "tasks": 640,
+    "unique_trap_candidates": 48,
+    "validated_outcome_events": 40
+  },
+  "tasks_sha256": "d9175adf0998b4aaaf8ba1c287e6cef898d854bebe931bb05772a17399f4dfdd",
+  "total_tokens": 35128
+}

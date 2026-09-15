@@ -1,0 +1,40 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T17:18:26Z",
+    "phase": "wave",
+    "pi_version": "0.84.3"
+  },
+  "aborted": [],
+  "leg": "A",
+  "parallel": 2,
+  "running_standard_priced_usd": 0.277168,
+  "skipped": [],
+  "submission_order": [
+    "karc-full--S01",
+    "rag-bm25--S01"
+  ],
+  "unit_summaries": [
+    {
+      "arm": "karc-full",
+      "session_id": "S01",
+      "three_paths": {
+        "bridge_audit_lines": 9,
+        "db_ingest_observations_mcp": 9,
+        "pi_tool_execution_start": 9
+      },
+      "turns_executed": 8
+    },
+    {
+      "arm": "rag-bm25",
+      "session_id": "S01",
+      "three_paths": {
+        "bridge_audit_lines": 0,
+        "db_ingest_observations_mcp": null,
+        "pi_tool_execution_start": 0
+      },
+      "turns_executed": 8
+    }
+  ],
+  "units": 2,
+  "wall_seconds": 45.7
+}

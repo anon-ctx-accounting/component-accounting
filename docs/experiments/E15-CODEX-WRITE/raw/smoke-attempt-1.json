@@ -1,0 +1,43 @@
+{
+  "cell": "E15-CODEX-WRITE",
+  "attempt": 1,
+  "observed_at_utc": "2026-08-27T14:54:43+00:00",
+  "code_git_hash": "934d7db69612bbc41f159b0ad2c69f295aa1d744",
+  "binary_path": "<HOME>/.local/opt/codex-0.145.0/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+  "cli_version": "codex-cli 0.145.0",
+  "model_requested": "gpt-5.6-luna",
+  "model_reported": "gpt-5.6-luna",
+  "model_verification": "hook",
+  "reasoning_effort": "low",
+  "route": "chatgpt-subscription (auth.json bridge, controlled CODEX_HOME)",
+  "ok": true,
+  "error_class": null,
+  "error_detail": null,
+  "usage_raw": {
+    "input_tokens": 10083,
+    "cached_input_tokens": 6912,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5,
+    "reasoning_output_tokens": 0
+  },
+  "usage_raw_unexpected_keys": [],
+  "usage_normalized": {
+    "input_tokens": 3171,
+    "cache_read_input_tokens": 6912,
+    "output_tokens": 5,
+    "reasoning_output_tokens": 0,
+    "cache_creation_input_tokens": 0
+  },
+  "write_key_present": true,
+  "usage_schema": "codex-exec-jsonl-0.145.x-v2",
+  "fresh_semantics": "uncached",
+  "gross_input_tokens": 10083,
+  "fresh_input_tokens": 3171,
+  "event_types": [
+    "item.completed",
+    "thread.started",
+    "turn.completed",
+    "turn.started"
+  ],
+  "hook_event_count": 2
+}

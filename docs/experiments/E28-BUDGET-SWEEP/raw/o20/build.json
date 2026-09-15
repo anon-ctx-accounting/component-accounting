@@ -1,0 +1,362 @@
+{
+  "H12_gold_containment": {
+    "fired": false,
+    "gold_containment_rate": 1.0,
+    "is_one": true,
+    "mean_budget_utilization": 0.9931568801897983,
+    "plan_tokens_mean": 6976.927083333333
+  },
+  "H13_non_degenerate_branch": {
+    "fired": false,
+    "hot_supersession_trap_tasks": 12,
+    "reused_occurrences": 42,
+    "sigma_defined": true,
+    "sigma_measured": 0.41379310344827586,
+    "supersession_events": 12
+  },
+  "H14_axis_purity": {
+    "budget_tokens": {
+      "c05": 1756,
+      "cell": 7025,
+      "ratio": 4.0005694760820045
+    },
+    "fired": false,
+    "manifest_sha256_differs": true,
+    "schedule_sha256_equal_across_budgets": true,
+    "snapshot_sha256_differs": true,
+    "structure_equal_across_budgets": true,
+    "tasks_sha256_equal_across_budgets": true,
+    "what_the_budget_moves": {
+      "note": "both arms move together: the policy replay admits a larger resident set and bm25_plans is budget-parity, so the retrieval payload grows by the same number",
+      "rag_plan_tokens_mean": {
+        "c05": 1728.9270833333333,
+        "cell": 6976.927083333333
+      },
+      "resident_tokens_last_session": {
+        "c05": 1735,
+        "cell": 4227
+      },
+      "resident_versions_last_session": {
+        "c05": 20,
+        "cell": 49
+      }
+    }
+  },
+  "_meta": {
+    "budget_pct": 20,
+    "budget_tokens": 7025,
+    "cell": "E28-BUDGET-SWEEP",
+    "cell_name": "E28-O-20",
+    "cell_tag": "o20",
+    "generated_at_utc": "2026-09-13T12:05:17Z",
+    "imported_runner_sha256": "d9cb64e409e177228b290149d3a656e1b2fdfbc0a356725ca93d853683726614",
+    "leg": "B",
+    "model": "gpt-5.6-luna",
+    "namespace": "o20",
+    "phase": "build",
+    "pi_version": "0.84.3",
+    "provider": "openai",
+    "reuse_factor": 0.5
+  },
+  "cell": "E28-O-20",
+  "cell_parameters": {
+    "budget_pct": 20,
+    "budget_tokens": 7025,
+    "rho": 0.5,
+    "sigma": 0.3
+  },
+  "control_c05_reproduces_e18": {
+    "budget_pct": 5,
+    "budget_tokens": 1756,
+    "manifest_sha256": "0b663cef5e449eac060488136475082c191d7b0e950b01a2813ac70d2d8a3418",
+    "matches_e18_manifest_sha256": true,
+    "matches_e18_schedule_sha256": true,
+    "matches_e18_snapshot_sha256": true,
+    "matches_e18_tasks_sha256": true,
+    "schedule_sha256": "9944a77572e2d130a0150f865024785929771cd13a9264ab315b4bfa5f26eea3",
+    "snapshot_sha256": "a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301",
+    "tasks_sha256": "618193d35103b819d83ce2d13dea40d7e3a65cbae5072266ab693613fe3b3584",
+    "why": "the override path is e5_cache_canary.prepare_bundle's body with the budget opened up; at c = 5% it must be byte-identical to E18's committed bundle, which is what makes this cell a one-axis change from its control"
+  },
+  "control_cell": "pi-O-g (E18-PI-REVERSAL leg B)",
+  "fractional_budget_pct_check": null,
+  "identity": {
+    "manifest_sha256": "e3dce84106730f4cafe1932cb45a574f2048b054273bb0d8a4211a09209078e4",
+    "matches_registered": true,
+    "schedule_sha256": "9944a77572e2d130a0150f865024785929771cd13a9264ab315b4bfa5f26eea3",
+    "snapshot_sha256": "5ce38390128a7ede023fe41725c51f3274c4bfa863830a8753f3e5dd1497d719",
+    "tasks_sha256": "618193d35103b819d83ce2d13dea40d7e3a65cbae5072266ab693613fe3b3584"
+  },
+  "imported_from": {
+    "path": "docs/experiments/E18-PI-REVERSAL/scripts/run_e18_pi_reversal.py",
+    "sha256": "d9cb64e409e177228b290149d3a656e1b2fdfbc0a356725ca93d853683726614"
+  },
+  "leg": "B",
+  "manipulated_axis": {
+    "control_point": {
+      "budget_pct": 5,
+      "budget_tokens": 1756
+    },
+    "held_fixed": [
+      "harness pi 0.84.3",
+      "provider and model",
+      "arms karc-full / rag-bm25",
+      "reuse factor 0.50",
+      "schedule seed 4200",
+      "12-session build",
+      "session length 8",
+      "rate card",
+      "statistics",
+      "MEASUREMENT WINDOW S01-S12 (the whole build; no warm-up, so the budget cannot move it)"
+    ],
+    "name": "resident budget",
+    "not_held_fixed": [],
+    "operative_knob": "e5_killgate._manifest_at_budget(manifest, budget_pct)",
+    "value_measured": {
+      "budget_pct": 20,
+      "budget_tokens": 7025
+    }
+  },
+  "measurement_window": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12"
+  ],
+  "resident_ramp": [
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.0,
+      "resident_tokens": 0,
+      "resident_versions": 0,
+      "session_id": "S01",
+      "session_index": 1
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.04939501779359431,
+      "resident_tokens": 347,
+      "resident_versions": 4,
+      "session_id": "S02",
+      "session_index": 2
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.09879003558718862,
+      "resident_tokens": 694,
+      "resident_versions": 8,
+      "session_id": "S03",
+      "session_index": 3
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.14818505338078292,
+      "resident_tokens": 1041,
+      "resident_versions": 12,
+      "session_id": "S04",
+      "session_index": 4
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.19758007117437723,
+      "resident_tokens": 1388,
+      "resident_versions": 16,
+      "session_id": "S05",
+      "session_index": 5
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.24697508896797152,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S06",
+      "session_index": 6
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.29637010676156583,
+      "resident_tokens": 2082,
+      "resident_versions": 24,
+      "session_id": "S07",
+      "session_index": 7
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.3574377224199288,
+      "resident_tokens": 2511,
+      "resident_versions": 29,
+      "session_id": "S08",
+      "session_index": 8
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.4185053380782918,
+      "resident_tokens": 2940,
+      "resident_versions": 34,
+      "session_id": "S09",
+      "session_index": 9
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.4795729537366548,
+      "resident_tokens": 3369,
+      "resident_versions": 39,
+      "session_id": "S10",
+      "session_index": 10
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.5406405693950178,
+      "resident_tokens": 3798,
+      "resident_versions": 44,
+      "session_id": "S11",
+      "session_index": 11
+    },
+    {
+      "budget_tokens": 7025,
+      "budget_utilization": 0.6017081850533808,
+      "resident_tokens": 4227,
+      "resident_versions": 49,
+      "session_id": "S12",
+      "session_index": 12
+    }
+  ],
+  "resident_ramp_c05_control": [
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.0,
+      "resident_tokens": 0,
+      "resident_versions": 0,
+      "session_id": "S01",
+      "session_index": 1
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.19760820045558086,
+      "resident_tokens": 347,
+      "resident_versions": 4,
+      "session_id": "S02",
+      "session_index": 2
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.3952164009111617,
+      "resident_tokens": 694,
+      "resident_versions": 8,
+      "session_id": "S03",
+      "session_index": 3
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.5928246013667426,
+      "resident_tokens": 1041,
+      "resident_versions": 12,
+      "session_id": "S04",
+      "session_index": 4
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.7904328018223234,
+      "resident_tokens": 1388,
+      "resident_versions": 16,
+      "session_id": "S05",
+      "session_index": 5
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S06",
+      "session_index": 6
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S07",
+      "session_index": 7
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9772209567198178,
+      "resident_tokens": 1716,
+      "resident_versions": 20,
+      "session_id": "S08",
+      "session_index": 8
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S09",
+      "session_index": 9
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S10",
+      "session_index": 10
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S11",
+      "session_index": 11
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S12",
+      "session_index": 12
+    }
+  ],
+  "retrieval_audit": {
+    "gold_containment_rate": 1.0,
+    "mean_budget_utilization": 0.9931568801897983,
+    "plan_tokens_mean": 6976.927083333333,
+    "rank_order_preserved": true
+  },
+  "retrieval_audit_c05_control": {
+    "gold_containment_rate": 1.0,
+    "mean_budget_utilization": 0.9845826214882308,
+    "plan_tokens_mean": 1728.9270833333333,
+    "rank_order_preserved": true
+  },
+  "schedule_seed": 4200,
+  "structure": {
+    "corrected_events": 12,
+    "r_measured": 0.5,
+    "r_requested": 0.5,
+    "reuse_opportunities": 84,
+    "reused_doc_ids": 29,
+    "reused_occurrences": 42,
+    "rho_measured_all_tasks": 0.4375,
+    "session_length": 8,
+    "sessions": 12,
+    "sigma_defined": true,
+    "sigma_denominator_reused_doc_ids": 29,
+    "sigma_measured": 0.41379310344827586,
+    "supersession_events": 12,
+    "tasks": 96,
+    "validated_outcome_events": 12
+  },
+  "tag": "o20",
+  "window_is_fixed_because": "E18's design measures the growth window S01-S12 of a 12-session build with no warm-up. The window is the whole schedule, so unlike E27 (which inherited E19's steady-state criterion) no budget value can move it. That is the entire reason this batch uses E18's bundle rather than E19's."
+}

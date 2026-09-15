@@ -1,0 +1,20 @@
+{
+  "schema": "e10-p2-xr-approval-v1",
+  "experiment_id": "E10-P2-XR",
+  "phase": "smoke",
+  "approved": true,
+  "approved_at": "2026-08-03 KST",
+  "approved_by": "user-in-conversation",
+  "plan_sha256": "895e8a17b70eb8fad2db481e1595c29b8e743135f3e2844c90ae41979339edb5",
+  "model_pin": "claude-sonnet-5",
+  "cli_pin": "2.1.220 (Claude Code)",
+  "auth_method": "claude.ai first-party Team subscription",
+  "api_key_billing_allowed": false,
+  "dollar_cap_usd": 75.0,
+  "dollar_cap_semantics": "rate-card-equivalent usage guard, not actual subscription billing",
+  "model_spend_attempt_cap": 80,
+  "probe_included_in_attempt_cap": true,
+  "karc_mcp_allowed": true,
+  "rag_mcp_allowed": false,
+  "canary_allowed": false
+}

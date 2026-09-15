@@ -1,0 +1,677 @@
+{
+  "H11_fired": false,
+  "_meta": {
+    "cell": "E23-REUSE-DENSITY",
+    "generated_at_utc": "2026-09-07T19:08:51Z",
+    "namespace": "",
+    "phase": "steady",
+    "pi_version": "0.84.3"
+  },
+  "attempts": [
+    {
+      "budget_utilization": 0.9664009111617312,
+      "last_session": "S08",
+      "per_session": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_tokens_per_turn_mean": 0.0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.29100227790432803,
+          "resident_tokens": 511,
+          "resident_tokens_per_turn_mean": 511.0,
+          "resident_versions": 6,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5820045558086561,
+          "resident_tokens": 1022,
+          "resident_tokens_per_turn_mean": 1022.0,
+          "resident_versions": 12,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.873006833712984,
+          "resident_tokens": 1533,
+          "resident_tokens_per_turn_mean": 1533.0,
+          "resident_versions": 18,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S08",
+          "session_index": 8
+        }
+      ],
+      "previous_session": "S07",
+      "relative_change": 0.01132300357568534,
+      "relative_change_within_tolerance": true,
+      "resident_tokens_last": 1697,
+      "resident_tokens_previous": 1678,
+      "steady_state_reached": true,
+      "utilization_at_least_95pct": true,
+      "warmup_sessions": 8
+    },
+    {
+      "budget_utilization": 0.9555808656036446,
+      "last_session": "S09",
+      "per_session": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_tokens_per_turn_mean": 0.0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.29100227790432803,
+          "resident_tokens": 511,
+          "resident_tokens_per_turn_mean": 511.0,
+          "resident_versions": 6,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5820045558086561,
+          "resident_tokens": 1022,
+          "resident_tokens_per_turn_mean": 1022.0,
+          "resident_versions": 12,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.873006833712984,
+          "resident_tokens": 1533,
+          "resident_tokens_per_turn_mean": 1533.0,
+          "resident_versions": 18,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S08",
+          "session_index": 8
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S09",
+          "session_index": 9
+        }
+      ],
+      "previous_session": "S08",
+      "relative_change": 0.011196228638774307,
+      "relative_change_within_tolerance": true,
+      "resident_tokens_last": 1678,
+      "resident_tokens_previous": 1697,
+      "steady_state_reached": true,
+      "utilization_at_least_95pct": true,
+      "warmup_sessions": 9
+    },
+    {
+      "budget_utilization": 0.9555808656036446,
+      "last_session": "S10",
+      "per_session": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_tokens_per_turn_mean": 0.0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.29100227790432803,
+          "resident_tokens": 511,
+          "resident_tokens_per_turn_mean": 511.0,
+          "resident_versions": 6,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5820045558086561,
+          "resident_tokens": 1022,
+          "resident_tokens_per_turn_mean": 1022.0,
+          "resident_versions": 12,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.873006833712984,
+          "resident_tokens": 1533,
+          "resident_tokens_per_turn_mean": 1533.0,
+          "resident_versions": 18,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S08",
+          "session_index": 8
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S09",
+          "session_index": 9
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S10",
+          "session_index": 10
+        }
+      ],
+      "previous_session": "S09",
+      "relative_change": 0.0,
+      "relative_change_within_tolerance": true,
+      "resident_tokens_last": 1678,
+      "resident_tokens_previous": 1678,
+      "steady_state_reached": true,
+      "utilization_at_least_95pct": true,
+      "warmup_sessions": 10
+    },
+    {
+      "budget_utilization": 0.9664009111617312,
+      "last_session": "S11",
+      "per_session": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_tokens_per_turn_mean": 0.0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.29100227790432803,
+          "resident_tokens": 511,
+          "resident_tokens_per_turn_mean": 511.0,
+          "resident_versions": 6,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5820045558086561,
+          "resident_tokens": 1022,
+          "resident_tokens_per_turn_mean": 1022.0,
+          "resident_versions": 12,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.873006833712984,
+          "resident_tokens": 1533,
+          "resident_tokens_per_turn_mean": 1533.0,
+          "resident_versions": 18,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S08",
+          "session_index": 8
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S09",
+          "session_index": 9
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S10",
+          "session_index": 10
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S11",
+          "session_index": 11
+        }
+      ],
+      "previous_session": "S10",
+      "relative_change": 0.01132300357568534,
+      "relative_change_within_tolerance": true,
+      "resident_tokens_last": 1697,
+      "resident_tokens_previous": 1678,
+      "steady_state_reached": true,
+      "utilization_at_least_95pct": true,
+      "warmup_sessions": 11
+    },
+    {
+      "budget_utilization": 0.9664009111617312,
+      "last_session": "S12",
+      "per_session": [
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.0,
+          "resident_tokens": 0,
+          "resident_tokens_per_turn_mean": 0.0,
+          "resident_versions": 0,
+          "session_id": "S01",
+          "session_index": 1
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.29100227790432803,
+          "resident_tokens": 511,
+          "resident_tokens_per_turn_mean": 511.0,
+          "resident_versions": 6,
+          "session_id": "S02",
+          "session_index": 2
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.5820045558086561,
+          "resident_tokens": 1022,
+          "resident_tokens_per_turn_mean": 1022.0,
+          "resident_versions": 12,
+          "session_id": "S03",
+          "session_index": 3
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.873006833712984,
+          "resident_tokens": 1533,
+          "resident_tokens_per_turn_mean": 1533.0,
+          "resident_versions": 18,
+          "session_id": "S04",
+          "session_index": 4
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S05",
+          "session_index": 5
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S06",
+          "session_index": 6
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S07",
+          "session_index": 7
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S08",
+          "session_index": 8
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S09",
+          "session_index": 9
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9555808656036446,
+          "resident_tokens": 1678,
+          "resident_tokens_per_turn_mean": 1678.0,
+          "resident_versions": 20,
+          "session_id": "S10",
+          "session_index": 10
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S11",
+          "session_index": 11
+        },
+        {
+          "budget_tokens": 1756,
+          "budget_utilization": 0.9664009111617312,
+          "resident_tokens": 1697,
+          "resident_tokens_per_turn_mean": 1697.0,
+          "resident_versions": 20,
+          "session_id": "S12",
+          "session_index": 12
+        }
+      ],
+      "previous_session": "S11",
+      "relative_change": 0.0,
+      "relative_change_within_tolerance": true,
+      "resident_tokens_last": 1697,
+      "resident_tokens_previous": 1697,
+      "steady_state_reached": true,
+      "utilization_at_least_95pct": true,
+      "warmup_sessions": 12
+    }
+  ],
+  "criterion": {
+    "definition": "last warm-up session's resident injection tokens within 5% of the previous session, and >= 95% utilization of the 1,756-token budget",
+    "quantity": "resident injection tokens per turn (input state)",
+    "search_range": [
+      8,
+      12
+    ]
+  },
+  "measurement_window": [
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+  ],
+  "measurement_window_resident": [
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9555808656036446,
+      "resident_tokens": 1678,
+      "resident_versions": 20,
+      "session_id": "S09",
+      "session_index": 9
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9555808656036446,
+      "resident_tokens": 1678,
+      "resident_versions": 20,
+      "session_id": "S10",
+      "session_index": 10
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S11",
+      "session_index": 11
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S12",
+      "session_index": 12
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S13",
+      "session_index": 13
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S14",
+      "session_index": 14
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S15",
+      "session_index": 15
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S16",
+      "session_index": 16
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S17",
+      "session_index": 17
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9772209567198178,
+      "resident_tokens": 1716,
+      "resident_versions": 20,
+      "session_id": "S18",
+      "session_index": 18
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S19",
+      "session_index": 19
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9664009111617312,
+      "resident_tokens": 1697,
+      "resident_versions": 20,
+      "session_id": "S20",
+      "session_index": 20
+    }
+  ],
+  "measurement_window_reuse_tasks": {
+    "S09": 2,
+    "S10": 2,
+    "S11": 2,
+    "S12": 2,
+    "S13": 2,
+    "S14": 2,
+    "S15": 2,
+    "S16": 2,
+    "S17": 2,
+    "S18": 2,
+    "S19": 1,
+    "S20": 1
+  },
+  "measurement_window_reuse_tasks_distinct": [
+    1,
+    2
+  ],
+  "measurement_window_utilization_max": 0.9772209567198178,
+  "measurement_window_utilization_min": 0.9555808656036446,
+  "reuse_factor": 0.25,
+  "rho_tag": "025",
+  "steady_state_reached": true,
+  "warmup_sessions_selected": 8,
+  "warmup_vs_measure_version_overlap": 0
+}

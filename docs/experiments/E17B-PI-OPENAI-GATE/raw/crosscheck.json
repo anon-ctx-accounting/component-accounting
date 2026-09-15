@@ -1,0 +1,429 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T16:57:12Z"
+  },
+  "db_first_party": {
+    "events_by_type": {
+      "discovered": 19,
+      "read": 9
+    },
+    "ingest_observations_mcp": 15,
+    "runtimes": [
+      "pi"
+    ]
+  },
+  "inclusion_verdict": {
+    "calls": 18,
+    "discriminating_calls": 13,
+    "exclusive_hypothesis_holds_all_calls": 18,
+    "exclusive_hypothesis_holds_discriminating": 13,
+    "inclusive_hypothesis_holds_all_calls": 5,
+    "inclusive_hypothesis_holds_discriminating": 0,
+    "input_ge_read_plus_write_all_calls": 5,
+    "input_ge_read_plus_write_discriminating": 0,
+    "verdict": "exclusive: usage.input excludes cacheRead and cacheWrite; gross = input + cacheRead + cacheWrite"
+  },
+  "pricing_reconstruction": {
+    "exclusive_matches_pi": true,
+    "exclusive_reconstruction": 0.0033557,
+    "grand_totals": {
+      "cacheRead": 17015,
+      "cacheWrite": 6308,
+      "input": 3748,
+      "output": 574
+    },
+    "inclusive_matches_pi": false,
+    "inclusive_reconstruction": 0.0014384,
+    "pi_reported_cost_sum_over_calls": 0.0033557000000000005,
+    "rates_per_million_usd": {
+      "cacheRead": 0.02,
+      "cacheWrite": 0.25,
+      "input": 0.2,
+      "output": 1.2
+    },
+    "rates_source": "pi model catalog (secondary; not a K-ARC rate card)"
+  },
+  "regimes": {
+    "long": {
+      "api_calls_total": 4,
+      "bridge_audit_has_text_fields": [],
+      "bridge_audit_lines_total": 3,
+      "bridge_audit_outcomes": [
+        "ok"
+      ],
+      "cacheWrite1h_key_present_any": false,
+      "cacheWrite_sum": 1403,
+      "calls_with_cacheRead_gt_0": 1,
+      "calls_with_cacheWrite_gt_0": 2,
+      "cold_call": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": false,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": true,
+        "input": 647,
+        "input_ge_read_plus_write": true,
+        "output": 25,
+        "totalTokens": 672
+      },
+      "cold_call_cacheRead": 0,
+      "cold_call_cacheWrite_gt_0": false,
+      "cost_total_reported_by_pi": 0.00083,
+      "first_cache_eligible_cold_call": {
+        "cacheRead": 0,
+        "cacheWrite": 1311,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": true,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": false,
+        "input": 3,
+        "input_ge_read_plus_write": false,
+        "output": 16,
+        "totalTokens": 1330
+      },
+      "first_cache_eligible_cold_call_cacheWrite_gt_0": true,
+      "first_cache_eligible_cold_call_index": 2,
+      "pi_tool_execution_start_total": 3,
+      "regime": "long",
+      "returncodes": [
+        0,
+        0
+      ],
+      "session_first_api_call": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": false,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": true,
+        "input": 647,
+        "input_ge_read_plus_write": true,
+        "output": 25,
+        "totalTokens": 672
+      },
+      "session_jsonl_assistant_usage_rows": 4,
+      "session_jsonl_equals_stdout_stream": true,
+      "stdout_assistant_usage_rows": 4,
+      "turn_cacheRead_totals": [
+        0,
+        1311
+      ],
+      "turn_cacheWrite1h_totals": [
+        0,
+        0
+      ],
+      "turn_cacheWrite_totals": [
+        1311,
+        92
+      ],
+      "turn_input_totals": [
+        1534,
+        3
+      ],
+      "turn_output_totals": [
+        105,
+        16
+      ],
+      "turns_executed": 2,
+      "usage_key_sets": [
+        "cacheRead,cacheWrite,cost,input,output,reasoning,totalTokens"
+      ],
+      "write_read_chain": [
+        {
+          "skipped_below_cache_minimum": 647
+        },
+        {
+          "skipped_below_cache_minimum": 884
+        },
+        {
+          "expected_read": 0,
+          "matches": true,
+          "observed_read": 0,
+          "write": 1311
+        },
+        {
+          "expected_read": 1311,
+          "matches": true,
+          "observed_read": 1311,
+          "write": 92
+        }
+      ],
+      "write_read_chain_exact": true,
+      "write_read_chain_final_cumulative": 1403
+    },
+    "pilot": {
+      "api_calls_total": 3,
+      "bridge_audit_has_text_fields": [],
+      "bridge_audit_lines_total": 4,
+      "bridge_audit_outcomes": [
+        "ok"
+      ],
+      "cacheWrite1h_key_present_any": false,
+      "cacheWrite_sum": 2208,
+      "calls_with_cacheRead_gt_0": 1,
+      "calls_with_cacheWrite_gt_0": 2,
+      "cold_call": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": false,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": true,
+        "input": 647,
+        "input_ge_read_plus_write": true,
+        "output": 64,
+        "totalTokens": 711
+      },
+      "cold_call_cacheRead": 0,
+      "cold_call_cacheWrite_gt_0": false,
+      "cost_total_reported_by_pi": 0.000891,
+      "first_cache_eligible_cold_call": {
+        "cacheRead": 0,
+        "cacheWrite": 1778,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": true,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": false,
+        "input": 3,
+        "input_ge_read_plus_write": false,
+        "output": 64,
+        "totalTokens": 1845
+      },
+      "first_cache_eligible_cold_call_cacheWrite_gt_0": true,
+      "first_cache_eligible_cold_call_index": 1,
+      "pi_tool_execution_start_total": 4,
+      "regime": "short",
+      "returncodes": [
+        0
+      ],
+      "session_first_api_call": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": false,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": true,
+        "input": 647,
+        "input_ge_read_plus_write": true,
+        "output": 64,
+        "totalTokens": 711
+      },
+      "session_jsonl_assistant_usage_rows": 3,
+      "session_jsonl_equals_stdout_stream": true,
+      "stdout_assistant_usage_rows": 3,
+      "turn_cacheRead_totals": [
+        1778
+      ],
+      "turn_cacheWrite1h_totals": [
+        0
+      ],
+      "turn_cacheWrite_totals": [
+        2208
+      ],
+      "turn_input_totals": [
+        653
+      ],
+      "turn_output_totals": [
+        144
+      ],
+      "turns_executed": 1,
+      "usage_key_sets": [
+        "cacheRead,cacheWrite,cost,input,output,reasoning,totalTokens"
+      ],
+      "write_read_chain": [
+        {
+          "skipped_below_cache_minimum": 647
+        },
+        {
+          "expected_read": 0,
+          "matches": true,
+          "observed_read": 0,
+          "write": 1778
+        },
+        {
+          "expected_read": 1778,
+          "matches": true,
+          "observed_read": 1778,
+          "write": 430
+        }
+      ],
+      "write_read_chain_exact": true,
+      "write_read_chain_final_cumulative": 2208
+    },
+    "short": {
+      "api_calls_total": 11,
+      "bridge_audit_has_text_fields": [],
+      "bridge_audit_lines_total": 8,
+      "bridge_audit_outcomes": [
+        "ok"
+      ],
+      "cacheWrite1h_key_present_any": false,
+      "cacheWrite_sum": 2697,
+      "calls_with_cacheRead_gt_0": 8,
+      "calls_with_cacheWrite_gt_0": 9,
+      "cold_call": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": false,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": true,
+        "input": 647,
+        "input_ge_read_plus_write": true,
+        "output": 25,
+        "totalTokens": 672
+      },
+      "cold_call_cacheRead": 0,
+      "cold_call_cacheWrite_gt_0": false,
+      "cost_total_reported_by_pi": 0.001635,
+      "first_cache_eligible_cold_call": {
+        "cacheRead": 0,
+        "cacheWrite": 1311,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": true,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": false,
+        "input": 3,
+        "input_ge_read_plus_write": false,
+        "output": 16,
+        "totalTokens": 1330
+      },
+      "first_cache_eligible_cold_call_cacheWrite_gt_0": true,
+      "first_cache_eligible_cold_call_index": 2,
+      "pi_tool_execution_start_total": 8,
+      "regime": "short",
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "session_first_api_call": {
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "cacheWrite1h_le_cacheWrite": true,
+        "discriminating": false,
+        "exclusive_hypothesis_total_eq_four_sum": true,
+        "inclusive_hypothesis_total_eq_input_plus_output": true,
+        "input": 647,
+        "input_ge_read_plus_write": true,
+        "output": 25,
+        "totalTokens": 672
+      },
+      "session_jsonl_assistant_usage_rows": 11,
+      "session_jsonl_equals_stdout_stream": true,
+      "stdout_assistant_usage_rows": 11,
+      "turn_cacheRead_totals": [
+        0,
+        1311,
+        4541,
+        1843,
+        6231
+      ],
+      "turn_cacheWrite1h_totals": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "turn_cacheWrite_totals": [
+        1311,
+        92,
+        440,
+        94,
+        760
+      ],
+      "turn_input_totals": [
+        1534,
+        3,
+        9,
+        3,
+        9
+      ],
+      "turn_output_totals": [
+        105,
+        16,
+        69,
+        16,
+        103
+      ],
+      "turns_executed": 5,
+      "usage_key_sets": [
+        "cacheRead,cacheWrite,cost,input,output,reasoning,totalTokens"
+      ],
+      "write_read_chain": [
+        {
+          "skipped_below_cache_minimum": 647
+        },
+        {
+          "skipped_below_cache_minimum": 884
+        },
+        {
+          "expected_read": 0,
+          "matches": true,
+          "observed_read": 0,
+          "write": 1311
+        },
+        {
+          "expected_read": 1311,
+          "matches": true,
+          "observed_read": 1311,
+          "write": 92
+        },
+        {
+          "expected_read": 1403,
+          "matches": true,
+          "observed_read": 1403,
+          "write": 92
+        },
+        {
+          "expected_read": 1495,
+          "matches": true,
+          "observed_read": 1495,
+          "write": 148
+        },
+        {
+          "expected_read": 1643,
+          "matches": true,
+          "observed_read": 1643,
+          "write": 200
+        },
+        {
+          "expected_read": 1843,
+          "matches": true,
+          "observed_read": 1843,
+          "write": 94
+        },
+        {
+          "expected_read": 1937,
+          "matches": true,
+          "observed_read": 1937,
+          "write": 92
+        },
+        {
+          "expected_read": 2029,
+          "matches": true,
+          "observed_read": 2029,
+          "write": 236
+        },
+        {
+          "expected_read": 2265,
+          "matches": true,
+          "observed_read": 2265,
+          "write": 432
+        }
+      ],
+      "write_read_chain_exact": true,
+      "write_read_chain_final_cumulative": 2697
+    }
+  },
+  "three_path_counts": {
+    "bridge_audit_lines": 15,
+    "db_ingest_observations_mcp": 15,
+    "pi_tool_execution_start": 15
+  },
+  "three_paths_agree": true
+}

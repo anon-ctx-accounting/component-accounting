@@ -1,0 +1,17 @@
+{
+  "actual_subscription_billed_usd": null,
+  "answer_passed": false,
+  "artifact_residual_zero": true,
+  "execution_epoch": "tool-exposure-v4",
+  "freeze_sha256": "dfe63d4c78d5756e405e7bc9fbfffc73545b5f990aae00393f1e908b380f03d0",
+  "get_calls": 1,
+  "gross_input_tokens": 83917,
+  "known_nonresident": true,
+  "rate_card_equivalent_usd": 0.18971939999999998,
+  "reported_model": "claude-sonnet-5",
+  "schema": "e10-p2-xr-karc-tool-exposure-probe-v1",
+  "search_calls": 1,
+  "status": "STOP-TOOL-EXPOSURE",
+  "task_id": "E5-S01-T01",
+  "tool_calls": 2
+}

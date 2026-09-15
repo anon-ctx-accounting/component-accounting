@@ -1,0 +1,29 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-08-27T16:48:49Z",
+    "phase": "mtime",
+    "pi_version": "0.84.3"
+  },
+  "paths": {
+    "<HOME>/.pi": {
+      "exists": true,
+      "mtime_ns": 1787847668687481309,
+      "size": null
+    },
+    "<HOME>/.pi/agent": {
+      "exists": true,
+      "mtime_ns": 1787848959226112841,
+      "size": null
+    },
+    "<HOME>/.pi/agent/auth.json": {
+      "exists": true,
+      "mtime_ns": 1787847668687571523,
+      "size": 2
+    },
+    "<HOME>/.pi/agent/models-store.json": {
+      "exists": true,
+      "mtime_ns": 1787847668690018934,
+      "size": 2
+    }
+  }
+}

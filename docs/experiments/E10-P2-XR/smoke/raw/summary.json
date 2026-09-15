@@ -1,0 +1,57 @@
+{
+  "actual_subscription_billed_usd": null,
+  "by_arm": {
+    "karc-full": {
+      "cache_creation_input_tokens_provider": 42221,
+      "cache_read_input_tokens_provider": 2056192,
+      "correct_rate": 0.875,
+      "fresh_input_tokens_provider": 136,
+      "gross_input_per_task": 65579.65625,
+      "gross_input_tokens": 2098549,
+      "mcp_calls": 37,
+      "provider_cache_hit_rate": 0.9798160538543537,
+      "rate_card_equivalent_usd": 0.9169416,
+      "tool_calls": 37,
+      "valid_turns": 32
+    },
+    "rag-bm25": {
+      "cache_creation_input_tokens_provider": 141326,
+      "cache_read_input_tokens_provider": 674316,
+      "correct_rate": 0.875,
+      "fresh_input_tokens_provider": 32,
+      "gross_input_per_task": 25489.8125,
+      "gross_input_tokens": 815674,
+      "mcp_calls": 0,
+      "provider_cache_hit_rate": 0.8266979209831379,
+      "rate_card_equivalent_usd": 1.0588818,
+      "tool_calls": 0,
+      "valid_turns": 32
+    }
+  },
+  "canary_cap_proposal": {
+    "max_session_12_session_envelope_usd": 6.226866,
+    "proposed_canary_cap_usd": 7.79,
+    "reserve_multiplier": 1.25,
+    "smoke_total_usd": 1.9758234000000001,
+    "straight_12_session_projection_usd": 5.9274702
+  },
+  "canary_executed": false,
+  "complete_paired_sessions": 4,
+  "eligible_valid_row_rate_card_equivalent_usd": 1.9758234,
+  "freeze_sha256": "3d5505b5583e80486328cbd2095ff2d4c39bdf055eebef822885a71c7b8e2bb0",
+  "model_spend_attempt_cap": 80,
+  "model_spend_attempts_including_probe": 77,
+  "operational_rate_card_equivalent_all_attempts_usd": 2.627151,
+  "rate_card": {
+    "cache_creation_1h": 6.0,
+    "cache_creation_5m": 3.75,
+    "cache_read": 0.3,
+    "fresh": 3.0,
+    "output_tokens": 15.0,
+    "unit": "USD-equivalent per MTok"
+  },
+  "rate_card_equivalent_total_including_probe_usd": 2.627151,
+  "schema": "e10-p2-xr-smoke-summary-v1",
+  "status": "COMPLETE-SMOKE-ONLY",
+  "valid_turns": 64
+}

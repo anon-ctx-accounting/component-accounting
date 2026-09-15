@@ -1,0 +1,316 @@
+{
+ "_meta": {
+  "cell": "E25-CODEX-BASEWINDOW",
+  "codex_version": "codex-cli 0.145.0",
+  "generated_at_utc": "2026-09-10T11:53:31+00:00",
+  "namespace": "",
+  "phase": "wave",
+  "derived_from": "E21 runner with schedule window overridden"
+ },
+ "aborted": [],
+ "cell_priced_usd_running": 0.226404,
+ "discarded_attempts": [],
+ "failed": [],
+ "namespace": "",
+ "parallel": 3,
+ "skipped": [],
+ "stage": "measure",
+ "submission_order": [
+  "karc-full--S01",
+  "rag-bm25--S01",
+  "rag-bm25--S02",
+  "karc-full--S02",
+  "karc-full--S03",
+  "rag-bm25--S03",
+  "rag-bm25--S04",
+  "karc-full--S04",
+  "karc-full--S05",
+  "rag-bm25--S05",
+  "rag-bm25--S06",
+  "karc-full--S06",
+  "karc-full--S07",
+  "rag-bm25--S07",
+  "rag-bm25--S08",
+  "karc-full--S08",
+  "karc-full--S09",
+  "rag-bm25--S09",
+  "rag-bm25--S10",
+  "karc-full--S10",
+  "karc-full--S11",
+  "rag-bm25--S11",
+  "rag-bm25--S12",
+  "karc-full--S12"
+ ],
+ "tokens_per_minute_target": 120000,
+ "unit_attempts": {
+  "karc-full--S01": 1,
+  "karc-full--S02": 1,
+  "karc-full--S03": 1,
+  "karc-full--S04": 1,
+  "karc-full--S05": 1,
+  "karc-full--S06": 1,
+  "karc-full--S07": 1,
+  "karc-full--S08": 1,
+  "karc-full--S09": 1,
+  "karc-full--S10": 1,
+  "karc-full--S11": 1,
+  "karc-full--S12": 1,
+  "rag-bm25--S01": 1,
+  "rag-bm25--S02": 1,
+  "rag-bm25--S03": 1,
+  "rag-bm25--S04": 1,
+  "rag-bm25--S05": 1,
+  "rag-bm25--S06": 1,
+  "rag-bm25--S07": 1,
+  "rag-bm25--S08": 1,
+  "rag-bm25--S09": 1,
+  "rag-bm25--S10": 1,
+  "rag-bm25--S11": 1,
+  "rag-bm25--S12": 1
+ },
+ "unit_summaries": [
+  {
+   "arm": "karc-full",
+   "session_id": "S01",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 9,
+    "db_ingest_observations_mcp": 9,
+    "guard_hook_pretooluse_mcp": 9
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S01",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S02",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S02",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 8,
+    "db_ingest_observations_mcp": 8,
+    "guard_hook_pretooluse_mcp": 8
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S03",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 8,
+    "db_ingest_observations_mcp": 8,
+    "guard_hook_pretooluse_mcp": 8
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S03",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S04",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S04",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 8,
+    "db_ingest_observations_mcp": 8,
+    "guard_hook_pretooluse_mcp": 8
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S05",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 8,
+    "db_ingest_observations_mcp": 8,
+    "guard_hook_pretooluse_mcp": 8
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S05",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S06",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S06",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 8,
+    "db_ingest_observations_mcp": 8,
+    "guard_hook_pretooluse_mcp": 8
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S07",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 10,
+    "db_ingest_observations_mcp": 10,
+    "guard_hook_pretooluse_mcp": 10
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S07",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S08",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S08",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 10,
+    "db_ingest_observations_mcp": 10,
+    "guard_hook_pretooluse_mcp": 10
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S09",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 10,
+    "db_ingest_observations_mcp": 10,
+    "guard_hook_pretooluse_mcp": 10
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S09",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S10",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S10",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 10,
+    "db_ingest_observations_mcp": 10,
+    "guard_hook_pretooluse_mcp": 10
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S11",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 10,
+    "db_ingest_observations_mcp": 10,
+    "guard_hook_pretooluse_mcp": 10
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S11",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "rag-bm25",
+   "session_id": "S12",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 0,
+    "db_ingest_observations_mcp": null,
+    "guard_hook_pretooluse_mcp": 0
+   },
+   "turns_executed": 8
+  },
+  {
+   "arm": "karc-full",
+   "session_id": "S12",
+   "three_paths": {
+    "codex_mcp_tool_call_items": 10,
+    "db_ingest_observations_mcp": 10,
+    "guard_hook_pretooluse_mcp": 10
+   },
+   "turns_executed": 8
+  }
+ ],
+ "units": 24,
+ "wall_seconds": 2241.3,
+ "wave_priced_usd": 0.226404
+}

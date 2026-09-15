@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "cell": "E19-STEADY-STATE",
+    "generated_at_utc": "2026-08-28T03:05:13Z",
+    "namespace": "r1",
+    "phase": "auth",
+    "pi_version": "0.84.3"
+  },
+  "isolated_auth_json": {
+    "bytes": 2,
+    "exists": true
+  },
+  "leg": "B",
+  "no_env_key": {
+    "returncode": 1,
+    "stderr_tail": [],
+    "stdout": "{\"status\":\"not_ready\",\"provider\":\"openai\",\"reason\":\"credentials_not_configured\"}"
+  },
+  "provider": "openai",
+  "with_env_key": {
+    "returncode": 0,
+    "stderr_tail": [],
+    "stdout": "{\"status\":\"ready\",\"provider\":\"openai\",\"authType\":\"api_key\"}"
+  }
+}

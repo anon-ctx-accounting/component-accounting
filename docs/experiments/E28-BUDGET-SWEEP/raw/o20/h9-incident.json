@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "generated_at_utc": "2026-09-13T14:47:30Z"
+  },
+  "cell": "E28-O-20",
+  "condition": "H9 — cold-start misattribution (cacheWrite == 0 while cacheRead > 0)",
+  "misattributed_call_measured_before_remediation": {
+    "arm": "karc-full",
+    "cacheRead": 8343,
+    "cacheWrite": 0,
+    "call_index": 0,
+    "position": 1,
+    "prefix_tokens": 8346,
+    "session_id": "S11",
+    "source": "raw/o20/crosscheck.json cold_start_assert_not_preregistered, before the unit was re-run (that file has since been regenerated)"
+  },
+  "remediation": {
+    "action": "re-ran that one unit with --force after OpenAI's 30-minute prefix reuse window had elapsed; the unit is re-materialized from scratch and its session store cleared, so its accounting is self-contained",
+    "cold_start_assert_after": "clean (0 calls with cacheWrite == 0 and cacheRead > 0)",
+    "judgment_unchanged": "B3 was FAIL for this cell before and after; delta_cache_read -1,945,661 -> -1,939,844",
+    "rerun_position1_cacheRead": 17700,
+    "rerun_position1_cacheWrite": 9812,
+    "rerun_started_after_utc": "14:36:20",
+    "rerun_three_paths": {
+      "bridge_audit_lines": 11,
+      "db_ingest_observations_mcp": 11,
+      "pi_tool_execution_start": 11
+    },
+    "rerun_turns_executed": 8,
+    "rerun_unit_file": "raw/o20/unit-karc-full-S11.json"
+  },
+  "spend_ledger_at_wave_time": {
+    "batch_cap_usd": 10.0,
+    "batch_stop_usd": 9.0,
+    "cells": {
+      "a10": 6.56424,
+      "o025": 0.093401,
+      "o10": 0.226216,
+      "o20": 0.378996
+    },
+    "currency": "standard rate cards; pi charges at catalog rates which are <= standard on both providers, so this bounds real spend from above",
+    "standard_priced_usd_total": 7.262853
+  },
+  "spend_ledger_note": "the ledger is accumulated by the wave phase only, so it excludes the $0.0028 standard-priced re-run; the authoritative per-cell figure is crosscheck.json cost",
+  "wave_abort_records": [
+    {
+      "error_tail": [],
+      "fatal_calls": 1,
+      "position": 5,
+      "returncode": 0,
+      "rows_before_failure": 5,
+      "stop_reasons": [
+        "error",
+        "stop"
+      ],
+      "unit": "B/karc-full/S11"
+    }
+  ],
+  "wave_retry_records": [
+    {
+      "attempt": 2,
+      "retry": "karc-full--S11",
+      "wave": "B"
+    }
+  ],
+  "what_happened": "during the wave, unit karc-full--S11 hit a call with stopReason 'error' at turn position 5; the runner's fail-fast discarded the whole unit and re-ran it from scratch after 30 s. The discarded attempt left a live provider-side prefix cache, and the retry's first call was served it."
+}

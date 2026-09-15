@@ -1,0 +1,93 @@
+{
+  "amendment": "harness-only current-source PYTHONPATH for Codex audit hook",
+  "approval_receipt_sha256": "a8cb0f967c2f88054e05a1297cc590e5274abf93b0f01b53971b08c3559567a1",
+  "arms_thresholds_caps_changed": false,
+  "caps": {
+    "infra_failure_attempt_cap": 144,
+    "max_turn_retries": 2,
+    "model_spend_attempt_cap": 720,
+    "planned_valid_turns": 576,
+    "probe_attempt_cap_separate": 2,
+    "total_api_call_cap": 864
+  },
+  "codex_preflight": {
+    "available": true,
+    "binary": "codex",
+    "contract_ok": true,
+    "driver_schema": "codex-exec-jsonl-0.144.x-v1",
+    "hooks_feature_stable": true,
+    "required_flags": {
+      "--ephemeral": true,
+      "--ignore-user-config": true,
+      "--json": true,
+      "--model": true,
+      "--sandbox": true,
+      "--strict-config": true
+    },
+    "resolved": "<HOME>/.local/bin/codex",
+    "version": "codex-cli 0.144.5"
+  },
+  "decision_bearing_model_calls_at_freeze": 0,
+  "execution_code_git_hash": "2697bb1d6683494998a3106541f0b998edf3ad44",
+  "experiment": "E11-BASE3",
+  "failed_probe_1_sha256": "46aeebe4321164b901de9e31a3fbdbbe3334aeab8c115c837dc855459c5fe4be",
+  "mcp_calls_at_freeze": 0,
+  "order": {
+    "shared_mutable_runtime_state": false,
+    "turn_order_within_session": "1..16",
+    "unit_shuffle_seed": 193043
+  },
+  "privacy": "normalized usage/grade/IDs/counts/state counts/hashes only",
+  "provider_probe_attempts_before_freeze": 1,
+  "reference_hashes": {
+    "fixture_manifest_file_sha256": "9b43d7f2904e81b8dc39139d2ad49271cc9a3644c7fea68560b4eb0fa8934e4b",
+    "h16_config_file_sha256": "a0baec55a75890533b444aa81b54438070a2e7951620aaa80699c9f5a106441c",
+    "h16_schedule_file_sha256": "0ae3e1586d30f8c83266faf3bbeb4a55fdb03a31a4479bfc808fc6b68b212da8",
+    "h16_summary_file_sha256": "5dfe3a6b827faf98017c07475687b80a3591c0dc092f92c8d31382d0dc0b31e3",
+    "h16_turns_file_sha256": "28eca47eada0a730204a91657cdf06827cb4109f60232415785934b49d1d049b"
+  },
+  "resume_preflight": {
+    "contract_ok": true,
+    "exit_code": 0,
+    "help_sha256": "5a5d005d16a82bedc7f3f672eeaf23bb3f4d364e3a5dc31fa01838c807ebc671",
+    "required_flags": {
+      "--dangerously-bypass-hook-trust": true,
+      "--json": true,
+      "--model": true,
+      "--strict-config": true
+    }
+  },
+  "runtime": {
+    "auth_mode": "ChatGPT subscription",
+    "codex_cli": "codex-cli 0.144.5",
+    "concurrency_sessions": 4,
+    "model": "gpt-5.6-luna",
+    "one_isolated_codex_home_per_provider_session": true,
+    "reasoning_effort": "high",
+    "runtime_root": "tmp/e11-base3-runtime"
+  },
+  "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006",
+  "schema": "e11-base3-execution-freeze-v2",
+  "scientific_config_sha256": "5a61492b6095487bf9166a5af586f8e203ed83d9f54ebe9da5bf1264b6d36beb",
+  "scientific_contract_changed": false,
+  "sha256": "5209be2a222970a204c19f3c9d4ad1b1e52548e15f0cd2a9236a32b5a97b7cda",
+  "source_sha256": {
+    "scripts/execute_e11_base3.py": "9d5b2164adc30b56a74c831e880d515a223aebfe56b6c2a79756bc7ac5d7de6f",
+    "src/karc/bench/driver.py": "d10159b40d8988c37569402ade59f00e65300498ebf8934e6c209ac24280da1f",
+    "src/karc/bench/e10_horizon_canary.py": "51d4a6b9d7f641147f891d77f1caf5f6683ced6bb57198a2c022a307617f6687",
+    "src/karc/bench/e10_horizon_execution.py": "33bb4cda0415b43e39be9c891d3fb67fb61fc34667aa5f2f68d735a7749f139a",
+    "src/karc/bench/e11_baseline3.py": "428c4e225739c7dcf75221dd1b4c616c5668725ea1dab31c6b63aac627e6c398",
+    "src/karc/bench/e11_baseline3_execution.py": "f699ab2a351583c055af6b17eb750a1dacea003bc5481377bb361d488bb9f700",
+    "src/karc/bench/e5_cache_canary.py": "af8cbce3af5b91245102f30eefa5f140133885387a0a6cd81fa594614645f580",
+    "src/karc/bench/e5_killgate.py": "701d0265eb6431ee84eb24c40e8f8fec29ef61810811e92fb1c5168588d10e32",
+    "src/karc/bench/e5_runtime_accounting.py": "12d44ce10f375b5d95f66496466373478361fdc20314bb51966024ba7d90c262",
+    "src/karc/bench/environment.py": "2dcacdfb524cdc22ab14b0d8fb5890f67dc4726941b5f218b20dc5e1d6147426",
+    "src/karc/bench/materialize.py": "bd87197440dbdba66ff059a52d615ac485c733e3f8c46def983c45460842c7cd"
+  },
+  "state_implementation": {
+    "full-history": "one persistent provider thread per 16-turn session",
+    "sliding-window-compaction": "fresh provider thread each turn; exact transient replay of up to four completed current-BM25 turns; semantic summary calls zero",
+    "stateless-rag": "fresh provider thread each turn; no replay"
+  },
+  "supersedes_freeze_sha256": "f4a171b12b5f783c9d32d7bfd8294cf5343a2278c64c0e0a5a6e8a9f3be8e6ba"
+}

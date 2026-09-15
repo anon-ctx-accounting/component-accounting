@@ -1,0 +1,23 @@
+{
+  "actual_subscription_billed_usd_observable": false,
+  "approved": true,
+  "approved_on": "2026-08-03",
+  "authorization": "User explicitly authorized E10-P2-XR Stage-B Canary and waived a separate cap-approval round because execution uses the Claude Team subscription.",
+  "canary_only": true,
+  "cli_pin": "2.1.220 (Claude Code)",
+  "concurrency_sessions": 1,
+  "experiment_id": "E10-P2-XR",
+  "first_party_team_subscription_only": true,
+  "karc_mcp_allowed": true,
+  "model_pin": "claude-sonnet-5",
+  "model_spend_attempt_cap": 240,
+  "paired_sessions": 12,
+  "plan_sha256": "9fcc0be8be601f18e7f12f49eb8b334392736266b048a2fad5180d6d2876c848",
+  "planned_valid_turns": 192,
+  "rag_mcp_allowed": false,
+  "rate_card_equivalent_guard_usd": 7.79,
+  "schema": "e10-p2-xr-canary-user-authorization-v1",
+  "smoke_manifest_sha256": "393dc199108d96ab65113821c27fbfe85f467064611bdd653376e8254018a7c8",
+  "smoke_rows_included": false,
+  "smoke_summary_sha256": "2e1af69f44a20c6dc620e0417e91c44738eaed6ffe1e672be587ed4db150c46e"
+}

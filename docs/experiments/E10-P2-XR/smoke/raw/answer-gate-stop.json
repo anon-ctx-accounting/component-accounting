@@ -1,0 +1,21 @@
+{
+  "artifact_residual_zero": true,
+  "canary_executed": false,
+  "execution_epoch": "tool-exposure-v4",
+  "exposure_gate": {
+    "get_calls": 1,
+    "native_tool_calls": 0,
+    "passed": true,
+    "search_calls": 1
+  },
+  "invalid_probe_attempt_index": 33,
+  "model_spend_attempt_cap": 80,
+  "model_spend_attempts": 29,
+  "operational_attempt_rows": 34,
+  "primary_eligible": false,
+  "probe_answer_passed": false,
+  "rate_card_equivalent_cap_usd": 75.0,
+  "rate_card_equivalent_total_usd": 1.1811174,
+  "schema": "e10-p2-xr-answer-gate-stop-v1",
+  "status": "STOP-PROBE-ANSWER-GATE"
+}

@@ -1,0 +1,56 @@
+{
+  "adjudicated_probe": {
+    "adjudication_sha256": "50e091dbf3e40a3902e4e0dceecfee28224b5a602fba0d440068ba4eac342be4",
+    "answer_quality": "FAIL-DIAGNOSTIC",
+    "attempt_index": 33,
+    "execution_epoch": "tool-exposure-v4",
+    "tool_exposure": "PASS"
+  },
+  "amendment": "TOOL-EXPOSURE-RECOVERY-9",
+  "canary_authorized": false,
+  "direct_mcp_handshake": {
+    "always_load": true,
+    "exit": 0,
+    "server": "karc",
+    "stderr_length": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools": [
+      "get",
+      "search"
+    ]
+  },
+  "execution_epoch": "tool-exposure-v4",
+  "experiment_id": "E10-P2-XR",
+  "invalid_epoch": {
+    "arm": "karc-full",
+    "reason": "MCP names were incorrectly passed through --tools",
+    "turn_rows": 9
+  },
+  "karc_stdio_mcp_always_load": true,
+  "prior_model_spend_attempts": 29,
+  "prior_operational_attempt_rows": 34,
+  "rag_salvage_audit": {
+    "preserved_sessions": [
+      "S01",
+      "S02"
+    ],
+    "preserved_turn_rows": 16,
+    "preserved_turn_rows_sha256": "c86e8f630b8c101f1021e44a5e43cfee68401971553479efd204428714123df1",
+    "prompt_hashes_recomputed": true,
+    "rag_argv_byte_identity_sha256": "0bfe3faabede6b632d23a181225b4d8c8c085230d7f40cb0729b16f1ecc1af65",
+    "status": "PASS"
+  },
+  "remaining_plan": {
+    "expected_final_attempts": 77,
+    "karc_probe": 0,
+    "karc_turns": 32,
+    "rag_turns": 16
+  },
+  "schema": "e10-p2-xr-tool-exposure-amendment-v1",
+  "sha256": "0ec0ba95ef009a0bc6beab70bbef40ecfd96c44d5fbbe79c52d1e59ca632be3c",
+  "supersedes_freeze_sha256": "dfe63d4c78d5756e405e7bc9fbfffc73545b5f990aae00393f1e908b380f03d0",
+  "supersedes_partial_stop_sha256": "061428aed3d7265b0ac1f3ac57fef3da00f1ef00ab05f1de0c14944f143965c7",
+  "supersedes_tool_policy_stop_sha256": "9174346d637fd36dc34df253e320da1a5b20fc5db8a1ba44ad7952f29158a671",
+  "toolsearch_disallowed_for_eager_mcp_schema": true,
+  "user_retry_approved": true
+}

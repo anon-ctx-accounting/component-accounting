@@ -1,0 +1,27 @@
+{
+  "apparatus": "scripts/run_e10_xr_canary.py, imported unmodified",
+  "cell": "E26-CLAUDE-STEADY",
+  "overridden": {
+    "APPROVAL": "docs/experiments/E26-CLAUDE-STEADY/approvals/e26.json",
+    "CONFIG": "docs/experiments/E26-CLAUDE-STEADY/pre-execution-config.json",
+    "EXPECTED_SCHEDULE_SHA256": "f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73",
+    "SCHEDULE_SEED": 4352,
+    "build_sessions": 24,
+    "measure_window": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20"
+    ]
+  },
+  "warmup_executed": false,
+  "why_no_warmup": "steady state comes from the schedule position because the resident set is fixed by model-independent policy replay (E19 report 7.3); executing warm-up would pre-write this harness's cross-session shared prefix into the provider cache and break the accounting boundary the other cells share (E24 section 4)"
+}

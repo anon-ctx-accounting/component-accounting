@@ -1,0 +1,119 @@
+{
+  "accounting": {
+    "closure_assert_per_call": "totalTokens == input + output + cacheRead + cacheWrite",
+    "gross": "input + cacheRead + cacheWrite",
+    "openai_cache_min_prefix_tokens": 1024,
+    "priced": "U*p_in + W_5m*p_w5 + W_1h*p_w1 + R*p_read + O*p_out",
+    "refusal_detection": "disjunction (output==0, errorMessage present, content block absent, normalized stopReason=='error'); the OpenAI leg's rawStopReason is always 'completed' (E17B §5)"
+  },
+  "arms": ["karc-full", "rag-bm25"],
+  "budget_cap_usd": 10.0,
+  "budget_stop_usd": 8.0,
+  "cell": "E27-BUDGET-10PCT",
+  "derived_from": {
+    "analyzer_imported": "docs/experiments/E23-REUSE-DENSITY/scripts/analyze_e23.py",
+    "analyzer_imported_sha256": "e52e673bdf88f81fdc6c1a9c4d66d0dbd3bb11c07a931bda53432655576516cd",
+    "parent_cell": "E19-STEADY-STATE leg B (paper name pi-O-s)",
+    "runner_imported": "docs/experiments/E23-REUSE-DENSITY/scripts/run_e23_reuse_density.py",
+    "runner_imported_sha256": "87fd1dcfd347ac5075c0b85debabb15052a6c1b4223f2639736ab401ab2ae914"
+  },
+  "design": {
+    "paired": "12 sessions x 8 turns x 2 arms = 192 turns",
+    "parallelism": 3,
+    "submission_order": "ABBA (E13 §5.0)",
+    "warmup_turns_executed": 0,
+    "warmup_turns_omitted_because": "E19 §6.3 measured that executing warm-up turns is a no-op for the measurement window on this harness; E23 inherited the same decision"
+  },
+  "gates_verified_model_free": {
+    "H12_gold_containment_rate": 1.0,
+    "H13_non_degenerate": {"reused_occurrences": 84, "sigma_defined": true, "supersession_events": 24},
+    "H14_axis_purity": "schedule and tasks sha256 identical across budgets; manifest and snapshot differ; structure statistics identical",
+    "control_c05_reproduces_e19_leg_b": true,
+    "raw": ["raw/build.json", "raw/steady-b10.json"]
+  },
+  "harness": {
+    "binary": "tmp/vendor/piprobe/node_modules/.bin/pi",
+    "isolation_root": "tmp/e27/",
+    "never_touched": ["~/.pi", "~/.codex", "~/.claude", "tmp/e17", "tmp/e17b", "tmp/e18", "tmp/e19", "tmp/e21", "tmp/e23"],
+    "runtime": "pi 0.84.3",
+    "settings": {"compaction.enabled": false, "defaultProjectTrust": "never"}
+  },
+  "identity": {
+    "c05_control": {
+      "manifest_sha256": "861e9114aa9d8b96c43bf671b3f079b517811ff35662af3e81cca18afe61baae",
+      "schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+      "snapshot_sha256": "f6edbb9e33c63c935aade45961ec8995f121e50e3854713963508925df1c2a73",
+      "tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74"
+    },
+    "c10_measured": {
+      "manifest_sha256": "052b65cfc2e1543aa50131e24db05eea752a4376504819460846d33b0336682a",
+      "schedule_sha256": "acdec9a853ae051225ac111e4c336bae743fa52fad5264bcb1837f42693f225b",
+      "snapshot_sha256": "4a36203e6fdf29aae53276502ba70b5bf1fab3b33167dbdabf88909a7144dd9d",
+      "tasks_sha256": "73706b12ea0cba1dcb46963a34da83d36201c942ac2958289ef0129e8d460d74"
+    },
+    "fixture": "fixture/e4-v2 (frozen, seed 4000, 408 artifacts, 35128 corpus tokens)"
+  },
+  "manipulated_axis": {
+    "held_fixed": ["reuse factor 0.50", "schedule seed 4352", "24-session build", "session length 8", "harness", "provider", "model", "arms", "rate card", "statistics"],
+    "name": "resident budget",
+    "not_held_fixed": ["measurement window position (S09-S20 at c=5% -> S13-S24 at c=10%), a determined consequence of the axis"],
+    "operative_knob": "e5_killgate._manifest_at_budget(manifest, budget_pct)",
+    "value_control_elsewhere": {"budget_pct": 5, "budget_tokens": 1756},
+    "value_measured": {"budget_pct": 10, "budget_tokens": 3512},
+    "what_it_moves": {
+      "karc_full": "policy replay admits a larger resident set (20 versions / 1754 tok -> 39 versions / 3445 tok at the last session)",
+      "rag_bm25": "bm25_plans is budget-parity, so the retrieval plan grows too (plan tokens mean 1729.1 -> 3451.1)"
+    }
+  },
+  "execution_namespace": {
+    "ns": "v1",
+    "pi_session_id": "e27b10v1-<arm>-<Sxx>",
+    "workdir": "tmp/e27/budget10v1/units/<arm>--<Sxx>/work"
+  },
+  "preregistration": "docs/experiments/E27-BUDGET-10PCT/preregistration.md",
+  "preregistration_status": "registered before observation, 2026-09-11",
+  "provider": {
+    "api": "openai-responses",
+    "key_source": "~/api-key.txt OPENAI_API_KEY, read by the runner, never in argv, placed only in the pi child environment",
+    "model": "gpt-5.6-luna",
+    "name": "openai",
+    "route": "metered API key",
+    "thinking": "off"
+  },
+  "rate_card_usd_per_million": {
+    "input": 0.2,
+    "output": 1.2,
+    "read": 0.02,
+    "source": "docs/analysis/openai-luna-rate-card.md, observed 2026-08-28; identical to E19 leg B",
+    "write_1h": 0.25,
+    "write_5m": 0.25
+  },
+  "registered_hypotheses": {
+    "B1": {"predicted_direction": false, "quantity": "paired gross-input ratio karc/rag with 95% CI"},
+    "B2": {"predicted_direction": false, "quantity": "paired priced cost ratio karc/rag with 95% CI, read against 1.0"},
+    "B3": {"criterion": "delta_cache_read(karc-rag) > 0 AND delta_creation(karc-rag) < 0", "predicted_direction": true, "quantity": "component allocation sign"},
+    "B4": {"predicted_direction": false, "quantity": "break-even cache-write price mu_w* = -(dU + mu_r*dR + mu_o*dO)/dW versus the actual 1.25"},
+    "naming_note": "B1..B4 are the requesting brief's H1..H4, renamed so they do not collide with hold conditions H1..H14"
+  },
+  "statistics": {
+    "ci": "two-sided 95% percentile",
+    "common_random_numbers": "one shared 10000 x 12 index matrix",
+    "method": "session-unit paired percentile bootstrap",
+    "percentile_convention": "floor(alpha/2*B), ceil((1-alpha/2)*B)-1",
+    "ratio_definition": "ratio of session sums",
+    "resamples": 10000,
+    "seed": 1313
+  },
+  "steady_state": {
+    "criterion": "smallest warm-up in 8..12 whose last session's resident injection tokens are within 5% of the previous session AND utilize >= 95% of the budget",
+    "decided": "model-free, before any model call",
+    "measurement_window": ["S13", "S14", "S15", "S16", "S17", "S18", "S19", "S20", "S21", "S22", "S23", "S24"],
+    "quantity": "resident injection tokens per turn (an INPUT state quantity)",
+    "sessions_shared_with_e19_leg_b_window": 8,
+    "warmup_sessions": 12,
+    "warmup_vs_window_required_version_overlap": 0,
+    "window_utilization_range": [0.9809225512528473, 0.9988610478359908]
+  },
+  "privacy_R9": "raw carries counts, public ids, sha256 and usage numbers only; prompts as sha256 and char count; teardown removes tmp/e27",
+  "not_pooled_with_the_eight_cells": "a different capacity grid point; it does not enter the abstract's range figures, §4's tables/figures, or the claims ledger"
+}

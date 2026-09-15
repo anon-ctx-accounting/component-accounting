@@ -1,0 +1,73 @@
+{
+  "approval": "user explicitly approved E10-P2-H16 model calls, registered caps, probe, and K-ARC MCP only in karc-full",
+  "caps": {
+    "infra_failure_attempt_cap": 96,
+    "max_turn_retries": 2,
+    "model_spend_attempt_cap": 480,
+    "planned_valid_turns": 384,
+    "probe_attempt_cap_separate": 2,
+    "total_api_call_cap": 576
+  },
+  "codex_preflight": {
+    "available": true,
+    "binary": "codex",
+    "contract_ok": true,
+    "driver_schema": "codex-exec-jsonl-0.144.x-v1",
+    "hooks_feature_stable": true,
+    "required_flags": {
+      "--ephemeral": true,
+      "--ignore-user-config": true,
+      "--json": true,
+      "--model": true,
+      "--sandbox": true,
+      "--strict-config": true
+    },
+    "resolved": "<HOME>/.local/bin/codex",
+    "version": "codex-cli 0.144.5"
+  },
+  "created_before_provider_probe": true,
+  "execution_code_git_hash": "b787f2887a49b6c0764b2d163341c39292e082e5",
+  "experiment": "E10-P2-H16",
+  "mcp_calls_at_freeze": 0,
+  "model_calls_at_freeze": 0,
+  "order": {
+    "shared_mutable_runtime_state": false,
+    "turn_order_within_session": "1..16",
+    "unit_shuffle_seed": 172722
+  },
+  "privacy": "normalized usage/grade/IDs/counts/hashes only",
+  "resume_preflight": {
+    "contract_ok": true,
+    "exit_code": 0,
+    "help_sha256": "5a5d005d16a82bedc7f3f672eeaf23bb3f4d364e3a5dc31fa01838c807ebc671",
+    "required_flags": {
+      "--dangerously-bypass-hook-trust": true,
+      "--json": true,
+      "--model": true,
+      "--strict-config": true
+    }
+  },
+  "runtime": {
+    "codex_cli": "codex-cli 0.144.5",
+    "concurrency_sessions": 4,
+    "model": "gpt-5.6-luna",
+    "one_isolated_codex_home_per_session": true,
+    "reasoning_effort": "high",
+    "runtime_root": "tmp/e10-p2-h16-runtime"
+  },
+  "schedule_sha256": "e9ee352fdaa8b8f3942cf77398b3c6b453952535a89e022d8b53aa08405f7006",
+  "schema": "e10-p2-h16-execution-freeze-v1",
+  "scientific_config_sha256": "75dd169f2d3eb05f7a40717ebd1199e10c3a8b22f918aaf7d53a280f966d44a2",
+  "sha256": "6b516d164e8208119ce2138f5c1c7f74d9fe852a93110099481928f7b36f0cb0",
+  "source_sha256": {
+    "scripts/run_e10_p2_h16.py": "7a87e866b55e8c858f1de1603e75e6f7d250711cb07806778ceb4f27c5f936d2",
+    "src/karc/bench/driver.py": "d10159b40d8988c37569402ade59f00e65300498ebf8934e6c209ac24280da1f",
+    "src/karc/bench/e10_horizon_canary.py": "51d4a6b9d7f641147f891d77f1caf5f6683ced6bb57198a2c022a307617f6687",
+    "src/karc/bench/e10_horizon_execution.py": "33bb4cda0415b43e39be9c891d3fb67fb61fc34667aa5f2f68d735a7749f139a",
+    "src/karc/bench/e5_cache_canary.py": "af8cbce3af5b91245102f30eefa5f140133885387a0a6cd81fa594614645f580",
+    "src/karc/bench/e5_killgate.py": "701d0265eb6431ee84eb24c40e8f8fec29ef61810811e92fb1c5168588d10e32",
+    "src/karc/bench/e5_runtime_accounting.py": "12d44ce10f375b5d95f66496466373478361fdc20314bb51966024ba7d90c262",
+    "src/karc/bench/environment.py": "2dcacdfb524cdc22ab14b0d8fb5890f67dc4726941b5f218b20dc5e1d6147426",
+    "src/karc/bench/mcp_index.py": "aa77391bbaca3bf12bc599efe4afdcf66069bbaf5e7e9d48f3a317ab6e6f409b"
+  }
+}

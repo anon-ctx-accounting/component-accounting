@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "cell": "E23-REUSE-DENSITY",
+    "generated_at_utc": "2026-09-07T19:09:10Z",
+    "namespace": "v1",
+    "phase": "auth",
+    "pi_version": "0.84.3"
+  },
+  "isolated_auth_json": {
+    "bytes": 2,
+    "exists": true
+  },
+  "no_env_key": {
+    "returncode": 1,
+    "stderr_tail": [],
+    "stdout": "{\"status\":\"not_ready\",\"provider\":\"openai\",\"reason\":\"credentials_not_configured\"}"
+  },
+  "provider": "openai",
+  "rho_tag": "075",
+  "with_env_key": {
+    "returncode": 0,
+    "stderr_tail": [],
+    "stdout": "{\"status\":\"ready\",\"provider\":\"openai\",\"authType\":\"api_key\"}"
+  }
+}

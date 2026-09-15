@@ -1,0 +1,55 @@
+{
+  "accuracy_is_diagnostic": true,
+  "actual_subscription_billed_usd": null,
+  "artifact_audit_rows": 24,
+  "artifact_residual_zero_all": true,
+  "by_arm": {
+    "karc-full": {
+      "cache_creation_input_tokens_provider": 177213,
+      "cache_read_input_tokens_provider": 6715268,
+      "correct_rate": 0.875,
+      "fresh_input_tokens_provider": 416,
+      "gross_input_per_task": 71801.01041666667,
+      "gross_input_tokens": 6892897,
+      "mcp_calls": 112,
+      "native_tool_calls": 0,
+      "provider_cache_hit_rate": 0.9742301386485247,
+      "rate_card_equivalent_usd": 3.2189514,
+      "tool_calls": 112,
+      "valid_turns": 96
+    },
+    "rag-bm25": {
+      "cache_creation_input_tokens_provider": 424236,
+      "cache_read_input_tokens_provider": 2023955,
+      "correct_rate": 0.875,
+      "fresh_input_tokens_provider": 96,
+      "gross_input_per_task": 25502.989583333332,
+      "gross_input_tokens": 2448287,
+      "mcp_calls": 0,
+      "native_tool_calls": 0,
+      "provider_cache_hit_rate": 0.8266820842491097,
+      "rate_card_equivalent_usd": 3.1789905,
+      "tool_calls": 0,
+      "valid_turns": 96
+    }
+  },
+  "execution_epoch": "canary-v1",
+  "freeze_sha256": "81c3bc5e4d4e23585b5347c093e2e41b9f8068f67be0f1e0ed5e536d7cc366fb",
+  "model_spend_attempt_cap": 240,
+  "model_spend_attempts": 192,
+  "operational_attempt_rows": 192,
+  "paired_sessions": 24,
+  "primary_direction": {
+    "conjunction": "cache-hit delta > 0 AND gross/task delta > 0",
+    "direction_reproduced": true,
+    "karc_minus_rag_cache_hit_rate": 0.14754805439941499,
+    "karc_minus_rag_gross_input_per_task": 46298.02083333334,
+    "karc_to_rag_gross_input_per_task_ratio": 2.815395825734483
+  },
+  "rate_card_equivalent_guard_usd": 7.79,
+  "rate_card_equivalent_total_usd": 6.3979419,
+  "schema": "e10-p2-xr-canary-summary-v1",
+  "smoke_rows_included": false,
+  "status": "COMPLETE-CANARY",
+  "valid_turns": 192
+}

@@ -1,0 +1,19 @@
+{
+  "approval-checklist.md": "aa2c12ea261d936f89273abd6d39bd0d37afbabbe51cce230b70cfc10d0e406d",
+  "config.json": "897678e04be1893623a89136bc88e4c6b02b0f1e2f1a51d9ba5f4a2d93326cdc",
+  "preregistration.md": "53d320a1f3a2b1600805cb7100c8f49ea6590561470866b3a747a683ff40c1a9",
+  "raw/approval.json": "e5527329a06c207d12ba2286357bbb906869a7985306a828d21e261f000d55d2",
+  "raw/execution-source-amendment-1.json": "e3f67c8f5e7a3f426bdf3a34571cccfd61123cfddad80fb8f21fae666d1c5667",
+  "raw/execution-source-freeze-v2.json": "a07fc5a5bb51660bce0275098e9cfcec44600cc028d925397d8be4df5ed5baf8",
+  "raw/execution-source-freeze.json": "273e44f9edb3a8e0e9cbc6b5064471130abfd329ca7197fbfb423f8c6b12b8bf",
+  "raw/model-free-dry-run.json": "bf9e83d70905054689b120e9a368d6cf859993f6949a72dbafd62f057a3cdebd",
+  "raw/provider-probe-2.json": "ce78de7e9d0163039894eeee8493dab931529079d4a2535404bb711bfb2f440e",
+  "raw/provider-probe.json": "57a3ec6f6a8586a27952a4642848f839d90395ca3f7cddb895a15da2d798c994",
+  "raw/schedule.json": "0ae3e1586d30f8c83266faf3bbeb4a55fdb03a31a4479bfc808fc6b68b212da8",
+  "report.md": "5a9fd4b25ce741477653e7283d6b0553e8ac9f50cd20fd57f35cb86420547449",
+  "run/raw/cost-summary.json": "a235d30f81a48d482509be7924df8f2a5b1daf7f2de5462fd0effcb357ff1589",
+  "run/raw/summary.json": "0757bb608fc7f63f0e4cfe81d3d6d2bb8de5132891eb0c2062678a78ccaa8092",
+  "run/raw/turns.jsonl": "059ada83ca01706cf36ba96db84caf5f76fefab690272727ad522e3397419f30",
+  "schema/config.schema.json": "3925dd35d64c709fb9a160572e1d44bc07063954e69f9eb80efc90a0cafe7f61",
+  "schema/turn.schema.json": "eacdcfb1ce43db1a5d049f29aceac21934811b492182fa5682a1dbfedb886e6a"
+}

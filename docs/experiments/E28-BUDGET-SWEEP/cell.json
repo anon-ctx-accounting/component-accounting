@@ -1,0 +1,164 @@
+{
+  "accounting": {
+    "closure_assert_per_call": "totalTokens == input + output + cacheRead + cacheWrite",
+    "gross": "input + cacheRead + cacheWrite",
+    "openai_cache_min_prefix_tokens": 1024,
+    "priced": "U*p_in + W_5m*p_w5 + W_1h*p_w1 + R*p_read + O*p_out",
+    "refusal_detection": "disjunction (output==0, errorMessage present, content block absent, normalized stopReason=='error'); the OpenAI leg's rawStopReason is always 'completed' (E17B §5), the Anthropic leg additionally has the discriminating provider layer"
+  },
+  "arms": ["karc-full", "rag-bm25"],
+  "batch_cap_usd": 10.0,
+  "batch_stop_usd": 9.0,
+  "batch_cap_currency": "standard rate cards; pi charges at catalog rates which are <= standard on both providers, so a standard-dollar ceiling bounds real spend from above",
+  "cell": "E28-BUDGET-SWEEP",
+  "cells": {
+    "o025": {
+      "name": "E28-O-025",
+      "leg": "B",
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "budget_pct": 2.5,
+      "budget_tokens": 878,
+      "control": "pi-O-g (E18-PI-REVERSAL leg B)",
+      "execution_order": 2
+    },
+    "o10": {
+      "name": "E28-O-10",
+      "leg": "B",
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "budget_pct": 10,
+      "budget_tokens": 3512,
+      "control": "pi-O-g (E18-PI-REVERSAL leg B)",
+      "execution_order": 1
+    },
+    "o20": {
+      "name": "E28-O-20",
+      "leg": "B",
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "budget_pct": 20,
+      "budget_tokens": 7025,
+      "control": "pi-O-g (E18-PI-REVERSAL leg B)",
+      "execution_order": 3
+    },
+    "a10": {
+      "name": "E28-A-10",
+      "leg": "A",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "retention": "long",
+      "budget_pct": 10,
+      "budget_tokens": 3512,
+      "control": "pi-A-g (E18-PI-REVERSAL leg A)",
+      "execution_order": 4
+    }
+  },
+  "derived_from": {
+    "parent_cells": ["E18-PI-REVERSAL leg B (paper name pi-O-g)", "E18-PI-REVERSAL leg A (paper name pi-A-g)"],
+    "runner_imported": "docs/experiments/E18-PI-REVERSAL/scripts/run_e18_pi_reversal.py",
+    "analyzer_imported": "docs/experiments/E18-PI-REVERSAL/scripts/analyze_e18.py",
+    "budget_override_pattern_from": "docs/experiments/E27-BUDGET-10PCT/scripts/run_e27.py",
+    "how": "run_e28.py imports E18's runner as a module and replaces only the run/raw roots, the execution namespace, the batch spend guard and build_bundle (the same builder at this cell's budget). analyze_e28.py imports E18's analyzer and reuses its bootstrap, crosscheck and statistics functions unchanged."
+  },
+  "design": {
+    "paired": "12 sessions x 8 turns x 2 arms = 192 turns per cell",
+    "measurement_window": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12"],
+    "window_is_fixed_because": "E18's design measures the growth window S01-S12 of a 12-session build with no warm-up, so the window is the whole schedule and no budget value can move it. That is why this batch uses E18's bundle (seed 4200) rather than E19/E23's (seed 4352).",
+    "submission_order": "ABBA (E13 §5.0)",
+    "warmup_sessions": 0,
+    "parallelism": {"openai_cells": 3, "anthropic_cell": 6},
+    "tokens_per_minute_target": {"openai_cells": 120000, "anthropic_cell": 0}
+  },
+  "gates_verified_model_free": {
+    "H12_gold_containment_rate": 1.0,
+    "H13_non_degenerate": {"reused_occurrences": 42, "supersession_events": 12, "sigma_defined": true},
+    "H14_axis_purity": "schedule and tasks sha256 identical across all four budgets; manifest and snapshot differ; structure statistics identical",
+    "control_c05_reproduces_e18": true,
+    "fractional_budget_falsifier": "the c = 2.5% resident ramp differs from the genuine c = 2% build, so the policy replay ran at c = 878 and not 702",
+    "raw": ["raw/o025/build.json", "raw/o10/build.json", "raw/o20/build.json", "raw/a10/build.json"]
+  },
+  "harness": {
+    "binary": "tmp/vendor/piprobe/node_modules/.bin/pi",
+    "isolation_root": "tmp/e28/",
+    "never_touched": ["~/.pi", "~/.codex", "~/.claude", "tmp/e17", "tmp/e17b", "tmp/e18", "tmp/e19", "tmp/e21", "tmp/e23", "tmp/e25", "tmp/e26", "tmp/e27"],
+    "runtime": "pi 0.84.3",
+    "settings": {"defaultProjectTrust": "never", "compaction.enabled": false}
+  },
+  "identity": {
+    "fixture": "fixture/e4-v2 (frozen, seed 4000, 408 artifacts, 35128 corpus tokens)",
+    "schedule_sha256_all_budgets": "9944a77572e2d130a0150f865024785929771cd13a9264ab315b4bfa5f26eea3",
+    "tasks_sha256_all_budgets": "618193d35103b819d83ce2d13dea40d7e3a65cbae5072266ab693613fe3b3584",
+    "c05_control_e18": {
+      "snapshot_sha256": "a19dea499215f03560e18d2bd53249cb0c63fcec0fb8c0df0449b48c50840301",
+      "manifest_sha256": "0b663cef5e449eac060488136475082c191d7b0e950b01a2813ac70d2d8a3418"
+    },
+    "c025": {
+      "snapshot_sha256": "a7c7caf66e77974e3172fa43a476c717d2f8f097fd292617ad2846ce1a0664b7",
+      "manifest_sha256": "11652d372f13b1d1cff6f5fa93971eee00e0995a5d047647d7e965e4a16c64ca"
+    },
+    "c10": {
+      "snapshot_sha256": "7d16fa0f260d668e880b3164c51ac8da9420b08253d566ddf4818b880302bbed",
+      "manifest_sha256": "5eece713507dcaae31c313c78fbf723e35ce8daccaff5fcdee0f94909f256ff0"
+    },
+    "c20": {
+      "snapshot_sha256": "5ce38390128a7ede023fe41725c51f3274c4bfa863830a8753f3e5dd1497d719",
+      "manifest_sha256": "e3dce84106730f4cafe1932cb45a574f2048b054273bb0d8a4211a09209078e4"
+    }
+  },
+  "manipulated_axis": {
+    "name": "resident budget",
+    "operative_knob": "e5_killgate._manifest_at_budget(manifest, budget_pct)",
+    "values_measured": [2.5, 10, 20],
+    "control_point_not_re_run_here": {"budget_pct": 5, "budget_tokens": 1756},
+    "held_fixed": ["harness pi 0.84.3", "provider and model within a cell", "arms", "reuse factor 0.50", "schedule seed 4200", "12-session build", "session length 8", "rate card", "statistics", "measurement window S01-S12"],
+    "not_held_fixed": [],
+    "what_it_moves": {
+      "karc_full": "the model-free policy replay admits a larger resident set (S12: 10 versions / 858 tok at 2.5%, 20 / 1735 at 5%, 40 / 3432 at 10%, 49 / 4227 at 20%)",
+      "rag_bm25": "bm25_plans is budget-parity, so the retrieval plan pasted into each turn grows with the same number (plan tokens mean 826.9 / 1728.9 / 3450.9 / 6976.9)"
+    },
+    "budget_pct_20_is_7025_not_7024": "int(35128 * 20 / 100) = int(7025.6) = 7025; the requesting brief's 7,024 was an arithmetic slip. The knob position (pct = 20) is unchanged."
+  },
+  "execution_namespace": {
+    "workdir": "tmp/e28/leg<L><tag>/units/<arm>--<Sxx>/work",
+    "pi_session_id": "e18<tag>-<arm>-<Sxx>",
+    "note": "E18's runner derives both the workdir path and the pi session id from one NAMESPACE string, so setting it to the cell tag moves both levers at once (H10). The literal 'e18' prefix is E18's own code, kept rather than forked; no earlier execution used any of these four suffixes."
+  },
+  "fractional_budget_pct_note": "e4_replay.replay_cell guards its explicit-manifest branch with int(cell['budget_pct']) != budget_pct, an int() cast assuming an integer percentage. At 2.5% the manifest honestly carries budget_pct 2.5 and budget_tokens 878, and the guard is called with int(2.5) == 2. budget_pct is used for nothing else; PolicyConfig.c comes from budget_tokens. phase_build proves this by requiring the 2.5% resident ramp to differ from the genuine c = 2% build.",
+  "preregistration": "docs/experiments/E28-BUDGET-SWEEP/preregistration.md",
+  "preregistration_status": "registered before observation, 2026-09-13",
+  "rate_cards_usd_per_million": {
+    "A": {"input": 3.0, "output": 15.0, "read": 0.3, "write_5m": 3.75, "write_1h": 6.0, "source": "E13-RECOMP §4.1 recovered Anthropic claude-sonnet-5 card"},
+    "B": {"input": 0.2, "output": 1.2, "read": 0.02, "write_5m": 0.25, "write_1h": 0.25, "source": "docs/analysis/openai-luna-rate-card.md, observed 2026-08-28"}
+  },
+  "registered_hypotheses": {
+    "B1": {"quantity": "paired gross-input ratio karc/rag with 95% CI", "predicted_direction": false},
+    "B2": {"quantity": "paired priced cost ratio karc/rag with 95% CI, read against 1.0", "predicted_direction": false},
+    "B3": {"quantity": "component allocation sign", "criterion": "delta_cache_read(karc-rag) > 0 AND delta_creation(karc-rag) < 0", "predicted_direction": true},
+    "B4": {"quantity": "break-even cache-write price mu_w* versus the actual rate (OpenAI 1.25, Anthropic 2.00)", "predicted_direction": false},
+    "applied": "independently per cell",
+    "batch_level_questions_measured_not_predicted": [
+      "(i) where the gross ratio sits relative to 1.0 at c = 2.5 / 5 / 10 / 20%, and whether at 20% it passes beyond parity",
+      "(ii) whether the cost ratio stays below 1.0 at c = 2.5%",
+      "(iii) the difference between E27 (steady state, S13-S24, c = 10%) and E28-O-10 with the window held fixed"
+    ]
+  },
+  "statistics": {
+    "method": "session-unit paired percentile bootstrap",
+    "seed": 1313,
+    "resamples": 10000,
+    "ci": "two-sided 95% percentile",
+    "percentile_convention": "floor(alpha/2*B), ceil((1-alpha/2)*B)-1",
+    "common_random_numbers": "one shared 10000 x 12 index matrix",
+    "ratio_definition": "ratio of session sums",
+    "difference_definition": "mean of per-session paired differences"
+  },
+  "hold_conditions_added_beyond_E27": {
+    "H15": "at c = 2.5% the model-free policy replay admits no resident set at all — stop that cell only. Measured before observation: 10 versions / 858 tokens, utilization 0.977, so not fired.",
+    "H16": "at c = 20% a unit fails against pi's token pacer (120,000 tokens/min) or a context limit — stop that cell only.",
+    "H11_not_applicable": "E27's steady-state condition does not apply: this batch does not choose a window."
+  },
+  "privacy_R9": "raw carries counts, public ids, sha256 and usage numbers only; prompts appear as sha256 and character count. Transcripts under tmp/e28/*/streams are audit-only and are removed at teardown.",
+  "teardown": "rm -rf tmp/e28",
+  "not_pooled_with_the_eight_cells": "different capacity grid points; these cells do not enter the abstract's range figures, §4's tables or figures, or the claims ledger. Whether any of it reaches the 6-page paper is the user's decision."
+}

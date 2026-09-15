@@ -1,0 +1,25 @@
+{
+  "artifact_audit_rows": 14,
+  "artifact_residual_zero_all": true,
+  "attempt_indexes_contiguous": true,
+  "eligible_composition": {
+    "legacy_rag_s01_s02": 16,
+    "tool_exposure_v4_karc": 32,
+    "tool_exposure_v4_rag_s03_s04": 16
+  },
+  "eligible_turn_rows": 64,
+  "gross_bucket_closure_all_attempts": true,
+  "full_tests": "370 passed, 3 skipped",
+  "invalid_legacy_karc_turn_rows": 9,
+  "model_spend_attempt_cap": 80,
+  "model_spend_attempts": 77,
+  "operational_attempt_rows": 82,
+  "privacy_forbidden_keys_found": [],
+  "rag_tool_and_mcp_zero": true,
+  "schema": "e10-p2-xr-smoke-validation-v1",
+  "status": "PASS",
+  "targeted_tests": "15 passed",
+  "turn_rows_persisted": 73,
+  "valid_karc_mcp_calls": 37,
+  "valid_karc_native_tool_calls": 0
+}

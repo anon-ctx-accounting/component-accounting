@@ -1,0 +1,16 @@
+{
+  "approvals/canary.json": "3d98776a9d418c24bc031053f3eb75925334859d98e54b9e8167b85b91d46202",
+  "canary/raw/artifact-audit.jsonl": "cba54281c1c94f3bb6bb1d9e14f037597890c601d53572b695638c1bd61029cf",
+  "canary/raw/attempts.jsonl": "5cfe9327cab465df5f51bbe170d0950346d753bd4cadba984507cec9d1298525",
+  "canary/raw/halfway.json": "0ff3a4cb0361ba9e3a439481a52e50cade1ffca6d97837d355dcecf66ca7b9ff",
+  "canary/raw/pre-canary-freeze.json": "b500a3082f28dac6c9a87fa03b977e1300bf76a3ea5f17a53a1d4ea81f8d20cf",
+  "canary/raw/schedule.json": "280737104c1742e6825d3d966d2574e379ad14abf7a4d1ba0a72f5dd20e395cd",
+  "canary/raw/summary.json": "29c4fb0ff15dd6f1ad155bcef74229f146490f12bb1c28048d22b1c1b5ea5a9c",
+  "canary/raw/turns.jsonl": "eee0390c8d878cc9fc51eddc7f150edead24d2964e19ed22edd7529414a0f1d4",
+  "canary/raw/validation.json": "c73559ae9c57fd1701cc34e8df414450b08dcb1850dde2f29dda49d21d821a25",
+  "canary/report.md": "863bd01c603bedb563e75bc56f1f2aa465db3e260264d4c8e947beb3e7a9b604",
+  "pre-execution-config.json": "9fcc0be8be601f18e7f12f49eb8b334392736266b048a2fad5180d6d2876c848",
+  "smoke/raw/sha256.json": "393dc199108d96ab65113821c27fbfe85f467064611bdd653376e8254018a7c8",
+  "smoke/raw/summary.json": "2e1af69f44a20c6dc620e0417e91c44738eaed6ffe1e672be587ed4db150c46e",
+  "smoke/raw/validation.json": "9a55b02222b3834500f58d2b2983532f5d79a4c0dd99471d3e35fb0f42c014e0"
+}

@@ -1,0 +1,248 @@
+{
+  "H12_fired": false,
+  "_meta": {
+    "cell": "E21-CODEX-COMPONENT",
+    "codex_version": "codex-cli 0.145.0",
+    "generated_at_utc": "2026-09-07T16:34:36+00:00",
+    "namespace": "",
+    "phase": "steady"
+  },
+  "all_warmup_turns_executed": true,
+  "criterion": {
+    "budget_utilization": 0.9988610478359908,
+    "definition": "last warm-up session's resident injection tokens per turn within 5% of the previous session, and >= 95% utilization of the 1,756-token budget",
+    "last_session": "S08",
+    "previous_session": "S07",
+    "relative_change": 0.0,
+    "relative_change_within_tolerance": true,
+    "resident_tokens_last": 1754,
+    "resident_tokens_previous": 1754,
+    "utilization_at_least_95pct": true
+  },
+  "measurement_window_resident": [
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S09",
+      "session_index": 9
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9629840546697038,
+      "resident_tokens": 1691,
+      "resident_versions": 19,
+      "session_id": "S10",
+      "session_index": 10
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9629840546697038,
+      "resident_tokens": 1691,
+      "resident_versions": 19,
+      "session_id": "S11",
+      "session_index": 11
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9629840546697038,
+      "resident_tokens": 1691,
+      "resident_versions": 19,
+      "session_id": "S12",
+      "session_index": 12
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S13",
+      "session_index": 13
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S14",
+      "session_index": 14
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S15",
+      "session_index": 15
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S16",
+      "session_index": 16
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S17",
+      "session_index": 17
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S18",
+      "session_index": 18
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S19",
+      "session_index": 19
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S20",
+      "session_index": 20
+    }
+  ],
+  "measurement_window_utilization_range": [
+    0.9629840546697038,
+    0.9988610478359908
+  ],
+  "per_session": [
+    {
+      "agents_md_bytes": 444,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.0,
+      "executed": {
+        "thread_id_sha256": "d76973c2a9316c3b10b4c1473f05b9e0d497126c45330d136f3475dd5b2a6937",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 0,
+      "injected_artifact_bytes": 0,
+      "resident_tokens": 0,
+      "resident_versions": 0,
+      "session_id": "S01",
+      "session_index": 1
+    },
+    {
+      "agents_md_bytes": 2586,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.19760820045558086,
+      "executed": {
+        "thread_id_sha256": "d49e9335342d408103ff4f64fd51824ff5154f4c234be0d651e00bd2e332a565",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 4,
+      "injected_artifact_bytes": 1385,
+      "resident_tokens": 347,
+      "resident_versions": 4,
+      "session_id": "S02",
+      "session_index": 2
+    },
+    {
+      "agents_md_bytes": 4728,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.3952164009111617,
+      "executed": {
+        "thread_id_sha256": "7fb7c3d5395cd56cc864c00b7ebf1e691390295ccf0bb761f5c5f09aab540482",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 8,
+      "injected_artifact_bytes": 2770,
+      "resident_tokens": 694,
+      "resident_versions": 8,
+      "session_id": "S03",
+      "session_index": 3
+    },
+    {
+      "agents_md_bytes": 6870,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.5928246013667426,
+      "executed": {
+        "thread_id_sha256": "eba6a5bf213e2348c81d8a915fc3ecb91edf3489d1bec654753a07268c96b2ba",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 12,
+      "injected_artifact_bytes": 4155,
+      "resident_tokens": 1041,
+      "resident_versions": 12,
+      "session_id": "S04",
+      "session_index": 4
+    },
+    {
+      "agents_md_bytes": 9012,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.7904328018223234,
+      "executed": {
+        "thread_id_sha256": "5ac866bf9a4d85a683fdf0b7e5741f6f9b19ea9b621959b9d2f73d6e8adb3c4f",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 16,
+      "injected_artifact_bytes": 5540,
+      "resident_tokens": 1388,
+      "resident_versions": 16,
+      "session_id": "S05",
+      "session_index": 5
+    },
+    {
+      "agents_md_bytes": 11154,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "executed": {
+        "thread_id_sha256": "1b002be751d5cd8797343424ddb8c818fc301dc10d567972fb226a807e461900",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 20,
+      "injected_artifact_bytes": 6925,
+      "resident_tokens": 1735,
+      "resident_versions": 20,
+      "session_id": "S06",
+      "session_index": 6
+    },
+    {
+      "agents_md_bytes": 11232,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "executed": {
+        "thread_id_sha256": "581644ee4ce9b5d521d4cf9dd51fc56122e6936260dffda8d830afa8e4a6580b",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 20,
+      "injected_artifact_bytes": 6998,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S07",
+      "session_index": 7
+    },
+    {
+      "agents_md_bytes": 11232,
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "executed": {
+        "thread_id_sha256": "8625d2487c5a626badc4370d240d413189f8dc45d3357d578033bb9c3b87827f",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 20,
+      "injected_artifact_bytes": 6998,
+      "resident_tokens": 1754,
+      "resident_versions": 20,
+      "session_id": "S08",
+      "session_index": 8
+    }
+  ],
+  "steady_state_reached": true,
+  "warmup_sessions_run": 8
+}

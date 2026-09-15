@@ -1,0 +1,284 @@
+{
+  "_meta": {
+    "budget_pct": 10,
+    "budget_tokens": 3512,
+    "cell": "E28-BUDGET-SWEEP",
+    "cell_name": "E28-A-10",
+    "cell_tag": "a10",
+    "generated_at_utc": "2026-09-13T13:56:25Z",
+    "imported_runner_sha256": "d9cb64e409e177228b290149d3a656e1b2fdfbc0a356725ca93d853683726614",
+    "leg": "A",
+    "model": "claude-sonnet-5",
+    "namespace": "a10",
+    "phase": "registry",
+    "pi_version": "0.84.3",
+    "provider": "anthropic",
+    "reuse_factor": 0.5
+  },
+  "leg": "A",
+  "probes": [
+    {
+      "append_system_prompt": false,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "anthropic",
+        "--model",
+        "claude-sonnet-5",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/integrations/pi/karc-mcp-bridge/index.ts",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-builtin-tools",
+        "--tools",
+        "karc_search,karc_get",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session"
+      ],
+      "arm": "karc-full",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "anthropic-messages",
+        "autoCompactionEnabled": false,
+        "model": "claude-sonnet-5",
+        "provider": "anthropic"
+      },
+      "probe": {
+        "active_tools": [
+          "karc_search",
+          "karc_get"
+        ],
+        "all_tools": [
+          {
+            "description_chars": 192,
+            "description_sha256": "6351b9f0161f6272789336561f1ef6401e6f48d2dea5294cbc708a1cbcc3d183",
+            "name": "karc_search",
+            "parameters_sha256": "7ad17e703bba2fe48ccd7cfc0ea0f1b7f56d9cac192c883ae696a2bfb643aaec",
+            "source": null
+          },
+          {
+            "description_chars": 97,
+            "description_sha256": "5ca7bed62bee0cfeab8b6b2fce2fc13c677b3e81c02a8e0d8230714c359399a5",
+            "name": "karc_get",
+            "parameters_sha256": "265a2c9496ae7f3af9307a5808ece1fc4bcd9833f80d218fccc63ff4c76c4025",
+            "source": null
+          }
+        ],
+        "commands": [
+          "karc-bridge-stats",
+          "llama"
+        ],
+        "model_id": "claude-sonnet-5",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09b0e-1021-76ef-82c6-d16dbc297b72",
+        "system_prompt_chars": 1828,
+        "system_prompt_sha256": "f1258fd586ac6d5cf8e96a558aa2d1140bd15479ecde508b257ed91ebd467e32"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "append_system_prompt": true,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "anthropic",
+        "--model",
+        "claude-sonnet-5",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/integrations/pi/karc-mcp-bridge/index.ts",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-builtin-tools",
+        "--tools",
+        "karc_search,karc_get",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session",
+        "--append-system-prompt",
+        "<REPO>/tmp/e28/legAa10/units/karc-full--S01/context/system-append.md"
+      ],
+      "arm": "karc-full",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "anthropic-messages",
+        "autoCompactionEnabled": false,
+        "model": "claude-sonnet-5",
+        "provider": "anthropic"
+      },
+      "probe": {
+        "active_tools": [
+          "karc_search",
+          "karc_get"
+        ],
+        "all_tools": [
+          {
+            "description_chars": 192,
+            "description_sha256": "6351b9f0161f6272789336561f1ef6401e6f48d2dea5294cbc708a1cbcc3d183",
+            "name": "karc_search",
+            "parameters_sha256": "7ad17e703bba2fe48ccd7cfc0ea0f1b7f56d9cac192c883ae696a2bfb643aaec",
+            "source": null
+          },
+          {
+            "description_chars": 97,
+            "description_sha256": "5ca7bed62bee0cfeab8b6b2fce2fc13c677b3e81c02a8e0d8230714c359399a5",
+            "name": "karc_get",
+            "parameters_sha256": "265a2c9496ae7f3af9307a5808ece1fc4bcd9833f80d218fccc63ff4c76c4025",
+            "source": null
+          }
+        ],
+        "commands": [
+          "karc-bridge-stats",
+          "llama"
+        ],
+        "model_id": "claude-sonnet-5",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09b0e-110f-76db-b6d5-19289f64ab34",
+        "system_prompt_chars": 2274,
+        "system_prompt_sha256": "6c3bd48cbd1b04c8443c2db94a330f7d15df3cee54db12cc3c8dfbb5a5a07614"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "append_system_prompt": false,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "anthropic",
+        "--model",
+        "claude-sonnet-5",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-tools",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session"
+      ],
+      "arm": "rag-bm25",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "anthropic-messages",
+        "autoCompactionEnabled": false,
+        "model": "claude-sonnet-5",
+        "provider": "anthropic"
+      },
+      "probe": {
+        "active_tools": [],
+        "all_tools": [],
+        "commands": [
+          "llama"
+        ],
+        "model_id": "claude-sonnet-5",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09b0e-11fc-7325-a9a4-16ff2840d424",
+        "system_prompt_chars": 1827,
+        "system_prompt_sha256": "5b0670c0db7c981aac66804632035a7d3faa2a7842bf37a34f9da19a1509a232"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    },
+    {
+      "append_system_prompt": true,
+      "argv_tail": [
+        "--mode",
+        "rpc",
+        "--provider",
+        "anthropic",
+        "--model",
+        "claude-sonnet-5",
+        "--thinking",
+        "off",
+        "--no-extensions",
+        "-e",
+        "<REPO>/docs/experiments/E18-PI-REVERSAL/scripts/tool-registry-probe.ts",
+        "--no-tools",
+        "--no-context-files",
+        "--no-skills",
+        "--no-prompt-templates",
+        "--no-themes",
+        "--no-approve",
+        "--no-session",
+        "--append-system-prompt",
+        "<REPO>/tmp/e28/legAa10/units/rag-bm25--S01/context/system-append.md"
+      ],
+      "arm": "rag-bm25",
+      "bridge_audit_lines": 0,
+      "get_state": {
+        "api": "anthropic-messages",
+        "autoCompactionEnabled": false,
+        "model": "claude-sonnet-5",
+        "provider": "anthropic"
+      },
+      "probe": {
+        "active_tools": [],
+        "all_tools": [],
+        "commands": [
+          "llama"
+        ],
+        "model_id": "claude-sonnet-5",
+        "ok": true,
+        "probe": "e18-tool-registry",
+        "session_id": "01a09b0e-1290-79cc-8996-25cabcf9ac83",
+        "system_prompt_chars": 2126,
+        "system_prompt_sha256": "640cda17b27ad1252e73904acb31fb8071adbce985d649aac655712f73234d71"
+      },
+      "returncode": 0,
+      "rpc_event_types": [
+        "response"
+      ],
+      "stderr_tail": []
+    }
+  ],
+  "system_prompt_injection": {
+    "karc-full": {
+      "active_tools": [
+        "karc_search",
+        "karc_get"
+      ],
+      "delta_chars": 446,
+      "system_prompt_chars_append": 2274,
+      "system_prompt_chars_noappend": 1828
+    },
+    "rag-bm25": {
+      "active_tools": [],
+      "delta_chars": 299,
+      "system_prompt_chars_append": 2126,
+      "system_prompt_chars_noappend": 1827
+    }
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "judgments_B": {
+    "P1_gross_ordering_karc_more_expensive": {
+      "ci95": [
+        0.9587568780644194,
+        1.3583100864774325
+      ],
+      "criterion": "paired gross ratio 95% CI entirely above 1.0",
+      "ratio": 1.1717461830647544,
+      "verdict": "FAIL"
+    },
+    "P4_no_reversal_on_openai_rates": {
+      "criterion": "paired priced ratio 95% CI entirely above 1.0",
+      "paired_mean_usd_difference": -0.0009669791666666668,
+      "paired_mean_usd_difference_ci95": [
+        -0.0016808058333333336,
+        -0.00023002250000000014
+      ],
+      "priced_ratio": 0.8229024808685841,
+      "priced_ratio_ci95": [
+        0.72286801049372,
+        0.9484214320932263
+      ],
+      "verdict": "FAIL"
+    },
+    "P5_component_structure_transfers": {
+      "criterion": "delta_read > 0 AND delta_creation < 0",
+      "delta_creation": -84933,
+      "delta_output": 3018,
+      "delta_read": 279985,
+      "delta_uncached": 2041,
+      "verdict": "PASS"
+    },
+    "hold_fired": []
+  },
+  "legs_B": {
+    "bootstrap": {
+      "ci": "two-sided 95% percentile",
+      "method": "paired percentile bootstrap over sessions, common random numbers",
+      "n_sessions": 12,
+      "resamples": 10000,
+      "seed": 1313,
+      "unit": "session"
+    },
+    "component_delta_karc_minus_rag": {
+      "api_calls": 108,
+      "cache_read": 279985,
+      "creation": -84933,
+      "creation_1h": 0,
+      "creation_5m": -84933,
+      "gross": 197093,
+      "output": 3018,
+      "tool_calls": 111,
+      "turns": 0,
+      "uncached": 2041
+    },
+    "component_totals": {
+      "karc-full": {
+        "api_calls": 204,
+        "cache_read": 1250703,
+        "creation": 91644,
+        "creation_1h": 0,
+        "creation_5m": 91644,
+        "gross": 1344676,
+        "output": 4606,
+        "tool_calls": 111,
+        "turns": 96,
+        "uncached": 2329
+      },
+      "rag-bm25": {
+        "api_calls": 96,
+        "cache_read": 970718,
+        "creation": 176577,
+        "creation_1h": 0,
+        "creation_5m": 176577,
+        "gross": 1147583,
+        "output": 1588,
+        "tool_calls": 0,
+        "turns": 96,
+        "uncached": 288
+      }
+    },
+    "gross_ratio_karc_over_rag": {
+      "ci95_hi": 1.3583100864774325,
+      "ci95_lo": 0.9587568780644194,
+      "degenerate_resamples": 0,
+      "entirely_above_one": false,
+      "entirely_below_one": false,
+      "point": 1.1717461830647544,
+      "usable_resamples": 10000
+    },
+    "leg": "B",
+    "multipliers": {
+      "mu_output": 5.999999999999999,
+      "mu_read": 0.09999999999999999,
+      "mu_write_1h": 1.25,
+      "mu_write_5m": 1.25
+    },
+    "observed_mu_w": 1.25,
+    "paired_mean_session_gross_difference": {
+      "ci95_hi": 34262.416666666664,
+      "ci95_lo": -3945.0833333333335,
+      "excludes_zero": false,
+      "point": 16424.416666666668
+    },
+    "paired_mean_session_priced_usd_difference": {
+      "ci95_hi": -0.00023002250000000014,
+      "ci95_lo": -0.0016808058333333336,
+      "excludes_zero": true,
+      "point": -0.0009669791666666668
+    },
+    "per_position_profile": {
+      "karc-full": {
+        "1": {
+          "api_calls_mean": 3,
+          "creation_mean": 3048.75,
+          "gross_mean": 12169.166666666666,
+          "n": 12,
+          "output_mean": 79.91666666666667,
+          "read_mean": 8968.333333333334
+        },
+        "2": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 583.5,
+          "gross_mean": 9883.416666666666,
+          "n": 12,
+          "output_mean": 39.333333333333336,
+          "read_mean": 9294.416666666666
+        },
+        "3": {
+          "api_calls_mean": 2.3333333333333335,
+          "creation_mean": 888.5,
+          "gross_mean": 13959,
+          "n": 12,
+          "output_mean": 52.666666666666664,
+          "read_mean": 13063.5
+        },
+        "4": {
+          "api_calls_mean": 2.1666666666666665,
+          "creation_mean": 716.9166666666666,
+          "gross_mean": 13576.916666666666,
+          "n": 12,
+          "output_mean": 47.75,
+          "read_mean": 12853.5
+        },
+        "5": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 513.6666666666666,
+          "gross_mean": 12895.166666666666,
+          "n": 12,
+          "output_mean": 38.583333333333336,
+          "read_mean": 12376
+        },
+        "6": {
+          "api_calls_mean": 2.1666666666666665,
+          "creation_mean": 786.6666666666666,
+          "gross_mean": 17408.083333333332,
+          "n": 12,
+          "output_mean": 48,
+          "read_mean": 16614.916666666668
+        },
+        "7": {
+          "api_calls_mean": 2,
+          "creation_mean": 685.9166666666666,
+          "gross_mean": 18309.083333333332,
+          "n": 12,
+          "output_mean": 43.166666666666664,
+          "read_mean": 17617.166666666668
+        },
+        "8": {
+          "api_calls_mean": 1.6666666666666667,
+          "creation_mean": 413.0833333333333,
+          "gross_mean": 13855.5,
+          "n": 12,
+          "output_mean": 34.416666666666664,
+          "read_mean": 13437.416666666666
+        }
+      },
+      "rag-bm25": {
+        "1": {
+          "api_calls_mean": 1,
+          "creation_mean": 1766.9166666666667,
+          "gross_mean": 3032.25,
+          "n": 12,
+          "output_mean": 16.666666666666668,
+          "read_mean": 1262.3333333333333
+        },
+        "2": {
+          "api_calls_mean": 1,
+          "creation_mean": 1704,
+          "gross_mean": 5587.75,
+          "n": 12,
+          "output_mean": 16.833333333333332,
+          "read_mean": 3880.75
+        },
+        "3": {
+          "api_calls_mean": 1,
+          "creation_mean": 1698.0833333333333,
+          "gross_mean": 8137,
+          "n": 12,
+          "output_mean": 16.666666666666668,
+          "read_mean": 6435.916666666667
+        },
+        "4": {
+          "api_calls_mean": 1,
+          "creation_mean": 1702.25,
+          "gross_mean": 10685.833333333334,
+          "n": 12,
+          "output_mean": 16.5,
+          "read_mean": 8980.583333333334
+        },
+        "5": {
+          "api_calls_mean": 1,
+          "creation_mean": 1693.6666666666667,
+          "gross_mean": 13230,
+          "n": 12,
+          "output_mean": 16.333333333333332,
+          "read_mean": 11533.333333333334
+        },
+        "6": {
+          "api_calls_mean": 1,
+          "creation_mean": 1909.1666666666667,
+          "gross_mean": 15774.166666666666,
+          "n": 12,
+          "output_mean": 16.5,
+          "read_mean": 13862
+        },
+        "7": {
+          "api_calls_mean": 1,
+          "creation_mean": 2120.75,
+          "gross_mean": 18320.666666666668,
+          "n": 12,
+          "output_mean": 16.166666666666668,
+          "read_mean": 16196.916666666666
+        },
+        "8": {
+          "api_calls_mean": 1,
+          "creation_mean": 2119.9166666666665,
+          "gross_mean": 20864.25,
+          "n": 12,
+          "output_mean": 16.666666666666668,
+          "read_mean": 18741.333333333332
+        }
+      }
+    },
+    "per_session_gross": {
+      "karc-full": {
+        "S01": 32860.0,
+        "S02": 67842.0,
+        "S03": 87455.0,
+        "S04": 94424.0,
+        "S05": 102456.0,
+        "S06": 118586.0,
+        "S07": 139025.0,
+        "S08": 142690.0,
+        "S09": 137957.0,
+        "S10": 145103.0,
+        "S11": 134077.0,
+        "S12": 142201.0
+      },
+      "rag-bm25": {
+        "S01": 95748.0,
+        "S02": 95714.0,
+        "S03": 95595.0,
+        "S04": 95564.0,
+        "S05": 95819.0,
+        "S06": 95541.0,
+        "S07": 95586.0,
+        "S08": 95535.0,
+        "S09": 95780.0,
+        "S10": 95590.0,
+        "S11": 95648.0,
+        "S12": 95463.0
+      }
+    },
+    "per_session_priced_usd": {
+      "karc-full": {
+        "S01": 0.00212248,
+        "S02": 0.00303696,
+        "S03": 0.00342424,
+        "S04": 0.0035828599999999998,
+        "S05": 0.0037456699999999996,
+        "S06": 0.004136239999999999,
+        "S07": 0.00480296,
+        "S08": 0.00583061,
+        "S09": 0.0057474200000000005,
+        "S10": 0.005996990000000001,
+        "S11": 0.005672250000000001,
+        "S12": 0.00581938
+      },
+      "rag-bm25": {
+        "S01": 0.0032300200000000005,
+        "S02": 0.0020805999999999997,
+        "S03": 0.0020746199999999997,
+        "S04": 0.0061750500000000005,
+        "S05": 0.00688865,
+        "S06": 0.00383151,
+        "S07": 0.006875150000000001,
+        "S08": 0.0068703,
+        "S09": 0.00688483,
+        "S10": 0.006878830000000001,
+        "S11": 0.00687404,
+        "S12": 0.00685821
+      }
+    },
+    "priced_ratio_karc_over_rag": {
+      "ci95_hi": 0.9484214320932263,
+      "ci95_lo": 0.72286801049372,
+      "degenerate_resamples": 0,
+      "entirely_above_one": false,
+      "entirely_below_one": true,
+      "point": 0.8229024808685841,
+      "usable_resamples": 10000
+    },
+    "priced_totals_usd": {
+      "karc-full": 0.053918060000000004,
+      "rag-bm25": 0.06552181
+    },
+    "rate_card_source": "docs/analysis/openai-luna-rate-card.md (observed 2026-08-28)",
+    "rate_card_usd_per_million": {
+      "input": 0.2,
+      "output": 1.2,
+      "read": 0.02,
+      "write_1h": 0.25,
+      "write_5m": 0.25
+    },
+    "reversal_predicted_by_threshold": true,
+    "reversal_threshold_mu_w_star": 0.5668880176138839,
+    "single_api_call_turn_prefix_tokens": {
+      "karc-full": {
+        "max": 11090,
+        "mean": 6962.547619047619,
+        "min": 1534,
+        "n": 42
+      },
+      "rag-bm25": {
+        "max": 20888,
+        "mean": 11953.989583333334,
+        "min": 3027,
+        "n": 96
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "change": "pass the frozen current worktree src path as PYTHONPATH only to the controlled Codex child/hook environment",
+  "failed_probe_1_sha256": "46aeebe4321164b901de9e31a3fbdbbe3334aeab8c115c837dc855459c5fe4be",
+  "freeze_v2_sha256": "5209be2a222970a204c19f3c9d4ad1b1e52548e15f0cd2a9236a32b5a97b7cda",
+  "original_freeze_sha256": "f4a171b12b5f783c9d32d7bfd8294cf5343a2278c64c0e0a5a6e8a9f3be8e6ba",
+  "probe_attempts_remaining": 1,
+  "probe_attempts_used": 1,
+  "probe_cap_changed": false,
+  "reason": "probe-1 inference succeeded but the isolated hook could not import the current worktree package, so model ID remained requested-only",
+  "schema": "e11-base3-execution-source-amendment-v1",
+  "scientific_contract_changed": false,
+  "sha256": "81e51ccdd7f2cee8ff1cc6f0f33f08053147da352bdcc4d7ecc6ece3ea28cca4"
+}

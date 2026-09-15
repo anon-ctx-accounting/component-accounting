@@ -1,0 +1,155 @@
+{
+  "H10_fired": false,
+  "_meta": {
+    "cell": "E19-STEADY-STATE",
+    "generated_at_utc": "2026-08-28T03:13:34Z",
+    "namespace": "r1",
+    "phase": "steady",
+    "pi_version": "0.84.3"
+  },
+  "all_turns_executed": true,
+  "criterion": {
+    "budget_utilization": 0.9988610478359908,
+    "definition": "last warm-up session's mean resident injection tokens per turn within 5% of the previous session, and >= 95% utilization of the 1,756-token budget",
+    "last_session": "S08",
+    "previous_session": "S07",
+    "relative_change": 0.0,
+    "relative_change_within_tolerance": true,
+    "resident_tokens_last": 1754,
+    "resident_tokens_previous": 1754,
+    "utilization_at_least_95pct": true
+  },
+  "leg": "B",
+  "per_session": [
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.0,
+      "executed": {
+        "pi_session_id_sha256": "98d705dc741b26a91e3b79034ecfe5cc23e351676dbed2759688e0eb6ca592f9",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 0,
+      "injected_artifact_bytes": 0,
+      "resident_tokens": 0,
+      "resident_tokens_per_turn_mean": 0.0,
+      "resident_versions": 0,
+      "session_id": "S01",
+      "session_index": 1,
+      "system_append_bytes": 444
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.19760820045558086,
+      "executed": {
+        "pi_session_id_sha256": "b97f3a1b63306125256edf7c7a7bf0eefcdbbbb009ae17ae1aa847540eef28cc",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 4,
+      "injected_artifact_bytes": 1385,
+      "resident_tokens": 347,
+      "resident_tokens_per_turn_mean": 347.0,
+      "resident_versions": 4,
+      "session_id": "S02",
+      "session_index": 2,
+      "system_append_bytes": 2586
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.3952164009111617,
+      "executed": {
+        "pi_session_id_sha256": "ebd679a465ca14122ec0b1d66d71e6bbd68d413eec26803425c95f54d5ad1e9c",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 8,
+      "injected_artifact_bytes": 2770,
+      "resident_tokens": 694,
+      "resident_tokens_per_turn_mean": 694.0,
+      "resident_versions": 8,
+      "session_id": "S03",
+      "session_index": 3,
+      "system_append_bytes": 4728
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.5928246013667426,
+      "executed": {
+        "pi_session_id_sha256": "57b4756695126106eaf34d8527d2a70682dab21f5ba2e5c183407d83025aa751",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 12,
+      "injected_artifact_bytes": 4155,
+      "resident_tokens": 1041,
+      "resident_tokens_per_turn_mean": 1041.0,
+      "resident_versions": 12,
+      "session_id": "S04",
+      "session_index": 4,
+      "system_append_bytes": 6870
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.7904328018223234,
+      "executed": {
+        "pi_session_id_sha256": "93d7b874bdc07c6bd511b01fe3b39a9498cdc82aec02fe74b1fda55979b09779",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 16,
+      "injected_artifact_bytes": 5540,
+      "resident_tokens": 1388,
+      "resident_tokens_per_turn_mean": 1388.0,
+      "resident_versions": 16,
+      "session_id": "S05",
+      "session_index": 5,
+      "system_append_bytes": 9012
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9880410022779044,
+      "executed": {
+        "pi_session_id_sha256": "49bd17360b460a2b4e1166dea498007cfea1b3c51432793987e6fd7b06795726",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 20,
+      "injected_artifact_bytes": 6925,
+      "resident_tokens": 1735,
+      "resident_tokens_per_turn_mean": 1735.0,
+      "resident_versions": 20,
+      "session_id": "S06",
+      "session_index": 6,
+      "system_append_bytes": 11154
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "executed": {
+        "pi_session_id_sha256": "8bf7b5a32210a98fc861eef8e778e6fbb0085bd84ebbf73c42ef53f4182f22f9",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 20,
+      "injected_artifact_bytes": 6998,
+      "resident_tokens": 1754,
+      "resident_tokens_per_turn_mean": 1754.0,
+      "resident_versions": 20,
+      "session_id": "S07",
+      "session_index": 7,
+      "system_append_bytes": 11232
+    },
+    {
+      "budget_tokens": 1756,
+      "budget_utilization": 0.9988610478359908,
+      "executed": {
+        "pi_session_id_sha256": "ae22c7d3cb556e65c3dd3b1d1545f5fc87d5dd0879c38dadb0811dfb7f77b483",
+        "turns_executed": 8
+      },
+      "injected_artifact_blocks": 20,
+      "injected_artifact_bytes": 6998,
+      "resident_tokens": 1754,
+      "resident_tokens_per_turn_mean": 1754.0,
+      "resident_versions": 20,
+      "session_id": "S08",
+      "session_index": 8,
+      "system_append_bytes": 11232
+    }
+  ],
+  "steady_state_reached": true,
+  "warmup_sessions_run": 8
+}

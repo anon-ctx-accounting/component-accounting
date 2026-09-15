@@ -1,0 +1,149 @@
+{
+  "$id": "urn:k-arc:e10-p2-h16:turn:v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "not": {
+    "anyOf": [
+      {
+        "required": [
+          "argv"
+        ]
+      },
+      {
+        "required": [
+          "command"
+        ]
+      },
+      {
+        "required": [
+          "credential"
+        ]
+      },
+      {
+        "required": [
+          "cwd"
+        ]
+      },
+      {
+        "required": [
+          "environment"
+        ]
+      },
+      {
+        "required": [
+          "output"
+        ]
+      },
+      {
+        "required": [
+          "output_text"
+        ]
+      },
+      {
+        "required": [
+          "prompt"
+        ]
+      },
+      {
+        "required": [
+          "tool_response"
+        ]
+      },
+      {
+        "required": [
+          "transcript"
+        ]
+      }
+    ]
+  },
+  "properties": {
+    "api_cache_read_tokens": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "api_input_tokens_no_cache": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "api_input_tokens_with_cache": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "api_output_tokens": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "api_reasoning_tokens": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "arm": {
+      "enum": [
+        "karc-full",
+        "rag-bm25"
+      ]
+    },
+    "failure_class": {
+      "type": "string"
+    },
+    "infra_failure_attempts": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "mcp_get_calls": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "mcp_search_calls": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "model_spend_attempts": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "position": {
+      "maximum": 16,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "privacy": {
+      "const": "normalized-no-content"
+    },
+    "prompt_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema": {
+      "const": "e10-p2-h16-turn-v1"
+    },
+    "session_id": {
+      "pattern": "^S[0-9]{2}$",
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema",
+    "arm",
+    "session_id",
+    "position",
+    "task_id",
+    "failure_class",
+    "model_spend_attempts",
+    "infra_failure_attempts",
+    "api_input_tokens_no_cache",
+    "api_input_tokens_with_cache",
+    "api_cache_read_tokens",
+    "api_output_tokens",
+    "api_reasoning_tokens",
+    "mcp_search_calls",
+    "mcp_get_calls",
+    "prompt_sha256",
+    "privacy"
+  ],
+  "title": "E10-P2-H16 normalized turn row",
+  "type": "object"
+}

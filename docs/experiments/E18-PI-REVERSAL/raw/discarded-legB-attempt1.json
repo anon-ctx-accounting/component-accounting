@@ -1,0 +1,35 @@
+{
+  "attempt": 1,
+  "leg": "B",
+  "disposition": "DISCARDED IN FULL before any judgement was computed",
+  "parallelism": 6,
+  "throttle": "none",
+  "cause": "provider tokens-per-minute ceiling reached; pi's own auto-retry (3 attempts, 2s/4s/8s backoff) exhausted and the turn returned an assistant message with stopReason 'error', an errorMessage, no content block and an all-zero usage block",
+  "provider_error_shape": {
+    "kind": "rate_limit",
+    "scope": "organization tokens per minute (TPM)",
+    "limit_tokens_per_minute": 200000,
+    "used_tokens_per_minute": 200000,
+    "requested_tokens": 6404,
+    "note": "organization identifier deliberately not recorded (R-9)"
+  },
+  "first_observed_unit": "karc-full--S03",
+  "first_observed_position": 6,
+  "hold_condition_triggered": "H2' (output_tokens == 0 AND errorMessage present AND content block absent - all three signals of the disjunction)",
+  "why_full_discard_and_not_partial": "the preregistration marks H2' a full-redesign cause, not a partial-discard cause: a zero-usage turn leaves a user message with no assistant reply in the pi session, so every later turn of that unit is conditioned on a broken history and its cache accounting is unusable. Rather than reinterpret the criterion, the execution defect was fixed and leg B was re-run from scratch.",
+  "remedy_applied": [
+    "a global sliding-window tokens-per-minute pacer in the runner (--tpm), set below the observed provider ceiling",
+    "reduced parallelism",
+    "fail-fast: a turn with stopReason 'error', an errorMessage or a zero-usage call aborts its unit immediately and writes no unit file",
+    "a retried unit is fully re-materialized and its pi session store deleted first, so bridge ingest_observations rows cannot double-count and no broken history is resumed"
+  ],
+  "leg_A_unaffected": {
+    "checked": "all 300 leg A assistant messages",
+    "stop_reason_error_or_zero_usage": 0,
+    "auto_retry_events": 0
+  },
+  "discarded_units_present_at_stop": [
+    "karc-full--S01", "karc-full--S02", "karc-full--S03",
+    "rag-bm25--S01", "rag-bm25--S02", "rag-bm25--S03", "rag-bm25--S05"
+  ]
+}

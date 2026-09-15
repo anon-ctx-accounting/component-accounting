@@ -1,0 +1,729 @@
+{
+  "_meta": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 1313,
+    "generated_at_utc": "2026-09-10T21:12:53Z",
+    "imported_analyzer": "docs/experiments/E23-REUSE-DENSITY/scripts/analyze_e23.py",
+    "imported_analyzer_sha256": "e52e673bdf88f81fdc6c1a9c4d66d0dbd3bb11c07a931bda53432655576516cd",
+    "namespace": "v1"
+  },
+  "accounting_contract": {
+    "gross": "input + cacheRead + cacheWrite",
+    "why": "pi usage.input excludes cache buckets on both legs (E17 §3, E17B §2); measured again in this cell"
+  },
+  "cell": "E27-BUDGET-10PCT",
+  "e19_leg_b_contrast_c05": {
+    "available": true,
+    "component_delta_karc_minus_rag": {
+      "api_calls": 112,
+      "cache_read": 552616,
+      "creation": -124627,
+      "creation_1h": 0,
+      "creation_5m": -124627,
+      "gross": 428325,
+      "output": 3062,
+      "tool_calls": 113,
+      "turns": 0,
+      "uncached": 336
+    },
+    "component_totals": {
+      "karc-full": {
+        "api_calls": 208,
+        "cache_read": 1449633,
+        "creation": 125738,
+        "creation_1h": 0,
+        "creation_5m": 125738,
+        "gross": 1575995,
+        "output": 4662,
+        "tool_calls": 113,
+        "turns": 96,
+        "uncached": 624
+      },
+      "rag-bm25": {
+        "api_calls": 96,
+        "cache_read": 897017,
+        "creation": 250365,
+        "creation_1h": 0,
+        "creation_5m": 250365,
+        "gross": 1147670,
+        "output": 1600,
+        "tool_calls": 0,
+        "turns": 96,
+        "uncached": 288
+      }
+    },
+    "gross_ratio": 1.3732126830883442,
+    "gross_ratio_ci95": [
+      1.3047897373482338,
+      1.4360903304195332
+    ],
+    "mu_w_star": 0.5935278872154508,
+    "note": "E19 leg B is the same harness, provider, model, arms, seed, rate card and statistics; only the reuse factor differs. Its figures are quoted, not recomputed.",
+    "paired_mean_gross_difference": 35693.75,
+    "paired_mean_gross_difference_ci95": [
+      29138.166666666668,
+      41710.833333333336
+    ],
+    "paired_mean_usd_difference": -0.0013635691666666666,
+    "paired_mean_usd_difference_ci95": [
+      -0.0015868033333333335,
+      -0.0011557591666666665
+    ],
+    "priced_ratio": 0.8016847577827391,
+    "priced_ratio_ci95": [
+      0.769222762038129,
+      0.8318806227115109
+    ],
+    "priced_totals_usd": {
+      "karc-full": 0.06614636,
+      "rag-bm25": 0.08250919000000001
+    },
+    "reuse_factor": 0.5,
+    "sha256": "81cded17c798c8fd0d76c224ebe0273fd90f181c74735c142d8652c8901f5ddc",
+    "source": "docs/experiments/E19-STEADY-STATE/raw/analysis.json",
+    "window": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20"
+    ]
+  },
+  "judgments": {
+    "H6_budget": {
+      "cap_usd": 10.0,
+      "standard_rate_card_total_usd": 0.250522,
+      "within_cap": true
+    },
+    "S1_overall": {
+      "definition": "S1 holds at BOTH preregistered rho values",
+      "per_rho": {
+        "b10": "PASS"
+      },
+      "verdict": "HELD"
+    },
+    "b10": {
+      "S1_component_signature": {
+        "criterion": "delta_cache_read(karc - rag) > 0 AND delta_creation(karc - rag) < 0",
+        "delta_cache_read": 468742,
+        "delta_cache_read_positive": true,
+        "delta_creation": -320228,
+        "delta_creation_negative": true,
+        "delta_output": 3278,
+        "delta_uncached": 360,
+        "paired_ci": {
+          "cache_read": {
+            "ci95_hi": 43373.333333333336,
+            "ci95_lo": 33801.833333333336,
+            "excludes_zero": true,
+            "point": 39061.833333333336
+          },
+          "creation": {
+            "ci95_hi": -26254.75,
+            "ci95_lo": -27297.666666666668,
+            "excludes_zero": true,
+            "point": -26685.666666666668
+          },
+          "output": {
+            "ci95_hi": 279.5,
+            "ci95_lo": 270.0,
+            "excludes_zero": true,
+            "point": 273.1666666666667
+          },
+          "uncached": {
+            "ci95_hi": 30.0,
+            "ci95_lo": 30.0,
+            "excludes_zero": true,
+            "point": 30.0
+          }
+        },
+        "verdict": "PASS"
+      },
+      "hold_fired": [],
+      "measured_not_predicted": {
+        "gross_ratio": 1.0671213137696214,
+        "gross_ratio_ci95": [
+          1.035857468153218,
+          1.0925883857847154
+        ],
+        "mu_w_star": 0.20892051913011978,
+        "note": "preregistration §4 registers S1 only; the two ratios and the USD difference are reported, not judged",
+        "observed_mu_w": 1.25,
+        "paired_mean_gross_difference": 12406.166666666666,
+        "paired_mean_gross_difference_ci95": [
+          6628.25,
+          17113.083333333332
+        ],
+        "paired_mean_usd_difference": -0.005556379999999999,
+        "paired_mean_usd_difference_ci95": [
+          -0.0058131549999999995,
+          -0.005362975833333332
+        ],
+        "priced_ratio": 0.5795904465007549,
+        "priced_ratio_ci95": [
+          0.5600734958609708,
+          0.59428719639543
+        ]
+      },
+      "reuse_factor": 0.5,
+      "steady_state_reached": true
+    }
+  },
+  "manipulated_axis": {
+    "control_point": {
+      "budget_pct": 5,
+      "budget_tokens": 1756
+    },
+    "fixed": [
+      "harness pi 0.84.3",
+      "provider openai",
+      "model gpt-5.6-luna",
+      "arms karc-full / rag-bm25",
+      "reuse factor 0.50",
+      "schedule seed 4352",
+      "24-session build",
+      "rate card",
+      "statistics",
+      "12 sessions x 8 turns x 2 arms"
+    ],
+    "name": "resident budget",
+    "not_fixed": [
+      "measurement window position"
+    ],
+    "operative_knob": "e5_killgate._manifest_at_budget(manifest, budget_pct)",
+    "value_measured": {
+      "budget_pct": 10,
+      "budget_tokens": 3512
+    }
+  },
+  "measurement_window": [
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24"
+  ],
+  "not_pooled_with_the_eight_cells": "preregistration §8: a different capacity grid point, so it does not enter the abstract's range figures, §4's tables/figures or the claims ledger",
+  "preregistration": "docs/experiments/E27-BUDGET-10PCT/preregistration.md",
+  "registered_hypotheses": {
+    "B1_gross_input_ratio": {
+      "ci95": [
+        1.035857468153218,
+        1.0925883857847154
+      ],
+      "entirely_above_one": true,
+      "entirely_below_one": false,
+      "point": 1.0671213137696214,
+      "predicted_direction": false
+    },
+    "B2_priced_cost_ratio": {
+      "ci95": [
+        0.5600734958609708,
+        0.59428719639543
+      ],
+      "cost_parity_reference": 1.0,
+      "entirely_above_one": false,
+      "entirely_below_one": true,
+      "point": 0.5795904465007549,
+      "predicted_direction": false
+    },
+    "B3_component_allocation_sign": {
+      "criterion": "delta_cache_read > 0 AND delta_creation < 0",
+      "delta_cache_read": 468742,
+      "delta_creation": -320228,
+      "delta_output": 3278,
+      "delta_uncached": 360,
+      "paired_ci": {
+        "cache_read": {
+          "ci95_hi": 43373.333333333336,
+          "ci95_lo": 33801.833333333336,
+          "excludes_zero": true,
+          "point": 39061.833333333336
+        },
+        "creation": {
+          "ci95_hi": -26254.75,
+          "ci95_lo": -27297.666666666668,
+          "excludes_zero": true,
+          "point": -26685.666666666668
+        },
+        "output": {
+          "ci95_hi": 279.5,
+          "ci95_lo": 270.0,
+          "excludes_zero": true,
+          "point": 273.1666666666667
+        },
+        "uncached": {
+          "ci95_hi": 30.0,
+          "ci95_lo": 30.0,
+          "excludes_zero": true,
+          "point": 30.0
+        }
+      },
+      "predicted_direction": true,
+      "verdict": "PASS"
+    },
+    "B4_break_even_write_price": {
+      "distance_to_actual": 1.0410794808698802,
+      "formula": "mu_w* = -(dU + mu_r*dR + mu_o*dO) / dW, from this cell's own component totals",
+      "mu_w_star": 0.20892051913011978,
+      "observed_mu_w": 1.25,
+      "predicted_direction": false
+    },
+    "naming_note": "B1..B4 are the requesting brief's H1..H4, renamed so they do not collide with hold conditions H1..H14"
+  },
+  "statistics": {
+    "bootstrap": {
+      "ci": "two-sided 95% percentile",
+      "method": "paired percentile bootstrap over sessions, common random numbers",
+      "n_sessions": 12,
+      "resamples": 10000,
+      "seed": 1313,
+      "unit": "session"
+    },
+    "component_delta_karc_minus_rag": {
+      "api_calls": 120,
+      "cache_read": 468742,
+      "creation": -320228,
+      "creation_1h": 0,
+      "creation_5m": -320228,
+      "gross": 148874,
+      "output": 3278,
+      "policy_resident_hit_turns": 0,
+      "reuse_turns": 0,
+      "tool_calls": 121,
+      "turns": 0,
+      "uncached": 360
+    },
+    "component_delta_paired_ci": {
+      "cache_read": {
+        "ci95_hi": 43373.333333333336,
+        "ci95_lo": 33801.833333333336,
+        "excludes_zero": true,
+        "point": 39061.833333333336
+      },
+      "creation": {
+        "ci95_hi": -26254.75,
+        "ci95_lo": -27297.666666666668,
+        "excludes_zero": true,
+        "point": -26685.666666666668
+      },
+      "output": {
+        "ci95_hi": 279.5,
+        "ci95_lo": 270.0,
+        "excludes_zero": true,
+        "point": 273.1666666666667
+      },
+      "uncached": {
+        "ci95_hi": 30.0,
+        "ci95_lo": 30.0,
+        "excludes_zero": true,
+        "point": 30.0
+      }
+    },
+    "component_totals": {
+      "karc-full": {
+        "api_calls": 216,
+        "cache_read": 2198240,
+        "creation": 167970,
+        "creation_1h": 0,
+        "creation_5m": 167970,
+        "gross": 2366858,
+        "output": 4863,
+        "policy_resident_hit_turns": 23,
+        "reuse_turns": 36,
+        "tool_calls": 121,
+        "turns": 96,
+        "uncached": 648
+      },
+      "rag-bm25": {
+        "api_calls": 96,
+        "cache_read": 1729498,
+        "creation": 488198,
+        "creation_1h": 0,
+        "creation_5m": 488198,
+        "gross": 2217984,
+        "output": 1585,
+        "policy_resident_hit_turns": 23,
+        "reuse_turns": 36,
+        "tool_calls": 0,
+        "turns": 96,
+        "uncached": 288
+      }
+    },
+    "gross_ratio_karc_over_rag": {
+      "ci95_hi": 1.0925883857847154,
+      "ci95_lo": 1.035857468153218,
+      "degenerate_resamples": 0,
+      "entirely_above_one": true,
+      "entirely_below_one": false,
+      "point": 1.0671213137696214,
+      "predicted": false,
+      "usable_resamples": 10000,
+      "why": "preregistration §4 does not predict the gross ordering"
+    },
+    "measurement_window": [
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S24"
+    ],
+    "mu_w_star_note": "recomputed from THIS rho's own component totals; no threshold is carried over from another cell (E17B §6, E18 appendix A.3). Not a prediction.",
+    "multipliers": {
+      "mu_output": 5.999999999999999,
+      "mu_read": 0.09999999999999999,
+      "mu_write_1h": 1.25,
+      "mu_write_5m": 1.25
+    },
+    "observed_mu_w": 1.25,
+    "paired_mean_session_gross_difference": {
+      "ci95_hi": 17113.083333333332,
+      "ci95_lo": 6628.25,
+      "excludes_zero": true,
+      "point": 12406.166666666666,
+      "predicted": false
+    },
+    "paired_mean_session_priced_usd_difference": {
+      "ci95_hi": -0.005362975833333332,
+      "ci95_lo": -0.0058131549999999995,
+      "excludes_zero": true,
+      "point": -0.005556379999999999,
+      "predicted": false
+    },
+    "per_position_profile": {
+      "karc-full": {
+        "1": {
+          "api_calls_mean": 3,
+          "creation_mean": 8817.916666666666,
+          "gross_mean": 25013.666666666668,
+          "n": 12,
+          "output_mean": 73.58333333333333,
+          "read_mean": 16186.75
+        },
+        "2": {
+          "api_calls_mean": 2.5,
+          "creation_mean": 925.75,
+          "gross_mean": 23739.75,
+          "n": 12,
+          "output_mean": 57.166666666666664,
+          "read_mean": 22806.5
+        },
+        "3": {
+          "api_calls_mean": 1.8333333333333333,
+          "creation_mean": 554.9166666666666,
+          "gross_mean": 18695.416666666668,
+          "n": 12,
+          "output_mean": 38.75,
+          "read_mean": 18135
+        },
+        "4": {
+          "api_calls_mean": 1.3333333333333333,
+          "creation_mean": 285.3333333333333,
+          "gross_mean": 14027.416666666666,
+          "n": 12,
+          "output_mean": 25.333333333333332,
+          "read_mean": 13738.083333333334
+        },
+        "5": {
+          "api_calls_mean": 2.1666666666666665,
+          "creation_mean": 760.3333333333334,
+          "gross_mean": 24313.666666666668,
+          "n": 12,
+          "output_mean": 48.25,
+          "read_mean": 23546.833333333332
+        },
+        "6": {
+          "api_calls_mean": 2.3333333333333335,
+          "creation_mean": 863.75,
+          "gross_mean": 27704.083333333332,
+          "n": 12,
+          "output_mean": 52.666666666666664,
+          "read_mean": 26833.333333333332
+        },
+        "7": {
+          "api_calls_mean": 2.5,
+          "creation_mean": 926.25,
+          "gross_mean": 31884.583333333332,
+          "n": 12,
+          "output_mean": 56.916666666666664,
+          "read_mean": 30950.833333333332
+        },
+        "8": {
+          "api_calls_mean": 2.3333333333333335,
+          "creation_mean": 863.25,
+          "gross_mean": 31859.583333333332,
+          "n": 12,
+          "output_mean": 52.583333333333336,
+          "read_mean": 30989.333333333332
+        }
+      },
+      "rag-bm25": {
+        "1": {
+          "api_calls_mean": 1,
+          "creation_mean": 5507.416666666667,
+          "gross_mean": 5510.416666666667,
+          "n": 12,
+          "output_mean": 16.416666666666668,
+          "read_mean": 0
+        },
+        "2": {
+          "api_calls_mean": 1,
+          "creation_mean": 5025.083333333333,
+          "gross_mean": 10535.5,
+          "n": 12,
+          "output_mean": 16.666666666666668,
+          "read_mean": 5507.416666666667
+        },
+        "3": {
+          "api_calls_mean": 1,
+          "creation_mean": 5031.916666666667,
+          "gross_mean": 15567.416666666666,
+          "n": 12,
+          "output_mean": 16.25,
+          "read_mean": 10532.5
+        },
+        "4": {
+          "api_calls_mean": 1,
+          "creation_mean": 5031.833333333333,
+          "gross_mean": 20599.25,
+          "n": 12,
+          "output_mean": 16.333333333333332,
+          "read_mean": 15564.416666666666
+        },
+        "5": {
+          "api_calls_mean": 1,
+          "creation_mean": 5023.5,
+          "gross_mean": 25622.75,
+          "n": 12,
+          "output_mean": 16.75,
+          "read_mean": 20596.25
+        },
+        "6": {
+          "api_calls_mean": 1,
+          "creation_mean": 5022.916666666667,
+          "gross_mean": 30645.666666666668,
+          "n": 12,
+          "output_mean": 16.666666666666668,
+          "read_mean": 25619.75
+        },
+        "7": {
+          "api_calls_mean": 1,
+          "creation_mean": 5019.166666666667,
+          "gross_mean": 35664.833333333336,
+          "n": 12,
+          "output_mean": 16.416666666666668,
+          "read_mean": 30642.666666666668
+        },
+        "8": {
+          "api_calls_mean": 1,
+          "creation_mean": 5021.333333333333,
+          "gross_mean": 40686.166666666664,
+          "n": 12,
+          "output_mean": 16.583333333333332,
+          "read_mean": 35661.833333333336
+        }
+      }
+    },
+    "per_session_gross": {
+      "karc-full": {
+        "S13": 206131.0,
+        "S14": 203117.0,
+        "S15": 205242.0,
+        "S16": 199872.0,
+        "S17": 205319.0,
+        "S18": 199570.0,
+        "S19": 197579.0,
+        "S20": 197567.0,
+        "S21": 178783.0,
+        "S22": 199409.0,
+        "S23": 198824.0,
+        "S24": 175445.0
+      },
+      "rag-bm25": {
+        "S13": 184668.0,
+        "S14": 184889.0,
+        "S15": 184877.0,
+        "S16": 185058.0,
+        "S17": 184840.0,
+        "S18": 184770.0,
+        "S19": 184788.0,
+        "S20": 184939.0,
+        "S21": 184672.0,
+        "S22": 184739.0,
+        "S23": 184922.0,
+        "S24": 184822.0
+      }
+    },
+    "per_session_priced_usd": {
+      "karc-full": {
+        "S13": 0.00793096,
+        "S14": 0.00797247,
+        "S15": 0.00792646,
+        "S16": 0.007816430000000001,
+        "S17": 0.007922690000000001,
+        "S18": 0.0077648100000000005,
+        "S19": 0.00774501,
+        "S20": 0.007738720000000001,
+        "S21": 0.0068125,
+        "S22": 0.0077716,
+        "S23": 0.00779325,
+        "S24": 0.006727599999999999
+      },
+      "rag-bm25": {
+        "S13": 0.013201749999999998,
+        "S14": 0.01322349,
+        "S15": 0.013230249999999999,
+        "S16": 0.01323078,
+        "S17": 0.01321822,
+        "S18": 0.01320451,
+        "S19": 0.013221899999999998,
+        "S20": 0.01322301,
+        "S21": 0.01320349,
+        "S22": 0.013210679999999999,
+        "S23": 0.01322078,
+        "S24": 0.0132102
+      }
+    },
+    "per_session_reuse_turns": {
+      "karc-full": {
+        "S13": 3,
+        "S14": 3,
+        "S15": 3,
+        "S16": 3,
+        "S17": 3,
+        "S18": 3,
+        "S19": 3,
+        "S20": 3,
+        "S21": 3,
+        "S22": 3,
+        "S23": 3,
+        "S24": 3
+      },
+      "rag-bm25": {
+        "S13": 3,
+        "S14": 3,
+        "S15": 3,
+        "S16": 3,
+        "S17": 3,
+        "S18": 3,
+        "S19": 3,
+        "S20": 3,
+        "S21": 3,
+        "S22": 3,
+        "S23": 3,
+        "S24": 3
+      }
+    },
+    "per_session_tool_calls": {
+      "karc-full": {
+        "S13": 10,
+        "S14": 11,
+        "S15": 10,
+        "S16": 10,
+        "S17": 10,
+        "S18": 10,
+        "S19": 10,
+        "S20": 10,
+        "S21": 10,
+        "S22": 10,
+        "S23": 10,
+        "S24": 10
+      },
+      "rag-bm25": {
+        "S13": 0,
+        "S14": 0,
+        "S15": 0,
+        "S16": 0,
+        "S17": 0,
+        "S18": 0,
+        "S19": 0,
+        "S20": 0,
+        "S21": 0,
+        "S22": 0,
+        "S23": 0,
+        "S24": 0
+      }
+    },
+    "priced_ratio_karc_over_rag": {
+      "ci95_hi": 0.59428719639543,
+      "ci95_lo": 0.5600734958609708,
+      "degenerate_resamples": 0,
+      "entirely_above_one": false,
+      "entirely_below_one": true,
+      "point": 0.5795904465007549,
+      "predicted": false,
+      "usable_resamples": 10000,
+      "why": "preregistration §4 does not predict the priced ordering"
+    },
+    "priced_totals_usd": {
+      "karc-full": 0.0919225,
+      "rag-bm25": 0.15859906
+    },
+    "rate_card_source": "docs/analysis/openai-luna-rate-card.md (observed 2026-08-28); identical to E19 leg B",
+    "rate_card_usd_per_million": {
+      "input": 0.2,
+      "output": 1.2,
+      "read": 0.02,
+      "write_1h": 0.25,
+      "write_5m": 0.25
+    },
+    "reuse_factor": 0.5,
+    "reversal_threshold_mu_w_star": 0.20892051913011978,
+    "rho_tag": "b10",
+    "single_api_call_turn_prefix_tokens": {
+      "karc-full": {
+        "max": 14456,
+        "mean": 11048.5,
+        "min": 8904,
+        "n": 36
+      },
+      "rag-bm25": {
+        "max": 40716,
+        "mean": 23104,
+        "min": 5507,
+        "n": 96
+      }
+    }
+  },
+  "window_shift_vs_e19_leg_b": {
+    "note": "the window is a consequence of the axis, not a free choice: a larger budget fills more slowly, so E19's criterion is first met later. Disclosed as a confound, not resolved.",
+    "sessions_new": [
+      "S21",
+      "S22",
+      "S23",
+      "S24"
+    ],
+    "sessions_shared": [
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20"
+    ],
+    "sessions_shared_count": 8
+  }
+}
